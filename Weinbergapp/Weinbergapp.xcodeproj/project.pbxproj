@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */; };
+		356AFE3720CAB28F000D9BC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3620CAB28F000D9BC1 /* ViewController.swift */; };
+		356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* Main.storyboard */; };
+		356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */; };
+		356AFE3F20CAB28F000D9BC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3E20CAB28F000D9BC1 /* Assets.xcassets */; };
+		356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */; };
+		356AFE4D20CAB28F000D9BC1 /* WeinbergappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */; };
+		356AFE5820CAB28F000D9BC1 /* WeinbergappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		356AFE4920CAB28F000D9BC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 356AFE2920CAB28F000D9BC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 356AFE3020CAB28F000D9BC1;
+			remoteInfo = Weinbergapp;
+		};
+		356AFE5420CAB28F000D9BC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 356AFE2920CAB28F000D9BC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 356AFE3020CAB28F000D9BC1;
+			remoteInfo = Weinbergapp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		356AFE3120CAB28F000D9BC1 /* Weinbergapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weinbergapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		356AFE3620CAB28F000D9BC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		356AFE3920CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		356AFE3C20CAB28F000D9BC1 /* Weinbergapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weinbergapp.xcdatamodel; sourceTree = "<group>"; };
+		356AFE3E20CAB28F000D9BC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		356AFE4120CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		356AFE4320CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356AFE4820CAB28F000D9BC1 /* WeinbergappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeinbergappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeinbergappTests.swift; sourceTree = "<group>"; };
+		356AFE4E20CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356AFE5320CAB28F000D9BC1 /* WeinbergappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeinbergappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeinbergappUITests.swift; sourceTree = "<group>"; };
+		356AFE5920CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		356AFE2E20CAB28F000D9BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356AFE4520CAB28F000D9BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356AFE5020CAB28F000D9BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		356AFE2820CAB28F000D9BC1 = {
+			isa = PBXGroup;
+			children = (
+				356AFE3320CAB28F000D9BC1 /* Weinbergapp */,
+				356AFE4B20CAB28F000D9BC1 /* WeinbergappTests */,
+				356AFE5620CAB28F000D9BC1 /* WeinbergappUITests */,
+				356AFE3220CAB28F000D9BC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		356AFE3220CAB28F000D9BC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				356AFE3120CAB28F000D9BC1 /* Weinbergapp.app */,
+				356AFE4820CAB28F000D9BC1 /* WeinbergappTests.xctest */,
+				356AFE5320CAB28F000D9BC1 /* WeinbergappUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		356AFE3320CAB28F000D9BC1 /* Weinbergapp */ = {
+			isa = PBXGroup;
+			children = (
+				356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */,
+				356AFE3620CAB28F000D9BC1 /* ViewController.swift */,
+				356AFE3820CAB28F000D9BC1 /* Main.storyboard */,
+				356AFE3E20CAB28F000D9BC1 /* Assets.xcassets */,
+				356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */,
+				356AFE4320CAB28F000D9BC1 /* Info.plist */,
+				356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */,
+			);
+			path = Weinbergapp;
+			sourceTree = "<group>";
+		};
+		356AFE4B20CAB28F000D9BC1 /* WeinbergappTests */ = {
+			isa = PBXGroup;
+			children = (
+				356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */,
+				356AFE4E20CAB28F000D9BC1 /* Info.plist */,
+			);
+			path = WeinbergappTests;
+			sourceTree = "<group>";
+		};
+		356AFE5620CAB28F000D9BC1 /* WeinbergappUITests */ = {
+			isa = PBXGroup;
+			children = (
+				356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */,
+				356AFE5920CAB28F000D9BC1 /* Info.plist */,
+			);
+			path = WeinbergappUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		356AFE3020CAB28F000D9BC1 /* Weinbergapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356AFE5C20CAB290000D9BC1 /* Build configuration list for PBXNativeTarget "Weinbergapp" */;
+			buildPhases = (
+				356AFE2D20CAB28F000D9BC1 /* Sources */,
+				356AFE2E20CAB28F000D9BC1 /* Frameworks */,
+				356AFE2F20CAB28F000D9BC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Weinbergapp;
+			productName = Weinbergapp;
+			productReference = 356AFE3120CAB28F000D9BC1 /* Weinbergapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		356AFE4720CAB28F000D9BC1 /* WeinbergappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356AFE5F20CAB290000D9BC1 /* Build configuration list for PBXNativeTarget "WeinbergappTests" */;
+			buildPhases = (
+				356AFE4420CAB28F000D9BC1 /* Sources */,
+				356AFE4520CAB28F000D9BC1 /* Frameworks */,
+				356AFE4620CAB28F000D9BC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				356AFE4A20CAB28F000D9BC1 /* PBXTargetDependency */,
+			);
+			name = WeinbergappTests;
+			productName = WeinbergappTests;
+			productReference = 356AFE4820CAB28F000D9BC1 /* WeinbergappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		356AFE5220CAB28F000D9BC1 /* WeinbergappUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 356AFE6220CAB290000D9BC1 /* Build configuration list for PBXNativeTarget "WeinbergappUITests" */;
+			buildPhases = (
+				356AFE4F20CAB28F000D9BC1 /* Sources */,
+				356AFE5020CAB28F000D9BC1 /* Frameworks */,
+				356AFE5120CAB28F000D9BC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				356AFE5520CAB28F000D9BC1 /* PBXTargetDependency */,
+			);
+			name = WeinbergappUITests;
+			productName = WeinbergappUITests;
+			productReference = 356AFE5320CAB28F000D9BC1 /* WeinbergappUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		356AFE2920CAB28F000D9BC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "TH Bingen";
+				TargetAttributes = {
+					356AFE3020CAB28F000D9BC1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					356AFE4720CAB28F000D9BC1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 356AFE3020CAB28F000D9BC1;
+					};
+					356AFE5220CAB28F000D9BC1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 356AFE3020CAB28F000D9BC1;
+					};
+				};
+			};
+			buildConfigurationList = 356AFE2C20CAB28F000D9BC1 /* Build configuration list for PBXProject "Weinbergapp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 356AFE2820CAB28F000D9BC1;
+			productRefGroup = 356AFE3220CAB28F000D9BC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				356AFE3020CAB28F000D9BC1 /* Weinbergapp */,
+				356AFE4720CAB28F000D9BC1 /* WeinbergappTests */,
+				356AFE5220CAB28F000D9BC1 /* WeinbergappUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		356AFE2F20CAB28F000D9BC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */,
+				356AFE3F20CAB28F000D9BC1 /* Assets.xcassets in Resources */,
+				356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356AFE4620CAB28F000D9BC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356AFE5120CAB28F000D9BC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		356AFE2D20CAB28F000D9BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */,
+				356AFE3720CAB28F000D9BC1 /* ViewController.swift in Sources */,
+				356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356AFE4420CAB28F000D9BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356AFE4D20CAB28F000D9BC1 /* WeinbergappTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		356AFE4F20CAB28F000D9BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				356AFE5820CAB28F000D9BC1 /* WeinbergappUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		356AFE4A20CAB28F000D9BC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 356AFE3020CAB28F000D9BC1 /* Weinbergapp */;
+			targetProxy = 356AFE4920CAB28F000D9BC1 /* PBXContainerItemProxy */;
+		};
+		356AFE5520CAB28F000D9BC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 356AFE3020CAB28F000D9BC1 /* Weinbergapp */;
+			targetProxy = 356AFE5420CAB28F000D9BC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		356AFE3820CAB28F000D9BC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				356AFE3920CAB28F000D9BC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				356AFE4120CAB28F000D9BC1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		356AFE5A20CAB290000D9BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		356AFE5B20CAB290000D9BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		356AFE5D20CAB290000D9BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Weinbergapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.thbingen.Weinbergapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		356AFE5E20CAB290000D9BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Weinbergapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.thbingen.Weinbergapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		356AFE6020CAB290000D9BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeinbergappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.thbingen.WeinbergappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weinbergapp.app/Weinbergapp";
+			};
+			name = Debug;
+		};
+		356AFE6120CAB290000D9BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeinbergappTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.thbingen.WeinbergappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weinbergapp.app/Weinbergapp";
+			};
+			name = Release;
+		};
+		356AFE6320CAB290000D9BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeinbergappUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.thbingen.WeinbergappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Weinbergapp;
+			};
+			name = Debug;
+		};
+		356AFE6420CAB290000D9BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WeinbergappUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.thbingen.WeinbergappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Weinbergapp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		356AFE2C20CAB28F000D9BC1 /* Build configuration list for PBXProject "Weinbergapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356AFE5A20CAB290000D9BC1 /* Debug */,
+				356AFE5B20CAB290000D9BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356AFE5C20CAB290000D9BC1 /* Build configuration list for PBXNativeTarget "Weinbergapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356AFE5D20CAB290000D9BC1 /* Debug */,
+				356AFE5E20CAB290000D9BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356AFE5F20CAB290000D9BC1 /* Build configuration list for PBXNativeTarget "WeinbergappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356AFE6020CAB290000D9BC1 /* Debug */,
+				356AFE6120CAB290000D9BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		356AFE6220CAB290000D9BC1 /* Build configuration list for PBXNativeTarget "WeinbergappUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				356AFE6320CAB290000D9BC1 /* Debug */,
+				356AFE6420CAB290000D9BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				356AFE3C20CAB28F000D9BC1 /* Weinbergapp.xcdatamodel */,
+			);
+			currentVersion = 356AFE3C20CAB28F000D9BC1 /* Weinbergapp.xcdatamodel */;
+			path = Weinbergapp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 356AFE2920CAB28F000D9BC1 /* Project object */;
+}
