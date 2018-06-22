@@ -7,19 +7,52 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var _username: UITextField!
+    
+    @IBOutlet weak var _password: UITextField!
+    
+    @IBAction func login(_ sender: Any) {
+        let username = self._username.text
+        let password = self._password.text
+        
+        if(username == "ema" || password == "123456") {
+            //todo
+        } else {
+            let alert = UIAlertController(title: "Login fehlgeschlagen", message: "Ungültige Zugangsdaten. Bitte versuchen Sie es erneut", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style {
+                case .default:
+                    print("default")
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                }}))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+        
 }
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
