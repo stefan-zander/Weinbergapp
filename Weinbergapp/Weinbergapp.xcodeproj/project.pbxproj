@@ -15,6 +15,9 @@
 		356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */; };
 		356AFE4D20CAB28F000D9BC1 /* WeinbergappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */; };
 		356AFE5820CAB28F000D9BC1 /* WeinbergappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */; };
+		35BD464920DD264E00FDD443 /* WorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */; };
+		35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464A20DD267500FDD443 /* WorkProcess.swift */; };
+		35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		356AFE5320CAB28F000D9BC1 /* WeinbergappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeinbergappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeinbergappUITests.swift; sourceTree = "<group>"; };
 		356AFE5920CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcessViewController.swift; sourceTree = "<group>"; };
+		35BD464A20DD267500FDD443 /* WorkProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcess.swift; sourceTree = "<group>"; };
+		35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkProcessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */,
 				356AFE4320CAB28F000D9BC1 /* Info.plist */,
 				356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */,
+				35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */,
+				35BD464A20DD267500FDD443 /* WorkProcess.swift */,
+				35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */,
 			);
 			path = Weinbergapp;
 			sourceTree = "<group>";
@@ -265,6 +274,9 @@
 				356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */,
 				356AFE3720CAB28F000D9BC1 /* ViewController.swift in Sources */,
 				356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */,
+				35BD464920DD264E00FDD443 /* WorkProcessViewController.swift in Sources */,
+				35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */,
+				35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

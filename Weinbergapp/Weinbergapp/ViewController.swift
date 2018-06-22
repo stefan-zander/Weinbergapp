@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let username = self._username.text
         let password = self._password.text
         
-        if(username == "ema" || password == "123456") {
+        if(username == "" || password == "") {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             if let controller = storyBoard.instantiateViewController(withIdentifier: "controller") as? UITabBarController {
                 self.present(controller, animated: true, completion: nil)
