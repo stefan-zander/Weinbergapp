@@ -98,6 +98,7 @@
                     <connections>
                         <outlet property="_password" destination="AM1-Wo-tDm" id="6vc-ec-hP4"/>
                         <outlet property="_username" destination="LDb-mE-hNJ" id="rb1-Nx-6oc"/>
+                        <segue destination="AzT-oI-WRz" kind="show" id="QqJ-Gi-i6E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enU-V0-ElX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +108,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="osP-U2-eYe">
             <objects>
-                <tabBarController id="AzT-oI-WRz" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="controller" id="AzT-oI-WRz" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pvj-dI-Lvb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

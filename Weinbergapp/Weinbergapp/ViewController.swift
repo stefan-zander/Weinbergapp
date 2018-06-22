@@ -19,7 +19,10 @@ class ViewController: UIViewController {
         let password = self._password.text
         
         if(username == "ema" || password == "123456") {
-            //todo
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            if let controller = storyBoard.instantiateViewController(withIdentifier: "controller") as? UITabBarController {
+                self.present(controller, animated: true, completion: nil)
+            }            
         } else {
             let alert = UIAlertController(title: "Login fehlgeschlagen", message: "Ungültige Zugangsdaten. Bitte versuchen Sie es erneut", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
