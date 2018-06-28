@@ -21,6 +21,8 @@
 		35BD464920DD264E00FDD443 /* WorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */; };
 		35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464A20DD267500FDD443 /* WorkProcess.swift */; };
 		35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */; };
+		35FCD6B920E506EB002936D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FCD6B820E506EB002936D6 /* MapKit.framework */; };
+		35FCD6BB20E50814002936D6 /* MapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FCD6BA20E50814002936D6 /* MapTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcessViewController.swift; sourceTree = "<group>"; };
 		35BD464A20DD267500FDD443 /* WorkProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcess.swift; sourceTree = "<group>"; };
 		35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkProcessViewController.swift; sourceTree = "<group>"; };
+		35FCD6B820E506EB002936D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		35FCD6BA20E50814002936D6 /* MapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35FCD6B920E506EB002936D6 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +100,7 @@
 				356AFE4B20CAB28F000D9BC1 /* WeinbergappTests */,
 				356AFE5620CAB28F000D9BC1 /* WeinbergappUITests */,
 				356AFE3220CAB28F000D9BC1 /* Products */,
+				35FCD6B720E506EB002936D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +130,7 @@
 				35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */,
 				358B65D620E4ED8000640347 /* OperationTableViewCell.swift */,
 				358B65D820E4F22000640347 /* OperationsTableViewController.swift */,
+				35FCD6BA20E50814002936D6 /* MapTableViewController.swift */,
 			);
 			path = Weinbergapp;
 			sourceTree = "<group>";
@@ -144,6 +151,14 @@
 				356AFE5920CAB28F000D9BC1 /* Info.plist */,
 			);
 			path = WeinbergappUITests;
+			sourceTree = "<group>";
+		};
+		35FCD6B720E506EB002936D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35FCD6B820E506EB002936D6 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +230,14 @@
 					356AFE3020CAB28F000D9BC1 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					356AFE4720CAB28F000D9BC1 = {
 						CreatedOnToolsVersion = 9.2;
@@ -288,6 +311,7 @@
 				35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */,
 				35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
+				35FCD6BB20E50814002936D6 /* MapTableViewController.swift in Sources */,
 				358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
