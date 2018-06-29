@@ -22,6 +22,10 @@
 		35BD464920DD264E00FDD443 /* WorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */; };
 		35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464A20DD267500FDD443 /* WorkProcess.swift */; };
 		35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */; };
+		35C0DE4220E65BAD00C31C78 /* VintageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4120E65BAD00C31C78 /* VintageTableViewController.swift */; };
+		35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4720E65D7C00C31C78 /* Vintage.swift */; };
+		35C0DE4A20E65DCA00C31C78 /* VintageExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */; };
+		35C0DE4C20E6659300C31C78 /* AddVintageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4B20E6659300C31C78 /* AddVintageViewController.swift */; };
 		35FCD6B920E506EB002936D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FCD6B820E506EB002936D6 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +68,10 @@
 		35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcessViewController.swift; sourceTree = "<group>"; };
 		35BD464A20DD267500FDD443 /* WorkProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcess.swift; sourceTree = "<group>"; };
 		35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkProcessViewController.swift; sourceTree = "<group>"; };
+		35C0DE4120E65BAD00C31C78 /* VintageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageTableViewController.swift; sourceTree = "<group>"; };
+		35C0DE4720E65D7C00C31C78 /* Vintage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vintage.swift; sourceTree = "<group>"; };
+		35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageExecution.swift; sourceTree = "<group>"; };
+		35C0DE4B20E6659300C31C78 /* AddVintageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVintageViewController.swift; sourceTree = "<group>"; };
 		35FCD6B820E506EB002936D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -117,7 +125,8 @@
 		356AFE3320CAB28F000D9BC1 /* Weinbergapp */ = {
 			isa = PBXGroup;
 			children = (
-				358B65DA20E4F39B00640347 /* Operation.swift */,
+				35C0DE4420E65C0000C31C78 /* Operations */,
+				35C0DE4320E65BE500C31C78 /* Model */,
 				356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */,
 				356AFE3620CAB28F000D9BC1 /* ViewController.swift */,
 				356AFE3820CAB28F000D9BC1 /* Main.storyboard */,
@@ -125,11 +134,6 @@
 				356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */,
 				356AFE4320CAB28F000D9BC1 /* Info.plist */,
 				356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */,
-				35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */,
-				35BD464A20DD267500FDD443 /* WorkProcess.swift */,
-				35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */,
-				358B65D620E4ED8000640347 /* OperationTableViewCell.swift */,
-				358B65D820E4F22000640347 /* OperationsTableViewController.swift */,
 				354BA7A220E6599700EF1D9D /* MapViewController.swift */,
 			);
 			path = Weinbergapp;
@@ -151,6 +155,46 @@
 				356AFE5920CAB28F000D9BC1 /* Info.plist */,
 			);
 			path = WeinbergappUITests;
+			sourceTree = "<group>";
+		};
+		35C0DE4320E65BE500C31C78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35BD464A20DD267500FDD443 /* WorkProcess.swift */,
+				35C0DE4720E65D7C00C31C78 /* Vintage.swift */,
+				35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35C0DE4420E65C0000C31C78 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				35C0DE4520E65C3D00C31C78 /* WorkProcess */,
+				35C0DE4620E65CFA00C31C78 /* Vintage */,
+				358B65D820E4F22000640347 /* OperationsTableViewController.swift */,
+				358B65D620E4ED8000640347 /* OperationTableViewCell.swift */,
+				358B65DA20E4F39B00640347 /* Operation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		35C0DE4520E65C3D00C31C78 /* WorkProcess */ = {
+			isa = PBXGroup;
+			children = (
+				35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */,
+				35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */,
+			);
+			path = WorkProcess;
+			sourceTree = "<group>";
+		};
+		35C0DE4620E65CFA00C31C78 /* Vintage */ = {
+			isa = PBXGroup;
+			children = (
+				35C0DE4120E65BAD00C31C78 /* VintageTableViewController.swift */,
+				35C0DE4B20E6659300C31C78 /* AddVintageViewController.swift */,
+			);
+			path = Vintage;
 			sourceTree = "<group>";
 		};
 		35FCD6B720E506EB002936D6 /* Frameworks */ = {
@@ -303,11 +347,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C0DE4A20E65DCA00C31C78 /* VintageExecution.swift in Sources */,
 				356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */,
 				356AFE3720CAB28F000D9BC1 /* ViewController.swift in Sources */,
+				35C0DE4C20E6659300C31C78 /* AddVintageViewController.swift in Sources */,
 				356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */,
 				354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */,
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
+				35C0DE4220E65BAD00C31C78 /* VintageTableViewController.swift in Sources */,
+				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
 				35BD464920DD264E00FDD443 /* WorkProcessViewController.swift in Sources */,
 				35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */,
 				35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */,

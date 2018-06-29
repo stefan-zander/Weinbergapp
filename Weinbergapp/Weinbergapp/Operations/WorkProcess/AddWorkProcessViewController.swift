@@ -20,7 +20,6 @@ class AddWorkProcessViewController: UIViewController {
     
     @IBOutlet weak var addButton: UIButton!
     
-    
     var editIndex: Int?
     var source: WorkProcessesViewController!
     
