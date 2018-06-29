@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354BA7A220E6599700EF1D9D /* MapViewController.swift */; };
 		356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */; };
 		356AFE3720CAB28F000D9BC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3620CAB28F000D9BC1 /* ViewController.swift */; };
 		356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* Main.storyboard */; };
@@ -22,7 +23,6 @@
 		35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464A20DD267500FDD443 /* WorkProcess.swift */; };
 		35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */; };
 		35FCD6B920E506EB002936D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FCD6B820E506EB002936D6 /* MapKit.framework */; };
-		35FCD6BB20E50814002936D6 /* MapTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FCD6BA20E50814002936D6 /* MapTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		354BA7A220E6599700EF1D9D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		356AFE3120CAB28F000D9BC1 /* Weinbergapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weinbergapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356AFE3620CAB28F000D9BC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		35BD464A20DD267500FDD443 /* WorkProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcess.swift; sourceTree = "<group>"; };
 		35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkProcessViewController.swift; sourceTree = "<group>"; };
 		35FCD6B820E506EB002936D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		35FCD6BA20E50814002936D6 /* MapTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 				35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */,
 				358B65D620E4ED8000640347 /* OperationTableViewCell.swift */,
 				358B65D820E4F22000640347 /* OperationsTableViewController.swift */,
-				35FCD6BA20E50814002936D6 /* MapTableViewController.swift */,
+				354BA7A220E6599700EF1D9D /* MapViewController.swift */,
 			);
 			path = Weinbergapp;
 			sourceTree = "<group>";
@@ -306,12 +306,12 @@
 				356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */,
 				356AFE3720CAB28F000D9BC1 /* ViewController.swift in Sources */,
 				356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */,
+				354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */,
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				35BD464920DD264E00FDD443 /* WorkProcessViewController.swift in Sources */,
 				35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */,
 				35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
-				35FCD6BB20E50814002936D6 /* MapTableViewController.swift in Sources */,
 				358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
