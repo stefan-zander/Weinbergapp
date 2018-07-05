@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddVintageViewController: UIViewController, UIPickerViewDelegate {
+class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var date: UIDatePicker!
     
     @IBOutlet weak var field: UITextField!
@@ -22,32 +22,54 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate {
     var editIndex: Int?
     var source: VintageTableViewController!
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "test"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         execution.delegate = self
-        
-        // Do any additional setup after loading the view.
+        execution.dataSource = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 2
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch row {
+        case 0:
+            return "Händisch"
+        case 1:
+            return "Mechanisch"
+        default:
+            return nil
+        }
+    }
+    
+    @IBAction func ok(_ sender: UIBarButtonItem) {
+        let execution = self.execution.selectedRow(inComponent: 0) == 0 ?
+            VintageExecution.Manual : VintageExecution.Mechanic
+        
+        if let editIndex = editIndex {
+            source.vintages[editIndex].date = date.date
+            source.vintages[editIndex].field = field.text!
+            source.vintages[editIndex].user = user.text!
+            source.vintages[editIndex].workingHours = Double(workingHours.text!)!
+            source.vintages[editIndex].execution = execution
+            
+        } else {
+            let vintage = Vintage(date: date.date, field: field.text!, user: user.text!, workingHours: Double(workingHours.text!)!, execution: execution)
+            
+            source.vintages.append(vintage)
+        }
+        
+        source.tableView.reloadData()
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: false, completion: nil)
+    }
 }

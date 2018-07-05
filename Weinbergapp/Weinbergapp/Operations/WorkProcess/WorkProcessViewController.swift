@@ -14,12 +14,19 @@ class WorkProcessesViewController: UIViewController, UITableViewDelegate, UITabl
     
     var processes: [WorkProcess] = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return processes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "BetterTableViewCell")
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "WorkProcessViewCell")
         
         cell?.textLabel?.text = processes[indexPath.row].field
         
@@ -60,13 +67,6 @@ class WorkProcessesViewController: UIViewController, UITableViewDelegate, UITabl
             addProcess.source = self
             self.present(addProcess, animated: false, completion: nil)
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
     }
     
 }
