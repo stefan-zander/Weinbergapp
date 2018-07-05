@@ -7,21 +7,81 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
+/*class Lol: MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    
+    var hash: Int
+    
+    var superclass: AnyClass?
+    
+    
+    var description: String
+    
+    
+    
+    
+    var title: String? = "Hi"
+    var subtitle: String? = "jbjjbfj"
+    var location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: CLLocationDegrees(49.992862), longitude: CLLocationDegrees(8.247253))
+    
+    
+}*/
 
+class MapViewController: UIViewController, MKMapViewDelegate {
+
+    @IBOutlet weak var mapView: MKMapView!
+    
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        requestLocationAccess()
+        
+        mapView?.delegate = self
+        mapView?.showsUserLocation = true
+        
+        let p1 = CLLocationCoordinate2D(latitude: 49.992862, longitude: 8.247253)
+        let p2 = CLLocationCoordinate2D(latitude: 49.96674, longitude: 7.904596)
+        let pts: [CLLocationCoordinate2D] = [p1, p2]
+        
+        let testline = MKPolyline(coordinates: pts, count: pts.count)
+        
+        mapView.addAnnotation(testline)
+        
+          
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func requestLocationAccess() {
+        let status = CLLocationManager.authorizationStatus()
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            return
+            
+        case .denied, .restricted:
+            print("location access denied")
+            
+      default:
+        locationManager.requestWhenInUseAuthorization()
+        }
     }
     
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -30,6 +90,7 @@ class MapViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
+*/
 
 }
