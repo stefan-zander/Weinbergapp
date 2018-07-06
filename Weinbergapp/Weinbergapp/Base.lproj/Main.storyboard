@@ -246,31 +246,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZsK-FF-gum">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Karte" id="HXH-Ka-YXU">
+                                        <barButtonItem key="leftBarButtonItem" enabled="NO" systemItem="cancel" id="B2u-x9-WfU">
+                                            <connections>
+                                                <action selector="cancel:" destination="AhY-x6-VPU" id="XNP-Vi-j2G"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Hinzufügen" id="fNf-mP-5Hd">
+                                            <connections>
+                                                <action selector="add:" destination="AhY-x6-VPU" id="JT3-kR-3nF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fJU-Ud-ci9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="FXw-Bm-ff8"/>
-                                    <constraint firstAttribute="width" constant="375" id="Hb9-WB-EGX"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fJU-Ud-ci9" firstAttribute="leading" secondItem="tTu-fD-evz" secondAttribute="leading" id="3JO-mD-d7z"/>
-                            <constraint firstItem="fJU-Ud-ci9" firstAttribute="top" secondItem="HK5-ZS-E7u" secondAttribute="top" id="5xT-fP-G1b"/>
-                            <constraint firstItem="fJU-Ud-ci9" firstAttribute="bottom" secondItem="tTu-fD-evz" secondAttribute="bottom" id="bGA-p0-uCz"/>
-                            <constraint firstItem="fJU-Ud-ci9" firstAttribute="trailing" secondItem="tTu-fD-evz" secondAttribute="trailing" id="yGs-To-vnA"/>
+                            <constraint firstItem="fJU-Ud-ci9" firstAttribute="top" secondItem="HK5-ZS-E7u" secondAttribute="top" constant="64" id="Z7w-qG-eFz"/>
+                            <constraint firstAttribute="bottom" secondItem="fJU-Ud-ci9" secondAttribute="bottom" constant="49" id="ZSs-F7-RVJ"/>
+                            <constraint firstItem="fJU-Ud-ci9" firstAttribute="leading" secondItem="HK5-ZS-E7u" secondAttribute="leading" id="rYG-xp-r5T"/>
+                            <constraint firstAttribute="trailing" secondItem="fJU-Ud-ci9" secondAttribute="trailing" id="rku-01-3tz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tTu-fD-evz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Karte" id="0Mt-Cg-U6j"/>
                     <connections>
+                        <outlet property="add" destination="fNf-mP-5Hd" id="bZp-By-fEe"/>
+                        <outlet property="cancel" destination="B2u-x9-WfU" id="en7-5y-iht"/>
                         <outlet property="mapView" destination="fJU-Ud-ci9" id="6Mw-yc-LVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9k-ID-Bhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1853.5999999999999" y="-533.88305847076469"/>
+            <point key="canvasLocation" x="2053.5999999999999" y="-535.68215892053979"/>
         </scene>
         <!--Work Processes Table View Controller-->
         <scene sceneID="cwc-Vk-CAm">
