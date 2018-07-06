@@ -85,13 +85,18 @@ class VintageTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
-    @IBAction func add(_ sender: Any) {
+    
+    
+    @IBAction func add(_ sender: UIBarButtonItem) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
         if let addVintage = storyBoard.instantiateViewController(withIdentifier: "AddVintage") as? AddVintageViewController {
             addVintage.source = self
             self.present(addVintage, animated: false, completion: nil)
         }
+    }
+    
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

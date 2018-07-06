@@ -8,9 +8,7 @@
 
 import UIKit
 
-class WorkProcessesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet weak var tableView: UITableView!
+class WorkProcessesTableViewController: UITableViewController {
     
     var processes: [WorkProcess] = []
     
@@ -21,11 +19,11 @@ class WorkProcessesViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.dataSource = self
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return processes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "WorkProcessViewCell")
         
         cell?.textLabel?.text = processes[indexPath.row].field
@@ -33,7 +31,7 @@ class WorkProcessesViewController: UIViewController, UITableViewDelegate, UITabl
         return cell!
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
         if let addProcess = storyBoard.instantiateViewController(withIdentifier: "AddWorkProcess") as? AddWorkProcessViewController {
@@ -49,24 +47,28 @@ class WorkProcessesViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             processes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
-    @IBAction func add(_ sender: Any) {
+    @IBAction func add(_ sender: UIBarButtonItem) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
         if let addProcess = storyBoard.instantiateViewController(withIdentifier: "AddWorkProcess") as? AddWorkProcessViewController {
             addProcess.source = self
             self.present(addProcess, animated: false, completion: nil)
         }
+    }
+    
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

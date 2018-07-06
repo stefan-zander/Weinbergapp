@@ -48,7 +48,7 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
-    @IBAction func ok(_ sender: UIBarButtonItem) {
+    @IBAction func save(_ sender: UIBarButtonItem) {
         let execution = self.execution.selectedRow(inComponent: 0) == 0 ?
             VintageExecution.Manual : VintageExecution.Mechanic
         

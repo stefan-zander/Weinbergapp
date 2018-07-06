@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Operations Table View Controller-->
+        <!--Arbeitsgänge-->
         <scene sceneID="iJB-zV-OgV">
             <objects>
                 <tableViewController id="oNZ-z5-vyi" customClass="OperationsTableViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,15 +69,15 @@
                             <outlet property="delegate" destination="oNZ-z5-vyi" id="TH0-QY-TXD"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" systemItem="mostViewed" id="rjB-iW-7hR"/>
+                    <tabBarItem key="tabBarItem" title="Arbeitsgänge" id="rjB-iW-7hR"/>
                     <connections>
-                        <segue destination="Hfi-3m-7oB" kind="presentation" identifier="WorkProcesses" id="71i-q0-cHu"/>
                         <segue destination="BDy-Na-fe4" kind="presentation" id="xfT-aQ-mg1"/>
+                        <segue destination="WWk-N6-kJO" kind="presentation" id="9vQ-5k-xvG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ty-2f-Puc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415" y="117"/>
+            <point key="canvasLocation" x="1413.5999999999999" y="116.49175412293854"/>
         </scene>
         <!--Vintage Table View Controller-->
         <scene sceneID="0ND-yW-fHD">
@@ -87,20 +87,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="REd-O6-qrf">
-                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="eV8-G6-xKY">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <barButtonItem systemItem="add" id="9I1-B6-mdn">
-                                    <connections>
-                                        <action selector="add:" destination="BDy-Na-fe4" id="6cb-Su-tnL"/>
-                                    </connections>
-                                </barButtonItem>
+                                <navigationItem title="Traubenlese" id="mlW-1O-MHM">
+                                    <barButtonItem key="leftBarButtonItem" title="Zurück" id="YFk-Z3-qWY">
+                                        <connections>
+                                            <action selector="back:" destination="BDy-Na-fe4" id="CPd-S2-bnQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Kj-1A-zai">
+                                        <connections>
+                                            <action selector="add:" destination="BDy-Na-fe4" id="PpU-fd-SGQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
                             </items>
-                        </toolbar>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VintageViewCell" id="oXx-fz-J10">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oXx-fz-J10" id="CIt-cP-Zq3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -129,89 +136,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPC-ag-msg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <barButtonItem title="Abbrechen" id="bm1-53-jtw">
-                                        <connections>
-                                            <action selector="cancel:" destination="And-kL-e5Z" id="NA7-BU-5GN"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="Hinzufügen" id="CiD-RA-hmZ">
-                                        <connections>
-                                            <action selector="ok:" destination="And-kL-e5Z" id="UpU-ca-o3n"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7A-NI-EXm">
-                                <rect key="frame" x="16" y="57" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czN-0c-wcr">
-                                <rect key="frame" x="16" y="213" width="343" height="40"/>
+                                <rect key="frame" x="16" y="74" width="343" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Benutzer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpj-Ld-cbI">
-                                <rect key="frame" x="16" y="299" width="343" height="40"/>
+                                <rect key="frame" x="16" y="321" width="343" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arbeitszeit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6R7-3l-XLY">
-                                <rect key="frame" x="16" y="385" width="343" height="40"/>
+                                <rect key="frame" x="16" y="398" width="343" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Art der Durchführung:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T17-s0-oo6">
-                                <rect key="frame" x="16" y="471" width="343" height="40"/>
+                                <rect key="frame" x="16" y="482" width="343" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zugehöriges Feld eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ise-Hc-hV9">
-                                <rect key="frame" x="16" y="261" width="343" height="30"/>
+                                <rect key="frame" x="16" y="283" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzer eingeben..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHv-3S-z2l">
-                                <rect key="frame" x="16" y="347" width="343" height="30"/>
+                                <rect key="frame" x="16" y="360" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arbeitszeit eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAc-iQ-D0H">
-                                <rect key="frame" x="16" y="433" width="343" height="30"/>
+                                <rect key="frame" x="16" y="438" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xe8-Fr-MhG">
-                                <rect key="frame" x="16" y="519" width="343" height="100"/>
+                                <rect key="frame" x="16" y="540" width="343" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JUR-MA-PwK">
-                                <rect key="frame" x="16" y="105" width="343" height="100"/>
+                                <rect key="frame" x="8" y="113" width="343" height="118"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="551969957.13261604">
                                     <!--2018-06-29 12:59:17 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czN-0c-wcr">
+                                <rect key="frame" x="16" y="239" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vf1-BI-Ba2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="Tdo-Sq-o4t">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="G8Z-Wc-XXf">
+                                            <connections>
+                                                <action selector="cancel:" destination="And-kL-e5Z" id="3dO-sw-SAI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1B0-pT-oVj">
+                                            <connections>
+                                                <action selector="save:" destination="And-kL-e5Z" id="aTT-0g-71Q"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <edgeInsets key="layoutMargins" top="10" left="10" bottom="10" right="10"/>
@@ -263,49 +272,54 @@
             </objects>
             <point key="canvasLocation" x="1853.5999999999999" y="-533.88305847076469"/>
         </scene>
-        <!--Work Processes View Controller-->
-        <scene sceneID="c7X-kj-EM2">
+        <!--Work Processes Table View Controller-->
+        <scene sceneID="cwc-Vk-CAm">
             <objects>
-                <viewController storyboardIdentifier="WorkProcesses" id="Hfi-3m-7oB" customClass="WorkProcessesViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qgs-kb-l7Q">
+                <tableViewController storyboardIdentifier="WorkProcesses" id="WWk-N6-kJO" customClass="WorkProcessesTableViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eSM-7x-qCq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Dh-gd-Cjt">
-                                <rect key="frame" x="16" y="20" width="343" height="531"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WorkProcessViewCell" id="UEJ-C1-szp">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UEJ-C1-szp" id="KMU-RK-CwM">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5v4-D0-SnE">
-                                <rect key="frame" x="322" y="20" width="26" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Arbeitsgang hinzufügen" image="add"/>
-                                <connections>
-                                    <action selector="add:" destination="Hfi-3m-7oB" eventType="primaryActionTriggered" id="27Y-br-gmX"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="M5A-dH-gkp"/>
-                    </view>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="eM5-4S-mCX">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Entlauben" id="1uU-0h-2fL">
+                                    <barButtonItem key="leftBarButtonItem" title="Zurück" id="TBK-NU-hsc">
+                                        <connections>
+                                            <action selector="back:" destination="WWk-N6-kJO" id="2MG-Ha-2D9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="dRo-ZA-THU">
+                                        <connections>
+                                            <action selector="add:" destination="WWk-N6-kJO" id="Ryc-Es-jqD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkProcessViewCell" id="b7a-DR-Ikz">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b7a-DR-Ikz" id="7id-lC-HMU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WWk-N6-kJO" id="7Te-z5-5Ug"/>
+                            <outlet property="delegate" destination="WWk-N6-kJO" id="esD-cM-qvu"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="tableView" destination="1Dh-gd-Cjt" id="nD4-98-lTx"/>
-                        <segue destination="hyd-Kt-Hro" kind="presentation" identifier="AddWorkProcess" id="Tii-EA-Y8n"/>
+                        <segue destination="hyd-Kt-Hro" kind="presentation" id="Mnv-xl-8vr"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="04c-dU-J5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bqh-L7-SrX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="116"/>
+            <point key="canvasLocation" x="2054" y="116"/>
         </scene>
         <!--Add Work Process View Controller-->
         <scene sceneID="9RL-pi-Ebw">
@@ -321,26 +335,16 @@
                                 <date key="date" timeIntervalSinceReferenceDate="551364408.80920303">
                                     <!--2018-06-22 12:46:48 +0000-->
                                 </date>
-                                <connections>
-                                    <action selector="date:" destination="eGZ-FL-FmB" eventType="valueChanged" id="rM7-SY-Xmx"/>
-                                </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tf-qe-RDl">
-                                <rect key="frame" x="10" y="300" width="338" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Benutzer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-y8-dfB">
-                                <rect key="frame" x="13" y="406" width="351" height="35"/>
+                                <rect key="frame" x="12" y="418" width="351" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arbeitszeit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuh-78-Ko9">
-                                <rect key="frame" x="13" y="523" width="347" height="32"/>
+                                <rect key="frame" x="14" y="532" width="347" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -353,14 +357,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOe-K5-BL3">
-                                <rect key="frame" x="126" y="638" width="16" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Hinzufügen" image="add"/>
-                                <connections>
-                                    <action selector="add:" destination="hyd-Kt-Hro" eventType="primaryActionTriggered" id="ePA-0W-MPZ"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzer eingeben..." textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="V8f-xV-ohh">
                                 <rect key="frame" x="10" y="457" width="348" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -368,14 +364,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnC-VV-mmG">
-                                <rect key="frame" x="234" y="638" width="44" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Abbrechen" image="löschen"/>
-                                <connections>
-                                    <action selector="cancel:" destination="hyd-Kt-Hro" eventType="primaryActionTriggered" id="dL6-4d-dw2"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngy-ZM-KUg">
                                 <rect key="frame" x="14" y="69" width="342" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -390,21 +378,47 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tf-qe-RDl">
+                                <rect key="frame" x="10" y="319" width="347" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JbO-um-XMh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="5OR-Gf-dYH">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Xac-wY-tRd">
+                                            <connections>
+                                                <action selector="cancel:" destination="hyd-Kt-Hro" id="xsb-nM-QEn"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hdX-Ot-XoT">
+                                            <connections>
+                                                <action selector="save:" destination="hyd-Kt-Hro" id="QHS-5K-MXw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wYc-sC-H12"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addButton" destination="UOe-K5-BL3" id="UGt-E1-jRb"/>
+                        <outlet property="date" destination="a1k-vu-KSo" id="qfq-Jl-mHg"/>
                         <outlet property="field" destination="ykg-9K-6cI" id="Zot-n2-rqW"/>
                         <outlet property="time" destination="q08-BF-NQa" id="pUr-0n-2m2"/>
                         <outlet property="user" destination="V8f-xV-ohh" id="XFC-FG-fNw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3BC-pJ-ccz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="eGZ-FL-FmB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2769" y="116"/>
+            <point key="canvasLocation" x="2768.8000000000002" y="115.59220389805098"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pLV-aD-xdS">
@@ -494,8 +508,4 @@
             <point key="canvasLocation" x="762" y="118"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="add" width="31" height="31"/>
-        <image name="löschen" width="19" height="25"/>
-    </resources>
 </document>

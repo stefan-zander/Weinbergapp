@@ -19,7 +19,7 @@
 		358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D620E4ED8000640347 /* OperationTableViewCell.swift */; };
 		358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D820E4F22000640347 /* OperationsTableViewController.swift */; };
 		358B65DB20E4F39B00640347 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65DA20E4F39B00640347 /* Operation.swift */; };
-		35BD464920DD264E00FDD443 /* WorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */; };
+		35BD464920DD264E00FDD443 /* WorkProcessTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464820DD264E00FDD443 /* WorkProcessTableViewController.swift */; };
 		35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464A20DD267500FDD443 /* WorkProcess.swift */; };
 		35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */; };
 		35C0DE4220E65BAD00C31C78 /* VintageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4120E65BAD00C31C78 /* VintageTableViewController.swift */; };
@@ -65,7 +65,7 @@
 		358B65D620E4ED8000640347 /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
 		358B65D820E4F22000640347 /* OperationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsTableViewController.swift; sourceTree = "<group>"; };
 		358B65DA20E4F39B00640347 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
-		35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcessViewController.swift; sourceTree = "<group>"; };
+		35BD464820DD264E00FDD443 /* WorkProcessTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcessTableViewController.swift; sourceTree = "<group>"; };
 		35BD464A20DD267500FDD443 /* WorkProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcess.swift; sourceTree = "<group>"; };
 		35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkProcessViewController.swift; sourceTree = "<group>"; };
 		35C0DE4120E65BAD00C31C78 /* VintageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageTableViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		35C0DE4520E65C3D00C31C78 /* WorkProcess */ = {
 			isa = PBXGroup;
 			children = (
-				35BD464820DD264E00FDD443 /* WorkProcessViewController.swift */,
+				35BD464820DD264E00FDD443 /* WorkProcessTableViewController.swift */,
 				35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */,
 			);
 			path = WorkProcess;
@@ -356,7 +356,7 @@
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				35C0DE4220E65BAD00C31C78 /* VintageTableViewController.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
-				35BD464920DD264E00FDD443 /* WorkProcessViewController.swift in Sources */,
+				35BD464920DD264E00FDD443 /* WorkProcessTableViewController.swift in Sources */,
 				35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */,
 				35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,

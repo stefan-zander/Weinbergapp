@@ -18,21 +18,18 @@ class AddWorkProcessViewController: UIViewController {
     
     @IBOutlet weak var time: UITextField!
     
-    @IBOutlet weak var addButton: UIButton!
-    
     var editIndex: Int?
-    var source: WorkProcessesViewController!
+    var source: WorkProcessesTableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if editIndex != nil {
-            addButton.setTitle("Editieren", for: UIControlState.normal)
+            //addButton.setTitle("Editieren", for: UIControlState.normal)
         }
     }
     
-    
-    @IBAction func add(_ sender: Any) {
+    @IBAction func save(_ sender: UIBarButtonItem) {
         if let editIndex = editIndex {
             source.processes[editIndex].date = date.date
             source.processes[editIndex].field = field.text!
@@ -48,7 +45,7 @@ class AddWorkProcessViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    @IBAction func cancel(_ sender: Any) {
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: false, completion: nil)
     }
 }
