@@ -8,7 +8,10 @@
 
 import UIKit
 
-class WorkProcessesTableViewController: UITableViewController {
+class WorkProcessesTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     var processes: [WorkProcess] = []
     
@@ -17,7 +20,15 @@ class WorkProcessesTableViewController: UITableViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        setUpSearchBar()
     }
+    
+    private func setUpSearchBar() {
+        searchBar.delegate = self
+        
+    }
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return processes.count
@@ -56,6 +67,14 @@ class WorkProcessesTableViewController: UITableViewController {
             processes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+       
+    }
+    
+    public func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
     }
     
     @IBAction func add(_ sender: UIBarButtonItem) {

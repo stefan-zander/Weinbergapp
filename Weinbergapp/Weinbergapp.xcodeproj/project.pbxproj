@@ -12,13 +12,13 @@
 		356AFE3720CAB28F000D9BC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3620CAB28F000D9BC1 /* ViewController.swift */; };
 		356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* Main.storyboard */; };
 		356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */; };
-		356AFE3F20CAB28F000D9BC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3E20CAB28F000D9BC1 /* Assets.xcassets */; };
 		356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */; };
 		356AFE4D20CAB28F000D9BC1 /* WeinbergappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */; };
 		356AFE5820CAB28F000D9BC1 /* WeinbergappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */; };
 		358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D620E4ED8000640347 /* OperationTableViewCell.swift */; };
 		358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D820E4F22000640347 /* OperationsTableViewController.swift */; };
 		358B65DB20E4F39B00640347 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65DA20E4F39B00640347 /* Operation.swift */; };
+		359977E220F8AAD1005664CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359977E120F8AAD0005664CB /* Assets.xcassets */; };
 		35BD464920DD264E00FDD443 /* WorkProcessTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464820DD264E00FDD443 /* WorkProcessTableViewController.swift */; };
 		35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464A20DD267500FDD443 /* WorkProcess.swift */; };
 		35BD464D20DD269700FDD443 /* AddWorkProcessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */; };
@@ -53,7 +53,6 @@
 		356AFE3620CAB28F000D9BC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		356AFE3920CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		356AFE3C20CAB28F000D9BC1 /* Weinbergapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weinbergapp.xcdatamodel; sourceTree = "<group>"; };
-		356AFE3E20CAB28F000D9BC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		356AFE4120CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356AFE4320CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		356AFE4820CAB28F000D9BC1 /* WeinbergappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeinbergappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +64,7 @@
 		358B65D620E4ED8000640347 /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
 		358B65D820E4F22000640347 /* OperationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsTableViewController.swift; sourceTree = "<group>"; };
 		358B65DA20E4F39B00640347 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		359977E120F8AAD0005664CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35BD464820DD264E00FDD443 /* WorkProcessTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcessTableViewController.swift; sourceTree = "<group>"; };
 		35BD464A20DD267500FDD443 /* WorkProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcess.swift; sourceTree = "<group>"; };
 		35BD464C20DD269700FDD443 /* AddWorkProcessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkProcessViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 				356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */,
 				356AFE3620CAB28F000D9BC1 /* ViewController.swift */,
 				356AFE3820CAB28F000D9BC1 /* Main.storyboard */,
-				356AFE3E20CAB28F000D9BC1 /* Assets.xcassets */,
+				359977E120F8AAD0005664CB /* Assets.xcassets */,
 				356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */,
 				356AFE4320CAB28F000D9BC1 /* Info.plist */,
 				356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */,
@@ -321,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */,
-				356AFE3F20CAB28F000D9BC1 /* Assets.xcassets in Resources */,
+				359977E220F8AAD1005664CB /* Assets.xcassets in Resources */,
 				356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
