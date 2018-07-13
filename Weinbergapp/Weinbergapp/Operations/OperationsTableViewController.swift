@@ -11,17 +11,10 @@ import UIKit
 class OperationsTableViewController: UITableViewController {
     
     let operations = [
-        Operation(name: "", image: UIImage(named: "add")!, viewName: ""),
-        Operation(name: "Arbeitsgänge", image: UIImage(named: "add")!, viewName: ""),
-        Operation(name: "Entlauben", image: UIImage(named: "Defoliate")!, viewName: "WorkProcesses"),
-        Operation(name: "Traubenlese", image: UIImage(named: "Vintage")!, viewName: "Vintage"),
         Operation(name: "Duengung", image: UIImage(named: "Fertilization")!, viewName: ""),
+        Operation(name: "Entlauben", image: UIImage(named: "Defoliate")!, viewName: "WorkProcesses"),
         Operation(name: "Pflanzenschutz", image: UIImage(named: "PlantProtection")!, viewName: ""),
-        Operation(name: "", image: UIImage(named: "add")!, viewName: ""),
-        Operation(name: "Aufwenfungen", image: UIImage(named: "add")!, viewName: ""),
-        Operation(name: "Elektrische Aufwendung", image: UIImage(named: "add")!, viewName: ""),
-        Operation(name: "Thermische Aufwendung", image: UIImage(named: "add")!, viewName: ""),
-        Operation(name: "Stoffströme", image: UIImage(named: "add")!, viewName: "")
+        Operation(name: "Traubenlese", image: UIImage(named: "Vintage")!, viewName: "Vintage"),
     ]
 
     override func viewDidLoad() {

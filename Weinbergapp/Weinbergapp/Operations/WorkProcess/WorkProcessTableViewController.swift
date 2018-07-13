@@ -10,9 +10,6 @@ import UIKit
 
 class WorkProcessesTableViewController: UITableViewController, UISearchBarDelegate {
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    
-    
     var processes: [WorkProcess] = []
     
     override func viewDidLoad() {
@@ -20,13 +17,8 @@ class WorkProcessesTableViewController: UITableViewController, UISearchBarDelega
         
         tableView.delegate = self
         tableView.dataSource = self
-        setUpSearchBar()
     }
-    
-    private func setUpSearchBar() {
-        searchBar.delegate = self
-        
-    }
+
     
     
     

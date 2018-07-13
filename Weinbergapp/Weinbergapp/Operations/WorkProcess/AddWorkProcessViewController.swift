@@ -10,13 +10,12 @@ import UIKit
 
 class AddWorkProcessViewController: UIViewController {
     
+   
     @IBOutlet weak var date: UIDatePicker!
-    
     @IBOutlet weak var field: UITextField!
-    
     @IBOutlet weak var user: UITextField!
-    
     @IBOutlet weak var time: UITextField!
+    
     
     var editIndex: Int?
     var source: WorkProcessesTableViewController!
@@ -28,6 +27,7 @@ class AddWorkProcessViewController: UIViewController {
             //addButton.setTitle("Editieren", for: UIControlState.normal)
         }
     }
+    
     
     @IBAction func save(_ sender: UIBarButtonItem) {
         if let editIndex = editIndex {
