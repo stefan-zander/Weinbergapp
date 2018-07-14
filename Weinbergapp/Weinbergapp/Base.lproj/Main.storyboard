@@ -485,6 +485,16 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VintageViewCell" id="fjp-QM-Tae">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fjp-QM-Tae" id="1tp-ik-sxN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -581,12 +591,12 @@
                                     <navigationItem id="Tdo-Sq-o4t">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="G8Z-Wc-XXf">
                                             <connections>
-                                                <action selector="cancel:" destination="And-kL-e5Z" id="3dO-sw-SAI"/>
+                                                <action selector="cancel:" destination="And-kL-e5Z" id="DtF-2N-alh"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="1B0-pT-oVj">
                                             <connections>
-                                                <action selector="save:" destination="And-kL-e5Z" id="aTT-0g-71Q"/>
+                                                <action selector="save:" destination="And-kL-e5Z" id="6ao-jm-APJ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -598,11 +608,11 @@
                         <viewLayoutGuide key="safeArea" id="wIy-Lf-rwo"/>
                     </view>
                     <connections>
-                        <outlet property="date" destination="JUR-MA-PwK" id="z1P-Sd-GuP"/>
-                        <outlet property="execution" destination="Xe8-Fr-MhG" id="iwa-6O-aNs"/>
-                        <outlet property="field" destination="Ise-Hc-hV9" id="paS-w7-YUS"/>
-                        <outlet property="user" destination="tHv-3S-z2l" id="fHR-VF-4Ev"/>
-                        <outlet property="workingHours" destination="ZAc-iQ-D0H" id="WYV-M8-y2L"/>
+                        <outlet property="date" destination="JUR-MA-PwK" id="pyN-jn-aRs"/>
+                        <outlet property="execution" destination="Xe8-Fr-MhG" id="veW-mD-4eb"/>
+                        <outlet property="field" destination="Ise-Hc-hV9" id="BFD-sX-Uwm"/>
+                        <outlet property="user" destination="tHv-3S-z2l" id="Lcz-Op-2sw"/>
+                        <outlet property="workingHours" destination="ZAc-iQ-D0H" id="I4h-NB-f5u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GD1-EY-awp" userLabel="First Responder" sceneMemberID="firstResponder"/>

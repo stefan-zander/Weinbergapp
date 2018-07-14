@@ -8,28 +8,110 @@
 
 import UIKit
 
-class AddVintageViewController: UIViewController {
+class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var date: UIDatePicker!
+    @IBOutlet weak var field: UITextField!
+    @IBOutlet weak var user: UITextField!
+    @IBOutlet weak var workingHours: UITextField!
+    @IBOutlet weak var execution: UIPickerView!
+    
+    var editIndex: Int?
+    var source: VintageViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        execution.delegate = self
+        execution.dataSource = self
+        
+        if let editIndex = editIndex {
+            date.date = source.vintages[editIndex].date
+            field.text = source.vintages[editIndex].field
+            user.text = source.vintages[editIndex].user
+            workingHours.text = String(source.vintages[editIndex].workingHours)
+            execution.selectRow(source.vintages[editIndex].execution.rawValue, inComponent: 0, animated: true)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch row {
+        case 0:
+            return "Händisch"
+        case 1:
+            return "Mechanisch"
+        default:
+            return nil
+        }
+    }
+    
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        guard let field = field.text, !field.isEmpty else {
+            let alert = UIAlertController(title: "Feld nicht angegeben", message: "Das Feld darf nicht leer sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let user = user.text, !user.isEmpty else {
+            let alert = UIAlertController(title: "Benutzer nicht angegeben", message: "Der Benuzter darf nicht leer sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let workingHoursText = workingHours.text, !workingHoursText.isEmpty else {
+            let alert = UIAlertController(title: "Arbeitsstunden nicht angegeben", message: "Die Arbeitsstunden müssen angegeben sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let workingHours = Double(workingHoursText) else {
+            let alert = UIAlertController(title: "Arbeitsstunden ist keine Zahl", message: "Bei der Angabe von Arbeitsstunden sind nur Zahlen zugelassen.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let execution = VintageExecution(rawValue: execution.selectedRow(inComponent: 0)) else {
+            assert(false)
+            return
+        }
+        
+        if let editIndex = editIndex {
+            source.vintages[editIndex].date = date.date
+            source.vintages[editIndex].field = field
+            source.vintages[editIndex].user = user
+            source.vintages[editIndex].workingHours = workingHours
+            source.vintages[editIndex].execution = execution
+        } else {
+            let vintage = Vintage(date: date.date,
+                                  field: field,
+                                  user: user,
+                                  workingHours: workingHours,
+                                  execution: execution)
+            
+            source.vintages.append(vintage)
+        }
+        
+        source.tableView.reloadData()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum VintageExecution {
-    case Manual
-    case Mechanic
+enum VintageExecution: Int {
+    case Manual = 0
+    case Mechanic = 1
 }

@@ -40,7 +40,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
             addDefoliation.source = self
             addDefoliation.editIndex = indexPath.row
             
-            self.present(addDefoliation, animated: false, completion: nil)
+            self.present(addDefoliation, animated: true, completion: nil)
         }
     }
     

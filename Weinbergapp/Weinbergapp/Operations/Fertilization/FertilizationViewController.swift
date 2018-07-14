@@ -40,7 +40,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
             addFertilization.source = self
             addFertilization.editIndex = indexPath.row
             
-            self.present(addFertilization, animated: false, completion: nil)
+            self.present(addFertilization, animated: true, completion: nil)
         }
     }
     

@@ -19,7 +19,6 @@
 		358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D820E4F22000640347 /* OperationsTableViewController.swift */; };
 		358B65DB20E4F39B00640347 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65DA20E4F39B00640347 /* Operation.swift */; };
 		359977E220F8AAD1005664CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359977E120F8AAD0005664CB /* Assets.xcassets */; };
-		35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BD464A20DD267500FDD443 /* WorkProcess.swift */; };
 		35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4720E65D7C00C31C78 /* Vintage.swift */; };
 		35C0DE4A20E65DCA00C31C78 /* VintageExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */; };
 		35FCD6B920E506EB002936D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FCD6B820E506EB002936D6 /* MapKit.framework */; };
@@ -71,7 +70,6 @@
 		358B65D820E4F22000640347 /* OperationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsTableViewController.swift; sourceTree = "<group>"; };
 		358B65DA20E4F39B00640347 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		359977E120F8AAD0005664CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		35BD464A20DD267500FDD443 /* WorkProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkProcess.swift; sourceTree = "<group>"; };
 		35C0DE4720E65D7C00C31C78 /* Vintage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vintage.swift; sourceTree = "<group>"; };
 		35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageExecution.swift; sourceTree = "<group>"; };
 		35FCD6B820E506EB002936D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -174,7 +172,6 @@
 			children = (
 				940477AA20F9E8320049CDB5 /* Fertilization.swift */,
 				9450659A20FA3A8000758D8C /* Defoliation.swift */,
-				35BD464A20DD267500FDD443 /* WorkProcess.swift */,
 				35C0DE4720E65D7C00C31C78 /* Vintage.swift */,
 				35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */,
 			);
@@ -392,7 +389,6 @@
 				940477B320F9E92B0049CDB5 /* AddPlantProtectionViewController.swift in Sources */,
 				940477B120F9E9200049CDB5 /* PlantProtectionViewController.swift in Sources */,
 				940477AD20F9E9030049CDB5 /* DefoliationViewController.swift in Sources */,
-				35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */,
 				940477B520F9E93A0049CDB5 /* VintageViewController.swift in Sources */,
 				940477A920F9E7420049CDB5 /* AddFertilizationViewController.swift in Sources */,
 				9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */,
