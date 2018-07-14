@@ -170,10 +170,10 @@
 		35C0DE4320E65BE500C31C78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				940477AA20F9E8320049CDB5 /* Fertilization.swift */,
 				35BD464A20DD267500FDD443 /* WorkProcess.swift */,
 				35C0DE4720E65D7C00C31C78 /* Vintage.swift */,
 				35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */,
-				940477AA20F9E8320049CDB5 /* Fertilization.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

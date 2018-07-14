@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="-89" y="-1198"/>
         </scene>
-        <!--Defoliation View Controller-->
+        <!--Fertilization View Controller-->
         <scene sceneID="Fln-A6-dHo">
             <objects>
-                <viewController id="Tq0-nU-pyU" customClass="DefoliationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Fertilization" id="Tq0-nU-pyU" customClass="FertilizationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MhJ-Wd-Rmh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,6 +118,17 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FertilizationViewCell" id="yog-Y2-CtE">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yog-Y2-CtE" id="Qdu-rH-TXs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                             </tableView>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KjL-EU-bIy">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
@@ -135,12 +146,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiX-ZP-lMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="-365"/>
+            <point key="canvasLocation" x="-1220" y="-353"/>
         </scene>
-        <!--Add Fertilization View Controller-->
+        <!--Add Defoliation View Controller-->
         <scene sceneID="DmK-LE-RDr">
             <objects>
-                <viewController id="izO-ZI-EHb" customClass="AddFertilizationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddDefoliation" id="izO-ZI-EHb" customClass="AddDefoliationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="1" contentMode="scaleToFill" id="ibO-TF-XYX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,12 +229,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdM-nq-TDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1202" y="391"/>
+            <point key="canvasLocation" x="-474" y="379"/>
         </scene>
-        <!--Add Defoliation View Controller-->
+        <!--Add Fertilization View Controller-->
         <scene sceneID="6Pk-oH-P1s">
             <objects>
-                <viewController storyboardIdentifier="AddWorkProcess" id="oxu-Rc-7rC" customClass="AddDefoliationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddFertilization" id="oxu-Rc-7rC" customClass="AddFertilizationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="1" contentMode="scaleToFill" id="dDG-YT-nvO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,12 +246,12 @@
                                     <navigationItem id="Fjj-vs-CeG">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZZf-hw-dSl">
                                             <connections>
-                                                <action selector="cancel:" destination="oxu-Rc-7rC" id="ado-eX-fqj"/>
+                                                <action selector="cancel:" destination="oxu-Rc-7rC" id="uaV-4u-9kx"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Uhh-fG-66a">
                                             <connections>
-                                                <action selector="save:" destination="oxu-Rc-7rC" id="Uw3-rt-frk"/>
+                                                <action selector="save:" destination="oxu-Rc-7rC" id="XTK-9C-GlF"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -307,20 +318,20 @@
                         <viewLayoutGuide key="safeArea" id="NYr-Fs-Fsq"/>
                     </view>
                     <connections>
-                        <outlet property="date" destination="JM5-fK-ZXJ" id="jQP-MR-UYi"/>
-                        <outlet property="field" destination="Aab-Qg-EPc" id="sZK-U6-zO5"/>
-                        <outlet property="time" destination="Jxn-EN-RtI" id="ovV-yh-TFr"/>
-                        <outlet property="user" destination="UMh-mI-rWL" id="C6n-Mq-eVb"/>
+                        <outlet property="date" destination="JM5-fK-ZXJ" id="qHz-5Y-eCi"/>
+                        <outlet property="field" destination="Aab-Qg-EPc" id="hml-T1-TcJ"/>
+                        <outlet property="user" destination="UMh-mI-rWL" id="cMM-zo-F3c"/>
+                        <outlet property="workingHours" destination="Jxn-EN-RtI" id="AEX-Xs-JUP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6t-Tw-kDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-90" y="426"/>
+            <point key="canvasLocation" x="-1220" y="379"/>
         </scene>
-        <!--Fertilization View Controller-->
+        <!--Defoliation View Controller-->
         <scene sceneID="R2M-05-0bF">
             <objects>
-                <viewController id="sFc-au-szY" customClass="FertilizationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Defoliation" id="sFc-au-szY" customClass="DefoliationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qt0-KD-cWC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -352,6 +363,16 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FertilizationViewCell" id="Xvp-pa-3EC">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xvp-pa-3EC" id="zTc-QH-R6l">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -364,12 +385,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pk6-oy-jXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1202" y="-366"/>
+            <point key="canvasLocation" x="-473" y="-353"/>
         </scene>
         <!--Plant Protection View Controller-->
         <scene sceneID="xEr-5m-Pmd">
             <objects>
-                <viewController id="H0n-5A-YR2" customClass="PlantProtectionViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlantProtection" id="H0n-5A-YR2" customClass="PlantProtectionViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXl-UQ-2ZI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,12 +434,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91W-KI-RhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="-366"/>
+            <point key="canvasLocation" x="247" y="-353"/>
         </scene>
         <!--Vintage View Controller-->
         <scene sceneID="EtE-TQ-Chv">
             <objects>
-                <viewController id="5mE-ge-PpQ" customClass="VintageViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Vintage" id="5mE-ge-PpQ" customClass="VintageViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q2K-CV-vwp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeN-hl-9lx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2193" y="-353"/>
+            <point key="canvasLocation" x="1009" y="-353"/>
         </scene>
         <!--Add Vintage View Controller-->
         <scene sceneID="MkX-Y2-IAq">
@@ -572,12 +593,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GD1-EY-awp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2210" y="426"/>
+            <point key="canvasLocation" x="1009" y="378"/>
         </scene>
         <!--Add Plant Protection View Controller-->
         <scene sceneID="NwA-pw-8rj">
             <objects>
-                <viewController id="5ic-Mj-OiB" customClass="AddPlantProtectionViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPlantProtection" id="5ic-Mj-OiB" customClass="AddPlantProtectionViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="2" contentMode="scaleToFill" id="ZgE-d6-hXK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -748,7 +769,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsE-Ee-PJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="801"/>
+            <point key="canvasLocation" x="246" y="753"/>
         </scene>
         <!--Karte-->
         <scene sceneID="k0y-qW-tgp">

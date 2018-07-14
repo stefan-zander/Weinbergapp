@@ -9,5 +9,8 @@
 import Foundation
 
 struct Fertilization {
-    
+    var date: Date
+    var field: String
+    var user: String
+    var workingHours: Double	
 }
