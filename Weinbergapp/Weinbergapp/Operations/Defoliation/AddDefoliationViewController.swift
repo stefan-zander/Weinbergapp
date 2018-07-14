@@ -9,27 +9,77 @@
 import UIKit
 
 class AddDefoliationViewController: UIViewController {
-
+    @IBOutlet weak var date: UIDatePicker!
+    @IBOutlet weak var field: UITextField!
+    @IBOutlet weak var user: UITextField!
+    @IBOutlet weak var workingHours: UITextField!
+    
+    var editIndex: Int?
+    var source: DefoliationViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let editIndex = editIndex {
+            date.date = source.defoliations[editIndex].date
+            field.text = source.defoliations[editIndex].field
+            user.text = source.defoliations[editIndex].user
+            workingHours.text = String(source.defoliations[editIndex].workingHours)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        guard let field = field.text, !field.isEmpty else {
+            let alert = UIAlertController(title: "Feld nicht angegeben", message: "Das Feld darf nicht leer sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let user = user.text, !user.isEmpty else {
+            let alert = UIAlertController(title: "Benutzer nicht angegeben", message: "Der Benuzter darf nicht leer sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let workingHoursText = workingHours.text, !workingHoursText.isEmpty else {
+            let alert = UIAlertController(title: "Arbeitsstunden nicht angegeben", message: "Die Arbeitsstunden müssen angegeben sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let workingHours = Double(workingHoursText) else {
+            let alert = UIAlertController(title: "Arbeitsstunden ist keine Zahl", message: "Bei der Angabe von Arbeitsstunden sind nur Zahlen zugelassen.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        if let editIndex = editIndex {
+            source.defoliations[editIndex].date = date.date
+            source.defoliations[editIndex].field = field
+            source.defoliations[editIndex].user = user
+            source.defoliations[editIndex].workingHours = workingHours
+        } else {
+            let defoliation = Defoliation(date: date.date,
+                                          field: field,
+                                          user: user,
+                                          workingHours: workingHours)
+            
+            source.defoliations.append(defoliation)
+        }
+        
+        source.tableView.reloadData()
+        self.dismiss(animated: false, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: false, completion: nil)
     }
-    */
-
 }

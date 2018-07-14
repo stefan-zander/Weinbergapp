@@ -32,6 +32,7 @@
 		940477B320F9E92B0049CDB5 /* AddPlantProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */; };
 		940477B520F9E93A0049CDB5 /* VintageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B420F9E93A0049CDB5 /* VintageViewController.swift */; };
 		940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B620F9E9450049CDB5 /* AddVintageViewController.swift */; };
+		9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659A20FA3A8000758D8C /* Defoliation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantProtectionViewController.swift; sourceTree = "<group>"; };
 		940477B420F9E93A0049CDB5 /* VintageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageViewController.swift; sourceTree = "<group>"; };
 		940477B620F9E9450049CDB5 /* AddVintageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVintageViewController.swift; sourceTree = "<group>"; };
+		9450659A20FA3A8000758D8C /* Defoliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defoliation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				940477AA20F9E8320049CDB5 /* Fertilization.swift */,
+				9450659A20FA3A8000758D8C /* Defoliation.swift */,
 				35BD464A20DD267500FDD443 /* WorkProcess.swift */,
 				35C0DE4720E65D7C00C31C78 /* Vintage.swift */,
 				35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */,
@@ -392,6 +395,7 @@
 				35BD464B20DD267500FDD443 /* WorkProcess.swift in Sources */,
 				940477B520F9E93A0049CDB5 /* VintageViewController.swift in Sources */,
 				940477A920F9E7420049CDB5 /* AddFertilizationViewController.swift in Sources */,
+				9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */,
 				940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
 				358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */,

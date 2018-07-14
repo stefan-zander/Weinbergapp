@@ -40,8 +40,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
             addFertilization.source = self
             addFertilization.editIndex = indexPath.row
             
-            self.present(addFertilization, animated: false, completion: {
-            })
+            self.present(addFertilization, animated: false, completion: nil)
         }
     }
     
@@ -61,6 +60,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
         
         if let addFertilization = storyBoard.instantiateViewController(withIdentifier: "AddFertilization") as? AddFertilizationViewController {
             addFertilization.source = self
+            
             self.present(addFertilization, animated: true, completion: nil)
         }
     }
