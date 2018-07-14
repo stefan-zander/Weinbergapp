@@ -12,7 +12,7 @@ class OperationsTableViewController: UITableViewController {
     
     let operations = [
         Operation(name: "Duengung", image: UIImage(named: "Fertilization")!, viewName: ""),
-        Operation(name: "Entlauben", image: UIImage(named: "Defoliate")!, viewName: "WorkProcesses"),
+        Operation(name: "Entlauben", image: UIImage(named: "Defoliation")!, viewName: "WorkProcesses"),
         Operation(name: "Pflanzenschutz", image: UIImage(named: "PlantProtection")!, viewName: ""),
         Operation(name: "Traubenlese", image: UIImage(named: "Vintage")!, viewName: "Vintage"),
     ]

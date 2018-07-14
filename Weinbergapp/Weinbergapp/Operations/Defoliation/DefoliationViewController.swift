@@ -1,5 +1,5 @@
 //
-//  AddVintageViewController.swift
+//  DefoliationViewController.swift
 //  Weinbergapp
 //
 //  Created by VM on 14.07.18.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AddVintageViewController: UIViewController {
+class DefoliationViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,11 @@ class AddVintageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func add(_ sender: UIBarButtonItem) {
+    }
+    @IBAction func back(_ sender: UIBarButtonItem) {
+    }
+    
     /*
     // MARK: - Navigation
 

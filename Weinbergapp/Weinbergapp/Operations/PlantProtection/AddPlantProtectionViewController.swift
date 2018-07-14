@@ -1,5 +1,5 @@
 //
-//  AddVintageViewController.swift
+//  AddPlantProtectionViewController.swift
 //  Weinbergapp
 //
 //  Created by VM on 14.07.18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddVintageViewController: UIViewController {
+class AddPlantProtectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1LT-e3-SDl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1LT-e3-SDl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -76,7 +76,7 @@
                             <outlet property="delegate" destination="oNZ-z5-vyi" id="TH0-QY-TXD"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Arbeitsgänge" image="WorkProcesses" id="rjB-iW-7hR"/>
+                    <tabBarItem key="tabBarItem" title="Arbeitsgänge" image="Operations" id="rjB-iW-7hR"/>
                     <connections>
                         <segue destination="Tq0-nU-pyU" kind="presentation" id="Tjm-pc-7jM"/>
                         <segue destination="sFc-au-szY" kind="presentation" id="U2J-yj-sdG"/>
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="-89" y="-1198"/>
         </scene>
-        <!--View Controller-->
+        <!--Defoliation View Controller-->
         <scene sceneID="Fln-A6-dHo">
             <objects>
-                <viewController id="Tq0-nU-pyU" sceneMemberID="viewController">
+                <viewController id="Tq0-nU-pyU" customClass="DefoliationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MhJ-Wd-Rmh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,8 +101,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Düngung" id="sur-gW-9fU">
-                                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="zBO-7N-KlE"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="kVX-6u-Aya"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="zBO-7N-KlE">
+                                            <connections>
+                                                <action selector="back:" destination="Tq0-nU-pyU" id="hk4-Ja-Czu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="kVX-6u-Aya">
+                                            <connections>
+                                                <action selector="add:" destination="Tq0-nU-pyU" id="wU1-ic-d4X"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -121,6 +129,7 @@
                         <viewLayoutGuide key="safeArea" id="eXf-uq-btc"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="xSw-0S-s5p" id="RWA-GV-N6Y"/>
                         <segue destination="oxu-Rc-7rC" kind="presentation" id="gUr-Ae-4Cs"/>
                     </connections>
                 </viewController>
@@ -128,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="-36" y="-365"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Fertilization View Controller-->
         <scene sceneID="DmK-LE-RDr">
             <objects>
-                <viewController id="izO-ZI-EHb" sceneMemberID="viewController">
+                <viewController id="izO-ZI-EHb" customClass="AddFertilizationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="1" contentMode="scaleToFill" id="ibO-TF-XYX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,10 +220,10 @@
             </objects>
             <point key="canvasLocation" x="-1202" y="391"/>
         </scene>
-        <!--Add Work Process View Controller-->
+        <!--Add Defoliation View Controller-->
         <scene sceneID="6Pk-oH-P1s">
             <objects>
-                <viewController storyboardIdentifier="AddWorkProcess" id="oxu-Rc-7rC" customClass="AddWorkProcessViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddWorkProcess" id="oxu-Rc-7rC" customClass="AddDefoliationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="1" contentMode="scaleToFill" id="dDG-YT-nvO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -308,10 +317,10 @@
             </objects>
             <point key="canvasLocation" x="-90" y="426"/>
         </scene>
-        <!--View Controller-->
+        <!--Fertilization View Controller-->
         <scene sceneID="R2M-05-0bF">
             <objects>
-                <viewController id="sFc-au-szY" sceneMemberID="viewController">
+                <viewController id="sFc-au-szY" customClass="FertilizationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qt0-KD-cWC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,8 +330,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Entlauben" id="VGQ-UU-A0E">
-                                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="LFU-MP-8kb"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f7a-m2-MAR"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="LFU-MP-8kb">
+                                            <connections>
+                                                <action selector="back:" destination="sFc-au-szY" id="NB5-YI-yHa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f7a-m2-MAR">
+                                            <connections>
+                                                <action selector="add:" destination="sFc-au-szY" id="lia-LQ-mCA"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -341,6 +358,7 @@
                         <viewLayoutGuide key="safeArea" id="Vdl-CO-a64"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="qD8-pQ-fYV" id="gNO-j4-JiA"/>
                         <segue destination="izO-ZI-EHb" kind="presentation" id="t64-Vy-H7L"/>
                     </connections>
                 </viewController>
@@ -348,10 +366,10 @@
             </objects>
             <point key="canvasLocation" x="-1202" y="-366"/>
         </scene>
-        <!--View Controller-->
+        <!--Plant Protection View Controller-->
         <scene sceneID="xEr-5m-Pmd">
             <objects>
-                <viewController id="H0n-5A-YR2" sceneMemberID="viewController">
+                <viewController id="H0n-5A-YR2" customClass="PlantProtectionViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXl-UQ-2ZI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,8 +379,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Pflanzenschutz" id="8zm-EX-aFd">
-                                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="99f-0y-dO1"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y72-wr-cHx"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="99f-0y-dO1">
+                                            <connections>
+                                                <action selector="back:" destination="H0n-5A-YR2" id="ay2-55-DZo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y72-wr-cHx">
+                                            <connections>
+                                                <action selector="add:" destination="H0n-5A-YR2" id="LU9-yn-X6m"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -381,6 +407,7 @@
                         <viewLayoutGuide key="safeArea" id="GDK-LP-b09"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="Uuh-Ai-Nnf" id="dHW-iu-tih"/>
                         <segue destination="5ic-Mj-OiB" kind="presentation" id="n2A-zA-6F6"/>
                     </connections>
                 </viewController>
@@ -388,10 +415,10 @@
             </objects>
             <point key="canvasLocation" x="1087" y="-366"/>
         </scene>
-        <!--View Controller-->
+        <!--Vintage View Controller-->
         <scene sceneID="EtE-TQ-Chv">
             <objects>
-                <viewController id="5mE-ge-PpQ" sceneMemberID="viewController">
+                <viewController id="5mE-ge-PpQ" customClass="VintageViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q2K-CV-vwp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,8 +428,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Traubenlese" id="Ph5-lS-718">
-                                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="XKr-rL-k79"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SbS-sv-7hW"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Zurück" id="XKr-rL-k79">
+                                            <connections>
+                                                <action selector="back:" destination="5mE-ge-PpQ" id="vRb-Ea-kRK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SbS-sv-7hW">
+                                            <connections>
+                                                <action selector="add:" destination="5mE-ge-PpQ" id="FEX-VO-TTq"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -421,6 +456,7 @@
                         <viewLayoutGuide key="safeArea" id="IAF-wP-h3v"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="TcY-Rl-Ofl" id="FMw-PM-WH1"/>
                         <segue destination="And-kL-e5Z" kind="presentation" id="qv9-5Z-ogf"/>
                     </connections>
                 </viewController>
@@ -538,10 +574,10 @@
             </objects>
             <point key="canvasLocation" x="2210" y="426"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Plant Protection View Controller-->
         <scene sceneID="NwA-pw-8rj">
             <objects>
-                <viewController id="5ic-Mj-OiB" sceneMemberID="viewController">
+                <viewController id="5ic-Mj-OiB" customClass="AddPlantProtectionViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="2" contentMode="scaleToFill" id="ZgE-d6-hXK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -979,7 +1015,7 @@
     </scenes>
     <resources>
         <image name="Map" width="30" height="30"/>
+        <image name="Operations" width="30" height="30"/>
         <image name="Weinntrauben" width="384" height="386"/>
-        <image name="WorkProcesses" width="30" height="30"/>
     </resources>
 </document>
