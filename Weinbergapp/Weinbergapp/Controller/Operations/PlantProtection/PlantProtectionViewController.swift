@@ -11,10 +11,10 @@ import UIKit
 class PlantProtectionViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,9 +23,17 @@ class PlantProtectionViewController: UIViewController {
     }
     
     @IBAction func add(_ sender: UIBarButtonItem) {
+        let storyBoard = UIStoryboard(name: "View", bundle: nil)
+        
+        if let addPlantProtection = storyBoard.instantiateViewController(withIdentifier: "AddPlantProtection") as? AddPlantProtectionViewController {
+            //addDefoliation.source = self
+            
+            self.present(addPlantProtection, animated: true, completion: nil)
+        }
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

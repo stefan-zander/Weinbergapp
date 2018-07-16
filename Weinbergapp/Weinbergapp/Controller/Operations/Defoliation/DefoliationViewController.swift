@@ -1,5 +1,5 @@
 //
-//  VintageViewController.swift
+//  DefoliationViewController.swift
 //  Weinbergapp
 //
 //  Created by VM on 14.07.18.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class VintageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DefoliationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var vintages: [Vintage] = []
+    var defoliations: [Defoliation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,25 +22,25 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vintages.count
+        return defoliations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "VintageViewCell")
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "DefoliationViewCell")
         
-        cell?.textLabel?.text = vintages[indexPath.row].field
+        cell?.textLabel?.text = defoliations[indexPath.row].field
         
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: "View", bundle: nil)
         
-        if let addVintage = storyBoard.instantiateViewController(withIdentifier: "AddVintage") as? AddVintageViewController {
-            addVintage.source = self
-            addVintage.editIndex = indexPath.row
+        if let addDefoliation = storyBoard.instantiateViewController(withIdentifier: "AddDefoliation") as? AddDefoliationViewController {
+            addDefoliation.source = self
+            addDefoliation.editIndex = indexPath.row
             
-            self.present(addVintage, animated: true, completion: nil)
+            self.present(addDefoliation, animated: true, completion: nil)
         }
     }
     
@@ -50,18 +50,18 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            vintages.remove(at: indexPath.row)
+            defoliations.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     @IBAction func add(_ sender: UIBarButtonItem) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: "View", bundle: nil)
         
-        if let addVintage = storyBoard.instantiateViewController(withIdentifier: "AddVintage") as? AddVintageViewController {
-            addVintage.source = self
+        if let addDefoliation = storyBoard.instantiateViewController(withIdentifier: "AddDefoliation") as? AddDefoliationViewController {
+            addDefoliation.source = self
             
-            self.present(addVintage, animated: true, completion: nil)
+            self.present(addDefoliation, animated: true, completion: nil)
         }
     }
     

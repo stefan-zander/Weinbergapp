@@ -10,7 +10,7 @@
 		354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354BA7A220E6599700EF1D9D /* MapViewController.swift */; };
 		356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */; };
 		356AFE3720CAB28F000D9BC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3620CAB28F000D9BC1 /* ViewController.swift */; };
-		356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* Main.storyboard */; };
+		356AFE3A20CAB28F000D9BC1 /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* View.storyboard */; };
 		356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */; };
 		356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */; };
 		356AFE4D20CAB28F000D9BC1 /* WeinbergappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */; };
@@ -22,6 +22,8 @@
 		35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4720E65D7C00C31C78 /* Vintage.swift */; };
 		35C0DE4A20E65DCA00C31C78 /* VintageExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */; };
 		35FCD6B920E506EB002936D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FCD6B820E506EB002936D6 /* MapKit.framework */; };
+		940155F420FCC96A006E36D9 /* PlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940155F320FCC96A006E36D9 /* PlantProtection.swift */; };
+		940155F620FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940155F520FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift */; };
 		940477A620F9E7290049CDB5 /* FertilizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477A520F9E7290049CDB5 /* FertilizationViewController.swift */; };
 		940477A920F9E7420049CDB5 /* AddFertilizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477A820F9E7420049CDB5 /* AddFertilizationViewController.swift */; };
 		940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477AA20F9E8320049CDB5 /* Fertilization.swift */; };
@@ -32,6 +34,8 @@
 		940477B520F9E93A0049CDB5 /* VintageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B420F9E93A0049CDB5 /* VintageViewController.swift */; };
 		940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B620F9E9450049CDB5 /* AddVintageViewController.swift */; };
 		9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659A20FA3A8000758D8C /* Defoliation.swift */; };
+		9450659F20FB445F00758D8C /* SwitchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659E20FB445F00758D8C /* SwitchListViewController.swift */; };
+		945065A120FB445F00758D8C /* SwitchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945065A020FB445F00758D8C /* SwitchListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +60,7 @@
 		356AFE3120CAB28F000D9BC1 /* Weinbergapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weinbergapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356AFE3620CAB28F000D9BC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		356AFE3920CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		356AFE3920CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/View.storyboard; sourceTree = "<group>"; };
 		356AFE3C20CAB28F000D9BC1 /* Weinbergapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weinbergapp.xcdatamodel; sourceTree = "<group>"; };
 		356AFE4120CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356AFE4320CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		35C0DE4720E65D7C00C31C78 /* Vintage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vintage.swift; sourceTree = "<group>"; };
 		35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageExecution.swift; sourceTree = "<group>"; };
 		35FCD6B820E506EB002936D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		940155F320FCC96A006E36D9 /* PlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtection.swift; sourceTree = "<group>"; };
+		940155F520FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionTreatmentSchedule.swift; sourceTree = "<group>"; };
 		940477A520F9E7290049CDB5 /* FertilizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationViewController.swift; sourceTree = "<group>"; };
 		940477A820F9E7420049CDB5 /* AddFertilizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFertilizationViewController.swift; sourceTree = "<group>"; };
 		940477AA20F9E8320049CDB5 /* Fertilization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fertilization.swift; sourceTree = "<group>"; };
@@ -83,6 +89,8 @@
 		940477B420F9E93A0049CDB5 /* VintageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageViewController.swift; sourceTree = "<group>"; };
 		940477B620F9E9450049CDB5 /* AddVintageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVintageViewController.swift; sourceTree = "<group>"; };
 		9450659A20FA3A8000758D8C /* Defoliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defoliation.swift; sourceTree = "<group>"; };
+		9450659E20FB445F00758D8C /* SwitchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchListViewController.swift; sourceTree = "<group>"; };
+		945065A020FB445F00758D8C /* SwitchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,16 +143,15 @@
 		356AFE3320CAB28F000D9BC1 /* Weinbergapp */ = {
 			isa = PBXGroup;
 			children = (
-				35C0DE4420E65C0000C31C78 /* Operations */,
 				35C0DE4320E65BE500C31C78 /* Model */,
+				356AFE3820CAB28F000D9BC1 /* View.storyboard */,
+				940155F720FCCEFB006E36D9 /* Controller */,
 				356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */,
 				356AFE3620CAB28F000D9BC1 /* ViewController.swift */,
-				356AFE3820CAB28F000D9BC1 /* Main.storyboard */,
 				359977E120F8AAD0005664CB /* Assets.xcassets */,
 				356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */,
 				356AFE4320CAB28F000D9BC1 /* Info.plist */,
 				356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */,
-				354BA7A220E6599700EF1D9D /* MapViewController.swift */,
 			);
 			path = Weinbergapp;
 			sourceTree = "<group>";
@@ -170,10 +177,8 @@
 		35C0DE4320E65BE500C31C78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				940477AA20F9E8320049CDB5 /* Fertilization.swift */,
-				9450659A20FA3A8000758D8C /* Defoliation.swift */,
-				35C0DE4720E65D7C00C31C78 /* Vintage.swift */,
-				35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */,
+				9401561C20FCCFF3006E36D9 /* Map */,
+				940155F820FCCF0A006E36D9 /* Operations */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +205,75 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		940155F720FCCEFB006E36D9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				940155FD20FCCF52006E36D9 /* Map */,
+				35C0DE4420E65C0000C31C78 /* Operations */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		940155F820FCCF0A006E36D9 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				940155F920FCCF1B006E36D9 /* Fertilization */,
+				940155FA20FCCF27006E36D9 /* Defoliation */,
+				940155FB20FCCF2C006E36D9 /* PlantProtection */,
+				940155FC20FCCF32006E36D9 /* Vintage */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		940155F920FCCF1B006E36D9 /* Fertilization */ = {
+			isa = PBXGroup;
+			children = (
+				940477AA20F9E8320049CDB5 /* Fertilization.swift */,
+			);
+			path = Fertilization;
+			sourceTree = "<group>";
+		};
+		940155FA20FCCF27006E36D9 /* Defoliation */ = {
+			isa = PBXGroup;
+			children = (
+				9450659A20FA3A8000758D8C /* Defoliation.swift */,
+			);
+			path = Defoliation;
+			sourceTree = "<group>";
+		};
+		940155FB20FCCF2C006E36D9 /* PlantProtection */ = {
+			isa = PBXGroup;
+			children = (
+				940155F320FCC96A006E36D9 /* PlantProtection.swift */,
+				940155F520FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift */,
+			);
+			path = PlantProtection;
+			sourceTree = "<group>";
+		};
+		940155FC20FCCF32006E36D9 /* Vintage */ = {
+			isa = PBXGroup;
+			children = (
+				35C0DE4720E65D7C00C31C78 /* Vintage.swift */,
+				35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */,
+			);
+			path = Vintage;
+			sourceTree = "<group>";
+		};
+		940155FD20FCCF52006E36D9 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				354BA7A220E6599700EF1D9D /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		9401561C20FCCFF3006E36D9 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		940477A120F9E6290049CDB5 /* Fertilization */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +297,8 @@
 			children = (
 				940477B020F9E9200049CDB5 /* PlantProtectionViewController.swift */,
 				940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */,
+				9450659E20FB445F00758D8C /* SwitchListViewController.swift */,
+				945065A020FB445F00758D8C /* SwitchListTableViewCell.swift */,
 			);
 			path = PlantProtection;
 			sourceTree = "<group>";
@@ -353,7 +429,7 @@
 			files = (
 				356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */,
 				359977E220F8AAD1005664CB /* Assets.xcassets in Resources */,
-				356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */,
+				356AFE3A20CAB28F000D9BC1 /* View.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,14 +465,18 @@
 				940477B320F9E92B0049CDB5 /* AddPlantProtectionViewController.swift in Sources */,
 				940477B120F9E9200049CDB5 /* PlantProtectionViewController.swift in Sources */,
 				940477AD20F9E9030049CDB5 /* DefoliationViewController.swift in Sources */,
+				940155F620FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift in Sources */,
 				940477B520F9E93A0049CDB5 /* VintageViewController.swift in Sources */,
+				945065A120FB445F00758D8C /* SwitchListTableViewCell.swift in Sources */,
 				940477A920F9E7420049CDB5 /* AddFertilizationViewController.swift in Sources */,
 				9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */,
 				940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
 				358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */,
+				940155F420FCC96A006E36D9 /* PlantProtection.swift in Sources */,
 				940477AF20F9E9120049CDB5 /* AddDefoliationViewController.swift in Sources */,
 				940477A620F9E7290049CDB5 /* FertilizationViewController.swift in Sources */,
+				9450659F20FB445F00758D8C /* SwitchListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,12 +512,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		356AFE3820CAB28F000D9BC1 /* Main.storyboard */ = {
+		356AFE3820CAB28F000D9BC1 /* View.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				356AFE3920CAB28F000D9BC1 /* Base */,
 			);
-			name = Main.storyboard;
+			name = View.storyboard;
 			sourceTree = "<group>";
 		};
 		356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */ = {

@@ -34,7 +34,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: "View", bundle: nil)
         
         if let addFertilization = storyBoard.instantiateViewController(withIdentifier: "AddFertilization") as? AddFertilizationViewController {
             addFertilization.source = self
@@ -56,7 +56,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func add(_ sender: UIBarButtonItem) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: "View", bundle: nil)
         
         if let addFertilization = storyBoard.instantiateViewController(withIdentifier: "AddFertilization") as? AddFertilizationViewController {
             addFertilization.source = self

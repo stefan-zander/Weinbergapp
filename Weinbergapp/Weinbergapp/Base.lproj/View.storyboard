@@ -619,6 +619,61 @@
             </objects>
             <point key="canvasLocation" x="1009" y="378"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="cSL-Sd-eHE">
+            <objects>
+                <tableViewController storyboardIdentifier="SwitchList" id="Mic-AS-JB1" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wfe-VQ-EgL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="0qA-84-kY3">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem id="2YC-6e-rlf">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dro-Hb-CWX"/>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="save" id="58l-oJ-m3n"/>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchListViewCell" id="dNI-0V-Dj7" customClass="SwitchListTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dNI-0V-Dj7" id="bW2-lU-1uv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="egV-q7-Apu">
+                                            <rect key="frame" x="16" y="11" width="49" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRJ-tc-bYs">
+                                            <rect key="frame" x="85" y="11" width="274" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="checked" destination="egV-q7-Apu" id="BIH-Ed-Ywa"/>
+                                    <outlet property="label" destination="kRJ-tc-bYs" id="0fN-xK-dZ8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mic-AS-JB1" id="ioG-Mt-kZR"/>
+                            <outlet property="delegate" destination="Mic-AS-JB1" id="SiO-OY-MEd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysJ-sL-cVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-567.20000000000005" y="1192.3538230884558"/>
+        </scene>
         <!--Add Plant Protection View Controller-->
         <scene sceneID="NwA-pw-8rj">
             <objects>
@@ -793,7 +848,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsE-Ee-PJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="753"/>
+            <point key="canvasLocation" x="245.59999999999999" y="752.92353823088456"/>
         </scene>
         <!--Karte-->
         <scene sceneID="k0y-qW-tgp">
