@@ -46,12 +46,13 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="4rJ-rd-L0U" secondAttribute="bottom" id="6HA-sO-TVR"/>
                                         <constraint firstItem="ILG-WS-Lbf" firstAttribute="top" secondItem="n5Q-ub-Tp6" secondAttribute="topMargin" id="71c-CA-4k1"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="ILG-WS-Lbf" secondAttribute="bottom" id="DaU-Fk-4p6"/>
-                                        <constraint firstItem="4rJ-rd-L0U" firstAttribute="top" secondItem="n5Q-ub-Tp6" secondAttribute="top" id="DuK-If-tOg"/>
+                                        <constraint firstItem="4rJ-rd-L0U" firstAttribute="leading" secondItem="ILG-WS-Lbf" secondAttribute="trailing" constant="20" id="F35-VG-vPG"/>
                                         <constraint firstItem="ILG-WS-Lbf" firstAttribute="leading" secondItem="n5Q-ub-Tp6" secondAttribute="leadingMargin" id="OK0-qV-jg3"/>
+                                        <constraint firstItem="4rJ-rd-L0U" firstAttribute="top" secondItem="n5Q-ub-Tp6" secondAttribute="top" id="clB-Ca-saY"/>
                                         <constraint firstAttribute="bottom" secondItem="4rJ-rd-L0U" secondAttribute="bottom" id="nAX-KH-S69"/>
-                                        <constraint firstItem="4rJ-rd-L0U" firstAttribute="leading" secondItem="ILG-WS-Lbf" secondAttribute="trailing" id="wPC-rC-Lu4"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -947,7 +948,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VE9-7W-U9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1721" y="-353"/>
+            <point key="canvasLocation" x="2391" y="-353"/>
         </scene>
         <!--Karte-->
         <scene sceneID="k0y-qW-tgp">
