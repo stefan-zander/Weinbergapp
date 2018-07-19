@@ -11,7 +11,7 @@ import UIKit
 class OperationsTableViewController: UITableViewController {
     
     let operations = [
-        Operation(name: "Duengung", image: UIImage(named: "Fertilization")!, viewName: "Fertilization"),
+        Operation(name: "Düngung", image: UIImage(named: "Fertilization")!, viewName: "Fertilization"),
         Operation(name: "Entlauben", image: UIImage(named: "Defoliation")!, viewName: "Defoliation"),
         Operation(name: "Pflanzenschutz", image: UIImage(named: "PlantProtection")!, viewName: "PlantProtection"),
         Operation(name: "Traubenlese", image: UIImage(named: "Vintage")!, viewName: "Vintage"),
