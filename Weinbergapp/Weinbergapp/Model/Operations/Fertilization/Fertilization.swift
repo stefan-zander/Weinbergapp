@@ -12,5 +12,7 @@ struct Fertilization {
     var date: Date
     var field: String
     var user: String
-    var workingHours: Double	
+    var workingHours: Double
+    var fertilizer: Fertilizer
+    var appliedAmount: Double
 }

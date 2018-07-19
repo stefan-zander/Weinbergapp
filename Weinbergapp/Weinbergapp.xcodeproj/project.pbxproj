@@ -36,6 +36,9 @@
 		9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659A20FA3A8000758D8C /* Defoliation.swift */; };
 		9450659F20FB445F00758D8C /* SwitchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659E20FB445F00758D8C /* SwitchListViewController.swift */; };
 		945065A120FB445F00758D8C /* SwitchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945065A020FB445F00758D8C /* SwitchListTableViewCell.swift */; };
+		945F08292100850C00F55C44 /* Fertilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08282100850C00F55C44 /* Fertilizer.swift */; };
+		945F082B2100851F00F55C44 /* MineralFertilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F082A2100851F00F55C44 /* MineralFertilizer.swift */; };
+		945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F082C2100852F00F55C44 /* OrganicFertilizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		9450659A20FA3A8000758D8C /* Defoliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defoliation.swift; sourceTree = "<group>"; };
 		9450659E20FB445F00758D8C /* SwitchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchListViewController.swift; sourceTree = "<group>"; };
 		945065A020FB445F00758D8C /* SwitchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchListTableViewCell.swift; sourceTree = "<group>"; };
+		945F08282100850C00F55C44 /* Fertilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fertilizer.swift; sourceTree = "<group>"; };
+		945F082A2100851F00F55C44 /* MineralFertilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineralFertilizer.swift; sourceTree = "<group>"; };
+		945F082C2100852F00F55C44 /* OrganicFertilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganicFertilizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +235,9 @@
 			isa = PBXGroup;
 			children = (
 				940477AA20F9E8320049CDB5 /* Fertilization.swift */,
+				945F08282100850C00F55C44 /* Fertilizer.swift */,
+				945F082A2100851F00F55C44 /* MineralFertilizer.swift */,
+				945F082C2100852F00F55C44 /* OrganicFertilizer.swift */,
 			);
 			path = Fertilization;
 			sourceTree = "<group>";
@@ -457,14 +466,17 @@
 				35C0DE4A20E65DCA00C31C78 /* VintageExecution.swift in Sources */,
 				356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */,
 				356AFE3720CAB28F000D9BC1 /* ViewController.swift in Sources */,
+				945F082B2100851F00F55C44 /* MineralFertilizer.swift in Sources */,
 				356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */,
 				354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */,
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
+				945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */,
 				940477B320F9E92B0049CDB5 /* AddPlantProtectionViewController.swift in Sources */,
 				940477B120F9E9200049CDB5 /* PlantProtectionViewController.swift in Sources */,
 				940477AD20F9E9030049CDB5 /* DefoliationViewController.swift in Sources */,
+				945F08292100850C00F55C44 /* Fertilizer.swift in Sources */,
 				940155F620FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift in Sources */,
 				940477B520F9E93A0049CDB5 /* VintageViewController.swift in Sources */,
 				945065A120FB445F00758D8C /* SwitchListTableViewCell.swift in Sources */,

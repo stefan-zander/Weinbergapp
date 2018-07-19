@@ -1,5 +1,5 @@
 //
-//  AddFertilizationViewController.swift
+//  AddFertilizatinViewController.swift
 //  Weinbergapp
 //
 //  Created by VM on 14.07.18.
@@ -8,23 +8,118 @@
 
 import UIKit
 
-class AddFertilizationViewController: UIViewController {
+class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var field: UITextField!
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var workingHours: UITextField!
+    @IBOutlet weak var fertilizerCategory: UIPickerView!
+    @IBOutlet weak var fertilizer: UIPickerView!
+    @IBOutlet weak var appliedAmount: UITextField!
     
     var editIndex: Int?
     var source: FertilizationViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fertilizerCategory.delegate = self
+        fertilizerCategory.dataSource = self
+        fertilizer.delegate = self
+        fertilizer.dataSource = self
 
         if let editIndex = editIndex {
             date.date = source.fertilizations[editIndex].date
             field.text = source.fertilizations[editIndex].field
             user.text = source.fertilizations[editIndex].user
             workingHours.text = String(source.fertilizations[editIndex].workingHours)
+            currentFertilizier = source.fertilizations[editIndex].fertilizer
+            appliedAmount.text = String(source.fertilizations[editIndex].appliedAmount)
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView {
+        case fertilizerCategory:
+            return 2
+        case fertilizer:
+            return 8
+        default:
+            return 0
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == fertilizerCategory {
+            fertilizer.reloadAllComponents()
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch pickerView {
+        case fertilizerCategory:
+            switch row {
+            case 0:
+                return "Mineralisch"
+            case 1:
+                return "Organisch"
+            default:
+                return nil
+            }
+        case fertilizer:
+            switch fertilizerCategory.selectedRow(inComponent: 0) {
+            case 0:
+                switch row {
+                case 0:
+                    return "Entec perfekt"
+                case 1:
+                    return "Entec 26"
+                case 2:
+                    return "Hyperphosphat - fein (Rohphosphat)"
+                case 3:
+                    return "Mg-Kalke"
+                case 4:
+                    return "Kornkali mit MgO"
+                case 5:
+                    return "Kalimagnesia (Parent-Kali)"
+                case 6:
+                    return "Kaliumsulfat fein u. granuliert"
+                case 7:
+                    return "Kalksalpeter"
+                default:
+                    return nil
+                }
+            case 1:
+                switch row {
+                case 0:
+                    return "Terragon"
+                case 1:
+                    return "Weinhefen filtriert"
+                case 2:
+                    return "Trester"
+                case 3:
+                    return "Legehennen (22,5% TS)"
+                case 4:
+                    return "Rinder"
+                case 5:
+                    return "Bio(Abfall)kompost"
+                case 6:
+                    return "Baumrinde (1m3 = 0,4 t)"
+                case 7:
+                    return "Weinhefe Flüssig (1m² = 1t)"
+                default:
+                    return nil
+                }
+            default:
+                return nil
+            }
+        default:
+            return nil
         }
     }
 
@@ -61,16 +156,40 @@ class AddFertilizationViewController: UIViewController {
             return
         }
         
+        guard let appliedAmountText = appliedAmount.text, !appliedAmountText.isEmpty else {
+            let alert = UIAlertController(title: "Ausgebrachte Menge nicht angegeben", message: "Die ausgebrachte Menge muss angegeben sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let appliedAmount = Double(appliedAmountText) else {
+            let alert = UIAlertController(title: "Ausgebrachte Menge ist keine Zahl", message: "Bei der Angabe von der ausgebrachten Menge sind nur Zahlen zugelassen.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+            return
+        }
+        
+        guard let fertilizer = currentFertilizier else {
+            return
+        }
+        
         if let editIndex = editIndex {
             source.fertilizations[editIndex].date = date.date
             source.fertilizations[editIndex].field = field
             source.fertilizations[editIndex].user = user
             source.fertilizations[editIndex].workingHours = workingHours
+            source.fertilizations[editIndex].fertilizer = fertilizer
+            source.fertilizations[editIndex].appliedAmount = appliedAmount
         } else {
             let fertilization = Fertilization(date: date.date,
                                               field: field,
                                               user: user,
-                                              workingHours: workingHours)
+                                              workingHours: workingHours,
+                                              fertilizer: fertilizer,
+                                              appliedAmount: appliedAmount)
             
             source.fertilizations.append(fertilization)
         }
@@ -81,5 +200,106 @@ class AddFertilizationViewController: UIViewController {
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    var currentFertilizier: Fertilizer? {
+        get {
+            switch fertilizerCategory.selectedRow(inComponent: 0) {
+            case 0:
+                switch fertilizer.selectedRow(inComponent: 0) {
+                case 0:
+                    return .Mineral(.EntecPerfect)
+                case 1:
+                    return .Mineral(.Entec26)
+                case 2:
+                    return .Mineral(.Hyperphosphate)
+                case 3:
+                    return .Mineral(.MgLimes)
+                case 4:
+                    return .Mineral(.Kornkali)
+                case 5:
+                    return .Mineral(.Kalimagnesia)
+                case 6:
+                    return .Mineral(.PotassiumSulfate)
+                case 7:
+                    return .Mineral(.CalciumNitrate)
+                default:
+                    return nil
+                }
+            case 1:
+                switch fertilizer.selectedRow(inComponent: 0) {
+                case 0:
+                    return .Organic(.Terragon)
+                case 1:
+                    return .Organic(.WineYeastsFiltered)
+                case 2:
+                    return .Organic(.Marc)
+                case 3:
+                    return .Organic(.LayingHens)
+                case 4:
+                    return .Organic(.Bovine)
+                case 5:
+                    return .Organic(.BiowasteCompost)
+                case 6:
+                    return .Organic(.Bark)
+                case 7:
+                    return .Organic(.WineYeastLiquid)
+                default:
+                    return nil
+                }
+            default:
+                return nil
+            }
+        }
+        set(newFertilizer) {
+            guard let newFertilizer = newFertilizer else {
+                return
+            }
+            
+            switch newFertilizer {
+            case .Mineral(let fertilizer):
+                
+                fertilizerCategory.selectRow(0, inComponent: 0, animated: false)
+                switch fertilizer {
+                case .EntecPerfect:
+                    self.fertilizer.selectRow(0, inComponent: 0, animated: false)
+                case .Entec26:
+                    self.fertilizer.selectRow(1, inComponent: 0, animated: false)
+                case .Hyperphosphate:
+                    self.fertilizer.selectRow(2, inComponent: 0, animated: false)
+                case .MgLimes:
+                    self.fertilizer.selectRow(3, inComponent: 0, animated: false)
+                case .Kornkali:
+                    self.fertilizer.selectRow(4, inComponent: 0, animated: false)
+                case .Kalimagnesia:
+                    self.fertilizer.selectRow(5, inComponent: 0, animated: false)
+                case .PotassiumSulfate:
+                    self.fertilizer.selectRow(6, inComponent: 0, animated: false)
+                case .CalciumNitrate:
+                    self.fertilizer.selectRow(7, inComponent: 0, animated: false)
+                }
+            case .Organic(let fertilizer):
+                fertilizerCategory.selectRow(1, inComponent: 0, animated: false)
+                
+                switch fertilizer {
+                case .Terragon:
+                    self.fertilizer.selectRow(0, inComponent: 0, animated: false)
+                case .WineYeastsFiltered:
+                    self.fertilizer.selectRow(1, inComponent: 0, animated: false)
+                case .Marc:
+                    self.fertilizer.selectRow(2, inComponent: 0, animated: false)
+                case .LayingHens:
+                    self.fertilizer.selectRow(3, inComponent: 0, animated: false)
+                case .Bovine:
+                    self.fertilizer.selectRow(4, inComponent: 0, animated: false)
+                case .BiowasteCompost:
+                    self.fertilizer.selectRow(5, inComponent: 0, animated: false)
+                case .Bark:
+                    self.fertilizer.selectRow(6, inComponent: 0, animated: false)
+                case .WineYeastLiquid:
+                    self.fertilizer.selectRow(7, inComponent: 0, animated: false)
+                }
+            }
+        }
     }
 }
