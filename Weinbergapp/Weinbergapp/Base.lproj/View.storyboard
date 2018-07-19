@@ -470,6 +470,16 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bVx-Fe-ZKU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bVx-Fe-ZKU" id="ia8-e3-AJo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -736,8 +746,16 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <items>
                                                     <navigationItem id="qY9-KW-ZEt">
-                                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eAs-oN-oDa"/>
-                                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1Bl-cf-IP5"/>
+                                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eAs-oN-oDa">
+                                                            <connections>
+                                                                <action selector="cancel:" destination="GpP-Qe-e6B" id="fti-VR-vCQ"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1Bl-cf-IP5">
+                                                            <connections>
+                                                                <action selector="save:" destination="GpP-Qe-e6B" id="ACo-Mm-xNR"/>
+                                                            </connections>
+                                                        </barButtonItem>
                                                     </navigationItem>
                                                 </items>
                                             </navigationBar>
@@ -829,16 +847,25 @@
                                                 <rect key="frame" x="14" y="678" width="78" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="FUNGIZID"/>
+                                                <connections>
+                                                    <action selector="fungicidalClicked:" destination="GpP-Qe-e6B" eventType="primaryActionTriggered" id="IYO-ac-Dil"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yz-e9-zTU">
                                                 <rect key="frame" x="100" y="678" width="86" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="HERBIZID"/>
+                                                <connections>
+                                                    <action selector="herbicideClicked:" destination="GpP-Qe-e6B" eventType="primaryActionTriggered" id="WUg-ek-Zpu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vf-gk-ADR">
                                                 <rect key="frame" x="194" y="678" width="164" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="INSEKTIZID / AKARIZID "/>
+                                                <connections>
+                                                    <action selector="insecticidalOrAcaricidalClicked:" destination="GpP-Qe-e6B" eventType="primaryActionTriggered" id="roU-Hq-S7V"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Krankheiten, Schädlinge oder Urkräuter eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Urh-Xj-UYT">
                                                 <rect key="frame" x="14" y="797" width="344" height="30"/>
@@ -879,7 +906,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1MQ-nj-Ecc">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Keine Informationen angegeben." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1MQ-nj-Ecc">
                                                 <rect key="frame" x="15" y="1197" width="344" height="131"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -912,10 +939,21 @@
                         <viewLayoutGuide key="safeArea" id="shX-wt-1DJ"/>
                     </view>
                     <size key="freeformSize" width="375" height="1500"/>
+                    <connections>
+                        <outlet property="additionalInformation" destination="1MQ-nj-Ecc" id="UPh-vM-zQA"/>
+                        <outlet property="appliedAmount" destination="Urh-Xj-UYT" id="dlm-K0-2yb"/>
+                        <outlet property="date" destination="Wiw-Va-dDH" id="fKq-R0-9DA"/>
+                        <outlet property="field" destination="e2J-I2-WCP" id="hoE-CT-Jda"/>
+                        <outlet property="pesticides" destination="DbZ-Iy-wKl" id="oyB-Qj-A4E"/>
+                        <outlet property="plantProtectionKind" destination="Urh-Xj-UYT" id="OPe-YL-bwa"/>
+                        <outlet property="treatmentSchedule" destination="3ag-tp-F5b" id="eOb-xx-53J"/>
+                        <outlet property="user" destination="Aze-4b-P5p" id="VNk-yi-Y3O"/>
+                        <outlet property="workingHours" destination="zf5-57-uFJ" id="mjA-cl-apG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N63-Yf-VTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="800"/>
+            <point key="canvasLocation" x="245.59999999999999" y="799.70014992503752"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="TWL-2O-zV3">

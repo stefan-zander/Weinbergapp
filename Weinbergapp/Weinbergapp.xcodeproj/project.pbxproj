@@ -39,6 +39,11 @@
 		945F08292100850C00F55C44 /* Fertilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08282100850C00F55C44 /* Fertilizer.swift */; };
 		945F082B2100851F00F55C44 /* MineralFertilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F082A2100851F00F55C44 /* MineralFertilizer.swift */; };
 		945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F082C2100852F00F55C44 /* OrganicFertilizer.swift */; };
+		945F082F21009FE200F55C44 /* PlantProtectionKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F082E21009FE200F55C44 /* PlantProtectionKind.swift */; };
+		945F08312100A03800F55C44 /* FungicidalPlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08302100A03800F55C44 /* FungicidalPlantProtection.swift */; };
+		945F08332100A05C00F55C44 /* HerbicidePlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08322100A05C00F55C44 /* HerbicidePlantProtection.swift */; };
+		945F08352100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */; };
+		945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +102,11 @@
 		945F08282100850C00F55C44 /* Fertilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fertilizer.swift; sourceTree = "<group>"; };
 		945F082A2100851F00F55C44 /* MineralFertilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineralFertilizer.swift; sourceTree = "<group>"; };
 		945F082C2100852F00F55C44 /* OrganicFertilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganicFertilizer.swift; sourceTree = "<group>"; };
+		945F082E21009FE200F55C44 /* PlantProtectionKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionKind.swift; sourceTree = "<group>"; };
+		945F08302100A03800F55C44 /* FungicidalPlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungicidalPlantProtection.swift; sourceTree = "<group>"; };
+		945F08322100A05C00F55C44 /* HerbicidePlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerbicidePlantProtection.swift; sourceTree = "<group>"; };
+		945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsecticidalOrAcaricidalPlantProtection.swift; sourceTree = "<group>"; };
+		945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionPesticides.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +264,11 @@
 			isa = PBXGroup;
 			children = (
 				940155F320FCC96A006E36D9 /* PlantProtection.swift */,
+				945F082E21009FE200F55C44 /* PlantProtectionKind.swift */,
+				945F08302100A03800F55C44 /* FungicidalPlantProtection.swift */,
+				945F08322100A05C00F55C44 /* HerbicidePlantProtection.swift */,
+				945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */,
+				945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */,
 				940155F520FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift */,
 			);
 			path = PlantProtection;
@@ -473,17 +488,22 @@
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
 				945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */,
+				945F08332100A05C00F55C44 /* HerbicidePlantProtection.swift in Sources */,
+				945F082F21009FE200F55C44 /* PlantProtectionKind.swift in Sources */,
 				940477B320F9E92B0049CDB5 /* AddPlantProtectionViewController.swift in Sources */,
 				940477B120F9E9200049CDB5 /* PlantProtectionViewController.swift in Sources */,
 				940477AD20F9E9030049CDB5 /* DefoliationViewController.swift in Sources */,
 				945F08292100850C00F55C44 /* Fertilizer.swift in Sources */,
 				940155F620FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift in Sources */,
 				940477B520F9E93A0049CDB5 /* VintageViewController.swift in Sources */,
+				945F08352100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift in Sources */,
 				945065A120FB445F00758D8C /* SwitchListTableViewCell.swift in Sources */,
 				940477A920F9E7420049CDB5 /* AddFertilizationViewController.swift in Sources */,
 				9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */,
+				945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */,
 				940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
+				945F08312100A03800F55C44 /* FungicidalPlantProtection.swift in Sources */,
 				358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */,
 				940155F420FCC96A006E36D9 /* PlantProtection.swift in Sources */,
 				940477AF20F9E9120049CDB5 /* AddDefoliationViewController.swift in Sources */,

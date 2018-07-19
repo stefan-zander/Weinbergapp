@@ -13,18 +13,9 @@ struct PlantProtection {
     var field: String
     var user: String
     var workingHours: Double
-    var category: PlantProtectionCategory
-    var applicationAgainst: [Bool]
-    var pesticides: [Bool]
+    var appliedAmount: Double
+    var plantProtectionKind: PlantProtectionKind
+    var pesticides: PlantProtectionPesticides
     var treatmentSchedule: PlantProtectionTreatmentSchedule
     var additionalInformation: String
-    var appliedAmount: Double
 }
-
-enum PlantProtectionCategory: Int {
-    case Fungicidal = 0
-    case Herbicide = 1
-    case InsecticidalOrAcaricidal = 2
-}
-
-
