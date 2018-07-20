@@ -19,11 +19,6 @@ class PlantProtectionViewController: UIViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func add(_ sender: UIBarButtonItem) {
         let storyBoard = UIStoryboard(name: "View", bundle: nil)
         

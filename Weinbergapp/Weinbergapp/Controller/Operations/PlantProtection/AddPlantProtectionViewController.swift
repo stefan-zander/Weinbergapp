@@ -20,6 +20,8 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     @IBOutlet weak var treatmentSchedule: UIPickerView!
     @IBOutlet weak var additionalInformation: UITextView!
     
+    var currentPlantProtectionKind = PlantProtectionKind.Fungicidal(FungicidalPlantProtection())
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +33,78 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        switch textField {
+        case plantProtectionKind:
+            let storyboard = UIStoryboard(name: "View", bundle: nil)
+            let sv = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
+            
+            if let sv = sv as? SwitchTableViewController {
+                switch currentPlantProtectionKind {
+                case PlantProtectionKind.Fungicidal(let fungicidal):
+                    sv.setItems(items: [
+                        ("Botrytis", fungicidal.botrytis),
+                        ("Essigfäule", fungicidal.acidRot),
+                        ("Oidium", fungicidal.oidium),
+                        ("Peronospora", fungicidal.peronospora),
+                        ("Phomopsis", fungicidal.phomopsis),
+                        ("Roter Brenner", fungicidal.redBurner)
+                        ])
+                    
+                    sv.completion = {
+                        self.currentPlantProtectionKind = .Fungicidal(FungicidalPlantProtection(
+                            botrytis: sv.getItemState(index: 0),
+                            acidRot: sv.getItemState(index: 1),
+                            oidium: sv.getItemState(index: 2),
+                            peronospora: sv.getItemState(index: 3),
+                            phomopsis: sv.getItemState(index: 4),
+                            redBurner: sv.getItemState(index: 5)
+                        ))
+                    }
+                    
+                case .Herbicide(let herbicide):
+                    sv.setItems(items: [
+                        ("Ackerwinde", herbicide.bindweed),
+                        ("Ein- und Zweikeimblättrige", herbicide.monocotyledonousAndDicotyledonous)
+                        ])
+                    
+                    sv.completion = {
+                        self.currentPlantProtectionKind = .Herbicide(HerbicidePlantProtection(
+                            bindweed: sv.getItemState(index: 0),
+                            monocotyledonousAndDicotyledonous: sv.getItemState(index: 1)
+                        ))
+                    }
+                    
+                case .InsecticidalOrAcaricidal(let insecticidalOrAcaricidal):
+                    sv.setItems(items: [
+                        ("Drosophila-Arten", insecticidalOrAcaricidal.drosophilaSpecies),
+                        ("Kräuselmilben", insecticidalOrAcaricidal.grapevineRustMites),
+                        ("Rhombenspanner", insecticidalOrAcaricidal.willowBeauty),
+                        ("Spinnmilben", insecticidalOrAcaricidal.spiderMites),
+                        ("Springwurm", insecticidalOrAcaricidal.springWorm),
+                        ("Traubenwickler (Heu- und Sauerwurm)", insecticidalOrAcaricidal.grape),
+                        ("Zikaden", insecticidalOrAcaricidal.cicadas)])
+                    
+                    sv.completion = {
+                        self.currentPlantProtectionKind = .InsecticidalOrAcaricidal(InsecticidalOrAcaricidalPlantProtection(
+                            drosophilaSpecies: sv.getItemState(index: 0),
+                            grapevineRustMites: sv.getItemState(index: 1),
+                            willowBeauty: sv.getItemState(index: 2),
+                            spiderMites: sv.getItemState(index: 3),
+                            springWorm: sv.getItemState(index: 4),
+                            grape: sv.getItemState(index: 5),
+                            cicadas: sv.getItemState(index: 6)
+                        ))
+                    }
+                }
+            }
+            
+            present(sv, animated: true, completion: nil)
+        case pesticides:
+            break
+        default:
+            break
+        }
+        
         return false
     }
     
@@ -66,13 +140,32 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     }
     
     @IBAction func fungicidalClicked(_ sender: UIButton) {
+        if case PlantProtectionKind.Fungicidal(_) = currentPlantProtectionKind {
+            return
+        }
+        
+        currentPlantProtectionKind = .Fungicidal(FungicidalPlantProtection())
+        plantProtectionKind.text = ""
     }
     
     @IBAction func herbicideClicked(_ sender: UIButton) {
+        if case PlantProtectionKind.Herbicide(_) = currentPlantProtectionKind {
+            return
+        }
+        
+        currentPlantProtectionKind = .Herbicide(HerbicidePlantProtection())
+        plantProtectionKind.text = ""
     }
     
     @IBAction func insecticidalOrAcaricidalClicked(_ sender: UIButton) {
+        if case PlantProtectionKind.InsecticidalOrAcaricidal(_) = currentPlantProtectionKind {
+            return
+        }
+        
+        currentPlantProtectionKind = .InsecticidalOrAcaricidal(InsecticidalOrAcaricidalPlantProtection())
+        plantProtectionKind.text = ""
     }
+    
     
     @IBAction func save(_ sender: UIBarButtonItem) {
         

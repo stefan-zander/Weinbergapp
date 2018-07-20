@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum InsecticidalOrAcaricidalPlantProtection: Int {
-    case DrosophilaSpecies
-    case GrapevineRustMites
-    case WillowBeauty
-    case SpiderMites
-    case SpringWorm
-    case Grape
-    case Cicadas
+struct InsecticidalOrAcaricidalPlantProtection {
+    var drosophilaSpecies: Bool = false
+    var grapevineRustMites: Bool = false
+    var willowBeauty: Bool = false
+    var spiderMites: Bool = false
+    var springWorm: Bool = false
+    var grape: Bool = false
+    var cicadas: Bool = false
 }

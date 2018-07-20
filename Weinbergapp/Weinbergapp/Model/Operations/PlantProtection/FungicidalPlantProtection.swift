@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum FungicidalPlantProtection: Int {
-    case Botrytis
-    case AcidRot
-    case Oidium
-    case Peronospora
-    case Phomopsis
-    case RedBurner
+struct FungicidalPlantProtection {
+    var botrytis: Bool = false
+    var acidRot: Bool = false
+    var oidium: Bool = false
+    var peronospora: Bool = false
+    var phomopsis: Bool = false
+    var redBurner: Bool = false
 }
