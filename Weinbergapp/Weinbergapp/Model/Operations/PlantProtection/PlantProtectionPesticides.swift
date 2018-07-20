@@ -9,14 +9,14 @@
 import Foundation
 
 struct PlantProtectionPesticides {
-    var botector: Bool
-    var cantus: Bool
-    var gibbb3: Bool
-    var melodyCombi: Bool
-    var prolectus: Bool
-    var pyrusBabel: Bool
-    var regalisPlus: Bool
-    var scala: Bool
-    var `switch`: Bool
-    var teldor: Bool
+    var botector: Bool = false
+    var cantus: Bool = false
+    var gibbb3: Bool = false
+    var melodyCombi: Bool = false
+    var prolectus: Bool = false
+    var pyrusBabel: Bool = false
+    var regalisPlus: Bool = false
+    var scala: Bool = false
+    var `switch`: Bool = false
+    var teldor: Bool = false
 }

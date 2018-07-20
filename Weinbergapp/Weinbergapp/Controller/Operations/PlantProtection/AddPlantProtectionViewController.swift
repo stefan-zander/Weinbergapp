@@ -21,6 +21,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     @IBOutlet weak var additionalInformation: UITextView!
     
     var currentPlantProtectionKind = PlantProtectionKind.Fungicidal(FungicidalPlantProtection())
+    var currentPesticides = PlantProtectionPesticides()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +34,14 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        switch textField {
-        case plantProtectionKind:
-            let storyboard = UIStoryboard(name: "View", bundle: nil)
-            let sv = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
-            
-            if let sv = sv as? SwitchTableViewController {
+        let storyboard = UIStoryboard(name: "View", bundle: nil)
+        
+        if let sw = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController") as? SwitchTableViewController {
+            switch textField {
+            case plantProtectionKind:
                 switch currentPlantProtectionKind {
                 case PlantProtectionKind.Fungicidal(let fungicidal):
-                    sv.setItems(items: [
+                    sw.setItems(items: [
                         ("Botrytis", fungicidal.botrytis),
                         ("Essigfäule", fungicidal.acidRot),
                         ("Oidium", fungicidal.oidium),
@@ -50,59 +50,86 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
                         ("Roter Brenner", fungicidal.redBurner)
                         ])
                     
-                    sv.completion = {
+                    sw.completion = {
                         self.currentPlantProtectionKind = .Fungicidal(FungicidalPlantProtection(
-                            botrytis: sv.getItemState(index: 0),
-                            acidRot: sv.getItemState(index: 1),
-                            oidium: sv.getItemState(index: 2),
-                            peronospora: sv.getItemState(index: 3),
-                            phomopsis: sv.getItemState(index: 4),
-                            redBurner: sv.getItemState(index: 5)
+                            botrytis: sw.getItemState(index: 0),
+                            acidRot: sw.getItemState(index: 1),
+                            oidium: sw.getItemState(index: 2),
+                            peronospora: sw.getItemState(index: 3),
+                            phomopsis: sw.getItemState(index: 4),
+                            redBurner: sw.getItemState(index: 5)
                         ))
                     }
                     
                 case .Herbicide(let herbicide):
-                    sv.setItems(items: [
+                    sw.setItems(items: [
                         ("Ackerwinde", herbicide.bindweed),
                         ("Ein- und Zweikeimblättrige", herbicide.monocotyledonousAndDicotyledonous)
                         ])
                     
-                    sv.completion = {
+                    sw.completion = {
                         self.currentPlantProtectionKind = .Herbicide(HerbicidePlantProtection(
-                            bindweed: sv.getItemState(index: 0),
-                            monocotyledonousAndDicotyledonous: sv.getItemState(index: 1)
+                            bindweed: sw.getItemState(index: 0),
+                            monocotyledonousAndDicotyledonous: sw.getItemState(index: 1)
                         ))
                     }
                     
                 case .InsecticidalOrAcaricidal(let insecticidalOrAcaricidal):
-                    sv.setItems(items: [
+                    sw.setItems(items: [
                         ("Drosophila-Arten", insecticidalOrAcaricidal.drosophilaSpecies),
                         ("Kräuselmilben", insecticidalOrAcaricidal.grapevineRustMites),
                         ("Rhombenspanner", insecticidalOrAcaricidal.willowBeauty),
                         ("Spinnmilben", insecticidalOrAcaricidal.spiderMites),
                         ("Springwurm", insecticidalOrAcaricidal.springWorm),
                         ("Traubenwickler (Heu- und Sauerwurm)", insecticidalOrAcaricidal.grape),
-                        ("Zikaden", insecticidalOrAcaricidal.cicadas)])
+                        ("Zikaden", insecticidalOrAcaricidal.cicadas)
+                        ])
                     
-                    sv.completion = {
+                    sw.completion = {
                         self.currentPlantProtectionKind = .InsecticidalOrAcaricidal(InsecticidalOrAcaricidalPlantProtection(
-                            drosophilaSpecies: sv.getItemState(index: 0),
-                            grapevineRustMites: sv.getItemState(index: 1),
-                            willowBeauty: sv.getItemState(index: 2),
-                            spiderMites: sv.getItemState(index: 3),
-                            springWorm: sv.getItemState(index: 4),
-                            grape: sv.getItemState(index: 5),
-                            cicadas: sv.getItemState(index: 6)
+                            drosophilaSpecies: sw.getItemState(index: 0),
+                            grapevineRustMites: sw.getItemState(index: 1),
+                            willowBeauty: sw.getItemState(index: 2),
+                            spiderMites: sw.getItemState(index: 3),
+                            springWorm: sw.getItemState(index: 4),
+                            grape: sw.getItemState(index: 5),
+                            cicadas: sw.getItemState(index: 6)
                         ))
                     }
                 }
+            case pesticides:
+                sw.setItems(items: [
+                    ("Botector", currentPesticides.botector),
+                    ("Cantus", currentPesticides.cantus),
+                    ("Gibbb 3", currentPesticides.gibbb3),
+                    ("Melody Combi", currentPesticides.melodyCombi),
+                    ("Prolectus", currentPesticides.prolectus),
+                    ("Pyrus; Babel", currentPesticides.pyrusBabel),
+                    ("Regalis Plus", currentPesticides.regalisPlus),
+                    ("Scala", currentPesticides.scala),
+                    ("Switch", currentPesticides.`switch`),
+                    ("Teldor", currentPesticides.teldor)
+                    ])
+                
+                sw.completion = {
+                    self.currentPesticides = PlantProtectionPesticides(
+                        botector: sw.getItemState(index: 0),
+                        cantus: sw.getItemState(index: 1),
+                        gibbb3: sw.getItemState(index: 2),
+                        melodyCombi: sw.getItemState(index: 3),
+                        prolectus: sw.getItemState(index: 4),
+                        pyrusBabel: sw.getItemState(index: 5),
+                        regalisPlus: sw.getItemState(index: 6),
+                        scala: sw.getItemState(index: 7),
+                        switch: sw.getItemState(index: 8),
+                        teldor: sw.getItemState(index: 9))
+                }
+                break
+            default:
+                break
             }
             
-            present(sv, animated: true, completion: nil)
-        case pesticides:
-            break
-        default:
-            break
+            present(sw, animated: true, completion: nil)
         }
         
         return false
