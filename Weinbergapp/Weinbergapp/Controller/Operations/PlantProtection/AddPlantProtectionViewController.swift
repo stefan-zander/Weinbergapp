@@ -14,23 +14,39 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     @IBOutlet weak var field: UITextField!
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var workingHours: UITextField!
-    @IBOutlet weak var appliedAmount: UITextField!
     @IBOutlet weak var plantProtectionKind: UITextField!
     @IBOutlet weak var pesticides: UITextField!
     @IBOutlet weak var treatmentSchedule: UIPickerView!
     @IBOutlet weak var additionalInformation: UITextView!
+    @IBOutlet weak var appliedAmount: UITextField!
     
     var currentPlantProtectionKind = PlantProtectionKind.Fungicidal(FungicidalPlantProtection())
     var currentPesticides = PlantProtectionPesticides()
+    
+    var editIndex: Int?
+    var source: PlantProtectionViewController!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         plantProtectionKind.delegate = self
         pesticides.delegate = self
-        
         treatmentSchedule.delegate = self
         treatmentSchedule.dataSource = self
+        
+        if let editIndex = editIndex {
+            date.date = source.plantProtections[editIndex].date
+            field.text = source.plantProtections[editIndex].field
+            user.text = source.plantProtections[editIndex].user
+            workingHours.text = String(source.plantProtections[editIndex].workingHours)
+            currentPlantProtectionKind = source.plantProtections[editIndex].plantProtectionKind
+            plantProtectionKind.text = AddPlantProtectionViewController.localizePlantProtectionKind(currentPlantProtectionKind)
+            currentPesticides = source.plantProtections[editIndex].pesticides
+            pesticides.text = AddPlantProtectionViewController.localizePesticides(currentPesticides)
+            treatmentSchedule.selectRow(source.plantProtections[editIndex].treatmentSchedule.rawValue, inComponent: 0, animated: false)
+            additionalInformation.text = source.plantProtections[editIndex].additionalInformation
+            appliedAmount.text = String(source.plantProtections[editIndex].appliedAmount)
+        }
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -59,6 +75,8 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
                             phomopsis: sw.getItemState(index: 4),
                             redBurner: sw.getItemState(index: 5)
                         ))
+                        
+                        self.plantProtectionKind.text = AddPlantProtectionViewController.localizePlantProtectionKind(self.currentPlantProtectionKind)
                     }
                     
                 case .Herbicide(let herbicide):
@@ -72,6 +90,8 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
                             bindweed: sw.getItemState(index: 0),
                             monocotyledonousAndDicotyledonous: sw.getItemState(index: 1)
                         ))
+                        
+                        self.plantProtectionKind.text = AddPlantProtectionViewController.localizePlantProtectionKind(self.currentPlantProtectionKind)
                     }
                     
                 case .InsecticidalOrAcaricidal(let insecticidalOrAcaricidal):
@@ -95,8 +115,12 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
                             grape: sw.getItemState(index: 5),
                             cicadas: sw.getItemState(index: 6)
                         ))
+                        
+                        self.plantProtectionKind.text = AddPlantProtectionViewController.localizePlantProtectionKind(self.currentPlantProtectionKind)
                     }
                 }
+                
+                
             case pesticides:
                 sw.setItems(items: [
                     ("Botector", currentPesticides.botector),
@@ -123,6 +147,8 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
                         scala: sw.getItemState(index: 7),
                         switch: sw.getItemState(index: 8),
                         teldor: sw.getItemState(index: 9))
+                    
+                    self.pesticides.text = AddPlantProtectionViewController.localizePesticides(self.currentPesticides)
                 }
                 break
             default:
@@ -133,6 +159,121 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         }
         
         return false
+    }
+    
+    static func localizePlantProtectionKind(_ plantProtectionKind: PlantProtectionKind) -> String {
+        var choices: [String] = []
+        
+        switch plantProtectionKind {
+        case PlantProtectionKind.Fungicidal(let fungicidal):
+            if fungicidal.botrytis {
+                choices.append("Botrytis")
+            }
+            
+            if fungicidal.acidRot {
+                choices.append("Essigfäule")
+            }
+            
+            if fungicidal.oidium {
+                choices.append("Oidium")
+            }
+            
+            if fungicidal.peronospora {
+                choices.append("Peronospora")
+            }
+            
+            if fungicidal.phomopsis {
+                choices.append("Phomopsis")
+            }
+            
+            if fungicidal.redBurner {
+                choices.append("Roter Brenner")
+            }
+        case .Herbicide(let herbicide):
+            if herbicide.bindweed {
+                choices.append("Ackerwinde")
+            }
+            if herbicide.monocotyledonousAndDicotyledonous {
+                choices.append("Ein- und Zweikeimblättrige")
+            }
+            
+        case .InsecticidalOrAcaricidal(let insecticidalOrAcaricidal):
+            if insecticidalOrAcaricidal.drosophilaSpecies {
+                choices.append("Drosophila-Arten")
+            }
+            
+            if insecticidalOrAcaricidal.grapevineRustMites {
+                choices.append("Kräuselmilben")
+            }
+            
+            if insecticidalOrAcaricidal.willowBeauty {
+                choices.append("Rhombenspanner")
+            }
+            
+            if insecticidalOrAcaricidal.spiderMites {
+                choices.append("Spinnmilben")
+            }
+            
+            if insecticidalOrAcaricidal.springWorm {
+                choices.append("Springwurm")
+            }
+            
+            if insecticidalOrAcaricidal.grape {
+                choices.append("Traubenwickler (Heu- und Sauerwurm)")
+            }
+            
+            if insecticidalOrAcaricidal.cicadas {
+                choices.append("Zikaden")
+            }
+        }
+        
+        return choices.joined(separator: ", ")
+    }
+    
+    static func localizePesticides(_ pesticides: PlantProtectionPesticides) -> String {
+        var choices: [String] = []
+        
+        if pesticides.botector {
+            choices.append("Botector")
+        }
+        
+        if pesticides.cantus {
+            choices.append("Cantus")
+        }
+        
+        if pesticides.gibbb3 {
+            choices.append("Gibbb 3")
+        }
+        
+        if pesticides.melodyCombi {
+            choices.append("Melody Combi")
+        }
+        
+        if pesticides.prolectus {
+            choices.append("Prolectus")
+        }
+        
+        if pesticides.pyrusBabel {
+            choices.append("Pyrus; Babel")
+        }
+        
+        if pesticides.regalisPlus {
+            choices.append("Regalis Plus")
+        }
+        
+        if pesticides.scala {
+            choices.append("Scala")
+        }
+        
+        if pesticides.`switch` {
+            choices.append("Switch")
+        }
+        
+        if pesticides.teldor {
+            choices.append("Teldor")
+        }
+        
+        return choices.joined(separator: ", ")
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -167,6 +308,8 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     }
     
     @IBAction func fungicidalClicked(_ sender: UIButton) {
+        
+        self.pesticides.text = "haha"
         if case PlantProtectionKind.Fungicidal(_) = currentPlantProtectionKind {
             return
         }
@@ -195,7 +338,77 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     
     
     @IBAction func save(_ sender: UIBarButtonItem) {
+        guard let field = field.text, !field.isEmpty else {
+            let alert = UIAlertController(title: "Feld nicht angegeben", message: "Das Feld darf nicht leer sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            
+            return
+        }
         
+        guard let user = user.text, !user.isEmpty else {
+            let alert = UIAlertController(title: "Benutzer nicht angegeben", message: "Der Benuzter darf nicht leer sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
+        guard let workingHoursText = workingHours.text, !workingHoursText.isEmpty else {
+            let alert = UIAlertController(title: "Arbeitsstunden nicht angegeben", message: "Die Arbeitsstunden müssen angegeben sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
+        guard let workingHours = Double(workingHoursText) else {
+            let alert = UIAlertController(title: "Arbeitsstunden ist keine Zahl", message: "Bei der Angabe von Arbeitsstunden sind nur Zahlen zugelassen.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
+        guard let treatmentSchedule = PlantProtectionTreatmentSchedule(rawValue: treatmentSchedule.selectedRow(inComponent: 0)) else {
+            assert(false)
+            return
+        }
+        
+        guard let appliedAmountText = appliedAmount.text, !appliedAmountText.isEmpty else {
+            let alert = UIAlertController(title: "Ausgegebene Menge nicht angegeben", message: "Die ausgegebene Menge muss angegeben sein.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
+        guard let appliedAmount = Double(appliedAmountText) else {
+            let alert = UIAlertController(title: "Ausgegebene Menge ist keine Zahl", message: "Bei der Angabe von der ausgegebene Menge sind nur Zahlen zugelassen.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
+        if let editIndex = editIndex {
+            source.plantProtections[editIndex].date = date.date
+            source.plantProtections[editIndex].field = field
+            source.plantProtections[editIndex].user = user
+            source.plantProtections[editIndex].workingHours = workingHours
+            source.plantProtections[editIndex].plantProtectionKind = currentPlantProtectionKind
+            source.plantProtections[editIndex].pesticides = currentPesticides
+            source.plantProtections[editIndex].treatmentSchedule = treatmentSchedule
+            source.plantProtections[editIndex].additionalInformation = additionalInformation.text
+            source.plantProtections[editIndex].appliedAmount = appliedAmount
+        } else {
+            let plantProtection = PlantProtection(date: date.date, field: field, user: user, workingHours: workingHours, plantProtectionKind: currentPlantProtectionKind, pesticides: currentPesticides, treatmentSchedule: treatmentSchedule, additionalInformation: additionalInformation.text, appliedAmount: appliedAmount)
+            
+            source.plantProtections.append(plantProtection)
+        }
+        
+        source.tableView.reloadData()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {

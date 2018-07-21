@@ -13,9 +13,9 @@ struct PlantProtection {
     var field: String
     var user: String
     var workingHours: Double
-    var appliedAmount: Double
     var plantProtectionKind: PlantProtectionKind
     var pesticides: PlantProtectionPesticides
     var treatmentSchedule: PlantProtectionTreatmentSchedule
     var additionalInformation: String
+    var appliedAmount: Double
 }
