@@ -13,5 +13,5 @@ struct Vintage {
     var field: String
     var user: String
     var workingHours: Double
-    var execution: VintageExecution    
+    var execution: VintageExecution
 }

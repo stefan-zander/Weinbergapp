@@ -22,6 +22,7 @@
 		35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4720E65D7C00C31C78 /* Vintage.swift */; };
 		35C0DE4A20E65DCA00C31C78 /* VintageExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */; };
 		35FCD6B920E506EB002936D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FCD6B820E506EB002936D6 /* MapKit.framework */; };
+		710329B79F1AB2916ED37B8A /* Pods_WeinbergappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F8058C0C1133D6939FAD66 /* Pods_WeinbergappUITests.framework */; };
 		940155F420FCC96A006E36D9 /* PlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940155F320FCC96A006E36D9 /* PlantProtection.swift */; };
 		940155F620FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940155F520FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift */; };
 		940477A620F9E7290049CDB5 /* FertilizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477A520F9E7290049CDB5 /* FertilizationViewController.swift */; };
@@ -50,6 +51,9 @@
 		945F08332100A05C00F55C44 /* HerbicidePlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08322100A05C00F55C44 /* HerbicidePlantProtection.swift */; };
 		945F08352100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */; };
 		945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */; };
+		946D20F02103EB560063DBF8 /* OperationVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D20EF2103EB560063DBF8 /* OperationVerification.swift */; };
+		DBC42D4AF5F0C2FA6250C345 /* Pods_Weinbergapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FB341301313ACB219BF7F5 /* Pods_Weinbergapp.framework */; };
+		DF9F2D24306BF99379C4BB9D /* Pods_WeinbergappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C3A6FD29B270AF3F1FBF87 /* Pods_WeinbergappTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06FB341301313ACB219BF7F5 /* Pods_Weinbergapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weinbergapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F311BF641165B08BBAF2535 /* Pods-Weinbergapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weinbergapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weinbergapp/Pods-Weinbergapp.release.xcconfig"; sourceTree = "<group>"; };
+		265BAD8103D79841FFA1921F /* Pods-Weinbergapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weinbergapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weinbergapp/Pods-Weinbergapp.debug.xcconfig"; sourceTree = "<group>"; };
+		298CABE8D1A1F2B600589360 /* Pods-WeinbergappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeinbergappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeinbergappTests/Pods-WeinbergappTests.release.xcconfig"; sourceTree = "<group>"; };
 		354BA7A220E6599700EF1D9D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		356AFE3120CAB28F000D9BC1 /* Weinbergapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weinbergapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +99,8 @@
 		35C0DE4720E65D7C00C31C78 /* Vintage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vintage.swift; sourceTree = "<group>"; };
 		35C0DE4920E65DCA00C31C78 /* VintageExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageExecution.swift; sourceTree = "<group>"; };
 		35FCD6B820E506EB002936D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		81C8790D8067F52E096F0A5E /* Pods-WeinbergappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeinbergappUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeinbergappUITests/Pods-WeinbergappUITests.release.xcconfig"; sourceTree = "<group>"; };
+		92F8058C0C1133D6939FAD66 /* Pods_WeinbergappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeinbergappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		940155F320FCC96A006E36D9 /* PlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtection.swift; sourceTree = "<group>"; };
 		940155F520FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionTreatmentSchedule.swift; sourceTree = "<group>"; };
 		940477A520F9E7290049CDB5 /* FertilizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +129,10 @@
 		945F08322100A05C00F55C44 /* HerbicidePlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerbicidePlantProtection.swift; sourceTree = "<group>"; };
 		945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsecticidalOrAcaricidalPlantProtection.swift; sourceTree = "<group>"; };
 		945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionPesticides.swift; sourceTree = "<group>"; };
+		946D20EF2103EB560063DBF8 /* OperationVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationVerification.swift; sourceTree = "<group>"; };
+		C1D2D8E7F4580DFCF36D2D60 /* Pods-WeinbergappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeinbergappTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeinbergappTests/Pods-WeinbergappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D5C3A6FD29B270AF3F1FBF87 /* Pods_WeinbergappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeinbergappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E621F8F2BDA1CAA97A079BD0 /* Pods-WeinbergappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeinbergappUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeinbergappUITests/Pods-WeinbergappUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35FCD6B920E506EB002936D6 /* MapKit.framework in Frameworks */,
+				DBC42D4AF5F0C2FA6250C345 /* Pods_Weinbergapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9F2D24306BF99379C4BB9D /* Pods_WeinbergappTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710329B79F1AB2916ED37B8A /* Pods_WeinbergappUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +172,7 @@
 				356AFE5620CAB28F000D9BC1 /* WeinbergappUITests */,
 				356AFE3220CAB28F000D9BC1 /* Products */,
 				35FCD6B720E506EB002936D6 /* Frameworks */,
+				8A365CCF5B53D3E8BD3AFEC5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +236,7 @@
 				940477A220F9E6BE0049CDB5 /* Defoliation */,
 				940477A320F9E6DC0049CDB5 /* PlantProtection */,
 				940477A420F9E6E30049CDB5 /* Vintage */,
+				946D20EF2103EB560063DBF8 /* OperationVerification.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -226,8 +245,24 @@
 			isa = PBXGroup;
 			children = (
 				35FCD6B820E506EB002936D6 /* MapKit.framework */,
+				06FB341301313ACB219BF7F5 /* Pods_Weinbergapp.framework */,
+				D5C3A6FD29B270AF3F1FBF87 /* Pods_WeinbergappTests.framework */,
+				92F8058C0C1133D6939FAD66 /* Pods_WeinbergappUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A365CCF5B53D3E8BD3AFEC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				265BAD8103D79841FFA1921F /* Pods-Weinbergapp.debug.xcconfig */,
+				0F311BF641165B08BBAF2535 /* Pods-Weinbergapp.release.xcconfig */,
+				C1D2D8E7F4580DFCF36D2D60 /* Pods-WeinbergappTests.debug.xcconfig */,
+				298CABE8D1A1F2B600589360 /* Pods-WeinbergappTests.release.xcconfig */,
+				E621F8F2BDA1CAA97A079BD0 /* Pods-WeinbergappUITests.debug.xcconfig */,
+				81C8790D8067F52E096F0A5E /* Pods-WeinbergappUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		940155F720FCCEFB006E36D9 /* Controller */ = {
@@ -425,9 +460,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 356AFE5C20CAB290000D9BC1 /* Build configuration list for PBXNativeTarget "Weinbergapp" */;
 			buildPhases = (
+				9E95A9DD71FEC61BAF790549 /* [CP] Check Pods Manifest.lock */,
 				356AFE2D20CAB28F000D9BC1 /* Sources */,
 				356AFE2E20CAB28F000D9BC1 /* Frameworks */,
 				356AFE2F20CAB28F000D9BC1 /* Resources */,
+				946D20EE2103DC340063DBF8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -442,6 +479,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 356AFE5F20CAB290000D9BC1 /* Build configuration list for PBXNativeTarget "WeinbergappTests" */;
 			buildPhases = (
+				27C2378AF88934AA856568A2 /* [CP] Check Pods Manifest.lock */,
 				356AFE4420CAB28F000D9BC1 /* Sources */,
 				356AFE4520CAB28F000D9BC1 /* Frameworks */,
 				356AFE4620CAB28F000D9BC1 /* Resources */,
@@ -460,6 +498,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 356AFE6220CAB290000D9BC1 /* Build configuration list for PBXNativeTarget "WeinbergappUITests" */;
 			buildPhases = (
+				89BE9EF832574EF070151C10 /* [CP] Check Pods Manifest.lock */,
 				356AFE4F20CAB28F000D9BC1 /* Sources */,
 				356AFE5020CAB28F000D9BC1 /* Frameworks */,
 				356AFE5120CAB28F000D9BC1 /* Resources */,
@@ -555,6 +594,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27C2378AF88934AA856568A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeinbergappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89BE9EF832574EF070151C10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeinbergappUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		946D20EE2103DC340063DBF8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+		9E95A9DD71FEC61BAF790549 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Weinbergapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		356AFE2D20CAB28F000D9BC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -572,6 +681,7 @@
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
 				945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */,
+				946D20F02103EB560063DBF8 /* OperationVerification.swift in Sources */,
 				945F08332100A05C00F55C44 /* HerbicidePlantProtection.swift in Sources */,
 				9409694521036DEB00AA7146 /* FertilizationTableViewCell.swift in Sources */,
 				945F082F21009FE200F55C44 /* PlantProtectionKind.swift in Sources */,
@@ -764,6 +874,7 @@
 		};
 		356AFE5D20CAB290000D9BC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 265BAD8103D79841FFA1921F /* Pods-Weinbergapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -778,6 +889,7 @@
 		};
 		356AFE5E20CAB290000D9BC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F311BF641165B08BBAF2535 /* Pods-Weinbergapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -792,6 +904,7 @@
 		};
 		356AFE6020CAB290000D9BC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1D2D8E7F4580DFCF36D2D60 /* Pods-WeinbergappTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -808,6 +921,7 @@
 		};
 		356AFE6120CAB290000D9BC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 298CABE8D1A1F2B600589360 /* Pods-WeinbergappTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -824,6 +938,7 @@
 		};
 		356AFE6320CAB290000D9BC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E621F8F2BDA1CAA97A079BD0 /* Pods-WeinbergappUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -839,6 +954,7 @@
 		};
 		356AFE6420CAB290000D9BC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81C8790D8067F52E096F0A5E /* Pods-WeinbergappUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

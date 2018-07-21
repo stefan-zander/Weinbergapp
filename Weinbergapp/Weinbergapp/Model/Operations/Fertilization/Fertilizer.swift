@@ -9,6 +9,6 @@
 import Foundation
 
 enum Fertilizer {
-    case Mineral(MineralFertilizer)
-    case Organic(OrganicFertilizer)
+    case mineral(MineralFertilizer)
+    case organic(OrganicFertilizer)
 }

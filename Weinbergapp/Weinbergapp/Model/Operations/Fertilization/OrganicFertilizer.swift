@@ -9,12 +9,12 @@
 import Foundation
 
 enum OrganicFertilizer: Int {
-    case Terragon
-    case WineYeastsFiltered
-    case Marc
-    case LayingHens
-    case Bovine
-    case BiowasteCompost
-    case Bark
-    case WineYeastLiquid
+    case terragon
+    case wineYeastsFiltered
+    case marc
+    case layingHens
+    case bovine
+    case biowasteCompost
+    case bark
+    case wineYeastLiquid
 }

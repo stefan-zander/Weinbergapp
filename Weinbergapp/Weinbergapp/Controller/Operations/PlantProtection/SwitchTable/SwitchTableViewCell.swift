@@ -12,22 +12,22 @@ class SwitchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var checked: UISwitch!
     @IBOutlet weak var label: UILabel!
-    
+
     var source: SwitchTableViewController!
     var index: Int?
-    
+
     override func awakeFromNib() {
-        super.awakeFromNib()        
+        super.awakeFromNib()
     }
-    
+
     func setText(text: String) {
         label.text = text
     }
-    
+
     func setChecked(checked: Bool) {
         self.checked.isOn = checked
     }
-    
+
     @IBAction func checkedChanged(_ sender: UISwitch) {
         if let index = index {
             source.items[index].1 = checked.isOn

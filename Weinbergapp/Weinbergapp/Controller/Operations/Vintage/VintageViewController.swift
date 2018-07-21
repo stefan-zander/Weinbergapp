@@ -11,70 +11,74 @@ import UIKit
 class VintageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     var vintages: [Vintage] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vintages.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "VintageViewCell", for: indexPath)
-        
+
         if let cell = cell as? VintageTableViewCell {
             let vintage = vintages[indexPath.row]
-            
+
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy"
             dateFormatter.locale = Locale.init(identifier: "de_DE")
-            
+
             cell.setField(field: "Feld: \(vintage.field)")
             cell.setDate(date: "Datum: \(dateFormatter.string(from: vintage.date))")
             cell.setUser(user: "Benutzer: \(vintage.user)")
         }
-        
+
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        if let addVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage") as? AddVintageViewController {
+
+        if let addVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage")
+            as? AddVintageViewController {
             addVintage.source = self
             addVintage.editIndex = indexPath.row
-            
+
             self.present(addVintage, animated: true, completion: nil)
         }
     }
-    
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCellEditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
             vintages.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
+
     @IBAction func add(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        if let addVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage") as? AddVintageViewController {
+
+        if let addVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage")
+            as? AddVintageViewController {
             addVintage.source = self
-            
+
             self.present(addVintage, animated: true, completion: nil)
         }
     }
-    
+
     @IBAction func back(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }

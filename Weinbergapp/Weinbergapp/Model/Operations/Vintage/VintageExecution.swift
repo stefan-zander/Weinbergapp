@@ -9,6 +9,6 @@
 import Foundation
 
 enum VintageExecution: Int {
-    case Manual = 0
-    case Mechanic = 1
+    case manual = 0
+    case mechanic = 1
 }

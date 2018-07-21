@@ -12,7 +12,7 @@ struct Operation {
     let name: String
     let image: UIImage
     let viewName: String
-    
+
     init(name: String, image: UIImage, viewName: String) {
         self.name = name
         self.image = image

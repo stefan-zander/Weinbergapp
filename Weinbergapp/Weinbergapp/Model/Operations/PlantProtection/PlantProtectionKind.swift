@@ -9,7 +9,7 @@
 import Foundation
 
 enum PlantProtectionKind {
-    case Fungicidal(FungicidalPlantProtection)
-    case Herbicide(HerbicidePlantProtection)
-    case InsecticidalOrAcaricidal(InsecticidalOrAcaricidalPlantProtection)
+    case fungicidal(FungicidalPlantProtection)
+    case herbicide(HerbicidePlantProtection)
+    case insecticidalOrAcaricidal(InsecticidalOrAcaricidalPlantProtection)
 }

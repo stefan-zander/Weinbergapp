@@ -9,12 +9,12 @@
 import Foundation
 
 enum MineralFertilizer: Int {
-    case EntecPerfect
-    case Entec26
-    case Hyperphosphate
-    case MgLimes
-    case Kornkali
-    case Kalimagnesia
-    case PotassiumSulfate
-    case CalciumNitrate
+    case entecPerfect
+    case entec26
+    case hyperphosphate
+    case mgLimes
+    case kornkali
+    case kalimagnesia
+    case potassiumSulfate
+    case calciumNitrate
 }

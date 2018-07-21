@@ -9,12 +9,12 @@
 import Foundation
 
 enum PlantProtectionTreatmentSchedule: Int {
-    case Proliferation
-    case EarlyFlowering
-    case FirstEarlyFlowering
-    case SecondEarlyFlowering
-    case ThirdEarlyFlowering
-    case OutgoingFlowering
-    case SecondAfterFlowering
-    case ThirdAfterFlowering
+    case proliferation
+    case earlyFlowering
+    case firstEarlyFlowering
+    case secondEarlyFlowering
+    case thirdEarlyFlowering
+    case outgoingFlowering
+    case secondAfterFlowering
+    case thirdAfterFlowering
 }
