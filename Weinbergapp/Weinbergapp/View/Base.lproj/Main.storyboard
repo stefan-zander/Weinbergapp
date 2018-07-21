@@ -265,7 +265,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FertilizationViewCell" rowHeight="56" id="yog-Y2-CtE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FertilizationViewCell" rowHeight="56" id="yog-Y2-CtE" customClass="FertilizationTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yog-Y2-CtE" id="Qdu-rH-TXs">
@@ -295,6 +295,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="kiM-Ec-AVM" id="YS7-Rw-3dW"/>
+                                            <outlet property="field" destination="hXQ-Qq-S7U" id="1nm-ol-MPX"/>
+                                            <outlet property="user" destination="qT5-eI-kQ4" id="8g0-2Z-3PB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -440,7 +445,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefoliationViewCell" rowHeight="54" id="Xvp-pa-3EC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefoliationViewCell" rowHeight="54" id="Xvp-pa-3EC" customClass="DefoliationTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xvp-pa-3EC" id="zTc-QH-R6l">
@@ -470,6 +475,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="LyS-bf-ty9" id="GFp-ib-uRc"/>
+                                            <outlet property="field" destination="O4E-Yr-Cxg" id="7kj-t0-FGD"/>
+                                            <outlet property="user" destination="ahh-E8-aQo" id="Fa2-21-aQX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -517,7 +527,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantProtectionViewCell" rowHeight="52" id="bVx-Fe-ZKU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantProtectionViewCell" rowHeight="52" id="bVx-Fe-ZKU" customClass="PlantProtectionTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bVx-Fe-ZKU" id="ia8-e3-AJo">
@@ -547,6 +557,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="asH-IP-JZh" id="OM7-GX-N4g"/>
+                                            <outlet property="field" destination="Ydf-pE-Pq2" id="Bt7-8p-VkO"/>
+                                            <outlet property="user" destination="lPT-dn-1Cd" id="dTy-0m-2CY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -594,7 +609,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VintageViewCell" rowHeight="54" id="fjp-QM-Tae">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VintageViewCell" rowHeight="54" id="fjp-QM-Tae" customClass="VintageTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fjp-QM-Tae" id="1tp-ik-sxN">
@@ -624,6 +639,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="bRc-xC-jZ8" id="dX2-QZ-e2I"/>
+                                            <outlet property="field" destination="YZG-Dm-yfi" id="0PV-QO-bs2"/>
+                                            <outlet property="user" destination="JMe-Wo-aVZ" id="bPF-0A-5PD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

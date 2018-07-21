@@ -26,17 +26,27 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "VintageViewCell")
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "VintageViewCell", for: indexPath)
         
-        cell?.textLabel?.text = vintages[indexPath.row].field
+        if let cell = cell as? VintageTableViewCell {
+            let vintage = vintages[indexPath.row]
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            dateFormatter.locale = Locale.init(identifier: "de_DE")
+            
+            cell.setField(field: "Feld: \(vintage.field)")
+            cell.setDate(date: "Datum: \(dateFormatter.string(from: vintage.date))")
+            cell.setUser(user: "Benutzer: \(vintage.user)")
+        }
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let addVintage = storyBoard.instantiateViewController(withIdentifier: "AddVintage") as? AddVintageViewController {
+        if let addVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage") as? AddVintageViewController {
             addVintage.source = self
             addVintage.editIndex = indexPath.row
             
@@ -58,7 +68,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func add(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let addVintage = storyBoard.instantiateViewController(withIdentifier: "AddVintage") as? AddVintageViewController {
+        if let addVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage") as? AddVintageViewController {
             addVintage.source = self
             
             self.present(addVintage, animated: true, completion: nil)

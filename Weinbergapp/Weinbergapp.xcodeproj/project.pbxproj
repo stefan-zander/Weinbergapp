@@ -33,6 +33,10 @@
 		940477B320F9E92B0049CDB5 /* AddPlantProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */; };
 		940477B520F9E93A0049CDB5 /* VintageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B420F9E93A0049CDB5 /* VintageViewController.swift */; };
 		940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B620F9E9450049CDB5 /* AddVintageViewController.swift */; };
+		9409694521036DEB00AA7146 /* FertilizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694421036DEB00AA7146 /* FertilizationTableViewCell.swift */; };
+		9409694721036DFD00AA7146 /* DefoliationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694621036DFD00AA7146 /* DefoliationTableViewCell.swift */; };
+		9409694921036E0C00AA7146 /* PlantProtectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694821036E0C00AA7146 /* PlantProtectionTableViewCell.swift */; };
+		9409694B21036E1B00AA7146 /* VintageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694A21036E1B00AA7146 /* VintageTableViewCell.swift */; };
 		9445648D2103506100201DD4 /* PlantProtectionLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */; };
 		944564912103528700201DD4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944564902103528700201DD4 /* MoreViewController.swift */; };
 		9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659A20FA3A8000758D8C /* Defoliation.swift */; };
@@ -98,6 +102,10 @@
 		940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantProtectionViewController.swift; sourceTree = "<group>"; };
 		940477B420F9E93A0049CDB5 /* VintageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageViewController.swift; sourceTree = "<group>"; };
 		940477B620F9E9450049CDB5 /* AddVintageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVintageViewController.swift; sourceTree = "<group>"; };
+		9409694421036DEB00AA7146 /* FertilizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationTableViewCell.swift; sourceTree = "<group>"; };
+		9409694621036DFD00AA7146 /* DefoliationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefoliationTableViewCell.swift; sourceTree = "<group>"; };
+		9409694821036E0C00AA7146 /* PlantProtectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionTableViewCell.swift; sourceTree = "<group>"; };
+		9409694A21036E1B00AA7146 /* VintageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageTableViewCell.swift; sourceTree = "<group>"; };
 		9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionLocalization.swift; sourceTree = "<group>"; };
 		944564902103528700201DD4 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		9450659A20FA3A8000758D8C /* Defoliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defoliation.swift; sourceTree = "<group>"; };
@@ -205,13 +213,11 @@
 		35C0DE4420E65C0000C31C78 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				358B65D820E4F22000640347 /* OperationsTableViewController.swift */,
 				940477A120F9E6290049CDB5 /* Fertilization */,
 				940477A220F9E6BE0049CDB5 /* Defoliation */,
 				940477A320F9E6DC0049CDB5 /* PlantProtection */,
 				940477A420F9E6E30049CDB5 /* Vintage */,
-				358B65D820E4F22000640347 /* OperationsTableViewController.swift */,
-				358B65D620E4ED8000640347 /* OperationTableViewCell.swift */,
-				358B65DA20E4F39B00640347 /* Operation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 		940155F820FCCF0A006E36D9 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				358B65DA20E4F39B00640347 /* Operation.swift */,
 				940155F920FCCF1B006E36D9 /* Fertilization */,
 				940155FA20FCCF27006E36D9 /* Defoliation */,
 				940155FB20FCCF2C006E36D9 /* PlantProtection */,
@@ -344,9 +351,54 @@
 		9409693D2103682200AA7146 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9409693F21036CF200AA7146 /* Operations */,
 				356AFE3820CAB28F000D9BC1 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9409693F21036CF200AA7146 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				9409694021036D5C00AA7146 /* Fertilization */,
+				9409694121036D6800AA7146 /* Defoliation */,
+				9409694221036D7500AA7146 /* PlantProtection */,
+				9409694321036D7900AA7146 /* Vintage */,
+				358B65D620E4ED8000640347 /* OperationTableViewCell.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		9409694021036D5C00AA7146 /* Fertilization */ = {
+			isa = PBXGroup;
+			children = (
+				9409694421036DEB00AA7146 /* FertilizationTableViewCell.swift */,
+			);
+			path = Fertilization;
+			sourceTree = "<group>";
+		};
+		9409694121036D6800AA7146 /* Defoliation */ = {
+			isa = PBXGroup;
+			children = (
+				9409694621036DFD00AA7146 /* DefoliationTableViewCell.swift */,
+			);
+			path = Defoliation;
+			sourceTree = "<group>";
+		};
+		9409694221036D7500AA7146 /* PlantProtection */ = {
+			isa = PBXGroup;
+			children = (
+				9409694821036E0C00AA7146 /* PlantProtectionTableViewCell.swift */,
+			);
+			path = PlantProtection;
+			sourceTree = "<group>";
+		};
+		9409694321036D7900AA7146 /* Vintage */ = {
+			isa = PBXGroup;
+			children = (
+				9409694A21036E1B00AA7146 /* VintageTableViewCell.swift */,
+			);
+			path = Vintage;
 			sourceTree = "<group>";
 		};
 		9445648E2103506B00201DD4 /* SwitchTable */ = {
@@ -514,12 +566,14 @@
 				356AFE3720CAB28F000D9BC1 /* LoginViewController.swift in Sources */,
 				945F082B2100851F00F55C44 /* MineralFertilizer.swift in Sources */,
 				356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */,
+				9409694921036E0C00AA7146 /* PlantProtectionTableViewCell.swift in Sources */,
 				354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */,
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
 				945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */,
 				945F08332100A05C00F55C44 /* HerbicidePlantProtection.swift in Sources */,
+				9409694521036DEB00AA7146 /* FertilizationTableViewCell.swift in Sources */,
 				945F082F21009FE200F55C44 /* PlantProtectionKind.swift in Sources */,
 				940477B320F9E92B0049CDB5 /* AddPlantProtectionViewController.swift in Sources */,
 				940477B120F9E9200049CDB5 /* PlantProtectionViewController.swift in Sources */,
@@ -532,6 +586,7 @@
 				945065A120FB445F00758D8C /* SwitchTableViewCell.swift in Sources */,
 				940477A920F9E7420049CDB5 /* AddFertilizationViewController.swift in Sources */,
 				9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */,
+				9409694721036DFD00AA7146 /* DefoliationTableViewCell.swift in Sources */,
 				945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */,
 				940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
@@ -541,6 +596,7 @@
 				940477AF20F9E9120049CDB5 /* AddDefoliationViewController.swift in Sources */,
 				940477A620F9E7290049CDB5 /* FertilizationViewController.swift in Sources */,
 				9450659F20FB445F00758D8C /* SwitchTableViewController.swift in Sources */,
+				9409694B21036E1B00AA7146 /* VintageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

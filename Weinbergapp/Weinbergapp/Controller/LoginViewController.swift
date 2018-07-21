@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         if(username.text == "" && password.text == "") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let controller = storyBoard.instantiateViewController(withIdentifier: "controller") as? UITabBarController {
+            if let controller = storyboard.instantiateViewController(withIdentifier: "controller") as? UITabBarController {
                 self.present(controller, animated: true, completion: nil)
             }            
         } else {

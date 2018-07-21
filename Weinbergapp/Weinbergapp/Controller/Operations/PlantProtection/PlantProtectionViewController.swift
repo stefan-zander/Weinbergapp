@@ -26,17 +26,29 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "PlantProtectionViewCell")
+        let cell = self.tableView.dequeueReusableCell(
+            withIdentifier: "PlantProtectionViewCell",
+            for: indexPath)
         
-        cell?.textLabel?.text = plantProtections[indexPath.row].field
+        if let cell = cell as? PlantProtectionTableViewCell {
+            let plantProtection = plantProtections[indexPath.row]
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            dateFormatter.locale = Locale.init(identifier: "de_DE")
+            
+            cell.setField(field: "Feld: \(plantProtection.field)")
+            cell.setDate(date: "Datum: \(dateFormatter.string(from: plantProtection.date))")
+            cell.setUser(user: "Benutzer: \(plantProtection.user)")
+        }
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let addPlantProtection = storyBoard.instantiateViewController(withIdentifier: "AddPlantProtection") as? AddPlantProtectionViewController {
+        if let addPlantProtection = storyboard.instantiateViewController(withIdentifier: "AddPlantProtection") as? AddPlantProtectionViewController {
             addPlantProtection.source = self
             addPlantProtection.editIndex = indexPath.row
             
@@ -58,7 +70,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     @IBAction func add(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let addPlantProtection = storyBoard.instantiateViewController(withIdentifier: "AddPlantProtection") as? AddPlantProtectionViewController {
+        if let addPlantProtection = storyboard.instantiateViewController(withIdentifier: "AddPlantProtection") as? AddPlantProtectionViewController {
             addPlantProtection.source = self
             
             self.present(addPlantProtection, animated: true, completion: nil)

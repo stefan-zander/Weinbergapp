@@ -195,8 +195,6 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     }
     
     @IBAction func fungicidalClicked(_ sender: UIButton) {
-        
-        self.pesticides.text = "haha"
         if case PlantProtectionKind.Fungicidal(_) = currentPlantProtectionKind {
             return
         }

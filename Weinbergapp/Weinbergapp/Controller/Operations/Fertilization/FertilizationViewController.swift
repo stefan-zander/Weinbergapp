@@ -26,17 +26,29 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "FertilizationViewCell")
+        let cell = self.tableView.dequeueReusableCell(
+            withIdentifier: "FertilizationViewCell",
+            for: indexPath)
         
-        cell?.textLabel?.text = fertilizations[indexPath.row].field
+        if let cell = cell as? FertilizationTableViewCell {
+            let fertilization = fertilizations[indexPath.row]
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            dateFormatter.locale = Locale.init(identifier: "de_DE")
+            
+            cell.setField(field: "Feld: \(fertilization.field)")
+            cell.setDate(date: "Datum: \(dateFormatter.string(from: fertilization.date))")
+            cell.setUser(user: "Benutzer: \(fertilization.user)")
+        }
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let addFertilization = storyBoard.instantiateViewController(withIdentifier: "AddFertilization") as? AddFertilizationViewController {
+        if let addFertilization = storyboard.instantiateViewController(withIdentifier: "AddFertilization") as? AddFertilizationViewController {
             addFertilization.source = self
             addFertilization.editIndex = indexPath.row
             
@@ -58,7 +70,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func add(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let addFertilization = storyBoard.instantiateViewController(withIdentifier: "AddFertilization") as? AddFertilizationViewController {
+        if let addFertilization = storyboard.instantiateViewController(withIdentifier: "AddFertilization") as? AddFertilizationViewController {
             addFertilization.source = self
             
             self.present(addFertilization, animated: true, completion: nil)

@@ -26,17 +26,29 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "DefoliationViewCell")
+        let cell = self.tableView.dequeueReusableCell(
+            withIdentifier: "DefoliationViewCell",
+            for: indexPath)
         
-        cell?.textLabel?.text = defoliations[indexPath.row].field
+        if let cell = cell as? DefoliationTableViewCell {
+            let defoliation = defoliations[indexPath.row]
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            dateFormatter.locale = Locale.init(identifier: "de_DE")
+            
+            cell.setField(field: "Feld: \(defoliation.field)")
+            cell.setDate(date: "Datum: \(dateFormatter.string(from: defoliation.date))")
+            cell.setUser(user: "Benutzer: \(defoliation.user)")
+        }
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let addDefoliation = storyBoard.instantiateViewController(withIdentifier: "AddDefoliation") as? AddDefoliationViewController {
+        if let addDefoliation = storyboard.instantiateViewController(withIdentifier: "AddDefoliation") as? AddDefoliationViewController {
             addDefoliation.source = self
             addDefoliation.editIndex = indexPath.row
             
@@ -58,7 +70,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func add(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let addDefoliation = storyBoard.instantiateViewController(withIdentifier: "AddDefoliation") as? AddDefoliationViewController {
+        if let addDefoliation = storyboard.instantiateViewController(withIdentifier: "AddDefoliation") as? AddDefoliationViewController {
             addDefoliation.source = self
             
             self.present(addDefoliation, animated: true, completion: nil)
