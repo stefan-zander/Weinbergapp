@@ -11,18 +11,15 @@ import Foundation
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var _username: UITextField!
-    @IBOutlet weak var _password: UITextField!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func login(_ sender: Any) {
-        let username = self._username.text
-        let password = self._password.text
-        
-        if(username == "" || password == "") {
+        if(username.text == "" && password.text == "") {
             let storyBoard = UIStoryboard(name: "View", bundle: nil)
             if let controller = storyBoard.instantiateViewController(withIdentifier: "controller") as? UITabBarController {
                 self.present(controller, animated: true, completion: nil)
