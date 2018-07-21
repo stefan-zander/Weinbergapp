@@ -57,32 +57,32 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
         guard let field = field.text, !field.isEmpty else {
             let alert = UIAlertController(title: "Feld nicht angegeben", message: "Das Feld darf nicht leer sein.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         
         guard let user = user.text, !user.isEmpty else {
             let alert = UIAlertController(title: "Benutzer nicht angegeben", message: "Der Benuzter darf nicht leer sein.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         
         guard let workingHoursText = workingHours.text, !workingHoursText.isEmpty else {
             let alert = UIAlertController(title: "Arbeitsstunden nicht angegeben", message: "Die Arbeitsstunden müssen angegeben sein.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         
         guard let workingHours = Double(workingHoursText) else {
             let alert = UIAlertController(title: "Arbeitsstunden ist keine Zahl", message: "Bei der Angabe von Arbeitsstunden sind nur Zahlen zugelassen.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         

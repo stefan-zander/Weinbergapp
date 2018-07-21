@@ -127,52 +127,53 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         guard let field = field.text, !field.isEmpty else {
             let alert = UIAlertController(title: "Feld nicht angegeben", message: "Das Feld darf nicht leer sein.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         
         guard let user = user.text, !user.isEmpty else {
             let alert = UIAlertController(title: "Benutzer nicht angegeben", message: "Der Benuzter darf nicht leer sein.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         
         guard let workingHoursText = workingHours.text, !workingHoursText.isEmpty else {
             let alert = UIAlertController(title: "Arbeitsstunden nicht angegeben", message: "Die Arbeitsstunden müssen angegeben sein.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         
         guard let workingHours = Double(workingHoursText) else {
             let alert = UIAlertController(title: "Arbeitsstunden ist keine Zahl", message: "Bei der Angabe von Arbeitsstunden sind nur Zahlen zugelassen.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         
         guard let appliedAmountText = appliedAmount.text, !appliedAmountText.isEmpty else {
             let alert = UIAlertController(title: "Ausgebrachte Menge nicht angegeben", message: "Die ausgebrachte Menge muss angegeben sein.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         
         guard let appliedAmount = Double(appliedAmountText) else {
             let alert = UIAlertController(title: "Ausgebrachte Menge ist keine Zahl", message: "Bei der Angabe von der ausgebrachten Menge sind nur Zahlen zugelassen.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
             self.present(alert, animated: true)
+            
             return
         }
         
         guard let fertilizer = currentFertilizier else {
+            assert(false)
             return
         }
         
@@ -206,50 +207,18 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         get {
             switch fertilizerCategory.selectedRow(inComponent: 0) {
             case 0:
-                switch fertilizer.selectedRow(inComponent: 0) {
-                case 0:
-                    return .Mineral(.EntecPerfect)
-                case 1:
-                    return .Mineral(.Entec26)
-                case 2:
-                    return .Mineral(.Hyperphosphate)
-                case 3:
-                    return .Mineral(.MgLimes)
-                case 4:
-                    return .Mineral(.Kornkali)
-                case 5:
-                    return .Mineral(.Kalimagnesia)
-                case 6:
-                    return .Mineral(.PotassiumSulfate)
-                case 7:
-                    return .Mineral(.CalciumNitrate)
-                default:
-                    return nil
+                if let mineralFertilizier = MineralFertilizer(rawValue: fertilizer.selectedRow(inComponent: 0)) {
+                    return .Mineral(mineralFertilizier)
                 }
             case 1:
-                switch fertilizer.selectedRow(inComponent: 0) {
-                case 0:
-                    return .Organic(.Terragon)
-                case 1:
-                    return .Organic(.WineYeastsFiltered)
-                case 2:
-                    return .Organic(.Marc)
-                case 3:
-                    return .Organic(.LayingHens)
-                case 4:
-                    return .Organic(.Bovine)
-                case 5:
-                    return .Organic(.BiowasteCompost)
-                case 6:
-                    return .Organic(.Bark)
-                case 7:
-                    return .Organic(.WineYeastLiquid)
-                default:
-                    return nil
+                if let organicFertilizer = OrganicFertilizer(rawValue: fertilizer.selectedRow(inComponent: 0)) {
+                    return .Organic(organicFertilizer)
                 }
             default:
-                return nil
+                break
             }
+            
+            return nil
         }
         set(newFertilizer) {
             guard let newFertilizer = newFertilizer else {
@@ -258,47 +227,11 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
             
             switch newFertilizer {
             case .Mineral(let fertilizer):
-                
                 fertilizerCategory.selectRow(0, inComponent: 0, animated: false)
-                switch fertilizer {
-                case .EntecPerfect:
-                    self.fertilizer.selectRow(0, inComponent: 0, animated: false)
-                case .Entec26:
-                    self.fertilizer.selectRow(1, inComponent: 0, animated: false)
-                case .Hyperphosphate:
-                    self.fertilizer.selectRow(2, inComponent: 0, animated: false)
-                case .MgLimes:
-                    self.fertilizer.selectRow(3, inComponent: 0, animated: false)
-                case .Kornkali:
-                    self.fertilizer.selectRow(4, inComponent: 0, animated: false)
-                case .Kalimagnesia:
-                    self.fertilizer.selectRow(5, inComponent: 0, animated: false)
-                case .PotassiumSulfate:
-                    self.fertilizer.selectRow(6, inComponent: 0, animated: false)
-                case .CalciumNitrate:
-                    self.fertilizer.selectRow(7, inComponent: 0, animated: false)
-                }
+                self.fertilizer.selectRow(fertilizer.rawValue, inComponent: 0, animated: false)
             case .Organic(let fertilizer):
                 fertilizerCategory.selectRow(1, inComponent: 0, animated: false)
-                
-                switch fertilizer {
-                case .Terragon:
-                    self.fertilizer.selectRow(0, inComponent: 0, animated: false)
-                case .WineYeastsFiltered:
-                    self.fertilizer.selectRow(1, inComponent: 0, animated: false)
-                case .Marc:
-                    self.fertilizer.selectRow(2, inComponent: 0, animated: false)
-                case .LayingHens:
-                    self.fertilizer.selectRow(3, inComponent: 0, animated: false)
-                case .Bovine:
-                    self.fertilizer.selectRow(4, inComponent: 0, animated: false)
-                case .BiowasteCompost:
-                    self.fertilizer.selectRow(5, inComponent: 0, animated: false)
-                case .Bark:
-                    self.fertilizer.selectRow(6, inComponent: 0, animated: false)
-                case .WineYeastLiquid:
-                    self.fertilizer.selectRow(7, inComponent: 0, animated: false)
-                }
+                self.fertilizer.selectRow(fertilizer.rawValue, inComponent: 0, animated: false)
             }
         }
     }
