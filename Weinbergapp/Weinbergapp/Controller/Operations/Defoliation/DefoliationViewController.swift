@@ -34,7 +34,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "View", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let addDefoliation = storyBoard.instantiateViewController(withIdentifier: "AddDefoliation") as? AddDefoliationViewController {
             addDefoliation.source = self
@@ -56,7 +56,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func add(_ sender: UIBarButtonItem) {
-        let storyBoard = UIStoryboard(name: "View", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let addDefoliation = storyBoard.instantiateViewController(withIdentifier: "AddDefoliation") as? AddDefoliationViewController {
             addDefoliation.source = self

@@ -1096,10 +1096,10 @@
             </objects>
             <point key="canvasLocation" x="-969" y="-1188"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="pLV-aD-xdS">
             <objects>
-                <viewController id="1LT-e3-SDl" customClass="ViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1LT-e3-SDl" customClass="LoginViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RiL-dC-4QX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1191,8 +1191,8 @@
                         <viewLayoutGuide key="safeArea" id="rxe-3P-IT0"/>
                     </view>
                     <connections>
-                        <outlet property="_password" destination="AM1-Wo-tDm" id="6vc-ec-hP4"/>
-                        <outlet property="_username" destination="LDb-mE-hNJ" id="rb1-Nx-6oc"/>
+                        <outlet property="password" destination="AM1-Wo-tDm" id="1HC-S1-HbU"/>
+                        <outlet property="username" destination="LDb-mE-hNJ" id="EaX-fE-Svo"/>
                         <segue destination="AzT-oI-WRz" kind="presentation" id="640-xF-Ghc"/>
                     </connections>
                 </viewController>

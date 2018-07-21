@@ -36,7 +36,7 @@ class OperationsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "View", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyBoard.instantiateViewController(withIdentifier: operations[indexPath.row].viewName)
         
         self.present(view, animated: true, completion: nil)

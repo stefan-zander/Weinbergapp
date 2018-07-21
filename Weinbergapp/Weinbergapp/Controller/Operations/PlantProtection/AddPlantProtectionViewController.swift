@@ -52,7 +52,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        let storyboard = UIStoryboard(name: "View", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let sw = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController") as? SwitchTableViewController {
             switch textField {

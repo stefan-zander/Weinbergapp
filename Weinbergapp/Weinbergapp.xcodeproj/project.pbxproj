@@ -10,7 +10,7 @@
 		354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354BA7A220E6599700EF1D9D /* MapViewController.swift */; };
 		356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */; };
 		356AFE3720CAB28F000D9BC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3620CAB28F000D9BC1 /* LoginViewController.swift */; };
-		356AFE3A20CAB28F000D9BC1 /* View.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* View.storyboard */; };
+		356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* Main.storyboard */; };
 		356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */; };
 		356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */; };
 		356AFE4D20CAB28F000D9BC1 /* WeinbergappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */; };
@@ -70,7 +70,7 @@
 		356AFE3120CAB28F000D9BC1 /* Weinbergapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weinbergapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356AFE3620CAB28F000D9BC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		356AFE3920CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/View.storyboard; sourceTree = "<group>"; };
+		356AFE3920CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		356AFE3C20CAB28F000D9BC1 /* Weinbergapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weinbergapp.xcdatamodel; sourceTree = "<group>"; };
 		356AFE4120CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356AFE4320CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				35C0DE4320E65BE500C31C78 /* Model */,
-				356AFE3820CAB28F000D9BC1 /* View.storyboard */,
+				9409693D2103682200AA7146 /* View */,
 				940155F720FCCEFB006E36D9 /* Controller */,
 				356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */,
 				359977E120F8AAD0005664CB /* Assets.xcassets */,
@@ -275,6 +275,7 @@
 				945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */,
 				945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */,
 				940155F520FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift */,
+				9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */,
 			);
 			path = PlantProtection;
 			sourceTree = "<group>";
@@ -326,7 +327,6 @@
 			children = (
 				940477B020F9E9200049CDB5 /* PlantProtectionViewController.swift */,
 				940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */,
-				9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */,
 				9445648E2103506B00201DD4 /* SwitchTable */,
 			);
 			path = PlantProtection;
@@ -339,6 +339,14 @@
 				940477B620F9E9450049CDB5 /* AddVintageViewController.swift */,
 			);
 			path = Vintage;
+			sourceTree = "<group>";
+		};
+		9409693D2103682200AA7146 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				356AFE3820CAB28F000D9BC1 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9445648E2103506B00201DD4 /* SwitchTable */ = {
@@ -475,7 +483,7 @@
 			files = (
 				356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */,
 				359977E220F8AAD1005664CB /* Assets.xcassets in Resources */,
-				356AFE3A20CAB28F000D9BC1 /* View.storyboard in Resources */,
+				356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,12 +576,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		356AFE3820CAB28F000D9BC1 /* View.storyboard */ = {
+		356AFE3820CAB28F000D9BC1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				356AFE3920CAB28F000D9BC1 /* Base */,
 			);
-			name = View.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */ = {

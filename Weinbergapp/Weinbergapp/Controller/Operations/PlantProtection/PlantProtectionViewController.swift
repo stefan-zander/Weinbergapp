@@ -34,7 +34,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "View", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let addPlantProtection = storyBoard.instantiateViewController(withIdentifier: "AddPlantProtection") as? AddPlantProtectionViewController {
             addPlantProtection.source = self
@@ -56,7 +56,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     @IBAction func add(_ sender: UIBarButtonItem) {
-        let storyBoard = UIStoryboard(name: "View", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let addPlantProtection = storyBoard.instantiateViewController(withIdentifier: "AddPlantProtection") as? AddPlantProtectionViewController {
             addPlantProtection.source = self
