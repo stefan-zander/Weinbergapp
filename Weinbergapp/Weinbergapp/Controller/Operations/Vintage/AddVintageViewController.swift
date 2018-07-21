@@ -26,11 +26,13 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
         execution.dataSource = self
         
         if let editIndex = editIndex {
-            date.date = source.vintages[editIndex].date
-            field.text = source.vintages[editIndex].field
-            user.text = source.vintages[editIndex].user
-            workingHours.text = String(source.vintages[editIndex].workingHours)
-            execution.selectRow(source.vintages[editIndex].execution.rawValue, inComponent: 0, animated: true)
+            let vintage = source.vintages[editIndex]
+            
+            date.date = vintage.date
+            field.text = vintage.field
+            user.text = vintage.user
+            workingHours.text = String(vintage.workingHours)
+            execution.selectRow(vintage.execution.rawValue, inComponent: 0, animated: true)
         }
     }
     

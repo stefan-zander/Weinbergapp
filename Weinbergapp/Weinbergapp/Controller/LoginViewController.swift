@@ -9,10 +9,14 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
-    @IBOutlet weak var _username: UITextField!
+class LoginViewController: UIViewController {
     
+    @IBOutlet weak var _username: UITextField!
     @IBOutlet weak var _password: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     @IBAction func login(_ sender: Any) {
         let username = self._username.text
@@ -38,12 +42,7 @@ class ViewController: UIViewController {
                 }}))
             self.present(alert, animated: true, completion: nil)
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-        
+    }        
 }
     
 

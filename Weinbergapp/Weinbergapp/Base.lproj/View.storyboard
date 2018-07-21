@@ -252,7 +252,7 @@
                                                 <action selector="back:" destination="Tq0-nU-pyU" id="hk4-Ja-Czu"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="kVX-6u-Aya">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kVX-6u-Aya">
                                             <connections>
                                                 <action selector="add:" destination="Tq0-nU-pyU" id="wU1-ic-d4X"/>
                                             </connections>
@@ -815,22 +815,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysJ-sL-cVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678" y="1418"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="NFZ-uO-2ye">
-            <objects>
-                <viewController id="Ko4-lo-4tI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XU8-dt-gvJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="HAk-Om-oys"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UlN-1b-zra" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-17" y="1972"/>
+            <point key="canvasLocation" x="246" y="1878"/>
         </scene>
         <!--Add Plant Protection View Controller-->
         <scene sceneID="3jZ-SO-3LR">
@@ -1235,10 +1220,10 @@
             </objects>
             <point key="canvasLocation" x="-36" y="-1997"/>
         </scene>
-        <!--View Controller-->
+        <!--More View Controller-->
         <scene sceneID="sjB-a1-VNd">
             <objects>
-                <viewController id="RnH-Df-VRR" sceneMemberID="viewController">
+                <viewController id="RnH-Df-VRR" customClass="MoreViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FM5-yA-41I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

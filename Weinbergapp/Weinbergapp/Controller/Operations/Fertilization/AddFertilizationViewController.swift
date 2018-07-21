@@ -30,12 +30,14 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         fertilizer.dataSource = self
 
         if let editIndex = editIndex {
-            date.date = source.fertilizations[editIndex].date
-            field.text = source.fertilizations[editIndex].field
-            user.text = source.fertilizations[editIndex].user
-            workingHours.text = String(source.fertilizations[editIndex].workingHours)
-            currentFertilizier = source.fertilizations[editIndex].fertilizer
-            appliedAmount.text = String(source.fertilizations[editIndex].appliedAmount)
+            let fertilization = source.fertilizations[editIndex]
+            
+            date.date = fertilization.date
+            field.text = fertilization.field
+            user.text = fertilization.user
+            workingHours.text = String(fertilization.workingHours)
+            currentFertilizier = fertilization.fertilizer
+            appliedAmount.text = String(fertilization.appliedAmount)
         }
     }
     
