@@ -177,21 +177,16 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
             return
         }
         
+        let fertilization = Fertilization(date: date.date,
+                                          field: field,
+                                          user: user,
+                                          workingHours: workingHours,
+                                          fertilizer: fertilizer,
+                                          appliedAmount: appliedAmount)
+        
         if let editIndex = editIndex {
-            source.fertilizations[editIndex].date = date.date
-            source.fertilizations[editIndex].field = field
-            source.fertilizations[editIndex].user = user
-            source.fertilizations[editIndex].workingHours = workingHours
-            source.fertilizations[editIndex].fertilizer = fertilizer
-            source.fertilizations[editIndex].appliedAmount = appliedAmount
+            source.fertilizations[editIndex] = fertilization
         } else {
-            let fertilization = Fertilization(date: date.date,
-                                              field: field,
-                                              user: user,
-                                              workingHours: workingHours,
-                                              fertilizer: fertilizer,
-                                              appliedAmount: appliedAmount)
-            
             source.fertilizations.append(fertilization)
         }
         

@@ -61,17 +61,14 @@ class AddDefoliationViewController: UIViewController {
             return
         }
         
+        let defoliation = Defoliation(date: date.date,
+                                      field: field,
+                                      user: user,
+                                      workingHours: workingHours)
+        
         if let editIndex = editIndex {
-            source.defoliations[editIndex].date = date.date
-            source.defoliations[editIndex].field = field
-            source.defoliations[editIndex].user = user
-            source.defoliations[editIndex].workingHours = workingHours
+            source.defoliations[editIndex] = defoliation
         } else {
-            let defoliation = Defoliation(date: date.date,
-                                          field: field,
-                                          user: user,
-                                          workingHours: workingHours)
-            
             source.defoliations.append(defoliation)
         }
         

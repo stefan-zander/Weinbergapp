@@ -90,20 +90,15 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
             assert(false)
             return
         }
+        let vintage = Vintage(date: date.date,
+                              field: field,
+                              user: user,
+                              workingHours: workingHours,
+                              execution: execution)
         
         if let editIndex = editIndex {
-            source.vintages[editIndex].date = date.date
-            source.vintages[editIndex].field = field
-            source.vintages[editIndex].user = user
-            source.vintages[editIndex].workingHours = workingHours
-            source.vintages[editIndex].execution = execution
+            source.vintages[editIndex] = vintage
         } else {
-            let vintage = Vintage(date: date.date,
-                                  field: field,
-                                  user: user,
-                                  workingHours: workingHours,
-                                  execution: execution)
-            
             source.vintages.append(vintage)
         }
         

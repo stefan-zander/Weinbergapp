@@ -391,19 +391,20 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
             return
         }
         
+        let plantProtection = PlantProtection(
+            date: date.date,
+            field: field,
+            user: user,
+            workingHours: workingHours,
+            plantProtectionKind: currentPlantProtectionKind,
+            pesticides: currentPesticides,
+            treatmentSchedule: treatmentSchedule,
+            additionalInformation: additionalInformation.text,
+            appliedAmount: appliedAmount)
+        
         if let editIndex = editIndex {
-            source.plantProtections[editIndex].date = date.date
-            source.plantProtections[editIndex].field = field
-            source.plantProtections[editIndex].user = user
-            source.plantProtections[editIndex].workingHours = workingHours
-            source.plantProtections[editIndex].plantProtectionKind = currentPlantProtectionKind
-            source.plantProtections[editIndex].pesticides = currentPesticides
-            source.plantProtections[editIndex].treatmentSchedule = treatmentSchedule
-            source.plantProtections[editIndex].additionalInformation = additionalInformation.text
-            source.plantProtections[editIndex].appliedAmount = appliedAmount
+            source.plantProtections[editIndex] = plantProtection
         } else {
-            let plantProtection = PlantProtection(date: date.date, field: field, user: user, workingHours: workingHours, plantProtectionKind: currentPlantProtectionKind, pesticides: currentPesticides, treatmentSchedule: treatmentSchedule, additionalInformation: additionalInformation.text, appliedAmount: appliedAmount)
-            
             source.plantProtections.append(plantProtection)
         }
         
