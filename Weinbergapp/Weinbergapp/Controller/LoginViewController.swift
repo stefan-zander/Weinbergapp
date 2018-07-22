@@ -18,6 +18,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func passwordVisibilityToggled(_ sender: UISwitch) {
+        password.isSecureTextEntry = !sender.isOn
+    }
+
     @IBAction func login(_ sender: Any) {
         if username.text == "" && password.text == "" {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
