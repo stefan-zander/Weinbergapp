@@ -13,15 +13,15 @@ class PlantProtectionLocalization {
     public static func localize(_ plantProtectionKind: PlantProtectionKind) -> String {
         switch plantProtectionKind {
         case .fungicidal(let fungicidal):
-            return localizeFungicidal(fungicidal)
+            return localize(fungicidal)
         case .herbicide(let herbicide):
-            return localizeHerbicide(herbicide)
+            return localize(herbicide)
         case .insecticidalOrAcaricidal(let insecticidalOrAcaricidal):
-            return localizeInsecticidalOrAcaricidal(insecticidalOrAcaricidal)
+            return localize(insecticidalOrAcaricidal)
         }
     }
 
-    private static func localizeFungicidal(_ fungicidal: FungicidalPlantProtection) -> String {
+    public static func localize(_ fungicidal: FungicidalPlantProtection) -> String {
         var choices: [String] = []
 
         if fungicidal.botrytis {
@@ -51,7 +51,7 @@ class PlantProtectionLocalization {
         return choices.joined(separator: ", ")
     }
 
-    private static func localizeHerbicide(_ herbicide: HerbicidePlantProtection) -> String {
+    public static func localize(_ herbicide: HerbicidePlantProtection) -> String {
         var choices: [String] = []
 
         if herbicide.bindweed {
@@ -64,9 +64,7 @@ class PlantProtectionLocalization {
         return choices.joined(separator: ", ")
     }
 
-    private static func localizeInsecticidalOrAcaricidal(
-        _ insecticidalOrAcaricidal: InsecticidalOrAcaricidalPlantProtection)
-        -> String {
+    public static func localize(_ insecticidalOrAcaricidal: InsecticidalOrAcaricidalPlantProtection) -> String {
         var choices: [String] = []
 
         if insecticidalOrAcaricidal.drosophilaSpecies {

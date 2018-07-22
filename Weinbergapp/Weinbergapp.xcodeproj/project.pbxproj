@@ -38,6 +38,7 @@
 		9409694721036DFD00AA7146 /* DefoliationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694621036DFD00AA7146 /* DefoliationTableViewCell.swift */; };
 		9409694921036E0C00AA7146 /* PlantProtectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694821036E0C00AA7146 /* PlantProtectionTableViewCell.swift */; };
 		9409694B21036E1B00AA7146 /* VintageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694A21036E1B00AA7146 /* VintageTableViewCell.swift */; };
+		940DD3C821047AF80004CD26 /* PlantProtectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940DD3C721047AF80004CD26 /* PlantProtectionDialog.swift */; };
 		9445648D2103506100201DD4 /* PlantProtectionLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */; };
 		944564912103528700201DD4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944564902103528700201DD4 /* MoreViewController.swift */; };
 		9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659A20FA3A8000758D8C /* Defoliation.swift */; };
@@ -116,6 +117,7 @@
 		9409694621036DFD00AA7146 /* DefoliationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefoliationTableViewCell.swift; sourceTree = "<group>"; };
 		9409694821036E0C00AA7146 /* PlantProtectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionTableViewCell.swift; sourceTree = "<group>"; };
 		9409694A21036E1B00AA7146 /* VintageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageTableViewCell.swift; sourceTree = "<group>"; };
+		940DD3C721047AF80004CD26 /* PlantProtectionDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionDialog.swift; sourceTree = "<group>"; };
 		9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionLocalization.swift; sourceTree = "<group>"; };
 		944564902103528700201DD4 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		9450659A20FA3A8000758D8C /* Defoliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defoliation.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			children = (
 				940477B020F9E9200049CDB5 /* PlantProtectionViewController.swift */,
 				940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */,
+				940DD3C721047AF80004CD26 /* PlantProtectionDialog.swift */,
 				9445648E2103506B00201DD4 /* SwitchTable */,
 			);
 			path = PlantProtection;
@@ -698,6 +701,7 @@
 				9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */,
 				9409694721036DFD00AA7146 /* DefoliationTableViewCell.swift in Sources */,
 				945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */,
+				940DD3C821047AF80004CD26 /* PlantProtectionDialog.swift in Sources */,
 				940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
 				945F08312100A03800F55C44 /* FungicidalPlantProtection.swift in Sources */,
