@@ -9,104 +9,59 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    @IBOutlet weak var cancel: UIBarButtonItem!
-    @IBOutlet weak var add: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var navigationBar: UINavigationItem!
 
-    var currentPolygon: [CLLocationCoordinate2D]?
     let locationManager = CLLocationManager()
-
-    @IBAction func add(_ sender: UIBarButtonItem) {
-        if currentPolygon == nil {
-            currentPolygon = []
-            add.title = "Fertig"
-            mapView.isUserInteractionEnabled = false
-        } else {
-            if currentPolygon!.count >= 3 {
-                currentPolygon!.append(currentPolygon![0])
-                let polygon = MKPolygon(coordinates: currentPolygon!, count: currentPolygon!.count)
-                mapView.add(polygon)
-            }
-
-            currentPolygon = nil
-            add.title = "Hinzufügen"
-            mapView.isUserInteractionEnabled = true
-        }
-    }
-
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestLocationAccess()
 
         mapView.delegate = self
         mapView.showsUserLocation = true
-        mapView.isUserInteractionEnabled = false
 
-        /*let l1 = CLLocationCoordinate2D(latitude: 49.992862, longitude: 8.247253)
-        let l2 = CLLocationCoordinate2D(latitude: 49.96674, longitude: 7.904596)
-        let l3 = CLLocationCoordinate2D(latitude: 49.94674, longitude: 7.954596)
-
-        let pts: [CLLocationCoordinate2D] = [ l1, l2, l3, l1 ]
-
-        let testline = MKPolygon(coordinates: pts, count: pts.count)
-
-        let p1 = MKPointAnnotation()
-        p1.coordinate = l1
-
-        let p2 = MKPointAnnotation()
-        p2.coordinate = l2
-
-        let p3 = MKPointAnnotation()
-        p3.coordinate = l3
-
-        mapView.add(testline)
-        mapView.addAnnotations([p1, p2, p3])*/
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if currentPolygon != nil {
-            mapView.removeOverlays(mapView.overlays)
-
-            if let touch = touches.first {
-                let coordinate = mapView.convert(touch.location(in: mapView), toCoordinateFrom: mapView)
-
-                self.currentPolygon?.append(coordinate)
-
-                let point = MKPointAnnotation()
-                point.coordinate = coordinate
-                mapView.addAnnotation(point)
-            }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let coordinate = manager.location?.coordinate {
+            let region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500)
+            mapView.setRegion(region, animated: true)
         }
     }
 
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolygon {
-            let renderer = MKPolygonRenderer(overlay: overlay)
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        let alert = UIAlertController(title: "Unable to find location",
+                                      message: error.localizedDescription,
+                                      preferredStyle: .alert)
 
-            renderer.fillColor = UIColor.blue.withAlphaComponent(0.25)
-            renderer.strokeColor = UIColor.blue.withAlphaComponent(0.5)
-            renderer.lineWidth = 2
-            return renderer
-        }
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
 
-        return MKOverlayRenderer()
+        self.present(alert, animated: true, completion: nil)
     }
 
-    func requestLocationAccess() {
-        let status = CLLocationManager.authorizationStatus()
+    @IBAction func gotoCurrentLocation(_ sender: UIBarButtonItem) {
+        locationManager.requestWhenInUseAuthorization()
 
-        switch status {
-        case .authorizedAlways, .authorizedWhenInUse:
-            return
-        case .denied, .restricted:
-            print("location access denied")
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestLocation()
+        }
+    }
+
+    @IBAction func changeMapType(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .satellite
+        case 2:
+            mapView.mapType = .hybrid
         default:
-            locationManager.requestWhenInUseAuthorization()
+            break
         }
     }
+
 }
