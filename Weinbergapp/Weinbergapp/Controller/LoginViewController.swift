@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
 
+    var test: [Int]? = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,6 +32,7 @@ class LoginViewController: UIViewController {
                 self.present(controller, animated: true, completion: nil)
             }
         } else {
+
             let alert = UIAlertController(
                 title: "Login fehlgeschlagen",
                 message: "Ungültige Zugangsdaten. Bitte versuchen Sie es erneut",
