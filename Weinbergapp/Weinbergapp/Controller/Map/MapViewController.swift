@@ -45,25 +45,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBAction func toggleAdd(_ sender: UIBarButtonItem) {
         if previewer.isEnabled {
             if previewer.pointsDrawn < 3 {
-                let alert = UIAlertController(title: "Nicht genügend Punkte eingezeichnet",
-                                              message: "Um eine Fläche aufzuspannen werden mindestens drei Punkte " +
-                                                       "benötigt.",
-                                              preferredStyle: .alert)
-
-                alert.addAction(UIAlertAction(title: "Weitere Punkte einzeichnen", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Vorgang abbrechen", style: .cancel, handler: { _ in
+                MapDialogs.showInsufficientPointsWarning(controller: self, onCancel: { _ in
                     self.navigationBar.leftBarButtonItem = self.addButton
                     self.previewer.leavePreviewMode()
-                }))
-
-                self.present(alert, animated: true)
-                return
+                })
+            } else {
+                
+                // add
+                self.navigationBar.leftBarButtonItem = addButton
+                previewer.leavePreviewMode()
             }
-
-            // add it
-
-            self.navigationBar.leftBarButtonItem = addButton
-            previewer.leavePreviewMode()
         } else {
             self.navigationBar.leftBarButtonItem = doneButton
             previewer.enterPreviewMode(coordinates: nil)
