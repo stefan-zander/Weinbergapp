@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum MineralFertilizer: Int {
+public enum MineralFertilizer: Int {
     case entecPerfect
     case entec26
     case hyperphosphate

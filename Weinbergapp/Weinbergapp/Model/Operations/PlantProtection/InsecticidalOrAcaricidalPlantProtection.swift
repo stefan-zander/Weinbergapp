@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct InsecticidalOrAcaricidalPlantProtection {
+public struct InsecticidalOrAcaricidalPlantProtection {
     var drosophilaSpecies: Bool = false
     var grapevineRustMites: Bool = false
     var willowBeauty: Bool = false

@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct Field {
+public struct Field {
     var name: String
     var vineVariety: String
     var coordinates: [CLLocationCoordinate2D]

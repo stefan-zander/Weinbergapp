@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Fertilizer {
+public enum Fertilizer {
     case mineral(MineralFertilizer)
     case organic(OrganicFertilizer)
 }

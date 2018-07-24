@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HerbicidePlantProtection {
+public struct HerbicidePlantProtection {
     var bindweed: Bool = false
     var monocotyledonousAndDicotyledonous: Bool = false
 }

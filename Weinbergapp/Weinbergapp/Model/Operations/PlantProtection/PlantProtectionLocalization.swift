@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PlantProtectionLocalization {
+public class PlantProtectionLocalization {
 
     public static func localize(_ plantProtectionKind: PlantProtectionKind) -> String {
         switch plantProtectionKind {

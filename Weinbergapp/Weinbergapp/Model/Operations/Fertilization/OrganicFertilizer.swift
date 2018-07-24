@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum OrganicFertilizer: Int {
+public enum OrganicFertilizer: Int {
     case terragon
     case wineYeastsFiltered
     case marc

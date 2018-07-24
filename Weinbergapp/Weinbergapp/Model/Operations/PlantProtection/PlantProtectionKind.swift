@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PlantProtectionKind {
+public enum PlantProtectionKind {
     case fungicidal(FungicidalPlantProtection)
     case herbicide(HerbicidePlantProtection)
     case insecticidalOrAcaricidal(InsecticidalOrAcaricidalPlantProtection)

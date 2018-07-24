@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Fertilization {
+public struct Fertilization {
     var date: Date
     var field: String
     var user: String

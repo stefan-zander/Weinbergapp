@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PlantProtectionPesticides {
+public struct PlantProtectionPesticides {
     var botector: Bool = false
     var cantus: Bool = false
     var gibbb3: Bool = false

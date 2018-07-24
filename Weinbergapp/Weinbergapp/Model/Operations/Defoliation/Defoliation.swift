@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Defoliation {
+public struct Defoliation {
     var date: Date
     var field: String
     var user: String

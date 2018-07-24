@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PlantProtectionTreatmentSchedule: Int {
+public enum PlantProtectionTreatmentSchedule: Int {
     case proliferation
     case earlyFlowering
     case firstEarlyFlowering

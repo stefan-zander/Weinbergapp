@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FungicidalPlantProtection {
+public struct FungicidalPlantProtection {
     var botrytis: Bool = false
     var acidRot: Bool = false
     var oidium: Bool = false

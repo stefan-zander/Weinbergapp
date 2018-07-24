@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Vintage {
+public struct Vintage {
     var date: Date
     var field: String
     var user: String

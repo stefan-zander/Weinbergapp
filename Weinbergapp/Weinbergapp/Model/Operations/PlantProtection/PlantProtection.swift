@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PlantProtection {
+public struct PlantProtection {
     var date: Date
     var field: String
     var user: String
