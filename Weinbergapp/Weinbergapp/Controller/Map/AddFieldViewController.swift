@@ -7,32 +7,43 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AddFieldViewController: UIViewController {
 
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var vineVariety: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var vineVarietyField: UITextField!
+
+    var coordinates: [CLLocationCoordinate2D] = []
+    var completion: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
-        // Do any additional setup after loading the view.
+    public var name: String {
+        get {
+            return nameField.text ?? ""
+        }
+        set(newName) {
+            nameField.text = newName
+        }
+    }
+
+    public var vineVariety: String {
+        get {
+            return vineVarietyField.text ?? ""
+        }
+        set(newVineVariety) {
+            vineVarietyField.text = newVineVariety
+        }
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: completion)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

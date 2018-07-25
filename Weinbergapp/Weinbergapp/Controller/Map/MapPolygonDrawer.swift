@@ -9,9 +9,10 @@
 import Foundation
 import MapKit
 
-public class PolygonDrawer {
+public class MapPolygonDrawer {
 
     private let mapView: MKMapView
+
     private var previewPoints: [MKPointAnnotation]?
     private var previewPolygon: MKPolygon?
 
@@ -72,6 +73,14 @@ public class PolygonDrawer {
         refreshPreviewPolygon()
     }
 
+    public func getCoordinates() -> [CLLocationCoordinate2D] {
+        if let previewPoints = previewPoints {
+            return previewPoints.map { $0.coordinate }
+        }
+
+        return []
+    }
+
     public func remove(point: MKPointAnnotation) {
         guard var previewPoints = previewPoints else { return }
         guard let index = previewPoints.index(of: point) else { return }
@@ -104,7 +113,7 @@ public class PolygonDrawer {
     }
 
     private func createPointAnnotation(index: Int, coordinate: CLLocationCoordinate2D) -> MKPointAnnotation {
-        let point = MKPointAnnotation()
+        let point = MKPreviewPointAnnotation()
 
         point.title = "Punkt \(index + 1)"
         point.coordinate = coordinate
@@ -120,8 +129,8 @@ public class PolygonDrawer {
         guard let previewPoints = previewPoints else { return }
         guard previewPoints.count >= 3 else { return }
 
-        let newPreview = MKPolygon(coordinates: previewPoints.map { $0.coordinate },
-                                   count: previewPoints.count)
+        let newPreview = MKPreviewPolygon(coordinates: previewPoints.map { $0.coordinate },
+                                          count: previewPoints.count)
 
         self.mapView.add(newPreview)
         self.previewPolygon = newPreview

@@ -56,9 +56,12 @@
 		945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */; };
 		946D20F02103EB560063DBF8 /* OperationVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D20EF2103EB560063DBF8 /* OperationVerification.swift */; };
 		9473746D21061D8F006196CF /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473746C21061D8E006196CF /* Field.swift */; };
-		94BE5C63210799F300C95F97 /* PolygonDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C62210799F300C95F97 /* PolygonDrawer.swift */; };
-		94BE5C6521079D6900C95F97 /* PolygonDrawerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C6421079D6900C95F97 /* PolygonDrawerError.swift */; };
+		94BE5C63210799F300C95F97 /* MapPolygonDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */; };
 		94BE5C672107B50C00C95F97 /* MapDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C662107B50C00C95F97 /* MapDialogs.swift */; };
+		94BE5C692108844900C95F97 /* MapFieldCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C682108844900C95F97 /* MapFieldCollection.swift */; };
+		94BE5C6B210887CA00C95F97 /* MKPreviewPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C6A210887CA00C95F97 /* MKPreviewPolygon.swift */; };
+		94FEDF502108AC95002CF6A0 /* MKPreviewPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FEDF4F2108AC95002CF6A0 /* MKPreviewPointAnnotation.swift */; };
+		94FEDF522108ADA6002CF6A0 /* MKFieldPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FEDF512108ADA6002CF6A0 /* MKFieldPointAnnotation.swift */; };
 		DBC42D4AF5F0C2FA6250C345 /* Pods_Weinbergapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FB341301313ACB219BF7F5 /* Pods_Weinbergapp.framework */; };
 		DF9F2D24306BF99379C4BB9D /* Pods_WeinbergappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C3A6FD29B270AF3F1FBF87 /* Pods_WeinbergappTests.framework */; };
 /* End PBXBuildFile section */
@@ -141,9 +144,12 @@
 		945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionPesticides.swift; sourceTree = "<group>"; };
 		946D20EF2103EB560063DBF8 /* OperationVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationVerification.swift; sourceTree = "<group>"; };
 		9473746C21061D8E006196CF /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
-		94BE5C62210799F300C95F97 /* PolygonDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonDrawer.swift; sourceTree = "<group>"; };
-		94BE5C6421079D6900C95F97 /* PolygonDrawerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonDrawerError.swift; sourceTree = "<group>"; };
+		94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPolygonDrawer.swift; sourceTree = "<group>"; };
 		94BE5C662107B50C00C95F97 /* MapDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDialogs.swift; sourceTree = "<group>"; };
+		94BE5C682108844900C95F97 /* MapFieldCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFieldCollection.swift; sourceTree = "<group>"; };
+		94BE5C6A210887CA00C95F97 /* MKPreviewPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPreviewPolygon.swift; sourceTree = "<group>"; };
+		94FEDF4F2108AC95002CF6A0 /* MKPreviewPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPreviewPointAnnotation.swift; sourceTree = "<group>"; };
+		94FEDF512108ADA6002CF6A0 /* MKFieldPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKFieldPointAnnotation.swift; sourceTree = "<group>"; };
 		C1D2D8E7F4580DFCF36D2D60 /* Pods-WeinbergappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeinbergappTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeinbergappTests/Pods-WeinbergappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5C3A6FD29B270AF3F1FBF87 /* Pods_WeinbergappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeinbergappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621F8F2BDA1CAA97A079BD0 /* Pods-WeinbergappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeinbergappUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeinbergappUITests/Pods-WeinbergappUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -349,10 +355,14 @@
 			isa = PBXGroup;
 			children = (
 				354BA7A220E6599700EF1D9D /* MapViewController.swift */,
+				94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */,
+				94FEDF4F2108AC95002CF6A0 /* MKPreviewPointAnnotation.swift */,
+				94BE5C6A210887CA00C95F97 /* MKPreviewPolygon.swift */,
+				94BE5C682108844900C95F97 /* MapFieldCollection.swift */,
+				940743DD210763470028AC49 /* MKFieldPolygon.swift */,
+				94FEDF512108ADA6002CF6A0 /* MKFieldPointAnnotation.swift */,
 				940743DF210765E10028AC49 /* AddFieldViewController.swift */,
 				94BE5C662107B50C00C95F97 /* MapDialogs.swift */,
-				94BE5C62210799F300C95F97 /* PolygonDrawer.swift */,
-				94BE5C6421079D6900C95F97 /* PolygonDrawerError.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -361,7 +371,6 @@
 			isa = PBXGroup;
 			children = (
 				9473746C21061D8E006196CF /* Field.swift */,
-				940743DD210763470028AC49 /* MKFieldPolygon.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -698,23 +707,26 @@
 				356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */,
 				9409694921036E0C00AA7146 /* PlantProtectionTableViewCell.swift in Sources */,
 				354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */,
+				94FEDF522108ADA6002CF6A0 /* MKFieldPointAnnotation.swift in Sources */,
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
 				9473746D21061D8F006196CF /* Field.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
 				945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */,
-				94BE5C6521079D6900C95F97 /* PolygonDrawerError.swift in Sources */,
-				94BE5C63210799F300C95F97 /* PolygonDrawer.swift in Sources */,
+				94BE5C63210799F300C95F97 /* MapPolygonDrawer.swift in Sources */,
 				946D20F02103EB560063DBF8 /* OperationVerification.swift in Sources */,
 				945F08332100A05C00F55C44 /* HerbicidePlantProtection.swift in Sources */,
 				9409694521036DEB00AA7146 /* FertilizationTableViewCell.swift in Sources */,
 				945F082F21009FE200F55C44 /* PlantProtectionKind.swift in Sources */,
 				940743E0210765E10028AC49 /* AddFieldViewController.swift in Sources */,
 				940743DE210763470028AC49 /* MKFieldPolygon.swift in Sources */,
+				94FEDF502108AC95002CF6A0 /* MKPreviewPointAnnotation.swift in Sources */,
 				940477B320F9E92B0049CDB5 /* AddPlantProtectionViewController.swift in Sources */,
+				94BE5C692108844900C95F97 /* MapFieldCollection.swift in Sources */,
 				94BE5C672107B50C00C95F97 /* MapDialogs.swift in Sources */,
 				940477B120F9E9200049CDB5 /* PlantProtectionViewController.swift in Sources */,
 				944564912103528700201DD4 /* MoreViewController.swift in Sources */,
+				94BE5C6B210887CA00C95F97 /* MKPreviewPolygon.swift in Sources */,
 				940477AD20F9E9030049CDB5 /* DefoliationViewController.swift in Sources */,
 				945F08292100850C00F55C44 /* Fertilizer.swift in Sources */,
 				940155F620FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift in Sources */,

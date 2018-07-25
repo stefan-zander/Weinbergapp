@@ -13,13 +13,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var mapView: MKMapView!
-    var previewer: PolygonDrawer!
+
+    var previewer: MapPolygonDrawer!
+    var collection: MapFieldCollection!
 
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(toggleAdd))
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(toggleAdd))
 
     let locationManager = CLLocationManager()
-    var fields: [MKFieldPolygon] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +30,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.delegate = self
         mapView.showsUserLocation = true
 
-        previewer = PolygonDrawer(for: mapView)
+        previewer = MapPolygonDrawer(for: mapView)
+        collection = MapFieldCollection(for: mapView)
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-
-        /*let annotation = MKPointAnnotation()
-         annotation.coordinate = CLLocationCoordinate2D(latitude: 49.966740, longitude: 7.904596)  // your location here
-         annotation.title = "My Title"
-         annotation.subtitle = "My Subtitle"
-
-         self.mapView.addAnnotation(annotation)*/
     }
 
     @IBAction func toggleAdd(_ sender: UIBarButtonItem) {
@@ -50,10 +45,25 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     self.previewer.leavePreviewMode()
                 })
             } else {
-                
-                // add
-                self.navigationBar.leftBarButtonItem = addButton
-                previewer.leavePreviewMode()
+                let coordinates = previewer.getCoordinates()
+
+                self.navigationBar.leftBarButtonItem = self.addButton
+                self.previewer.leavePreviewMode()
+
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+                if let addField = storyboard.instantiateViewController(withIdentifier: "AddField")
+                    as? AddFieldViewController {
+
+                    addField.coordinates = previewer.getCoordinates()
+                    addField.completion = {
+                        self.collection.append(name: addField.name,
+                                               vineVariety: addField.vineVariety,
+                                               coordinates: coordinates)
+                    }
+
+                    self.present(addField, animated: true)
+                }
             }
         } else {
             self.navigationBar.leftBarButtonItem = doneButton
@@ -99,24 +109,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKPointAnnotation {
-            if let pinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin") {
-                pinAnnotationView.annotation = annotation
-                return pinAnnotationView
-            } else {
-                let pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-
-                pinAnnotationView.pinTintColor = .blue
-                pinAnnotationView.isDraggable = true
-                pinAnnotationView.canShowCallout = true
-                pinAnnotationView.animatesDrop = true
-
-                let removeButton = UIButton(type: .detailDisclosure)
-                removeButton.setImage(UIImage(named: "trash"), for: .normal)
-                pinAnnotationView.rightCalloutAccessoryView = removeButton
-
-                return pinAnnotationView
-            }
+        switch annotation {
+        case let previewPointAnnotation as MKPreviewPointAnnotation:
+            return previewPointAnnotation.getAnnotationView(in: mapView)
+        case let fieldPointAnnotation as MKFieldPointAnnotation:
+            return fieldPointAnnotation.getAnnotationView(in: mapView)
+        default:
+            break
         }
 
         return nil
@@ -125,21 +124,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func mapView(_ mapView: MKMapView,
                  annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-        if let point = view.annotation as? MKPointAnnotation {
+        switch view.annotation {
+        case let point as MKPreviewPointAnnotation:
             previewer.remove(point: point)
+        case let field as MKFieldPointAnnotation:
+            break
+        default:
+            break
         }
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolygon {
-            let renderer = MKPolygonRenderer(overlay: overlay)
-
-            renderer.fillColor = UIColor.blue.withAlphaComponent(0.25)
-            renderer.strokeColor = UIColor.blue.withAlphaComponent(0.5)
-            renderer.lineWidth = 2
-            renderer.lineDashPattern = [8, 8]
-
-            return renderer
+        if overlay is MKPreviewPolygon {
+            return MKPreviewPolygon.makeRenderer(rendererFor: overlay)
+        } else if overlay is MKFieldPolygon {
+            return MKFieldPolygon.makeRenderer(rendererFor: overlay)
         }
 
         return MKOverlayRenderer()
