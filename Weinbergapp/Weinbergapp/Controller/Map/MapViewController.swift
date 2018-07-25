@@ -100,12 +100,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        let alert = UIAlertController(title: "Standort konnte nicht ermittelt werden.",
-                                      message: error.localizedDescription,
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-
-        self.present(alert, animated: true, completion: nil)
+        MapDialogs.showLocationUnavailable(controller: self, error: error)
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

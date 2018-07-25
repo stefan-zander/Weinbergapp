@@ -22,4 +22,13 @@ public class MapDialogs {
 
         controller.present(alert, animated: true)
     }
+
+    public static func showLocationUnavailable(controller: UIViewController, error: Error) {
+        let alert = UIAlertController(title: "Standort konnte nicht ermittelt werden.",
+                                      message: error.localizedDescription,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+        controller.present(alert, animated: true, completion: nil)
+    }
 }
