@@ -8,6 +8,20 @@
 
 import Foundation
 
+/**
+ A mineral fertilizer.
+ 
+ ````
+ case entecPerfect
+ case entec26
+ case hyperphosphate
+ case mgLimes
+ case kornkali
+ case kalimagnesia
+ case potassiumSulfate
+ case calciumNitrate
+ ````
+ */
 public enum MineralFertilizer: Int {
     case entecPerfect
     case entec26

@@ -8,6 +8,20 @@
 
 import Foundation
 
+/**
+ An organic fertilizer.
+ 
+ ````
+ case terragon
+ case wineYeastsFiltered
+ case marc
+ case layingHens
+ case bovine
+ case biowasteCompost
+ case bark
+ case wineYeastLiquid
+ ````
+ */
 public enum OrganicFertilizer: Int {
     case terragon
     case wineYeastsFiltered

@@ -11,10 +11,21 @@ import UIKit
 class OperationsTableViewController: UITableViewController {
 
     let operations = [
-        Operation(name: "Düngung", image: UIImage(named: "Fertilization")!, viewName: "Fertilization"),
-        Operation(name: "Entlauben", image: UIImage(named: "Defoliation")!, viewName: "Defoliation"),
-        Operation(name: "Pflanzenschutz", image: UIImage(named: "PlantProtection")!, viewName: "PlantProtection"),
-        Operation(name: "Traubenlese", image: UIImage(named: "Vintage")!, viewName: "Vintage")
+        Operation(name: "Düngung",
+                  image: UIImage(named: "Fertilization")!,
+                  storyboardIdentifier: "Fertilization"),
+        
+        Operation(name: "Entlauben",
+                  image: UIImage(named: "Defoliation")!,
+                  storyboardIdentifier: "Defoliation"),
+        
+        Operation(name: "Pflanzenschutz",
+                  image: UIImage(named: "PlantProtection")!,
+                  storyboardIdentifier: "PlantProtection"),
+        
+        Operation(name: "Traubenlese",
+                  image: UIImage(named: "Vintage")!,
+                  storyboardIdentifier: "Vintage")
     ]
 
     override func viewDidLoad() {
@@ -37,7 +48,8 @@ class OperationsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let view = storyboard.instantiateViewController(withIdentifier: operations[indexPath.row].viewName)
+        let view = storyboard.instantiateViewController(
+            withIdentifier: operations[indexPath.row].storyboardIdentifier)
 
         self.present(view, animated: true, completion: nil)
     }
