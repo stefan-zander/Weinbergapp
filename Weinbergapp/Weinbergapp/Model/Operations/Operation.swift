@@ -16,6 +16,6 @@ struct Operation {
     init(name: String, image: UIImage, storyboardIdentifier: String) {
         self.name = name
         self.image = image
-        self.viewName = storyboardIdentifier
+        self.storyboardIdentifier = storyboardIdentifier
     }
 }
