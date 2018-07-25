@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OperationVerification {
+public class OperationFieldVerification {
 
     public static func verify(field: UITextField, _ controller: UIViewController) -> String? {
         guard let field = field.text, !field.isEmpty else {

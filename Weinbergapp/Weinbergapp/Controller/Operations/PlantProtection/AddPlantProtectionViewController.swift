@@ -57,7 +57,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         case plantProtectionKind:
             switch currentPlantProtectionKind {
             case .fungicidal(let fungicidal):
-                PlantProtectionDialog.open(fungicidal: fungicidal,
+                PlantProtectionDialogs.open(fungicidal: fungicidal,
                                            controller: self,
                                            completion: { newFungicidal in
                     self.currentPlantProtectionKind = .fungicidal(newFungicidal)
@@ -65,7 +65,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
                     })
 
             case .herbicide(let herbicide):
-                PlantProtectionDialog.open(herbicide: herbicide,
+                PlantProtectionDialogs.open(herbicide: herbicide,
                                            controller: self,
                                            completion: { (newHerbicide) in
                     self.currentPlantProtectionKind = .herbicide(newHerbicide)
@@ -73,7 +73,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
                     })
 
             case .insecticidalOrAcaricidal(let insecticidalOrAcaricidal):
-                PlantProtectionDialog.open(insecticidalOrAcaricidal: insecticidalOrAcaricidal,
+                PlantProtectionDialogs.open(insecticidalOrAcaricidal: insecticidalOrAcaricidal,
                                            controller: self,
                                            completion: { (newInsecticidalOrAcaricidal) in
                     self.currentPlantProtectionKind = .insecticidalOrAcaricidal(insecticidalOrAcaricidal)
@@ -82,7 +82,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
 
             }
         case pesticides:
-            PlantProtectionDialog.open(pesticides: self.currentPesticides, controller: self) { (newPesticides) in
+            PlantProtectionDialogs.open(pesticides: self.currentPesticides, controller: self) { (newPesticides) in
                 self.currentPesticides = newPesticides
                 self.pesticides.text = PlantProtectionLocalization.localize(newPesticides)
             }
@@ -152,9 +152,9 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard let field = OperationVerification.verify(field: field, self) else { return }
-        guard let user = OperationVerification.verify(user: user, self) else { return }
-        guard let workingHours = OperationVerification.verify(workingHours: workingHours, self) else { return }
+        guard let field = OperationFieldVerification.verify(field: field, self) else { return }
+        guard let user = OperationFieldVerification.verify(user: user, self) else { return }
+        guard let workingHours = OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
 
         guard let treatmentSchedule = PlantProtectionTreatmentSchedule(
             rawValue: treatmentSchedule.selectedRow(inComponent: 0)) else {
@@ -162,7 +162,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
             return
         }
 
-        guard let appliedAmount = OperationVerification.verify(appliedAmount: appliedAmount, self) else { return }
+        guard let appliedAmount = OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
 
         let plantProtection = PlantProtection(
             date: date.date,

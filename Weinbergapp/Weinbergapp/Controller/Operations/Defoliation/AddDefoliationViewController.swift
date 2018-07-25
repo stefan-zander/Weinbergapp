@@ -31,9 +31,9 @@ class AddDefoliationViewController: UIViewController {
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard let field = OperationVerification.verify(field: field, self) else { return }
-        guard let user = OperationVerification.verify(user: user, self) else { return }
-        guard let workingHours = OperationVerification.verify(workingHours: workingHours, self) else { return }
+        guard let field = OperationFieldVerification.verify(field: field, self) else { return }
+        guard let user = OperationFieldVerification.verify(user: user, self) else { return }
+        guard let workingHours = OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
 
         let defoliation = Defoliation(date: date.date,
                                       field: field,

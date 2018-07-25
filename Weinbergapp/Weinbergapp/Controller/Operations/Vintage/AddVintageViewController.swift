@@ -56,9 +56,9 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard let field = OperationVerification.verify(field: field, self) else { return }
-        guard let user = OperationVerification.verify(user: user, self) else { return }
-        guard let workingHours = OperationVerification.verify(workingHours: workingHours, self) else { return }
+        guard let field = OperationFieldVerification.verify(field: field, self) else { return }
+        guard let user = OperationFieldVerification.verify(user: user, self) else { return }
+        guard let workingHours = OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
 
         guard let execution = VintageExecution(rawValue: execution.selectedRow(inComponent: 0)) else {
             assert(false)

@@ -134,10 +134,10 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard let field = OperationVerification.verify(field: field, self) else { return }
-        guard let user = OperationVerification.verify(user: user, self) else { return }
-        guard let workingHours = OperationVerification.verify(workingHours: workingHours, self) else { return }
-        guard let appliedAmount = OperationVerification.verify(appliedAmount: appliedAmount, self) else { return }
+        guard let field = OperationFieldVerification.verify(field: field, self) else { return }
+        guard let user = OperationFieldVerification.verify(user: user, self) else { return }
+        guard let workingHours = OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
+        guard let appliedAmount = OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
 
         guard let fertilizer = currentFertilizier else {
             assert(false)

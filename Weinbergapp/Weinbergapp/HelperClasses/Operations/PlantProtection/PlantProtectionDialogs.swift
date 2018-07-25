@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PlantProtectionDialog {
+public class PlantProtectionDialogs {
 
     public static func open(fungicidal: FungicidalPlantProtection,
                             controller: UIViewController,
