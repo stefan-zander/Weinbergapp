@@ -15,8 +15,7 @@ public class MKFieldPolygon: MKPolygon {
     static let kPreviewPolygonStrokeColor = UIColor.orange.withAlphaComponent(0.5)
     static let kPreviewPolygonLineWidth: CGFloat = 2.0
 
-    var field: Field?
-    var point: MKFieldPointAnnotation?
+    var owner: MKField!
 
     public static func makeRenderer(rendererFor overlay: MKOverlay) -> MKPolygonRenderer {
         let renderer = MKPolygonRenderer(overlay: overlay)

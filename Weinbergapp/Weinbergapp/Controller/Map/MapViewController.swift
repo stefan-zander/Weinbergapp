@@ -122,8 +122,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         switch view.annotation {
         case let point as MKPreviewPointAnnotation:
             previewer.remove(point: point)
-        case let field as MKFieldPointAnnotation:
-            break
+        case let point as MKFieldPointAnnotation:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+            if let editField = storyboard.instantiateViewController(withIdentifier: "AddField")
+                as? AddFieldViewController {
+
+                editField.editingField = point.owner!
+                editField.completion = {
+                    point.owner.changeNameAndVineVariety(newName: editField.name,
+                                                         newVineVariety: editField.vineVariety)
+                }
+
+                self.present(editField, animated: true)
+            }
         default:
             break
         }

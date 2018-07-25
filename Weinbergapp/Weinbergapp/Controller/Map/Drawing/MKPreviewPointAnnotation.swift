@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class MKPreviewPointAnnotation: MKPointAnnotation {
+public class MKPreviewPointAnnotation: MKPointAnnotation {
 
     func getAnnotationView(in mapView: MKMapView) -> MKAnnotationView {
         if let previewPointAnnotation = mapView.dequeueReusableAnnotationView(

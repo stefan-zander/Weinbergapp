@@ -17,29 +17,29 @@ class AddFieldViewController: UIViewController {
     var coordinates: [CLLocationCoordinate2D] = []
     var completion: (() -> Void)?
 
+    var editingField: MKField?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let editingField = editingField {
+            nameField.text = editingField.field.name
+            vineVarietyField.text = editingField.field.vineVariety
+        }
     }
 
     public var name: String {
-        get {
-            return nameField.text ?? ""
-        }
-        set(newName) {
-            nameField.text = newName
-        }
+        return nameField.text ?? ""
     }
 
     public var vineVariety: String {
-        get {
-            return vineVarietyField.text ?? ""
-        }
-        set(newVineVariety) {
-            vineVarietyField.text = newVineVariety
-        }
+        return vineVarietyField.text ?? ""
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
+        guard MapFieldVerification.verify(name: nameField, self) != nil else { return }
+        guard MapFieldVerification.verify(vineVariety: vineVarietyField, self) != nil else { return }
+
         self.dismiss(animated: true, completion: completion)
     }
 

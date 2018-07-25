@@ -9,12 +9,12 @@
 import Foundation
 import MapKit
 
-class MKPreviewPolygon: MKPolygon {
+public class MKPreviewPolygon: MKPolygon {
 
-    static let kPreviewPolygonFillColor = UIColor.blue.withAlphaComponent(0.25)
-    static let kPreviewPolygonStrokeColor = UIColor.blue.withAlphaComponent(0.5)
-    static let kPreviewPolygonLineWidth: CGFloat = 2.0
-    static let kPreviewPolygonLineDashPattern: [NSNumber] = [8, 8]
+    public static let kPreviewPolygonFillColor = UIColor.blue.withAlphaComponent(0.25)
+    public static let kPreviewPolygonStrokeColor = UIColor.blue.withAlphaComponent(0.5)
+    public static let kPreviewPolygonLineWidth: CGFloat = 2.0
+    public static let kPreviewPolygonLineDashPattern: [NSNumber] = [8, 8]
 
     public static func makeRenderer(rendererFor overlay: MKOverlay) -> MKPolygonRenderer {
         let renderer = MKPolygonRenderer(overlay: overlay)
