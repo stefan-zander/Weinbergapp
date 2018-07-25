@@ -341,7 +341,6 @@
 				945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */,
 				945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */,
 				940155F520FCC992006E36D9 /* PlantProtectionTreatmentSchedule.swift */,
-				9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */,
 			);
 			path = PlantProtection;
 			sourceTree = "<group>";
@@ -400,6 +399,7 @@
 				940477B020F9E9200049CDB5 /* PlantProtectionViewController.swift */,
 				940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */,
 				940DD3C721047AF80004CD26 /* PlantProtectionDialog.swift */,
+				9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */,
 				9445648E2103506B00201DD4 /* SwitchTable */,
 			);
 			path = PlantProtection;

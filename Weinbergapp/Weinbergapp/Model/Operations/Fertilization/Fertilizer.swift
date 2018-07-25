@@ -10,17 +10,17 @@ import Foundation
 
 /**
  A mineral or organic fertilizer.
- 
+
  ````
  case mineral(MineralFertilizer)
  case organic(OrganicFertilizer)
  ````
  */
 public enum Fertilizer {
-    
+
     /// A mineral fertilizer.
     case mineral(MineralFertilizer)
-    
+
     /// An organic fertilizer.
     case organic(OrganicFertilizer)
 }

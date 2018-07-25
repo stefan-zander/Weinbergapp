@@ -9,7 +9,6 @@
 import Foundation
 import CoreLocation
 
-
 public struct Field {
     var name: String
     var vineVariety: String

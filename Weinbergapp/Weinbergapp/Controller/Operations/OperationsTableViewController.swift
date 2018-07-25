@@ -14,15 +14,15 @@ class OperationsTableViewController: UITableViewController {
         Operation(name: "Düngung",
                   image: UIImage(named: "Fertilization")!,
                   storyboardIdentifier: "Fertilization"),
-        
+
         Operation(name: "Entlauben",
                   image: UIImage(named: "Defoliation")!,
                   storyboardIdentifier: "Defoliation"),
-        
+
         Operation(name: "Pflanzenschutz",
                   image: UIImage(named: "PlantProtection")!,
                   storyboardIdentifier: "PlantProtection"),
-        
+
         Operation(name: "Traubenlese",
                   image: UIImage(named: "Vintage")!,
                   storyboardIdentifier: "Vintage")
