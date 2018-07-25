@@ -18,9 +18,9 @@ import Foundation
  */
 public enum Fertilizer {
     
-    /// A mineral fertilizer
+    /// A mineral fertilizer.
     case mineral(MineralFertilizer)
     
-    /// An organic fertilizer
+    /// An organic fertilizer.
     case organic(OrganicFertilizer)
 }

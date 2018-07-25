@@ -23,12 +23,28 @@ import Foundation
  ````
  */
 public enum OrganicFertilizer: Int {
+    
+    /// The organic fertilizer "Terragon".
     case terragon
+    
+    /// The organic fertilizer "Wine yeasts filtered".
     case wineYeastsFiltered
+    
+    /// The organic fertilizer "Marc".
     case marc
+    
+    /// The organic fertilizer "Laying hens".
     case layingHens
+    
+    /// The organic fertilizer "Bovine".
     case bovine
+    
+    /// The organic fertilizer "Biowaste compost".
     case biowasteCompost
+    
+    /// The organic fertilizer "Bark".
     case bark
+    
+    /// The organic fertilizer "Wine yeast liquid".
     case wineYeastLiquid
 }

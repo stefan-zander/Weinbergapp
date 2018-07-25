@@ -13,21 +13,21 @@ import Foundation
  */
 public struct Fertilization {
     
-    /// The date on which the fertilization operation takes place
+    /// The date on which the fertilization operation takes place.
     var date: Date
     
-    /// The field associated with the fertilization operation
+    /// The field associated with the fertilization operation.
     var field: String
     
-    /// The user associated with the fertilization operation
+    /// The user associated with the fertilization operation.
     var user: String
     
-    /// The approximate working hours for the fertilization operation
+    /// The approximate working hours for the fertilization operation.
     var workingHours: Double
     
-    /// The fertilizer used for the fertilization operation
+    /// The fertilizer used for the fertilization operation.
     var fertilizer: Fertilizer
     
-    /// The applied amount of the fertilization process
+    /// The applied amount of the fertilization process.
     var appliedAmount: Double
 }
