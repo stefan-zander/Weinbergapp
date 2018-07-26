@@ -28,13 +28,18 @@ public class MKField {
     }
 
     public func changeNameAndVineVariety(newName: String, newVineVariety: String) {
-        field.name = newName
-        field.vineVariety = newVineVariety
+        self.field = Field(name: newName,
+                           vineVariety: newVineVariety,
+                           coordinates: self.field.coordinates)
 
         updateText()
     }
 
     public func changeCoordinates(newCoordinates: [CLLocationCoordinate2D]) {
+        self.field = Field(name: self.field.name,
+                           vineVariety: self.field.vineVariety,
+                           coordinates: newCoordinates)
+        
         polygon = MKFieldPolygon(coordinates: newCoordinates, count: newCoordinates.count)
         polygon.owner = self
 
@@ -52,7 +57,7 @@ public class MKField {
     }
 
     private func updateText() {
-        point.title = field.name
+        point.title = "\(field.name) (\(String.init(format: "%.2f", field.areaInSquareKilometers)) km²)"
         point.subtitle = "Reben Sorte: \(field.vineVariety)"
     }
 

@@ -15,11 +15,29 @@ import CoreLocation
 public struct Field {
 
     /// The name of the field.
-    var name: String
+    public let name: String
 
-    // The vine variety of the field.
-    var vineVariety: String
+    /// The vine variety of the field.
+    public let vineVariety: String
 
-    // The coordinates constructing the polygon of the field
-    var coordinates: [CLLocationCoordinate2D]
+    /// The coordinates constructing the polygon of the field
+    public let coordinates: [CLLocationCoordinate2D]
+    
+    /// The total area of the field in square meters
+    public let area: Double
+    
+    init(name: String, vineVariety: String, coordinates: [CLLocationCoordinate2D]) {
+        self.name = name
+        self.vineVariety = vineVariety
+        self.coordinates = coordinates
+        self.area = computeArea(coordinates: coordinates)
+    }
+    
+    var areaInSquareMeters: Double {
+        return area
+    }
+    
+    var areaInSquareKilometers: Double {
+        return area / (1000.0 * 1000.0)
+    }
 }
