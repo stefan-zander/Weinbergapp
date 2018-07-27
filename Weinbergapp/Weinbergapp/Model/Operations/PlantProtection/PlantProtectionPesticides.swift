@@ -44,10 +44,11 @@ public class PlantProtectionPesticides: Object {
     /// Represents the pesticide "Teldor"
     @objc public dynamic var teldor: Bool = false
     
-    public func copy(to: PlantProtectionPesticides) {
-        to.copy(from: self)
-    }
-    
+    /**
+     Copies the contents from another `PlantProtectionPesticides` object to this object.
+     
+     - Parameter from: The `PlantProtectionPesticides` object to copy from.
+     */
     public func copy(from: PlantProtectionPesticides) {
         self.botector = from.botector
         self.cantus = from.cantus
@@ -59,5 +60,14 @@ public class PlantProtectionPesticides: Object {
         self.scala = from.scala
         self.`switch` = from.`switch`
         self.teldor = from.teldor
+    }
+    
+    /**
+     Copies the contents of this object to another `PlantProtectionPesticides` object.
+     
+     - Parameter to: The `PlantProtectionPesticides` object to copy to.
+     */
+    public func copy(to: PlantProtectionPesticides) {
+        to.copy(from: self)
     }
 }

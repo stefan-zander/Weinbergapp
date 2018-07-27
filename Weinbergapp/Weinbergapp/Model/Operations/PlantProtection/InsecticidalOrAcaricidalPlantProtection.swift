@@ -35,10 +35,11 @@ public class InsecticidalOrAcaricidalPlantProtection: Object {
     /// Represents the insecticidal or acaricidal illnesses "Cicadas".
     @objc public dynamic var cicadas: Bool = false
     
-    public func copy(to: InsecticidalOrAcaricidalPlantProtection) {
-        to.copy(from: self)
-    }
-    
+    /**
+     Copies the contents from another `InsecticidalOrAcaricidalPlantProtection` object to this object.
+     
+     - Parameter from: The `InsecticidalOrAcaricidalPlantProtection` object to copy from.
+     */
     public func copy(from: InsecticidalOrAcaricidalPlantProtection) {
         self.drosophilaSpecies = from.drosophilaSpecies
         self.grapevineRustMites = from.grapevineRustMites
@@ -47,5 +48,14 @@ public class InsecticidalOrAcaricidalPlantProtection: Object {
         self.springWorm = from.springWorm
         self.grape = from.grape
         self.cicadas = from.cicadas
+    }
+    
+    /**
+     Copies the contents of this object to another `InsecticidalOrAcaricidalPlantProtection` object.
+     
+     - Parameter to: The `InsecticidalOrAcaricidalPlantProtection` object to copy to.
+     */    
+    public func copy(to: InsecticidalOrAcaricidalPlantProtection) {
+        to.copy(from: self)
     }
 }

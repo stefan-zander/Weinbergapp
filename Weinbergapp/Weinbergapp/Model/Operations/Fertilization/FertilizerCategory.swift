@@ -18,9 +18,9 @@ import Foundation
  */
 public enum FertilizerCategory: Int {
 
-    /// A mineral fertilizer.
+    /// The mineral fertilizer category.
     case mineral
 
-    /// An organic fertilizer.
+    /// The organic fertilizer category.
     case organic
 }
