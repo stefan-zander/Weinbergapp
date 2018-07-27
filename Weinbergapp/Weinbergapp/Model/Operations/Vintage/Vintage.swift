@@ -29,7 +29,13 @@ public class Vintage: Object {
     /// The approximate working hours for the vintage operation.
     @objc public dynamic var workingHours: Double = 0.0
 
-    /// The way of execution for the vintage operation.
+    /**
+     The raw value of the way of execution for the vintage operation.
+     
+     - Remark:
+         This property exists in order to remain compatible to RealmSwift, for the properly typed version see property
+         `execution`.
+     */
     @objc public dynamic var executionRaw: Int = 0
     
     /// The way of execution for the vintage operation.
