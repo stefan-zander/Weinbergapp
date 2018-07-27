@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let controller = storyboard.instantiateViewController(withIdentifier: "controller")
                 as? UITabBarController {
-                self.present(controller, animated: true, completion: nil)
+                self.present(controller, animated: true)
             }
         } else {
 
@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                 case .destructive:
                     print("destructive")
                 }}))
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true)
         }
     }
 }

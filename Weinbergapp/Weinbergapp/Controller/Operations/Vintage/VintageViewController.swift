@@ -51,7 +51,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
             addVintage.source = self
             addVintage.editIndex = indexPath.row
 
-            self.present(addVintage, animated: true, completion: nil)
+            self.present(addVintage, animated: true)
         }
     }
 
@@ -75,7 +75,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
             as? AddVintageViewController {
             addVintage.source = self
 
-            self.present(addVintage, animated: true, completion: nil)
+            self.present(addVintage, animated: true)
         }
     }
 

@@ -47,6 +47,8 @@
 		9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659A20FA3A8000758D8C /* Defoliation.swift */; };
 		9450659F20FB445F00758D8C /* SwitchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659E20FB445F00758D8C /* SwitchTableViewController.swift */; };
 		945065A120FB445F00758D8C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945065A020FB445F00758D8C /* SwitchTableViewCell.swift */; };
+		945B47B5210B448F007865D5 /* DefoliationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B4210B448F007865D5 /* DefoliationDataSource.swift */; };
+		945B47B7210B58B8007865D5 /* OperationFieldVerification2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B6210B58B8007865D5 /* OperationFieldVerification2.swift */; };
 		945CD7162108E60400542CD8 /* MapFieldVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945CD7152108E60400542CD8 /* MapFieldVerification.swift */; };
 		945CD71A2108EFAF00542CD8 /* MKField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945CD7192108EFAF00542CD8 /* MKField.swift */; };
 		945F08292100850C00F55C44 /* Fertilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08282100850C00F55C44 /* Fertilizer.swift */; };
@@ -138,6 +140,8 @@
 		9450659A20FA3A8000758D8C /* Defoliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defoliation.swift; sourceTree = "<group>"; };
 		9450659E20FB445F00758D8C /* SwitchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewController.swift; sourceTree = "<group>"; };
 		945065A020FB445F00758D8C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		945B47B4210B448F007865D5 /* DefoliationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefoliationDataSource.swift; sourceTree = "<group>"; };
+		945B47B6210B58B8007865D5 /* OperationFieldVerification2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFieldVerification2.swift; sourceTree = "<group>"; };
 		945CD7152108E60400542CD8 /* MapFieldVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFieldVerification.swift; sourceTree = "<group>"; };
 		945CD7192108EFAF00542CD8 /* MKField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKField.swift; sourceTree = "<group>"; };
 		945F08282100850C00F55C44 /* Fertilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fertilizer.swift; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				9450659A20FA3A8000758D8C /* Defoliation.swift */,
+				945B47B4210B448F007865D5 /* DefoliationDataSource.swift */,
 			);
 			path = Defoliation;
 			sourceTree = "<group>";
@@ -514,8 +519,8 @@
 		945CD71F21091E8F00542CD8 /* FieldManagement */ = {
 			isa = PBXGroup;
 			children = (
-				94BE5C682108844900C95F97 /* MapFieldCollection.swift */,
 				945CD7192108EFAF00542CD8 /* MKField.swift */,
+				94BE5C682108844900C95F97 /* MapFieldCollection.swift */,
 				940743DD210763470028AC49 /* MKFieldPolygon.swift */,
 				94FEDF512108ADA6002CF6A0 /* MKFieldPointAnnotation.swift */,
 			);
@@ -534,6 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				946D20EF2103EB560063DBF8 /* OperationFieldVerification.swift */,
+				945B47B6210B58B8007865D5 /* OperationFieldVerification2.swift */,
 				945CD72221091F0500542CD8 /* PlantProtection */,
 			);
 			path = Operations;
@@ -560,6 +566,7 @@
 				356AFE2E20CAB28F000D9BC1 /* Frameworks */,
 				356AFE2F20CAB28F000D9BC1 /* Resources */,
 				946D20EE2103DC340063DBF8 /* ShellScript */,
+				2062FD5A5564BF7550BB67F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -690,6 +697,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2062FD5A5564BF7550BB67F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Weinbergapp/Pods-Weinbergapp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weinbergapp/Pods-Weinbergapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		27C2378AF88934AA856568A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -771,12 +798,14 @@
 				356AFE3720CAB28F000D9BC1 /* LoginViewController.swift in Sources */,
 				945F082B2100851F00F55C44 /* MineralFertilizer.swift in Sources */,
 				356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */,
+				945B47B5210B448F007865D5 /* DefoliationDataSource.swift in Sources */,
 				9409694921036E0C00AA7146 /* PlantProtectionTableViewCell.swift in Sources */,
 				354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */,
 				94FEDF522108ADA6002CF6A0 /* MKFieldPointAnnotation.swift in Sources */,
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
 				9473746D21061D8F006196CF /* Field.swift in Sources */,
+				945B47B7210B58B8007865D5 /* OperationFieldVerification2.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
 				945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */,
 				94BE5C63210799F300C95F97 /* MapPolygonDrawer.swift in Sources */,

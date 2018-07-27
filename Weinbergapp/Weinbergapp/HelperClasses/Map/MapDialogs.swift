@@ -28,6 +28,6 @@ public class MapDialogs {
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
 
-        controller.present(alert, animated: true, completion: nil)
+        controller.present(alert, animated: true)
     }
 }

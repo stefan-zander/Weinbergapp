@@ -53,7 +53,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
             addPlantProtection.source = self
             addPlantProtection.editIndex = indexPath.row
 
-            self.present(addPlantProtection, animated: true, completion: nil)
+            self.present(addPlantProtection, animated: true)
         }
     }
 
@@ -77,7 +77,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
             as? AddPlantProtectionViewController {
             addPlantProtection.source = self
 
-            self.present(addPlantProtection, animated: true, completion: nil)
+            self.present(addPlantProtection, animated: true)
         }
     }
 

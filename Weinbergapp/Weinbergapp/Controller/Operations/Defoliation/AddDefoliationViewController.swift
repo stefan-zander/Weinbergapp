@@ -9,6 +9,7 @@
 import UIKit
 
 class AddDefoliationViewController: UIViewController {
+    
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var field: UITextField!
     @IBOutlet weak var user: UITextField!
@@ -21,33 +22,56 @@ class AddDefoliationViewController: UIViewController {
         super.viewDidLoad()
 
         if let editIndex = editIndex {
-            let defoliation = source.defoliations[editIndex]
-
-            date.date = defoliation.date
-            field.text = defoliation.field
-            user.text = defoliation.user
-            workingHours.text = String(defoliation.workingHours)
+            applyChanges(from: source.defoliations[editIndex])
         }
     }
-
+    
+    func applyChanges(from: Defoliation) {
+        date.date = from.date
+        field.text = from.field
+        user.text = from.user
+        workingHours.text = String(from.workingHours)
+    }
+    
+    func applyChanges(to: Defoliation) {
+        to.date = date.date
+        to.field = field.text ?? ""
+        to.user = user.text ?? ""
+        to.workingHours = Double(workingHours.text ?? "0") ?? 0
+    }
+    
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard let field = OperationFieldVerification.verify(field: field, self) else { return }
-        guard let user = OperationFieldVerification.verify(user: user, self) else { return }
-        guard let workingHours = OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
-
-        let defoliation = Defoliation(date: date.date,
-                                      field: field,
-                                      user: user,
-                                      workingHours: workingHours)
-
-        if let editIndex = editIndex {
-            source.defoliations[editIndex] = defoliation
-        } else {
-            source.defoliations.append(defoliation)
+        guard OperationFieldVerification2.verify(field: field, self) else { return }
+        guard OperationFieldVerification2.verify(user: user, self) else { return }
+        guard OperationFieldVerification2.verify(workingHours: workingHours, self) else { return }
+        
+        do {
+            if let editIndex = editIndex {
+                let defoliation = source.defoliations[editIndex]
+                
+                try source.dataSource.update {
+                    applyChanges(to: defoliation)
+                }
+            } else {
+                let defoliation = Defoliation()
+                applyChanges(to: defoliation)
+                
+                try source.dataSource.add(defoliation: defoliation)
+                source.defoliations.append(defoliation)
+            }
+            
+            source.tableView.reloadData()
+            self.dismiss(animated: true, completion: nil)
+        } catch let error as NSError {
+            let alert = UIAlertController(title: "Fehler beim speichern",
+                                          message: "Veränderungen konnten nicht gespeichert werden",
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
         }
 
-        source.tableView.reloadData()
-        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {

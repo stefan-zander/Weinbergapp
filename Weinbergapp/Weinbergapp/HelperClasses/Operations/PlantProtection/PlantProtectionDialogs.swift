@@ -39,7 +39,7 @@ public class PlantProtectionDialogs {
                 completion(newFungicidal)
             }
 
-            controller.present(switchTable, animated: true, completion: nil)
+            controller.present(switchTable, animated: true)
         }
     }
 
@@ -64,7 +64,7 @@ public class PlantProtectionDialogs {
                 completion(newHerbicide)
             }
 
-            controller.present(switchTable, animated: true, completion: nil)
+            controller.present(switchTable, animated: true)
         }
     }
 
@@ -99,7 +99,7 @@ public class PlantProtectionDialogs {
                 completion(newInsecticidalOrAcaricidal)
             }
 
-            controller.present(switchTable, animated: true, completion: nil)
+            controller.present(switchTable, animated: true)
         }
     }
 
@@ -140,7 +140,7 @@ public class PlantProtectionDialogs {
                 completion(newPesticides)
             }
 
-            controller.present(switchTable, animated: true, completion: nil)
+            controller.present(switchTable, animated: true)
         }
     }
 }

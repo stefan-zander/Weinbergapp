@@ -53,7 +53,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
             addFertilization.source = self
             addFertilization.editIndex = indexPath.row
 
-            self.present(addFertilization, animated: true, completion: nil)
+            self.present(addFertilization, animated: true)
         }
     }
 
@@ -77,7 +77,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
             as? AddFertilizationViewController {
             addFertilization.source = self
 
-            self.present(addFertilization, animated: true, completion: nil)
+            self.present(addFertilization, animated: true)
         }
     }
 

@@ -7,21 +7,29 @@
 //
 
 import Foundation
+import RealmSwift
 
 /**
- Represents the information required for the fertilization operation.
+ Represents the information required for the defoliation operation.
  */
-public struct Defoliation {
-
+public class Defoliation: Object {
+    
+    /// A unique identification for each defoliation operation.
+    @objc dynamic var id: Int = 0
+    
     /// The date on which the defoliation operation takes place.
-    var date: Date
+    @objc dynamic var date: Date = Date()
 
     /// The field associated with the defoliation operation.
-    var field: String
+    @objc dynamic var field: String = ""
 
     /// The user associated with the defoliation operation.
-    var user: String
+    @objc dynamic var user: String = ""
 
     /// The approximate working hours for the defoliation operation.
-    var workingHours: Double
+    @objc dynamic var workingHours: Double = 0.0
+    
+    public override static func primaryKey() -> String? {
+        return "id"
+    }
 }

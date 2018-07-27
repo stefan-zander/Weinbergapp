@@ -51,6 +51,6 @@ class OperationsTableViewController: UITableViewController {
         let view = storyboard.instantiateViewController(
             withIdentifier: operations[indexPath.row].storyboardIdentifier)
 
-        self.present(view, animated: true, completion: nil)
+        self.present(view, animated: true)
     }
 }
