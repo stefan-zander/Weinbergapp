@@ -11,9 +11,10 @@ import UIKit
 class VintageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    let dataSource = OperationDataSource<Vintage>()
 
     var vintages: [Vintage] = []
-    var dataSource = OperationDataSource<Vintage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()

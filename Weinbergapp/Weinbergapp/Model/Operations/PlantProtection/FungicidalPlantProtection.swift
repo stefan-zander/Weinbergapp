@@ -7,27 +7,41 @@
 //
 
 import Foundation
+import RealmSwift
 
 /**
  Represents the fungicidal illnesses to protect for in the plant protection operation.
  */
-public struct FungicidalPlantProtection {
+public class FungicidalPlantProtection: Object {
 
     /// Represents the fungicidal illnesses "Botrytis".
-    var botrytis: Bool = false
+    @objc public dynamic var botrytis: Bool = false
 
     /// Represents the fungicidal illnesses "AcidRot".
-    var acidRot: Bool = false
+    @objc public dynamic var acidRot: Bool = false
 
     /// Represents the fungicidal illnesses "Oidium".
-    var oidium: Bool = false
+    @objc public dynamic var oidium: Bool = false
 
     /// Represents the fungicidal illnesses "Peronospora".
-    var peronospora: Bool = false
+    @objc public dynamic var peronospora: Bool = false
 
     /// Represents the fungicidal illnesses "Phomopsis".
-    var phomopsis: Bool = false
+    @objc public dynamic var phomopsis: Bool = false
 
     /// Represents the fungicidal illnesses "Red burner".
-    var redBurner: Bool = false
+    @objc public dynamic var redBurner: Bool = false
+    
+    public func copy(to: FungicidalPlantProtection) {
+        to.copy(from: self)
+    }
+    
+    public func copy(from: FungicidalPlantProtection) {
+        self.botrytis = from.botrytis
+        self.acidRot = from.acidRot
+        self.oidium = from.oidium
+        self.peronospora = from.peronospora
+        self.phomopsis = from.phomopsis
+        self.redBurner = from.redBurner
+    }
 }

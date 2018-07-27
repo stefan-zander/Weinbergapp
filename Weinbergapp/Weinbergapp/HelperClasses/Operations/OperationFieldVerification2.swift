@@ -58,7 +58,7 @@ public class OperationFieldVerification2 {
             return false
         }
         
-        guard let workingHours = Double(workingHoursText) else {
+        guard Double(workingHoursText) != nil else {
             let alert = UIAlertController(title: "Arbeitsstunden ist keine Zahl",
                                           message: "Bei der Angabe von Arbeitsstunden sind nur Zahlen erlaubt.",
                                           preferredStyle: .alert)
@@ -88,7 +88,7 @@ public class OperationFieldVerification2 {
             return false
         }
         
-        guard let appliedAmount = Double(appliedAmountText) else {
+        guard Double(appliedAmountText) != nil else {
             let alert = UIAlertController(title: "Ausgegebene Menge ist keine Zahl",
                                           message: "Bei der Angabe von der ausgegebenen Menge sind nur Zahlen erlaubt.",
                                           preferredStyle: .alert)

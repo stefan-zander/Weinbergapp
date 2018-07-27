@@ -10,6 +10,17 @@ import Foundation
 
 /**
  Represents the treatment schedule used for the plant protection operation.
+ 
+ ````
+ case proliferation
+ case earlyFlowering
+ case firstPreBloom
+ case secondPreBloom
+ case thirdPreBloom
+ case outgoingFlowering
+ case secondPostBloom
+ case thirdPostBloom
+ ````
  */
 public enum PlantProtectionTreatmentSchedule: Int {
 

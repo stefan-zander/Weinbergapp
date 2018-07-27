@@ -12,7 +12,7 @@ public class PlantProtectionDialogs {
 
     public static func open(fungicidal: FungicidalPlantProtection,
                             controller: UIViewController,
-                            completion: @escaping (FungicidalPlantProtection) -> Void) {
+                            completion: @escaping () -> Void) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
@@ -28,15 +28,14 @@ public class PlantProtectionDialogs {
                 ])
 
             switchTable.completion = {
-                let newFungicidal = FungicidalPlantProtection(
-                    botrytis: switchTable.getItemState(index: 0),
-                    acidRot: switchTable.getItemState(index: 1),
-                    oidium: switchTable.getItemState(index: 2),
-                    peronospora: switchTable.getItemState(index: 3),
-                    phomopsis: switchTable.getItemState(index: 4),
-                    redBurner: switchTable.getItemState(index: 5))
+                fungicidal.botrytis = switchTable.getItemState(index: 0)
+                fungicidal.acidRot = switchTable.getItemState(index: 1)
+                fungicidal.oidium = switchTable.getItemState(index: 2)
+                fungicidal.peronospora = switchTable.getItemState(index: 3)
+                fungicidal.phomopsis = switchTable.getItemState(index: 4)
+                fungicidal.redBurner = switchTable.getItemState(index: 5)
 
-                completion(newFungicidal)
+                completion()
             }
 
             controller.present(switchTable, animated: true)
@@ -45,7 +44,7 @@ public class PlantProtectionDialogs {
 
     public static func open(herbicide: HerbicidePlantProtection,
                             controller: UIViewController,
-                            completion: @escaping (HerbicidePlantProtection) -> Void) {
+                            completion: @escaping () -> Void) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
@@ -57,11 +56,10 @@ public class PlantProtectionDialogs {
                 ])
 
             switchTable.completion = {
-                let newHerbicide = HerbicidePlantProtection(
-                    bindweed: switchTable.getItemState(index: 0),
-                    monocotyledonousAndDicotyledonous: switchTable.getItemState(index: 1))
+                herbicide.bindweed = switchTable.getItemState(index: 0)
+                herbicide.monocotyledonousAndDicotyledonous = switchTable.getItemState(index: 1)
 
-                completion(newHerbicide)
+                completion()
             }
 
             controller.present(switchTable, animated: true)
@@ -70,7 +68,7 @@ public class PlantProtectionDialogs {
 
     public static func open(insecticidalOrAcaricidal: InsecticidalOrAcaricidalPlantProtection,
                             controller: UIViewController,
-                            completion: @escaping (InsecticidalOrAcaricidalPlantProtection) -> Void) {
+                            completion: @escaping () -> Void) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
@@ -87,16 +85,15 @@ public class PlantProtectionDialogs {
                 ])
 
             switchTable.completion = {
-                let newInsecticidalOrAcaricidal = InsecticidalOrAcaricidalPlantProtection(
-                    drosophilaSpecies: switchTable.getItemState(index: 0),
-                    grapevineRustMites: switchTable.getItemState(index: 1),
-                    willowBeauty: switchTable.getItemState(index: 2),
-                    spiderMites: switchTable.getItemState(index: 3),
-                    springWorm: switchTable.getItemState(index: 4),
-                    grape: switchTable.getItemState(index: 5),
-                    cicadas: switchTable.getItemState(index: 6))
-
-                completion(newInsecticidalOrAcaricidal)
+                insecticidalOrAcaricidal.drosophilaSpecies = switchTable.getItemState(index: 0)
+                insecticidalOrAcaricidal.grapevineRustMites = switchTable.getItemState(index: 1)
+                insecticidalOrAcaricidal.willowBeauty = switchTable.getItemState(index: 2)
+                insecticidalOrAcaricidal.spiderMites = switchTable.getItemState(index: 3)
+                insecticidalOrAcaricidal.springWorm = switchTable.getItemState(index: 4)
+                insecticidalOrAcaricidal.grape = switchTable.getItemState(index: 5)
+                insecticidalOrAcaricidal.cicadas = switchTable.getItemState(index: 6)
+                
+                completion()
             }
 
             controller.present(switchTable, animated: true)
@@ -105,7 +102,7 @@ public class PlantProtectionDialogs {
 
     public static func open(pesticides: PlantProtectionPesticides,
                             controller: UIViewController,
-                            completion: @escaping (PlantProtectionPesticides) -> Void) {
+                            completion: @escaping () -> Void) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
@@ -125,19 +122,18 @@ public class PlantProtectionDialogs {
                 ])
 
             switchTable.completion = {
-                let newPesticides = PlantProtectionPesticides(
-                    botector: switchTable.getItemState(index: 0),
-                    cantus: switchTable.getItemState(index: 1),
-                    gibbb3: switchTable.getItemState(index: 2),
-                    melodyCombi: switchTable.getItemState(index: 3),
-                    prolectus: switchTable.getItemState(index: 4),
-                    pyrusBabel: switchTable.getItemState(index: 5),
-                    regalisPlus: switchTable.getItemState(index: 6),
-                    scala: switchTable.getItemState(index: 7),
-                    switch: switchTable.getItemState(index: 8),
-                    teldor: switchTable.getItemState(index: 9))
+                pesticides.botector = switchTable.getItemState(index: 0)
+                pesticides.cantus = switchTable.getItemState(index: 1)
+                pesticides.gibbb3 = switchTable.getItemState(index: 2)
+                pesticides.melodyCombi = switchTable.getItemState(index: 3)
+                pesticides.prolectus = switchTable.getItemState(index: 4)
+                pesticides.pyrusBabel = switchTable.getItemState(index: 5)
+                pesticides.regalisPlus = switchTable.getItemState(index: 6)
+                pesticides.scala = switchTable.getItemState(index: 7)
+                pesticides.`switch` = switchTable.getItemState(index: 8)
+                pesticides.teldor = switchTable.getItemState(index: 9)
 
-                completion(newPesticides)
+                completion()
             }
 
             controller.present(switchTable, animated: true)

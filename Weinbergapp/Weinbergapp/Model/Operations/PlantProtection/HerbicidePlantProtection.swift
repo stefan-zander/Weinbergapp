@@ -7,15 +7,25 @@
 //
 
 import Foundation
+import RealmSwift
 
 /**
  Represents the herbicide illnesses to protect for in the plant protection operation.
  */
-public struct HerbicidePlantProtection {
+public class HerbicidePlantProtection: Object {
 
     /// Represents the herbicide illnesses "Bindweed".
-    var bindweed: Bool = false
+    @objc public dynamic var bindweed: Bool = false
 
     /// Represents the herbicide illnesses "Monocotyledonous and dicotyledonous".
-    var monocotyledonousAndDicotyledonous: Bool = false
+    @objc public dynamic var monocotyledonousAndDicotyledonous: Bool = false
+    
+    public func copy(to: HerbicidePlantProtection) {
+        to.copy(from: self)
+    }
+    
+    public func copy(from: HerbicidePlantProtection) {
+        self.bindweed = from.bindweed
+        self.monocotyledonousAndDicotyledonous = from.monocotyledonousAndDicotyledonous
+    }
 }

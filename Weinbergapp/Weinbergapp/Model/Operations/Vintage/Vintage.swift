@@ -14,9 +14,6 @@ import RealmSwift
  */
 public class Vintage: Object {
     
-    /// A unique identification number for each fertilization operation.
-    @objc public dynamic var id: Int = 0
-
     /// The date on which the vintage operation takes place.
     @objc public dynamic var date: Date = Date()
 
@@ -33,7 +30,7 @@ public class Vintage: Object {
      The raw value of the way of execution for the vintage operation.
      
      - Remark:
-         This property exists in order to remain compatible to RealmSwift, for the properly typed version see property
+         This property exists in order to remain compatible to Realm Swift, for the properly typed version see property
          `execution`.
      */
     @objc public dynamic var executionRaw: Int = 0
@@ -46,10 +43,5 @@ public class Vintage: Object {
         set(execution) {
             executionRaw = execution.rawValue
         }
-    }
-    
-    /// Represents the primary key used for identification purposes by Realm Swift
-    public override static func primaryKey() -> String? {
-        return "id"
     }
 }

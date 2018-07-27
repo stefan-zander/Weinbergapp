@@ -9,15 +9,27 @@
 import Foundation
 
 class PlantProtectionLocalization {
-
-    static func localize(_ plantProtectionKind: PlantProtectionKind) -> String {
-        switch plantProtectionKind {
-        case .fungicidal(let fungicidal):
-            return localize(fungicidal)
-        case .herbicide(let herbicide):
-            return localize(herbicide)
-        case .insecticidalOrAcaricidal(let insecticidalOrAcaricidal):
-            return localize(insecticidalOrAcaricidal)
+    
+    static func getTreatmentSchedule(index: Int) -> String? {
+        switch index {
+        case 0:
+            return "Austrieb"
+        case 1:
+            return "Vorblüte"
+        case 2:
+            return "1. Vorblüte"
+        case 3:
+            return "2. Vorblüte"
+        case 4:
+            return "3. Vorblüte"
+        case 5:
+            return "Abgehende Blüte"
+        case 6:
+            return "2. Nachblüte"
+        case 7:
+            return "3. Nachblüte"
+        default:
+            return nil
         }
     }
 

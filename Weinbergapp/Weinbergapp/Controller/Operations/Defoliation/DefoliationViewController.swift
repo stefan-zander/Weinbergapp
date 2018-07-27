@@ -12,8 +12,9 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var tableView: UITableView!
 
+    let dataSource = OperationDataSource<Defoliation>()
+    
     var defoliations: [Defoliation] = []
-    var dataSource = OperationDataSource<Defoliation>()
 
     override func viewDidLoad() {
         super.viewDidLoad()

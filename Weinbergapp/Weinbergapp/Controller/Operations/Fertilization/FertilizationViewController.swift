@@ -12,12 +12,13 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var tableView: UITableView!
 
-    var fertilizations: [Fertilization] = []
     let dataSource = OperationDataSource<Fertilization>()
+    
+    var fertilizations: [Fertilization] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         

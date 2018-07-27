@@ -9,9 +9,11 @@
 import UIKit
 
 class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
-
+    
+    let dataSource = OperationDataSource<PlantProtection>()
+    
     var plantProtections: [PlantProtection] = []
 
     override func viewDidLoad() {
@@ -19,6 +21,12 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        do {
+            try dataSource.query(elements: &plantProtections)
+        } catch let error as NSError {
+            OperationDialogs.presentLoadFailed(error: error, controller: self)
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,8 +73,13 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                    commit editingStyle: UITableViewCellEditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            plantProtections.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            do {
+                try dataSource.delete(plantProtections[indexPath.row])
+                plantProtections.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } catch let error as NSError {
+                OperationDialogs.presentDeletionFailed(error: error, controller: self)
+            }
         }
     }
 

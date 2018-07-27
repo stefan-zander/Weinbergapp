@@ -7,30 +7,45 @@
 //
 
 import Foundation
+import RealmSwift
 
 /**
  Represents the insecticidal or acaricidal illnesses to protect for in the plant protection operation.
  */
-public struct InsecticidalOrAcaricidalPlantProtection {
+public class InsecticidalOrAcaricidalPlantProtection: Object {
 
     /// Represents the insecticidal or acaricidal illnesses "Drosophila species".
-    var drosophilaSpecies: Bool = false
+    @objc public dynamic var drosophilaSpecies: Bool = false
 
     /// Represents the insecticidal or acaricidal illnesses "Grapevine rust mites".
-    var grapevineRustMites: Bool = false
+    @objc public dynamic var grapevineRustMites: Bool = false
 
     /// Represents the insecticidal or acaricidal illnesses "Willow beauty".
-    var willowBeauty: Bool = false
+    @objc public dynamic var willowBeauty: Bool = false
 
     /// Represents the insecticidal or acaricidal illnesses "Spider mites".
-    var spiderMites: Bool = false
+    @objc public dynamic var spiderMites: Bool = false
 
     /// Represents the insecticidal or acaricidal illnesses "Spring worm".
-    var springWorm: Bool = false
+    @objc public dynamic var springWorm: Bool = false
 
     /// Represents the insecticidal or acaricidal illnesses "Grape".
-    var grape: Bool = false
+    @objc public dynamic var grape: Bool = false
 
     /// Represents the insecticidal or acaricidal illnesses "Cicadas".
-    var cicadas: Bool = false
+    @objc public dynamic var cicadas: Bool = false
+    
+    public func copy(to: InsecticidalOrAcaricidalPlantProtection) {
+        to.copy(from: self)
+    }
+    
+    public func copy(from: InsecticidalOrAcaricidalPlantProtection) {
+        self.drosophilaSpecies = from.drosophilaSpecies
+        self.grapevineRustMites = from.grapevineRustMites
+        self.willowBeauty = from.willowBeauty
+        self.spiderMites = from.spiderMites
+        self.springWorm = from.springWorm
+        self.grape = from.grape
+        self.cicadas = from.cicadas
+    }
 }
