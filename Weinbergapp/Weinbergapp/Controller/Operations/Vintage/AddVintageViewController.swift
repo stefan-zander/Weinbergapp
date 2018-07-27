@@ -26,14 +26,24 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
         execution.dataSource = self
 
         if let editIndex = editIndex {
-            let vintage = source.vintages[editIndex]
-
-            date.date = vintage.date
-            field.text = vintage.field
-            user.text = vintage.user
-            workingHours.text = String(vintage.workingHours)
-            execution.selectRow(vintage.execution.rawValue, inComponent: 0, animated: true)
+            applyChanges(from: source.vintages[editIndex])
         }
+    }
+    
+    func applyChanges(from: Vintage) {
+        date.date = from.date
+        field.text = from.field
+        user.text = from.user
+        workingHours.text = String(from.workingHours)
+        execution.selectRow(from.executionRaw, inComponent: 0, animated: false)
+    }
+    
+    func applyChanges(to: Vintage) {
+        to.date = date.date
+        to.field = field.text ?? ""
+        to.user = user.text ?? ""
+        to.workingHours = Double(workingHours.text ?? "0") ?? 0.0
+        to.executionRaw = execution.selectedRow(inComponent: 0)
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -45,40 +55,34 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch row {
-        case 0:
-            return "Händisch"
-        case 1:
-            return "Mechanisch"
-        default:
-            return nil
-        }
+        return VintageLocalization.getExecution(index: row)
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard let field = OperationFieldVerification.verify(field: field, self) else { return }
-        guard let user = OperationFieldVerification.verify(user: user, self) else { return }
-        guard let workingHours = OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
+        guard OperationFieldVerification2.verify(field: field, self) else { return }
+        guard OperationFieldVerification2.verify(user: user, self) else { return }
+        guard OperationFieldVerification2.verify(workingHours: workingHours, self) else { return }
 
-        guard let execution = VintageExecution(rawValue: execution.selectedRow(inComponent: 0)) else {
-            assert(false)
-            return
+        do {
+            if let editIndex = editIndex {
+                let vintage = source.vintages[editIndex]
+                
+                try source.dataSource.update {
+                    applyChanges(to: vintage)
+                }
+            } else {
+                let vintage = Vintage()
+                applyChanges(to: vintage)
+                
+                try source.dataSource.add(vintage)
+                source.vintages.append(vintage)
+            }
+            
+            source.tableView.reloadData()
+            self.dismiss(animated: true, completion: nil)
+        } catch let error as NSError {
+            OperationDialogs.presentSaveFailed(error: error, controller: self)
         }
-
-        let vintage = Vintage(date: date.date,
-                              field: field,
-                              user: user,
-                              workingHours: workingHours,
-                              execution: execution)
-
-        if let editIndex = editIndex {
-            source.vintages[editIndex] = vintage
-        } else {
-            source.vintages.append(vintage)
-        }
-
-        source.tableView.reloadData()
-        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {

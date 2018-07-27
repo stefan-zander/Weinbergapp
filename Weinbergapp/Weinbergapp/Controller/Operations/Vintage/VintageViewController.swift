@@ -13,12 +13,19 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
 
     var vintages: [Vintage] = []
+    var dataSource = OperationDataSource<Vintage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        do {
+            try dataSource.query(elements: &vintages)
+        } catch let error as NSError {
+            OperationDialogs.presentLoadFailed(error: error, controller: self)
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,8 +70,13 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                    commit editingStyle: UITableViewCellEditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            vintages.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            do {
+                try dataSource.delete(vintages[indexPath.row])
+                vintages.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } catch let error as NSError {
+                OperationDialogs.presentDeletionFailed(error: error, controller: self)
+            }
         }
     }
 

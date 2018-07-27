@@ -10,6 +10,18 @@ import UIKit
 
 class OperationDialogs {
     
+    static func presentLoadFailed(error: NSError, controller: UIViewController) {
+        let alert = UIAlertController(title: "Fehler beim Laden der Daten",
+                                      message: error.localizedDescription,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok",
+                                      style: .default,
+                                      handler: nil))
+        
+        controller.present(alert, animated: true)
+    }
+    
     static func presentSaveFailed(error: NSError, controller: UIViewController) {
         let alert = UIAlertController(title: "Veränderungen konnten nicht gespeichert werden",
                                       message: error.localizedDescription,

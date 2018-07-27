@@ -24,15 +24,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
         do {
             try dataSource.query(elements: &defoliations)
         } catch let error as NSError {
-            let alert = UIAlertController(title: "Fehler beim Laden der Daten",
-                                          message: error.localizedDescription,
-                                          preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok",
-                                          style: .default,
-                                          handler: nil))
-            
-            self.present(alert, animated: true)
+            OperationDialogs.presentLoadFailed(error: error, controller: self)
         }
     }
 

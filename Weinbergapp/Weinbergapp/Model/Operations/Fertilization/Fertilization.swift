@@ -71,6 +71,7 @@ public class Fertilization: Object {
         }
     }
     
+    /// Represents the primary key used for identification purposes by Realm Swift
     public override static func primaryKey() -> String? {
         return "id"
     }

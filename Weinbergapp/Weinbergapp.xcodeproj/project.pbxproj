@@ -52,6 +52,7 @@
 		945B47BA210B6650007865D5 /* FertilizationLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B9210B6650007865D5 /* FertilizationLocalization.swift */; };
 		945B47BC210B6A17007865D5 /* OperationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BB210B6A17007865D5 /* OperationDataSource.swift */; };
 		945B47BE210B70C6007865D5 /* OperationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BD210B70C6007865D5 /* OperationDialogs.swift */; };
+		945B47C1210B7776007865D5 /* VintageLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47C0210B7776007865D5 /* VintageLocalization.swift */; };
 		945CD7162108E60400542CD8 /* MapFieldVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945CD7152108E60400542CD8 /* MapFieldVerification.swift */; };
 		945CD71A2108EFAF00542CD8 /* MKField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945CD7192108EFAF00542CD8 /* MKField.swift */; };
 		945F08292100850C00F55C44 /* FertilizerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08282100850C00F55C44 /* FertilizerCategory.swift */; };
@@ -148,6 +149,7 @@
 		945B47B9210B6650007865D5 /* FertilizationLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationLocalization.swift; sourceTree = "<group>"; };
 		945B47BB210B6A17007865D5 /* OperationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDataSource.swift; sourceTree = "<group>"; };
 		945B47BD210B70C6007865D5 /* OperationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDialogs.swift; sourceTree = "<group>"; };
+		945B47C0210B7776007865D5 /* VintageLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageLocalization.swift; sourceTree = "<group>"; };
 		945CD7152108E60400542CD8 /* MapFieldVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFieldVerification.swift; sourceTree = "<group>"; };
 		945CD7192108EFAF00542CD8 /* MKField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKField.swift; sourceTree = "<group>"; };
 		945F08282100850C00F55C44 /* FertilizerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizerCategory.swift; sourceTree = "<group>"; };
@@ -500,6 +502,14 @@
 			path = Fertilization;
 			sourceTree = "<group>";
 		};
+		945B47BF210B7764007865D5 /* Vintage */ = {
+			isa = PBXGroup;
+			children = (
+				945B47C0210B7776007865D5 /* VintageLocalization.swift */,
+			);
+			path = Vintage;
+			sourceTree = "<group>";
+		};
 		945CD71C21091D1700542CD8 /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +568,7 @@
 				945B47B6210B58B8007865D5 /* OperationFieldVerification2.swift */,
 				945B47B8210B6640007865D5 /* Fertilization */,
 				945CD72221091F0500542CD8 /* PlantProtection */,
+				945B47BF210B7764007865D5 /* Vintage */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -840,6 +851,7 @@
 				94BE5C672107B50C00C95F97 /* MapDialogs.swift in Sources */,
 				940477B120F9E9200049CDB5 /* PlantProtectionViewController.swift in Sources */,
 				944564912103528700201DD4 /* MoreViewController.swift in Sources */,
+				945B47C1210B7776007865D5 /* VintageLocalization.swift in Sources */,
 				94BE5C6B210887CA00C95F97 /* MKPreviewPolygon.swift in Sources */,
 				940477AD20F9E9030049CDB5 /* DefoliationViewController.swift in Sources */,
 				945F08292100850C00F55C44 /* FertilizerCategory.swift in Sources */,

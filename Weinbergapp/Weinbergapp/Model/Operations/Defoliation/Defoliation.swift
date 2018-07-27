@@ -29,6 +29,7 @@ public class Defoliation: Object {
     /// The approximate working hours for the defoliation operation.
     @objc dynamic var workingHours: Double = 0.0
     
+    /// Represents the primary key used for identification purposes by Realm Swift
     public override static func primaryKey() -> String? {
         return "id"
     }
