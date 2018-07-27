@@ -47,7 +47,7 @@
 		9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659A20FA3A8000758D8C /* Defoliation.swift */; };
 		9450659F20FB445F00758D8C /* SwitchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659E20FB445F00758D8C /* SwitchTableViewController.swift */; };
 		945065A120FB445F00758D8C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945065A020FB445F00758D8C /* SwitchTableViewCell.swift */; };
-		945B47B7210B58B8007865D5 /* OperationFieldVerification2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B6210B58B8007865D5 /* OperationFieldVerification2.swift */; };
+		945B47B7210B58B8007865D5 /* OperationFieldVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */; };
 		945B47BA210B6650007865D5 /* FertilizationLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B9210B6650007865D5 /* FertilizationLocalization.swift */; };
 		945B47BC210B6A17007865D5 /* OperationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BB210B6A17007865D5 /* OperationDataSource.swift */; };
 		945B47BE210B70C6007865D5 /* OperationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BD210B70C6007865D5 /* OperationDialogs.swift */; };
@@ -62,7 +62,6 @@
 		945F08332100A05C00F55C44 /* HerbicidePlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08322100A05C00F55C44 /* HerbicidePlantProtection.swift */; };
 		945F08352100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */; };
 		945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */; };
-		946D20F02103EB560063DBF8 /* OperationFieldVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D20EF2103EB560063DBF8 /* OperationFieldVerification.swift */; };
 		9473746D21061D8F006196CF /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473746C21061D8E006196CF /* Field.swift */; };
 		94BE5C63210799F300C95F97 /* MapPolygonDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */; };
 		94BE5C672107B50C00C95F97 /* MapDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C662107B50C00C95F97 /* MapDialogs.swift */; };
@@ -143,7 +142,7 @@
 		9450659A20FA3A8000758D8C /* Defoliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defoliation.swift; sourceTree = "<group>"; };
 		9450659E20FB445F00758D8C /* SwitchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewController.swift; sourceTree = "<group>"; };
 		945065A020FB445F00758D8C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
-		945B47B6210B58B8007865D5 /* OperationFieldVerification2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFieldVerification2.swift; sourceTree = "<group>"; };
+		945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFieldVerification.swift; sourceTree = "<group>"; };
 		945B47B9210B6650007865D5 /* FertilizationLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationLocalization.swift; sourceTree = "<group>"; };
 		945B47BB210B6A17007865D5 /* OperationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDataSource.swift; sourceTree = "<group>"; };
 		945B47BD210B70C6007865D5 /* OperationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDialogs.swift; sourceTree = "<group>"; };
@@ -158,7 +157,6 @@
 		945F08322100A05C00F55C44 /* HerbicidePlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerbicidePlantProtection.swift; sourceTree = "<group>"; };
 		945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsecticidalOrAcaricidalPlantProtection.swift; sourceTree = "<group>"; };
 		945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionPesticides.swift; sourceTree = "<group>"; };
-		946D20EF2103EB560063DBF8 /* OperationFieldVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFieldVerification.swift; sourceTree = "<group>"; };
 		9473746C21061D8E006196CF /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPolygonDrawer.swift; sourceTree = "<group>"; };
 		94BE5C662107B50C00C95F97 /* MapDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDialogs.swift; sourceTree = "<group>"; };
@@ -561,8 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				945B47BD210B70C6007865D5 /* OperationDialogs.swift */,
-				946D20EF2103EB560063DBF8 /* OperationFieldVerification.swift */,
-				945B47B6210B58B8007865D5 /* OperationFieldVerification2.swift */,
+				945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */,
 				945B47B8210B6640007865D5 /* Fertilization */,
 				945CD72221091F0500542CD8 /* PlantProtection */,
 				945B47BF210B7764007865D5 /* Vintage */,
@@ -829,11 +826,10 @@
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
 				9473746D21061D8F006196CF /* Field.swift in Sources */,
-				945B47B7210B58B8007865D5 /* OperationFieldVerification2.swift in Sources */,
+				945B47B7210B58B8007865D5 /* OperationFieldVerification.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
 				945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */,
 				94BE5C63210799F300C95F97 /* MapPolygonDrawer.swift in Sources */,
-				946D20F02103EB560063DBF8 /* OperationFieldVerification.swift in Sources */,
 				945F08332100A05C00F55C44 /* HerbicidePlantProtection.swift in Sources */,
 				9409694521036DEB00AA7146 /* FertilizationTableViewCell.swift in Sources */,
 				945B47BA210B6650007865D5 /* FertilizationLocalization.swift in Sources */,
