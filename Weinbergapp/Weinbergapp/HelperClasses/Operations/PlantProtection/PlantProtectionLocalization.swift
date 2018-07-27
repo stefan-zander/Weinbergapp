@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class PlantProtectionLocalization {
+class PlantProtectionLocalization {
 
-    public static func localize(_ plantProtectionKind: PlantProtectionKind) -> String {
+    static func localize(_ plantProtectionKind: PlantProtectionKind) -> String {
         switch plantProtectionKind {
         case .fungicidal(let fungicidal):
             return localize(fungicidal)
@@ -21,7 +21,7 @@ public class PlantProtectionLocalization {
         }
     }
 
-    public static func localize(_ fungicidal: FungicidalPlantProtection) -> String {
+    static func localize(_ fungicidal: FungicidalPlantProtection) -> String {
         var choices: [String] = []
 
         if fungicidal.botrytis {
@@ -51,7 +51,7 @@ public class PlantProtectionLocalization {
         return choices.joined(separator: ", ")
     }
 
-    public static func localize(_ herbicide: HerbicidePlantProtection) -> String {
+    static func localize(_ herbicide: HerbicidePlantProtection) -> String {
         var choices: [String] = []
 
         if herbicide.bindweed {
@@ -64,7 +64,7 @@ public class PlantProtectionLocalization {
         return choices.joined(separator: ", ")
     }
 
-    public static func localize(_ insecticidalOrAcaricidal: InsecticidalOrAcaricidalPlantProtection) -> String {
+    static func localize(_ insecticidalOrAcaricidal: InsecticidalOrAcaricidalPlantProtection) -> String {
         var choices: [String] = []
 
         if insecticidalOrAcaricidal.drosophilaSpecies {
@@ -98,7 +98,7 @@ public class PlantProtectionLocalization {
         return choices.joined(separator: ", ")
     }
 
-    public static func localize(_ pesticides: PlantProtectionPesticides) -> String {
+    static func localize(_ pesticides: PlantProtectionPesticides) -> String {
         var choices: [String] = []
 
         if pesticides.botector {

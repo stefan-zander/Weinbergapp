@@ -14,7 +14,7 @@ import RealmSwift
  */
 public class Defoliation: Object {
     
-    /// A unique identification for each defoliation operation.
+    /// A unique identification number for each defoliation operation.
     @objc dynamic var id: Int = 0
     
     /// The date on which the defoliation operation takes place.

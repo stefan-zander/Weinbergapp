@@ -16,11 +16,11 @@ import Foundation
  case organic(OrganicFertilizer)
  ````
  */
-public enum Fertilizer {
+public enum FertilizerCategory: Int {
 
     /// A mineral fertilizer.
-    case mineral(MineralFertilizer)
+    case mineral
 
     /// An organic fertilizer.
-    case organic(OrganicFertilizer)
+    case organic
 }

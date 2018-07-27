@@ -13,12 +13,27 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
 
     var fertilizations: [Fertilization] = []
+    let dataSource = OperationDataSource<Fertilization>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        do {
+            try dataSource.query(elements: &fertilizations)
+        } catch let error as NSError {
+            let alert = UIAlertController(title: "Fehler beim Laden der Daten",
+                                          message: error.localizedDescription,
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok",
+                                          style: .default,
+                                          handler: nil))
+            
+            self.present(alert, animated: true)
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,8 +80,13 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                    commit editingStyle: UITableViewCellEditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            fertilizations.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            do {
+                try dataSource.delete(fertilizations[indexPath.row])
+                fertilizations.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } catch let error as NSError {
+                OperationDialogs.presentDeletionFailed(error: error, controller: self)
+            }
         }
     }
 

@@ -85,16 +85,8 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                 defoliations.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
-                let alert = UIAlertController(title: "Fehler beim Löschen",
-                                              message: error.localizedDescription,
-                                              preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "Ok",
-                                              style: .default,
-                                              handler: nil))
-                
-                self.present(alert, animated: true)
-            }            
+                OperationDialogs.presentDeletionFailed(error: error, controller: self)
+            }
         }
     }
 

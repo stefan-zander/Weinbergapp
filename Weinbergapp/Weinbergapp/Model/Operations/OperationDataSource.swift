@@ -1,5 +1,5 @@
 //
-//  DefoliationDataSource.swift
+//  OperationDataSource.swift
 //  Weinbergapp
 //
 //  Created by VM on 27.07.18.
@@ -9,23 +9,28 @@
 import Foundation
 import RealmSwift
 
-public class DefoliationDataSource {
+public class OperationDataSource<T: Object> {
+    
     var realm: Realm?
     
-    public func query(defoliations: inout [Defoliation]) throws {
+    public func query(elements: inout [T]) throws {
         let realm = try self.realm ?? Realm()
         
-        defoliations = Array(realm.objects(Defoliation.self))
+        elements = Array(realm.objects(T.self))
     }
     
-    public func add(defoliation: Defoliation) throws {
+    public func createId() throws -> Int {
         let realm = try self.realm ?? Realm()
-        let maxId: Int? = realm.objects(Defoliation.self).max(ofProperty: "id")
+        let newId: Int? = realm.objects(T.self).max(ofProperty: "id")
         
-        defoliation.id = (maxId ?? 0) + 1
+        return (newId ?? 0) + 1
+    }
+    
+    public func add(_ element: T) throws {
+        let realm = try self.realm ?? Realm()
         
         try realm.write {
-            realm.add(defoliation)
+            realm.add(element)
         }
     }
     
@@ -34,11 +39,11 @@ public class DefoliationDataSource {
         try realm.write(block)
     }
     
-    public func delete(defoliation: Defoliation) throws {
+    public func delete(_ element: T) throws {
         let realm = try self.realm ?? Realm()
         
         try realm.write {
-            realm.delete(defoliation)
+            realm.delete(element)
         }
-    }    
+    }
 }

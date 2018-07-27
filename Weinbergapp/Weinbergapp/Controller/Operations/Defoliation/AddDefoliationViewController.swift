@@ -37,7 +37,7 @@ class AddDefoliationViewController: UIViewController {
         to.date = date.date
         to.field = field.text ?? ""
         to.user = user.text ?? ""
-        to.workingHours = Double(workingHours.text ?? "0") ?? 0
+        to.workingHours = Double(workingHours.text ?? "0") ?? 0.0
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
@@ -63,15 +63,8 @@ class AddDefoliationViewController: UIViewController {
             source.tableView.reloadData()
             self.dismiss(animated: true, completion: nil)
         } catch let error as NSError {
-            let alert = UIAlertController(title: "Fehler beim speichern",
-                                          message: "Veränderungen konnten nicht gespeichert werden",
-                                          preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            
-            self.present(alert, animated: true)
+            OperationDialogs.presentSaveFailed(error: error, controller: self)
         }
-
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {

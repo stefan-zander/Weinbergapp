@@ -30,15 +30,46 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         fertilizer.dataSource = self
 
         if let editIndex = editIndex {
-            let fertilization = source.fertilizations[editIndex]
-
-            date.date = fertilization.date
-            field.text = fertilization.field
-            user.text = fertilization.user
-            workingHours.text = String(fertilization.workingHours)
-            currentFertilizier = fertilization.fertilizer
-            appliedAmount.text = String(fertilization.appliedAmount)
+            applyChanges(from: source.fertilizations[editIndex])
         }
+    }
+    
+    func applyChanges(from: Fertilization) {
+        date.date = from.date
+        field.text = from.field
+        user.text = from.user
+        workingHours.text = String(from.workingHours)
+        fertilizerCategory.selectRow(from.fertilizerCategoryRaw, inComponent: 0, animated: false)
+        
+        switch from.fertilizerCategoryRaw {
+        case 0:
+            fertilizer.selectRow(from.mineralFertilizerRaw, inComponent: 0, animated: false)
+        case 1:
+            fertilizer.selectRow(from.organicFertilizerRaw, inComponent: 0, animated: false)
+        default:
+            break
+        }
+        
+        appliedAmount.text = String(from.appliedAmount)
+    }
+    
+    func applyChanges(to: Fertilization) {
+        to.date = date.date
+        to.field = field.text ?? ""
+        to.user = user.text ?? ""
+        to.workingHours = Double(workingHours.text ?? "0") ?? 0.0
+        to.fertilizerCategoryRaw = fertilizerCategory.selectedRow(inComponent: 0)
+        
+        switch to.fertilizerCategoryRaw {
+        case 0:
+            to.mineralFertilizerRaw = fertilizer.selectedRow(inComponent: 0)
+        case 1:
+            to.organicFertilizerRaw = fertilizer.selectedRow(inComponent: 0)
+        default:
+            break
+        }
+        
+        to.appliedAmount = Double(appliedAmount.text ?? "0") ?? 0.0
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -65,20 +96,13 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView {
         case fertilizerCategory:
-            switch row {
-            case 0:
-                return "Mineralisch"
-            case 1:
-                return "Organisch"
-            default:
-                return nil
-            }
+            return FertilizationLocalization.getFertilizerCategory(index: row)
         case fertilizer:
             switch fertilizerCategory.selectedRow(inComponent: 0) {
             case 0:
-                return getMineralFertilizer(index: row)
+                return FertilizationLocalization.getMineralFertilizer(index: row)
             case 1:
-                return getOrganicFertilizer(index: row)
+                return FertilizationLocalization.getOrganicFertilizer(index: row)
             default:
                 return nil
             }
@@ -86,115 +110,36 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
             return nil
         }
     }
-
-    func getMineralFertilizer(index: Int) -> String? {
-        switch index {
-        case 0:
-            return "Entec perfekt"
-        case 1:
-            return "Entec 26"
-        case 2:
-            return "Hyperphosphat - fein (Rohphosphat)"
-        case 3:
-            return "Mg-Kalke"
-        case 4:
-            return "Kornkali mit MgO"
-        case 5:
-            return "Kalimagnesia (Parent-Kali)"
-        case 6:
-            return "Kaliumsulfat fein u. granuliert"
-        case 7:
-            return "Kalksalpeter"
-        default:
-            return nil
-        }
-    }
-
-    func getOrganicFertilizer(index: Int) -> String? {
-        switch index {
-        case 0:
-            return "Terragon"
-        case 1:
-            return "Weinhefen filtriert"
-        case 2:
-            return "Trester"
-        case 3:
-            return "Legehennen (22,5% TS)"
-        case 4:
-            return "Rinder"
-        case 5:
-            return "Bio(Abfall)kompost"
-        case 6:
-            return "Baumrinde (1m3 = 0,4 t)"
-        case 7:
-            return "Weinhefe Flüssig (1m² = 1t)"
-        default:
-            return nil
-        }
-    }
-
+    
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard let field = OperationFieldVerification.verify(field: field, self) else { return }
-        guard let user = OperationFieldVerification.verify(user: user, self) else { return }
-        guard let workingHours = OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
-        guard let appliedAmount = OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
-
-        guard let fertilizer = currentFertilizier else {
-            assert(false)
-            return
+        guard OperationFieldVerification2.verify(field: field, self) else { return }
+        guard OperationFieldVerification2.verify(user: user, self) else { return }
+        guard OperationFieldVerification2.verify(workingHours: workingHours, self) else { return }
+        guard OperationFieldVerification2.verify(appliedAmount: appliedAmount, self) else { return }
+        
+        do {
+            if let editIndex = editIndex {
+                let fertilization = source.fertilizations[editIndex]
+                
+                try source.dataSource.update {
+                    applyChanges(to: fertilization)
+                }
+            } else {
+                let fertilization = Fertilization()
+                applyChanges(to: fertilization)
+                
+                try source.dataSource.add(fertilization)
+                source.fertilizations.append(fertilization)
+            }
+            
+            source.tableView.reloadData()
+            self.dismiss(animated: true, completion: nil)
+        } catch let error as NSError {
+            OperationDialogs.presentSaveFailed(error: error, controller: self)
         }
-
-        let fertilization = Fertilization(date: date.date,
-                                          field: field,
-                                          user: user,
-                                          workingHours: workingHours,
-                                          fertilizer: fertilizer,
-                                          appliedAmount: appliedAmount)
-
-        if let editIndex = editIndex {
-            source.fertilizations[editIndex] = fertilization
-        } else {
-            source.fertilizations.append(fertilization)
-        }
-
-        source.tableView.reloadData()
-        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
-    }
-
-    var currentFertilizier: Fertilizer? {
-        get {
-            switch fertilizerCategory.selectedRow(inComponent: 0) {
-            case 0:
-                if let mineralFertilizier = MineralFertilizer(rawValue: fertilizer.selectedRow(inComponent: 0)) {
-                    return .mineral(mineralFertilizier)
-                }
-            case 1:
-                if let organicFertilizer = OrganicFertilizer(rawValue: fertilizer.selectedRow(inComponent: 0)) {
-                    return .organic(organicFertilizer)
-                }
-            default:
-                break
-            }
-
-            return nil
-        }
-        set(newFertilizer) {
-            guard let newFertilizer = newFertilizer else {
-                return
-            }
-
-            switch newFertilizer {
-            case .mineral(let fertilizer):
-                fertilizerCategory.selectRow(0, inComponent: 0, animated: false)
-                self.fertilizer.selectRow(fertilizer.rawValue, inComponent: 0, animated: false)
-            case .organic(let fertilizer):
-                fertilizerCategory.selectRow(1, inComponent: 0, animated: false)
-                self.fertilizer.selectRow(fertilizer.rawValue, inComponent: 0, animated: false)
-            }
-        }
     }
 }
