@@ -16,7 +16,7 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var workingHours: UITextField!
     @IBOutlet weak var execution: UIPickerView!
 
-    var editIndex: Int?
+    var editingElement: Vintage?
     var source: VintageViewController!
 
     override func viewDidLoad() {
@@ -24,9 +24,9 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
         execution.delegate = self
         execution.dataSource = self
-
-        if let editIndex = editIndex {
-            applyChanges(from: source.vintages[editIndex])
+        
+        if let editingElement = editingElement {
+            applyChanges(from: editingElement)
         }
     }
     
@@ -64,11 +64,9 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
 
         do {
-            if let editIndex = editIndex {
-                let vintage = source.vintages[editIndex]
-                
+            if let editingElement = editingElement {
                 try source.dataSource.update {
-                    applyChanges(to: vintage)
+                    applyChanges(to: editingElement)
                 }
             } else {
                 let vintage = Vintage()

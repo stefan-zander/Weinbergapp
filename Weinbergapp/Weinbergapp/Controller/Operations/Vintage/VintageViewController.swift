@@ -57,7 +57,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let addVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage")
             as? AddVintageViewController {
             addVintage.source = self
-            addVintage.editIndex = indexPath.row
+            addVintage.editingElement = vintages[indexPath.row]
 
             self.present(addVintage, animated: true)
         }

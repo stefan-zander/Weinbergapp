@@ -59,7 +59,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
         if let addDefoliation = storyboard.instantiateViewController(withIdentifier: "AddDefoliation")
             as? AddDefoliationViewController {
             addDefoliation.source = self
-            addDefoliation.editIndex = indexPath.row
+            addDefoliation.editingElement = defoliations[indexPath.row]
 
             self.present(addDefoliation, animated: true)
         }

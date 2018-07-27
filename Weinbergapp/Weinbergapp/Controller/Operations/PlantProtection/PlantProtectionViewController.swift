@@ -59,7 +59,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
         if let addPlantProtection = storyboard.instantiateViewController(withIdentifier: "AddPlantProtection")
             as? AddPlantProtectionViewController {
             addPlantProtection.source = self
-            addPlantProtection.editIndex = indexPath.row
+            addPlantProtection.editingElement = plantProtections[indexPath.row]
 
             self.present(addPlantProtection, animated: true)
         }

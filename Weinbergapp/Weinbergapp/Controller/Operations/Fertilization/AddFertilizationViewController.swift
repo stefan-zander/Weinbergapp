@@ -18,7 +18,7 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var fertilizer: UIPickerView!
     @IBOutlet weak var appliedAmount: UITextField!
 
-    var editIndex: Int?
+    var editingElement: Fertilization?
     var source: FertilizationViewController!
 
     override func viewDidLoad() {
@@ -29,8 +29,8 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         fertilizer.delegate = self
         fertilizer.dataSource = self
 
-        if let editIndex = editIndex {
-            applyChanges(from: source.fertilizations[editIndex])
+        if let editingElement = editingElement {
+            applyChanges(from: editingElement)
         }
     }
     
@@ -118,11 +118,9 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         guard OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
         
         do {
-            if let editIndex = editIndex {
-                let fertilization = source.fertilizations[editIndex]
-                
+            if let editingElement = editingElement {
                 try source.dataSource.update {
-                    applyChanges(to: fertilization)
+                    applyChanges(to: editingElement)
                 }
             } else {
                 let fertilization = Fertilization()

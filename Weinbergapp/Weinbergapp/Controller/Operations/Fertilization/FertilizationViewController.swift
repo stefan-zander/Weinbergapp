@@ -59,7 +59,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
         if let addFertilization = storyboard.instantiateViewController(withIdentifier: "AddFertilization")
             as? AddFertilizationViewController {
             addFertilization.source = self
-            addFertilization.editIndex = indexPath.row
+            addFertilization.editingElement = fertilizations[indexPath.row]
 
             self.present(addFertilization, animated: true)
         }

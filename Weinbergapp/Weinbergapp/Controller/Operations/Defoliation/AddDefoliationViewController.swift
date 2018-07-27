@@ -15,14 +15,14 @@ class AddDefoliationViewController: UIViewController {
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var workingHours: UITextField!
 
-    var editIndex: Int?
+    var editingElement: Defoliation?
     var source: DefoliationViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let editIndex = editIndex {
-            applyChanges(from: source.defoliations[editIndex])
+        if let editingElement = editingElement {
+            applyChanges(from: editingElement)
         }
     }
     
@@ -46,11 +46,9 @@ class AddDefoliationViewController: UIViewController {
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
         
         do {
-            if let editIndex = editIndex {
-                let defoliation = source.defoliations[editIndex]
-                
+            if let editingElement = editingElement {
                 try source.dataSource.update {
-                    applyChanges(to: defoliation)
+                    applyChanges(to: editingElement)
                 }
             } else {
                 let defoliation = Defoliation()

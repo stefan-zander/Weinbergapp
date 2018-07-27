@@ -27,7 +27,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     var currentInsecticidalOrAcaricidal = InsecticidalOrAcaricidalPlantProtection()
     var currentPesticides = PlantProtectionPesticides()
 
-    var editIndex: Int?
+    var editingElement: PlantProtection?
     var source: PlantProtectionViewController!
 
     override func viewDidLoad() {
@@ -37,9 +37,9 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         pesticides.delegate = self
         treatmentSchedule.delegate = self
         treatmentSchedule.dataSource = self
-
-        if let editIndex = editIndex {
-            applyChanges(from: source.plantProtections[editIndex])
+        
+        if let editingElement = editingElement {
+            applyChanges(from: editingElement)
         }
     }
     
@@ -191,11 +191,9 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         guard OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
         
         do {
-            if let editIndex = editIndex {
-                let plantProtection = source.plantProtections[editIndex]
-                
+            if let editingElement = editingElement {
                 try source.dataSource.update {
-                    applyChanges(to: plantProtection)
+                    applyChanges(to: editingElement)
                 }
             } else {
                 let plantProtection = PlantProtection()
