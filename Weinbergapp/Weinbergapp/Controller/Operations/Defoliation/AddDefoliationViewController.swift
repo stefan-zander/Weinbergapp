@@ -56,7 +56,7 @@ class AddDefoliationViewController: UIViewController {
                 let defoliation = Defoliation()
                 applyChanges(to: defoliation)
                 
-                try source.dataSource.add(defoliation: defoliation)
+                try source.dataSource.add(defoliation)
                 source.defoliations.append(defoliation)
             }
             

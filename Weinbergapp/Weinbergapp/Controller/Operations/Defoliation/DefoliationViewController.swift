@@ -13,7 +13,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
 
     var defoliations: [Defoliation] = []
-    var dataSource: DefoliationDataSource = DefoliationDataSource()
+    var dataSource = OperationDataSource<Defoliation>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.dataSource = self
         
         do {
-            try dataSource.query(defoliations: &defoliations)
+            try dataSource.query(elements: &defoliations)
         } catch let error as NSError {
             let alert = UIAlertController(title: "Fehler beim Laden der Daten",
                                           message: error.localizedDescription,
@@ -81,7 +81,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             do {
-                try dataSource.delete(defoliation: defoliations[indexPath.row])
+                try dataSource.delete(defoliations[indexPath.row])
                 defoliations.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
