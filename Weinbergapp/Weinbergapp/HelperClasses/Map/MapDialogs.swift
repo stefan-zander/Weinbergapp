@@ -64,4 +64,15 @@ class MapDialogs {
         
         controller.present(alert, animated: true)
     }
+    
+    static func showDeletionInDatabaseFailed(controller: UIViewController,
+                                             error: Error) {
+        let alert = UIAlertController(title: "Feld konnte nicht gelöscht werden.",
+                                      message: error.localizedDescription,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        controller.present(alert, animated: true)
+    }
 }

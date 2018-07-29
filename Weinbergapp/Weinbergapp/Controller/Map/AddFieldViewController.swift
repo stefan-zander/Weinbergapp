@@ -11,42 +11,78 @@ import CoreLocation
 
 class AddFieldViewController: UIViewController {
 
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var vineVarietyField: UITextField!
-
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var vineVariety: UITextField!
+    @IBOutlet weak var deleteFieldButton: UIButton!
+    
     var coordinates: [CLLocationCoordinate2D] = []
-    var completion: (() -> Bool)?
-
+    
+    var source: MapViewController!
     var editingField: MapField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let editingField = editingField {
-            nameField.text = editingField.name
-            vineVarietyField.text = editingField.vineVariety
+            name.text = editingField.name
+            vineVariety.text = editingField.vineVariety
+            deleteFieldButton.isHidden = false
         }
     }
-
-    public var name: String {
-        return nameField.text ?? ""
-    }
-
-    public var vineVariety: String {
-        return vineVarietyField.text ?? ""
+    
+    @IBAction func deleteField(_ sender: UIButton) {
+        guard let editingField = editingField else {
+            assert(false)
+        }
+        
+        do {
+            if let index = source.fields.index(where: { $0 === editingField }) {
+                try source.fieldDataSource.delete(editingField.field)
+                editingField.displayedOnMap = false
+                source.fields.remove(at: index)
+            }
+        } catch let error as NSError {
+            MapDialogs.showDeletionInDatabaseFailed(controller: self, error: error)
+            return
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard MapFieldVerification.verify(name: nameField, self) != nil else { return }
-        guard MapFieldVerification.verify(vineVariety: vineVarietyField, self) != nil else { return }
+        guard MapFieldVerification.verify(name: name, self) != nil else { return }
+        guard MapFieldVerification.verify(vineVariety: vineVariety, self) != nil else { return }
         
-        if let completion = completion {
-            if completion() {
-                self.dismiss(animated: true, completion: nil)
+        if let editingField = editingField {
+            do {
+                try editingField.changeText(name: name.text ?? "",
+                                            vineVariety: vineVariety.text ?? "")
+            } catch let error as NSError {
+                MapDialogs.showUpdateInDatabaseFailed(controller: self, error: error)
+                return
             }
         } else {
-            self.dismiss(animated: true, completion: nil)
+            let field = Field()
+            
+            field.name = name.text ?? ""
+            field.vineVariety = vineVariety.text ?? ""
+            field.coordinates = coordinates
+            
+            do {
+                try source.fieldDataSource.add(field)
+            } catch let error as NSError {
+                MapDialogs.showAddToDatabaseFailed(controller: self, error: error)
+                return
+            }
+            
+            let mapField = MapField(field: field,
+                                    fieldDataSource: source.fieldDataSource,
+                                    mapView: source.mapView)
+            mapField.displayedOnMap = true
+            source.fields.append(mapField)
         }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {

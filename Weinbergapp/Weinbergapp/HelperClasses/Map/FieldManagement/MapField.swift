@@ -11,9 +11,9 @@ import MapKit
 
 class MapField {
     
-    private let field: Field
-    private let fieldDataSource: RealmDataSource<Field>
-    private let mapView: MKMapView
+    let field: Field
+    let fieldDataSource: RealmDataSource<Field>
+    let mapView: MKMapView
     
     private var isDisplayedOnMap = false
     private var polygon: MKFieldPolygon?

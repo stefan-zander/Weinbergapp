@@ -65,29 +65,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
                 if let addField = storyboard.instantiateViewController(withIdentifier: "AddField")
                     as? AddFieldViewController {
-
                     addField.coordinates = previewer.getCoordinates()
-                    addField.completion = {
-                        let field = Field()
-                        
-                        field.name = addField.name
-                        field.vineVariety = addField.vineVariety
-                        field.coordinates = coordinates
-                        
-                        do {
-                            try self.fieldDataSource.add(field)
-                        } catch let error as NSError {
-                            MapDialogs.showAddToDatabaseFailed(controller: self, error: error)
-                            return false
-                        }
-                        
-                        let mapField = MapField(field: field,
-                                                fieldDataSource: self.fieldDataSource,
-                                                mapView: self.mapView)
-                        mapField.displayedOnMap = true
-                        self.fields.append(mapField)
-                        return true
-                    }
 
                     self.present(addField, animated: true)
                 }
@@ -154,19 +132,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
             if let editField = storyboard.instantiateViewController(withIdentifier: "AddField")
                 as? AddFieldViewController {
-
+                editField.source = self
                 editField.editingField = point.owner!
-                editField.completion = {
-                    do {
-                        try point.owner.changeText(name: editField.name,
-                                                   vineVariety: editField.vineVariety)
-                        return true
-                    } catch let error as NSError {
-                        MapDialogs.showUpdateInDatabaseFailed(controller: self, error: error)
-                        return false
-                    }
-                }
-
+                
                 self.present(editField, animated: true)
             }
         default:
