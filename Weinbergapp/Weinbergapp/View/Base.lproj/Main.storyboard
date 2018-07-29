@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1LT-e3-SDl">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <tableViewController id="oNZ-z5-vyi" customClass="OperationsTableViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pb7-8h-yOP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="ogb-dv-hsZ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Arbeitsgänge" id="Uer-9N-CsC"/>
@@ -27,14 +27,14 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OperationCell" id="Dk3-JF-t75" customClass="OperationTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="74"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dk3-JF-t75" id="n5Q-ub-Tp6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="73.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ILG-WS-Lbf">
-                                            <rect key="frame" x="12" y="11" width="50" height="50"/>
+                                            <rect key="frame" x="12" y="12" width="50" height="50"/>
                                             <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="6R6-z1-D3X"/>
@@ -42,7 +42,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rJ-rd-L0U">
-                                            <rect key="frame" x="78" y="11" width="281" height="50"/>
+                                            <rect key="frame" x="78" y="12" width="320" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="g5a-12-bba"/>
                                             </constraints>
@@ -81,17 +81,17 @@
             <objects>
                 <viewController storyboardIdentifier="AddFertilization" id="Gre-6w-vFN" customClass="AddFertilizationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oa7-rn-Wfr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5M2-y0-8dO">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBb-1W-8BD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
                                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abO-DW-v5J">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <items>
                                                     <navigationItem id="Wr1-NQ-sYt">
@@ -116,7 +116,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="A1a-sF-pNN">
-                                                <rect key="frame" x="9" y="110" width="359" height="112"/>
+                                                <rect key="frame" x="9" y="110" width="398" height="112"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="553517822.99566197">
                                                     <!--2018-07-17 10:57:02 +0000-->
@@ -172,7 +172,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5w-eu-NQg">
-                                                <rect key="frame" x="8" y="646" width="355" height="89"/>
+                                                <rect key="frame" x="8" y="646" width="394" height="89"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Düngungsmittel:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1Z-tr-Dev">
@@ -183,7 +183,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qfK-Ry-O4p">
-                                                <rect key="frame" x="8" y="813" width="375" height="89"/>
+                                                <rect key="frame" x="8" y="813" width="414" height="89"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ausgebrachte Menge (Kg je Ha):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4w-Ig-gf0">
@@ -244,11 +244,11 @@
             <objects>
                 <viewController storyboardIdentifier="Fertilization" id="Tq0-nU-pyU" customClass="FertilizationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MhJ-Wd-Rmh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ra-cN-QeE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Düngung" id="sur-gW-9fU">
                                         <barButtonItem key="leftBarButtonItem" title="Zurück" id="zBO-7N-KlE">
@@ -265,14 +265,14 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xSw-0S-s5p">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FertilizationViewCell" rowHeight="56" id="yog-Y2-CtE" customClass="FertilizationTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="56"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FertilizationViewCell" rowHeight="56" id="yog-Y2-CtE" customClass="FertilizationTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yog-Y2-CtE" id="Qdu-rH-TXs">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXQ-Qq-S7U">
@@ -333,7 +333,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddDefoliation" id="izO-ZI-EHb" customClass="AddDefoliationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="1" contentMode="scaleToFill" id="ibO-TF-XYX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4J-t4-fxP">
@@ -379,7 +379,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0S-C4-rop">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="cVf-yS-r8y">
@@ -397,7 +397,7 @@
                                 </items>
                             </navigationBar>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ynG-Ag-oTN">
-                                <rect key="frame" x="16" y="137" width="343" height="150"/>
+                                <rect key="frame" x="16" y="137" width="382" height="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="552578053.75867701">
                                     <!--2018-07-06 13:54:13 +0000-->
@@ -430,11 +430,11 @@
             <objects>
                 <viewController storyboardIdentifier="Defoliation" id="sFc-au-szY" customClass="DefoliationViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qt0-KD-cWC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7T-PH-C1p">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Entlauben" id="VGQ-UU-A0E">
                                         <barButtonItem key="leftBarButtonItem" title="Zurück" id="LFU-MP-8kb">
@@ -451,14 +451,14 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qD8-pQ-fYV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefoliationViewCell" rowHeight="54" id="Xvp-pa-3EC" customClass="DefoliationTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="54"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DefoliationViewCell" rowHeight="54" id="Xvp-pa-3EC" customClass="DefoliationTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xvp-pa-3EC" id="zTc-QH-R6l">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4E-Yr-Cxg">
@@ -518,11 +518,11 @@
             <objects>
                 <viewController storyboardIdentifier="PlantProtection" id="H0n-5A-YR2" customClass="PlantProtectionViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXl-UQ-2ZI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flC-uo-5jC">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Pflanzenschutz" id="8zm-EX-aFd">
                                         <barButtonItem key="leftBarButtonItem" title="Zurück" id="99f-0y-dO1">
@@ -539,14 +539,14 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QJG-y0-TR9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantProtectionViewCell" rowHeight="52" id="bVx-Fe-ZKU" customClass="PlantProtectionTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="52"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlantProtectionViewCell" rowHeight="52" id="bVx-Fe-ZKU" customClass="PlantProtectionTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bVx-Fe-ZKU" id="ia8-e3-AJo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydf-pE-Pq2">
@@ -606,11 +606,11 @@
             <objects>
                 <viewController storyboardIdentifier="Vintage" id="5mE-ge-PpQ" customClass="VintageViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q2K-CV-vwp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Drg-Oh-wXg">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Traubenlese" id="Ph5-lS-718">
                                         <barButtonItem key="leftBarButtonItem" title="Zurück" id="XKr-rL-k79">
@@ -627,14 +627,14 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TcY-Rl-Ofl">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VintageViewCell" rowHeight="54" id="fjp-QM-Tae" customClass="VintageTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="54"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VintageViewCell" rowHeight="54" id="fjp-QM-Tae" customClass="VintageTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fjp-QM-Tae" id="1tp-ik-sxN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZG-Dm-yfi">
@@ -689,126 +689,354 @@
             </objects>
             <point key="canvasLocation" x="813.60000000000002" y="-355.7721139430285"/>
         </scene>
-        <!--Add Vintage View Controller-->
-        <scene sceneID="MkX-Y2-IAq">
+        <!--Add Plant Protection View Controller-->
+        <scene sceneID="WZN-as-9CH">
             <objects>
-                <viewController storyboardIdentifier="AddVintage" id="And-kL-e5Z" customClass="AddVintageViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4Kx-hA-fzm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <viewController storyboardIdentifier="AddPlantProtection" id="c2A-th-kmg" customClass="AddPlantProtectionViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ybS-Mm-nYy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7A-NI-EXm">
-                                <rect key="frame" x="16" y="100" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Benutzer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpj-Ld-cbI">
-                                <rect key="frame" x="16" y="350" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arbeitszeit (Stunden):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6R7-3l-XLY">
-                                <rect key="frame" x="16" y="435" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zugehöriges Feld eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ise-Hc-hV9">
-                                <rect key="frame" x="16" y="312" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzer eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHv-3S-z2l">
-                                <rect key="frame" x="16" y="398" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arbeitszeit eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAc-iQ-D0H">
-                                <rect key="frame" x="16" y="483" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                            </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JUR-MA-PwK">
-                                <rect key="frame" x="16" y="148" width="343" height="120"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="551969957.13261604">
-                                    <!--2018-06-29 12:59:17 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czN-0c-wcr">
-                                <rect key="frame" x="16" y="264" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Art der Durchführung:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T17-s0-oo6">
-                                <rect key="frame" x="16" y="520" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xe8-Fr-MhG">
-                                <rect key="frame" x="16" y="568" width="343" height="89"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vf1-BI-Ba2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBd-4v-eYh">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
-                                    <navigationItem id="Tdo-Sq-o4t">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="G8Z-Wc-XXf">
+                                    <navigationItem id="bDF-kV-HXb">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1y8-A2-kep">
                                             <connections>
-                                                <action selector="cancel:" destination="And-kL-e5Z" id="DtF-2N-alh"/>
+                                                <action selector="cancel:" destination="c2A-th-kmg" id="ire-uq-Lkw"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1B0-pT-oVj">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VoN-zl-oo2">
                                             <connections>
-                                                <action selector="save:" destination="And-kL-e5Z" id="6ao-jm-APJ"/>
+                                                <action selector="save:" destination="c2A-th-kmg" id="BGZ-Sg-1QN"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJ4-Z1-bhJ">
+                                <rect key="frame" x="0.0" y="64" width="414" height="1436"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="THB-RO-gfT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1309.3333333333333"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD4-oN-Vem">
+                                                <rect key="frame" x="16" y="15.999999999999998" width="382" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Zv-QF-DhW">
+                                                <rect key="frame" x="16" y="52.333333333333314" width="382" height="216"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="554586677.99018204">
+                                                    <!--2018-07-29 19:51:17 +0000-->
+                                                </date>
+                                            </datePicker>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgg-b5-ELd">
+                                                <rect key="frame" x="16" y="284.33333333333331" width="382" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zugehöriges Feld eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VR2-va-bQV">
+                                                <rect key="frame" x="16" y="320.66666666666669" width="382" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benutzer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zye-HQ-6B7">
+                                                <rect key="frame" x="16" y="366.66666666666669" width="382" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzer eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2L7-Bh-BPb">
+                                                <rect key="frame" x="16" y="403" width="382" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arbeitsstunden:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLW-qo-caM">
+                                                <rect key="frame" x="16" y="449" width="382" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arbeitsstunden eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4p0-SE-rkn">
+                                                <rect key="frame" x="16" y="485.33333333333337" width="382" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pflanzenschutzmittel Kategorie:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysu-7e-YCq">
+                                                <rect key="frame" x="16" y="531.33333333333337" width="382" height="20.333333333333371"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VMR-Yv-Y3y">
+                                                <rect key="frame" x="16" y="567.66666666666663" width="382" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDx-sd-dt5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="30"/>
+                                                        <state key="normal" title="FUNGIZID"/>
+                                                        <connections>
+                                                            <action selector="fungicidalClicked:" destination="c2A-th-kmg" eventType="touchUpInside" id="IED-yV-1qG"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgx-GW-7uC">
+                                                        <rect key="frame" x="89" y="0.0" width="85" height="30"/>
+                                                        <state key="normal" title="HERBIZID"/>
+                                                        <connections>
+                                                            <action selector="herbicideClicked:" destination="c2A-th-kmg" eventType="touchUpInside" id="cwG-Ax-9IM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7E-u9-Ai7">
+                                                        <rect key="frame" x="174" y="0.0" width="208" height="30"/>
+                                                        <state key="normal" title="INSEKTIZID / AKARIZID "/>
+                                                        <connections>
+                                                            <action selector="insecticidalOrAcaricidalClicked:" destination="c2A-th-kmg" eventType="touchUpInside" id="e8S-KR-O7v"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ausbringungen gegen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6He-dy-lCA">
+                                                <rect key="frame" x="16" y="613.66666666666663" width="382" height="20.333333333333371"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Krankheiten, Schädlinge oder Urkräuter eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-DE-73k">
+                                                <rect key="frame" x="16" y="650" width="382" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pflanzenschutzmittel:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-DV-Rcb">
+                                                <rect key="frame" x="16" y="696" width="382" height="20.333333333333371"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pflanzenschutzmittel eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bys-Ms-kMg">
+                                                <rect key="frame" x="16" y="732.33333333333337" width="382" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Behandlungstermin:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vda-xT-qXj">
+                                                <rect key="frame" x="16" y="778.33333333333337" width="382" height="20.333333333333371"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHl-lb-9fd">
+                                                <rect key="frame" x="16" y="814.66666666666663" width="382" height="215.99999999999989"/>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zusatzliche Informationen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-tD-wFw">
+                                                <rect key="frame" x="16" y="1046.6666666666667" width="382" height="20.333333333333258"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Keine Informationen angegeben." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cGi-kJ-DAY">
+                                                <rect key="frame" x="16" y="1083" width="382" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="E01-WQ-zlm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ausgebrachte Menge (Kg je Ha):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOZ-pJ-jRq">
+                                                <rect key="frame" x="16" y="1227" width="382" height="20.333333333333258"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ausgebrachte Menge eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rvj-Sd-obg">
+                                                <rect key="frame" x="16" y="1263.3333333333333" width="382" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="THB-RO-gfT" secondAttribute="bottom" id="1fy-7w-jsO"/>
+                                    <constraint firstItem="THB-RO-gfT" firstAttribute="leading" secondItem="rJ4-Z1-bhJ" secondAttribute="leading" id="DJ5-v5-IFI"/>
+                                    <constraint firstItem="THB-RO-gfT" firstAttribute="width" secondItem="rJ4-Z1-bhJ" secondAttribute="width" id="HNc-rX-XFB"/>
+                                    <constraint firstAttribute="trailing" secondItem="THB-RO-gfT" secondAttribute="trailing" id="gca-O8-7kQ"/>
+                                    <constraint firstItem="THB-RO-gfT" firstAttribute="top" secondItem="rJ4-Z1-bhJ" secondAttribute="top" id="y29-pk-RhB"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <edgeInsets key="layoutMargins" top="10" left="10" bottom="10" right="10"/>
-                        <viewLayoutGuide key="safeArea" id="wIy-Lf-rwo"/>
+                        <constraints>
+                            <constraint firstItem="MBd-4v-eYh" firstAttribute="leading" secondItem="zOB-Ci-lFg" secondAttribute="leading" id="4IO-UB-3Ra"/>
+                            <constraint firstItem="MBd-4v-eYh" firstAttribute="top" secondItem="zOB-Ci-lFg" secondAttribute="top" id="ICG-27-Suq"/>
+                            <constraint firstItem="rJ4-Z1-bhJ" firstAttribute="leading" secondItem="zOB-Ci-lFg" secondAttribute="leading" id="IsS-fH-DJx"/>
+                            <constraint firstItem="rJ4-Z1-bhJ" firstAttribute="trailing" secondItem="zOB-Ci-lFg" secondAttribute="trailing" id="Wld-ak-HAe"/>
+                            <constraint firstItem="rJ4-Z1-bhJ" firstAttribute="top" secondItem="MBd-4v-eYh" secondAttribute="bottom" id="dNQ-JW-zMg"/>
+                            <constraint firstItem="MBd-4v-eYh" firstAttribute="trailing" secondItem="zOB-Ci-lFg" secondAttribute="trailing" id="grF-9R-J4B"/>
+                            <constraint firstItem="rJ4-Z1-bhJ" firstAttribute="bottom" secondItem="zOB-Ci-lFg" secondAttribute="bottom" id="wiQ-ZV-Sd9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zOB-Ci-lFg"/>
                     </view>
+                    <size key="freeformSize" width="414" height="1500"/>
                     <connections>
-                        <outlet property="date" destination="JUR-MA-PwK" id="pyN-jn-aRs"/>
-                        <outlet property="execution" destination="Xe8-Fr-MhG" id="veW-mD-4eb"/>
-                        <outlet property="field" destination="Ise-Hc-hV9" id="BFD-sX-Uwm"/>
-                        <outlet property="user" destination="tHv-3S-z2l" id="Lcz-Op-2sw"/>
-                        <outlet property="workingHours" destination="ZAc-iQ-D0H" id="I4h-NB-f5u"/>
+                        <outlet property="additionalInformation" destination="cGi-kJ-DAY" id="hUj-yV-a75"/>
+                        <outlet property="appliedAmount" destination="Rvj-Sd-obg" id="Hvo-09-mW3"/>
+                        <outlet property="date" destination="8Zv-QF-DhW" id="ja8-rS-8Vj"/>
+                        <outlet property="field" destination="VR2-va-bQV" id="7lc-b0-XDe"/>
+                        <outlet property="pesticides" destination="bys-Ms-kMg" id="XJc-i9-LX2"/>
+                        <outlet property="plantProtectionKind" destination="Lge-DE-73k" id="hPx-6y-BJ7"/>
+                        <outlet property="treatmentSchedule" destination="AHl-lb-9fd" id="a8V-J3-WXH"/>
+                        <outlet property="user" destination="2L7-Bh-BPb" id="Zml-LK-4rQ"/>
+                        <outlet property="workingHours" destination="4p0-SE-rkn" id="a7P-Mw-JUF"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GD1-EY-awp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7J-tK-qQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="322"/>
+            <point key="canvasLocation" x="854" y="643"/>
+        </scene>
+        <!--Add Vintage View Controller-->
+        <scene sceneID="BpC-Vo-vz0">
+            <objects>
+                <viewController storyboardIdentifier="AddVintage" id="TYz-uY-MNx" customClass="AddVintageViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fpx-0N-iJz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgR-wy-Nvy">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="DTH-pQ-zKA">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ehS-Ri-oVJ">
+                                            <connections>
+                                                <action selector="cancel:" destination="TYz-uY-MNx" id="Wbm-lO-UCt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="PzM-xb-M13">
+                                            <connections>
+                                                <action selector="save:" destination="TYz-uY-MNx" id="ex0-uI-EiS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYq-Bd-tTW">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7oY-IV-1gT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="799.66666666666663"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIv-23-zEs">
+                                                <rect key="frame" x="16" y="15.999999999999998" width="382" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zPa-s8-lGf">
+                                                <rect key="frame" x="16" y="52.333333333333314" width="382" height="216"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="554586677.99018204">
+                                                    <!--2018-07-29 19:51:17 +0000-->
+                                                </date>
+                                            </datePicker>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feld:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhd-cC-zrt">
+                                                <rect key="frame" x="16" y="284.33333333333331" width="382" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zugehöriges Feld eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcW-Px-JHb">
+                                                <rect key="frame" x="16" y="320.66666666666669" width="382" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benutzer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMD-XW-zn7">
+                                                <rect key="frame" x="16" y="366.66666666666669" width="382" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzer eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJ6-qn-mHh">
+                                                <rect key="frame" x="16" y="403" width="382" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arbeitsstunden:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9y-03-n3b">
+                                                <rect key="frame" x="16" y="449" width="382" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arbeitsstunden eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOX-Yu-tCt">
+                                                <rect key="frame" x="16" y="485.33333333333337" width="382" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art der Durchführung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLP-BS-Qmh">
+                                                <rect key="frame" x="16" y="531.33333333333337" width="382" height="20.333333333333371"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJc-hA-4Vb">
+                                                <rect key="frame" x="16" y="567.66666666666663" width="382" height="216"/>
+                                            </pickerView>
+                                        </subviews>
+                                        <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7oY-IV-1gT" firstAttribute="width" secondItem="JYq-Bd-tTW" secondAttribute="width" id="3CS-ZZ-aMq"/>
+                                    <constraint firstAttribute="trailing" secondItem="7oY-IV-1gT" secondAttribute="trailing" id="4lQ-dJ-DHx"/>
+                                    <constraint firstAttribute="bottom" secondItem="7oY-IV-1gT" secondAttribute="bottom" id="WU7-vX-0da"/>
+                                    <constraint firstItem="7oY-IV-1gT" firstAttribute="top" secondItem="JYq-Bd-tTW" secondAttribute="top" id="XgH-1L-sJu"/>
+                                    <constraint firstItem="7oY-IV-1gT" firstAttribute="leading" secondItem="JYq-Bd-tTW" secondAttribute="leading" id="ifG-q0-j0p"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wgR-wy-Nvy" firstAttribute="top" secondItem="HiY-hI-jYm" secondAttribute="top" id="4F8-Oc-JfV"/>
+                            <constraint firstItem="wgR-wy-Nvy" firstAttribute="leading" secondItem="HiY-hI-jYm" secondAttribute="leading" id="Bha-Jm-SVR"/>
+                            <constraint firstItem="JYq-Bd-tTW" firstAttribute="bottom" secondItem="HiY-hI-jYm" secondAttribute="bottom" id="G9L-ac-gTY"/>
+                            <constraint firstItem="JYq-Bd-tTW" firstAttribute="top" secondItem="wgR-wy-Nvy" secondAttribute="bottom" id="KAb-nB-IVy"/>
+                            <constraint firstItem="JYq-Bd-tTW" firstAttribute="leading" secondItem="HiY-hI-jYm" secondAttribute="leading" id="KzA-s3-9cu"/>
+                            <constraint firstItem="JYq-Bd-tTW" firstAttribute="trailing" secondItem="HiY-hI-jYm" secondAttribute="trailing" id="grK-cZ-XEN"/>
+                            <constraint firstItem="wgR-wy-Nvy" firstAttribute="trailing" secondItem="HiY-hI-jYm" secondAttribute="trailing" id="r64-Fa-xiF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HiY-hI-jYm"/>
+                    </view>
+                    <connections>
+                        <outlet property="date" destination="zPa-s8-lGf" id="lci-Xa-H3Z"/>
+                        <outlet property="execution" destination="gJc-hA-4Vb" id="Dpd-H2-qYl"/>
+                        <outlet property="field" destination="lcW-Px-JHb" id="nll-VW-ctX"/>
+                        <outlet property="user" destination="wJ6-qn-mHh" id="TPH-3F-1gf"/>
+                        <outlet property="workingHours" destination="rOX-Yu-tCt" id="SNv-qn-ryR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cNG-eL-XWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="351"/>
         </scene>
         <!--Switch Table View Controller-->
         <scene sceneID="cSL-Sd-eHE">
             <objects>
                 <tableViewController storyboardIdentifier="SwitchTableViewController" id="Mic-AS-JB1" customClass="SwitchTableViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wfe-VQ-EgL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="0qA-84-kY3">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem id="2YC-6e-rlf">
@@ -827,10 +1055,10 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="dNI-0V-Dj7" customClass="SwitchTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dNI-0V-Dj7" id="bW2-lU-1uv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="egV-q7-Apu">
@@ -864,24 +1092,24 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysJ-sL-cVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172" y="1022"/>
+            <point key="canvasLocation" x="277" y="1553"/>
         </scene>
-        <!--Add Plant Protection View Controller-->
+        <!--View Controller-->
         <scene sceneID="3jZ-SO-3LR">
             <objects>
-                <viewController storyboardIdentifier="AddPlantProtection" id="GpP-Qe-e6B" customClass="AddPlantProtectionViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GpP-Qe-e6B" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ley-J7-NxO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hyt-ct-uaj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="1480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbO-1a-5ZQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                                         <subviews>
                                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clB-Yx-pK4">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <items>
                                                     <navigationItem id="qY9-KW-ZEt">
@@ -899,7 +1127,7 @@
                                                 </items>
                                             </navigationBar>
                                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wiw-Va-dDH">
-                                                <rect key="frame" x="17" y="132" width="341" height="123"/>
+                                                <rect key="frame" x="17" y="132" width="380" height="123"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="553598246.16379595">
                                                     <!--2018-07-18 09:17:26 +0000-->
@@ -1021,7 +1249,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ag-tp-F5b">
-                                                <rect key="frame" x="14" y="1028" width="344" height="97"/>
+                                                <rect key="frame" x="14" y="1028" width="383" height="97"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zusatzliche Informationen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmt-49-xan">
@@ -1077,6 +1305,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="shX-wt-1DJ"/>
                     </view>
+                    <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="additionalInformation" destination="1MQ-nj-Ecc" id="UPh-vM-zQA"/>
                         <outlet property="appliedAmount" destination="Km7-5j-GLb" id="AHs-Na-tdQ"/>
@@ -1091,18 +1320,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N63-Yf-VTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172" y="322"/>
+            <point key="canvasLocation" x="171" y="634"/>
         </scene>
         <!--Add Field View Controller-->
         <scene sceneID="Ml7-yp-SqM">
             <objects>
                 <viewController storyboardIdentifier="AddField" id="Vrd-hg-1j0" customClass="AddFieldViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xqi-SD-lNz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-LA-d8J">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem id="9S1-Yq-c9m">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bTF-sX-tq3">
@@ -1119,41 +1348,41 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="LuT-Gp-X2m">
-                                <rect key="frame" x="0.0" y="64" width="375" height="189"/>
+                                <rect key="frame" x="0.0" y="63.999999999999986" width="414" height="180.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irp-iv-fuj">
-                                        <rect key="frame" x="20" y="20" width="335" height="20.5"/>
+                                        <rect key="frame" x="16" y="15.999999999999998" width="382" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Namen des Feldes eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMY-Qx-5mx">
-                                        <rect key="frame" x="20" y="56.5" width="335" height="30"/>
+                                        <rect key="frame" x="16" y="52.333333333333329" width="382" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reben Sorte:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIV-gh-GZW">
-                                        <rect key="frame" x="20" y="102.5" width="335" height="20.5"/>
+                                        <rect key="frame" x="16" y="98.333333333333343" width="382" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reben Sorte des Feldes eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QZC-Vx-ZVI">
-                                        <rect key="frame" x="20" y="139" width="335" height="30"/>
+                                        <rect key="frame" x="16" y="134.66666666666666" width="382" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q82-Rp-2fT">
-                                        <rect key="frame" x="20" y="169" width="335" height="0.0"/>
+                                        <rect key="frame" x="16" y="164.66666666666666" width="382" height="0.0"/>
                                         <state key="normal" title="Fläche löschen"/>
                                         <connections>
                                             <action selector="deleteField:" destination="Vrd-hg-1j0" eventType="primaryActionTriggered" id="izb-Wi-1O7"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
+                                <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1182,17 +1411,17 @@
             <objects>
                 <viewController id="AhY-x6-VPU" customClass="MapViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HK5-ZS-E7u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZsK-FF-gum">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="HXH-Ka-YXU">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DcG-sB-NT7">
-                                            <rect key="frame" x="81.5" y="7.5" width="212" height="29"/>
+                                            <rect key="frame" x="101" y="7.6666666666666679" width="212" height="29.000000000000004"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Standard"/>
@@ -1212,7 +1441,7 @@
                                 </items>
                             </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fJU-Ud-ci9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1239,33 +1468,33 @@
             <objects>
                 <viewController id="1LT-e3-SDl" customClass="LoginViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RiL-dC-4QX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzername" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LDb-mE-hNJ">
-                                <rect key="frame" x="16" y="256" width="343" height="30"/>
+                                <rect key="frame" x="16" y="256" width="382" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="4XQ-Oz-1Pv">
-                                <rect key="frame" x="16" y="60" width="343" height="100"/>
+                                <rect key="frame" x="16" y="60" width="382" height="100"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weinbergapp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRX-Ju-e3u">
-                                <rect key="frame" x="16" y="168" width="343" height="48"/>
+                                <rect key="frame" x="16" y="168" width="382" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="0.80904858732876717" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEp-Qc-o3Q">
-                                <rect key="frame" x="16" y="609" width="343" height="38"/>
+                                <rect key="frame" x="16" y="678" width="382" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Registrieren">
                                     <color key="titleColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="0.80904858729999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snK-00-Cer">
-                                <rect key="frame" x="16" y="563" width="343" height="38"/>
+                                <rect key="frame" x="16" y="632" width="382" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Anmelden">
                                     <color key="titleColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="0.80904858729999996" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1281,13 +1510,13 @@
                                 </connections>
                             </switch>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AM1-Wo-tDm">
-                                <rect key="frame" x="16" y="306" width="343" height="30"/>
+                                <rect key="frame" x="16" y="306" width="382" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwort anzeigen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxu-wX-hdj">
-                                <rect key="frame" x="85" y="356" width="274" height="31"/>
+                                <rect key="frame" x="85" y="356" width="313" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="JIu-bJ-Sgw"/>
                                 </constraints>
@@ -1358,17 +1587,17 @@
             <objects>
                 <viewController id="RnH-Df-VRR" customClass="MoreViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FM5-yA-41I">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdC-US-0HN">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Mehr" id="CUU-fJ-o3h"/>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBQ-wH-2rP">
-                                <rect key="frame" x="16" y="412" width="343" height="40"/>
+                                <rect key="frame" x="16" y="412" width="382" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="7rN-iw-Te7"/>
                                     <constraint firstAttribute="height" constant="40" id="ybf-99-84g"/>
@@ -1379,14 +1608,14 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="2rp-mg-IAg">
-                                <rect key="frame" x="67" y="95" width="241" height="128"/>
+                                <rect key="frame" x="67" y="95" width="280" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="G4x-LD-dc1"/>
                                     <constraint firstAttribute="width" constant="241" id="vbx-rY-mBE"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weinbergapp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGH-vK-SzP">
-                                <rect key="frame" x="16" y="231" width="343" height="55"/>
+                                <rect key="frame" x="16" y="231" width="382" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="0zO-9f-Olz"/>
                                     <constraint firstAttribute="height" constant="55" id="Qap-Zx-XXR"/>
@@ -1396,7 +1625,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFJ-1F-QkF">
-                                <rect key="frame" x="16" y="300" width="343" height="40"/>
+                                <rect key="frame" x="16" y="300" width="382" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QDr-k9-4l1"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="QPa-Jo-T4z"/>
@@ -1406,7 +1635,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOq-Oa-e97">
-                                <rect key="frame" x="16" y="474" width="343" height="40"/>
+                                <rect key="frame" x="16" y="474" width="382" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="PRc-9e-uWd"/>
                                     <constraint firstAttribute="height" constant="40" id="ZHw-MP-rIP"/>
