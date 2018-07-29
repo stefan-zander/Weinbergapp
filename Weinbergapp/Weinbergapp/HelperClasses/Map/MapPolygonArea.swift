@@ -1,5 +1,5 @@
 //
-//  test.swift
+//  MapPolygonArea.swift
 //  Weinbergapp
 //
 //  Created by VM on 26.07.18.

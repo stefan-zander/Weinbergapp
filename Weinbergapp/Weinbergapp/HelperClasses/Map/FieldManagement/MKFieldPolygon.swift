@@ -15,7 +15,12 @@ public class MKFieldPolygon: MKPolygon {
     static let kPreviewPolygonStrokeColor = UIColor.orange.withAlphaComponent(0.5)
     static let kPreviewPolygonLineWidth: CGFloat = 2.0
 
-    var owner: MKField!
+    var owner: MapField!
+    
+    convenience init(owner: MapField, coordinates: UnsafePointer<CLLocationCoordinate2D>, count: Int) {
+        self.init(coordinates: coordinates, count: count)
+        self.owner = owner
+    }
 
     public static func makeRenderer(rendererFor overlay: MKOverlay) -> MKPolygonRenderer {
         let renderer = MKPolygonRenderer(overlay: overlay)

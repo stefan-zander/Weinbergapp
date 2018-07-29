@@ -12,7 +12,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var tableView: UITableView!
 
-    let dataSource = OperationDataSource<Defoliation>()
+    let dataSource = RealmDataSource<Defoliation>()
     
     var defoliations: [Defoliation] = []
 

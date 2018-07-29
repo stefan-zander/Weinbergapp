@@ -12,7 +12,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet weak var tableView: UITableView!
     
-    let dataSource = OperationDataSource<PlantProtection>()
+    let dataSource = RealmDataSource<PlantProtection>()
     
     var plantProtections: [PlantProtection] = []
 

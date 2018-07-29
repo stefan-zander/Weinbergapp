@@ -11,7 +11,12 @@ import MapKit
 
 public class MKFieldPointAnnotation: MKPointAnnotation {
 
-    var owner: MKField!
+    var owner: MapField!
+    
+    convenience init(owner: MapField) {
+        self.init()
+        self.owner = owner
+    }
 
     public func getAnnotationView(in mapView: MKMapView) -> MKAnnotationView {
         if let fieldMarkerAnnotation = mapView.dequeueReusableAnnotationView(

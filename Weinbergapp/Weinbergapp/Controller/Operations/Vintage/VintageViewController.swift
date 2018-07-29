@@ -12,7 +12,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    let dataSource = OperationDataSource<Vintage>()
+    let dataSource = RealmDataSource<Vintage>()
 
     var vintages: [Vintage] = []
 

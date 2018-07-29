@@ -8,36 +8,64 @@
 
 import Foundation
 import CoreLocation
+import RealmSwift
 
 /**
  Represents a field on the map.
  */
-public struct Field {
-
+public class Field: Object {
+    
+    public static let kMetersPerKilometer = 1000.0
+    public static let kSquareMetersPerSquareKilometers = kMetersPerKilometer * kMetersPerKilometer
+    
     /// The name of the field.
-    public let name: String
-
+    @objc public dynamic var name: String = ""
+    
     /// The vine variety of the field.
-    public let vineVariety: String
-
-    /// The coordinates constructing the polygon of the field
-    public let coordinates: [CLLocationCoordinate2D]
+    @objc public dynamic var vineVariety: String = ""
     
-    /// The total area of the field in square meters
-    public let area: Double
+    /// The raw value of the coordinates constructing the polygon of the field
+    public let rawCoordinates = List<Double>()
     
-    init(name: String, vineVariety: String, coordinates: [CLLocationCoordinate2D]) {
-        self.name = name
-        self.vineVariety = vineVariety
-        self.coordinates = coordinates
-        self.area = computeArea(coordinates: coordinates)
-    }
+    private var cachedArea: Double?
     
-    var areaInSquareMeters: Double {
+    public var area: Double {
+        if let area = cachedArea {
+            return area
+        }
+        
+        let area = computeArea(coordinates: coordinates)
+        cachedArea = area
         return area
     }
     
-    var areaInSquareKilometers: Double {
-        return area / (1000.0 * 1000.0)
+    /// The coordinates constructing the polygon of the field
+    public var coordinates: [CLLocationCoordinate2D] {
+        get {
+            let coordinatesCount = rawCoordinates.count / 2
+            
+            var coordinates: [CLLocationCoordinate2D] = []
+            coordinates.reserveCapacity(coordinatesCount)
+            
+            for index in 0..<coordinatesCount {
+                coordinates.append(CLLocationCoordinate2D(latitude: rawCoordinates[2 * index],
+                                                          longitude: rawCoordinates[2 * index + 1]))
+            }
+            
+            return coordinates
+        }
+        set(coordinates) {
+            rawCoordinates.removeAll()
+            
+            for coordinate in coordinates {
+                rawCoordinates.append(coordinate.latitude)
+                rawCoordinates.append(coordinate.longitude)
+            }
+        }
+    }
+    
+    /// The total area of the field in square kilometers
+    public var areaInSquareKilometers: Double {
+        return area / Field.kSquareMetersPerSquareKilometers
     }
 }

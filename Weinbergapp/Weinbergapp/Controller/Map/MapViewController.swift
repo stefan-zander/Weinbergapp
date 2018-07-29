@@ -14,9 +14,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var mapView: MKMapView!
 
+    let fieldDataSource = RealmDataSource<Field>()
+    
+    var fields: [MapField] = []
     var previewer: MapPolygonDrawer!
-    var collection: MapFieldCollection!
-
+    
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(toggleAdd))
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(toggleAdd))
 
@@ -31,10 +33,19 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.showsUserLocation = true
 
         previewer = MapPolygonDrawer(for: mapView)
-        collection = MapFieldCollection(for: mapView)
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        do {
+            try fieldDataSource.query(elements: &fields, { field in
+                let mapField = MapField(field: field, fieldDataSource: self.fieldDataSource, mapView: self.mapView)
+                mapField.displayedOnMap = true
+                return mapField
+            })
+        } catch let error as NSError {
+            MapDialogs.presentLoadFailed(error: error, controller: self)
+        }
     }
 
     @IBAction func toggleAdd(_ sender: UIBarButtonItem) {
@@ -57,9 +68,25 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
                     addField.coordinates = previewer.getCoordinates()
                     addField.completion = {
-                        self.collection.append(name: addField.name,
-                                               vineVariety: addField.vineVariety,
-                                               coordinates: coordinates)
+                        let field = Field()
+                        
+                        field.name = addField.name
+                        field.vineVariety = addField.vineVariety
+                        field.coordinates = coordinates
+                        
+                        do {
+                            try self.fieldDataSource.add(field)
+                        } catch let error as NSError {
+                            MapDialogs.showAddToDatabaseFailed(controller: self, error: error)
+                            return false
+                        }
+                        
+                        let mapField = MapField(field: field,
+                                                fieldDataSource: self.fieldDataSource,
+                                                mapView: self.mapView)
+                        mapField.displayedOnMap = true
+                        self.fields.append(mapField)
+                        return true
                     }
 
                     self.present(addField, animated: true)
@@ -130,8 +157,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
                 editField.editingField = point.owner!
                 editField.completion = {
-                    point.owner.changeNameAndVineVariety(newName: editField.name,
-                                                         newVineVariety: editField.vineVariety)
+                    do {
+                        try point.owner.changeText(name: editField.name,
+                                                   vineVariety: editField.vineVariety)
+                        return true
+                    } catch let error as NSError {
+                        MapDialogs.showUpdateInDatabaseFailed(controller: self, error: error)
+                        return false
+                    }
                 }
 
                 self.present(editField, animated: true)

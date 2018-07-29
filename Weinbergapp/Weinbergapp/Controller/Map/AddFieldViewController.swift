@@ -15,16 +15,16 @@ class AddFieldViewController: UIViewController {
     @IBOutlet weak var vineVarietyField: UITextField!
 
     var coordinates: [CLLocationCoordinate2D] = []
-    var completion: (() -> Void)?
+    var completion: (() -> Bool)?
 
-    var editingField: MKField?
+    var editingField: MapField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let editingField = editingField {
-            nameField.text = editingField.field.name
-            vineVarietyField.text = editingField.field.vineVariety
+            nameField.text = editingField.name
+            vineVarietyField.text = editingField.vineVariety
         }
     }
 
@@ -39,8 +39,14 @@ class AddFieldViewController: UIViewController {
     @IBAction func save(_ sender: UIBarButtonItem) {
         guard MapFieldVerification.verify(name: nameField, self) != nil else { return }
         guard MapFieldVerification.verify(vineVariety: vineVarietyField, self) != nil else { return }
-
-        self.dismiss(animated: true, completion: completion)
+        
+        if let completion = completion {
+            if completion() {
+                self.dismiss(animated: true, completion: nil)
+            }
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {

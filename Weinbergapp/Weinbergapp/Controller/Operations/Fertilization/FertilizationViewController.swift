@@ -12,7 +12,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var tableView: UITableView!
 
-    let dataSource = OperationDataSource<Fertilization>()
+    let dataSource = RealmDataSource<Fertilization>()
     
     var fertilizations: [Fertilization] = []
 
