@@ -10,7 +10,7 @@ import Foundation
 
 class FertilizationLocalization {
     
-    static func getFertilizerCategory(index: Int) -> String? {
+    static func localizeFertilizerCategory(index: Int) -> String? {
         switch index {
         case 0:
             return "Mineralisch"
@@ -21,7 +21,7 @@ class FertilizationLocalization {
         }
     }
     
-    static func getMineralFertilizer(index: Int) -> String? {
+    static func localizeMineralFertilizer(index: Int) -> String? {
         switch index {
         case 0:
             return "Entec perfekt"

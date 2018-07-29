@@ -10,7 +10,7 @@ import Foundation
 
 class VintageLocalization {
     
-    static func getExecution(index: Int) -> String? {
+    static func localizeExecution(index: Int) -> String? {
         switch index {
         case 0:
             return "Händisch"

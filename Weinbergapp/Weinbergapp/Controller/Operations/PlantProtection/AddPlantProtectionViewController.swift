@@ -120,33 +120,33 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         case plantProtectionKind:
             switch currentCategory {
             case .fungicidal:
-                PlantProtectionDialogs.open(fungicidal: currentFungicidal,
-                                            controller: self,
-                                            completion: {
+                PlantProtectionDialogs.present(fungicidal: currentFungicidal,
+                                               controller: self,
+                                               completion: {
                     self.plantProtectionKind.text =
                         PlantProtectionLocalization.localize(self.currentFungicidal)
                 })
 
             case .herbicide:
-                PlantProtectionDialogs.open(herbicide: currentHerbicide,
-                                           controller: self,
-                                           completion: {
+                PlantProtectionDialogs.present(herbicide: currentHerbicide,
+                                               controller: self,
+                                               completion: {
                     self.plantProtectionKind.text =
                         PlantProtectionLocalization.localize(self.currentHerbicide)
                     })
 
             case .insecticidalOrAcaricidal:
-                PlantProtectionDialogs.open(insecticidalOrAcaricidal: currentInsecticidalOrAcaricidal,
-                                           controller: self,
-                                           completion: {
+                PlantProtectionDialogs.present(insecticidalOrAcaricidal: currentInsecticidalOrAcaricidal,
+                                               controller: self,
+                                               completion: {
                     self.plantProtectionKind.text =
                         PlantProtectionLocalization.localize(self.currentInsecticidalOrAcaricidal)
                 })
             }
         case pesticides:
-            PlantProtectionDialogs.open(pesticides: self.currentPesticides,
-                                        controller: self,
-                                        completion: {
+            PlantProtectionDialogs.present(pesticides: self.currentPesticides,
+                                           controller: self,
+                                           completion: {
                 self.pesticides.text =
                     PlantProtectionLocalization.localize(self.currentPesticides)
             })
@@ -166,7 +166,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return PlantProtectionLocalization.getTreatmentSchedule(index: row)
+        return PlantProtectionLocalization.localizeTreatmentSchedule(index: row)
     }
 
     @IBAction func fungicidalClicked(_ sender: UIButton) {

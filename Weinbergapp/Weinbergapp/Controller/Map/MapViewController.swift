@@ -51,7 +51,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBAction func toggleAdd(_ sender: UIBarButtonItem) {
         if previewer.isEnabled {
             if previewer.pointsDrawn < 3 {
-                MapDialogs.showInsufficientPointsWarning(controller: self, onCancel: { _ in
+                MapDialogs.presentInsufficientPointsWarning(controller: self, onCancel: { _ in
                     self.navigationBar.leftBarButtonItem = self.addButton
                     self.previewer.leavePreviewMode()
                 })
@@ -106,7 +106,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        MapDialogs.showLocationUnavailable(controller: self, error: error)
+        MapDialogs.presentLocationUnavailable(controller: self, error: error)
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

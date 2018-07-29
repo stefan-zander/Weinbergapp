@@ -10,7 +10,7 @@ import Foundation
 
 class PlantProtectionLocalization {
     
-    static func getTreatmentSchedule(index: Int) -> String? {
+    static func localizeTreatmentSchedule(index: Int) -> String? {
         switch index {
         case 0:
             return "Austrieb"

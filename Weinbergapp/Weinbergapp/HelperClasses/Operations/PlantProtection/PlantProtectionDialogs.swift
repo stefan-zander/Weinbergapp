@@ -10,9 +10,9 @@ import UIKit
 
 public class PlantProtectionDialogs {
 
-    public static func open(fungicidal: FungicidalPlantProtection,
-                            controller: UIViewController,
-                            completion: @escaping () -> Void) {
+    public static func present(fungicidal: FungicidalPlantProtection,
+                               controller: UIViewController,
+                               completion: @escaping () -> Void) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
@@ -42,9 +42,9 @@ public class PlantProtectionDialogs {
         }
     }
 
-    public static func open(herbicide: HerbicidePlantProtection,
-                            controller: UIViewController,
-                            completion: @escaping () -> Void) {
+    public static func present(herbicide: HerbicidePlantProtection,
+                               controller: UIViewController,
+                               completion: @escaping () -> Void) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
@@ -66,9 +66,9 @@ public class PlantProtectionDialogs {
         }
     }
 
-    public static func open(insecticidalOrAcaricidal: InsecticidalOrAcaricidalPlantProtection,
-                            controller: UIViewController,
-                            completion: @escaping () -> Void) {
+    public static func present(insecticidalOrAcaricidal: InsecticidalOrAcaricidalPlantProtection,
+                               controller: UIViewController,
+                               completion: @escaping () -> Void) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
@@ -100,9 +100,9 @@ public class PlantProtectionDialogs {
         }
     }
 
-    public static func open(pesticides: PlantProtectionPesticides,
-                            controller: UIViewController,
-                            completion: @escaping () -> Void) {
+    public static func present(pesticides: PlantProtectionPesticides,
+                               controller: UIViewController,
+                               completion: @escaping () -> Void) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")

@@ -59,12 +59,6 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Arbeitsgänge" image="Operations" id="rjB-iW-7hR"/>
-                    <connections>
-                        <segue destination="Tq0-nU-pyU" kind="presentation" id="Tjm-pc-7jM"/>
-                        <segue destination="sFc-au-szY" kind="presentation" id="U2J-yj-sdG"/>
-                        <segue destination="H0n-5A-YR2" kind="presentation" id="yPu-Mz-tni"/>
-                        <segue destination="5mE-ge-PpQ" kind="presentation" id="5hE-lz-FUo"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ty-2f-Puc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -316,7 +310,6 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="xSw-0S-s5p" id="RWA-GV-N6Y"/>
-                        <segue destination="Gre-6w-vFN" kind="presentation" id="Nxd-0J-9gE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiX-ZP-lMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -502,7 +495,6 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="qD8-pQ-fYV" id="gNO-j4-JiA"/>
-                        <segue destination="izO-ZI-EHb" kind="presentation" id="t64-Vy-H7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pk6-oy-jXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -591,7 +583,6 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="QJG-y0-TR9" id="Oeg-EB-Jp5"/>
-                        <segue destination="GpP-Qe-e6B" kind="presentation" id="hsS-SA-E0B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91W-KI-RhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -680,7 +671,6 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="TcY-Rl-Ofl" id="FMw-PM-WH1"/>
-                        <segue destination="And-kL-e5Z" kind="presentation" id="qv9-5Z-ogf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeN-hl-9lx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -862,7 +852,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysJ-sL-cVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172" y="1097"/>
+            <point key="canvasLocation" x="172" y="1022"/>
         </scene>
         <!--Add Plant Protection View Controller-->
         <scene sceneID="3jZ-SO-3LR">
@@ -1085,7 +1075,6 @@
                         <outlet property="treatmentSchedule" destination="3ag-tp-F5b" id="eOb-xx-53J"/>
                         <outlet property="user" destination="Aze-4b-P5p" id="VNk-yi-Y3O"/>
                         <outlet property="workingHours" destination="zf5-57-uFJ" id="mjA-cl-apG"/>
-                        <segue destination="Mic-AS-JB1" kind="presentation" id="PWq-mI-vSL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N63-Yf-VTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1227,7 +1216,6 @@
                     <connections>
                         <outlet property="mapView" destination="fJU-Ud-ci9" id="6Mw-yc-LVN"/>
                         <outlet property="navigationBar" destination="HXH-Ka-YXU" id="gpI-iK-pyR"/>
-                        <segue destination="Vrd-hg-1j0" kind="presentation" id="25k-e2-SbE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9k-ID-Bhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1327,7 +1315,6 @@
                     <connections>
                         <outlet property="password" destination="AM1-Wo-tDm" id="1HC-S1-HbU"/>
                         <outlet property="username" destination="LDb-mE-hNJ" id="EaX-fE-Svo"/>
-                        <segue destination="AzT-oI-WRz" kind="presentation" id="640-xF-Ghc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enU-V0-ElX" userLabel="First Responder" sceneMemberID="firstResponder"/>
