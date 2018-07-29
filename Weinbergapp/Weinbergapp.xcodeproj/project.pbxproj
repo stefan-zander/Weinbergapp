@@ -42,6 +42,7 @@
 		9409694921036E0C00AA7146 /* PlantProtectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694821036E0C00AA7146 /* PlantProtectionTableViewCell.swift */; };
 		9409694B21036E1B00AA7146 /* VintageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694A21036E1B00AA7146 /* VintageTableViewCell.swift */; };
 		940DD3C821047AF80004CD26 /* PlantProtectionDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940DD3C721047AF80004CD26 /* PlantProtectionDialogs.swift */; };
+		9427E4AD210E230D00BD0458 /* MapLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9427E4AC210E230D00BD0458 /* MapLocalization.swift */; };
 		943D33712109E684006886CA /* MapPolygonArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943D33702109E684006886CA /* MapPolygonArea.swift */; };
 		9445648D2103506100201DD4 /* PlantProtectionLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */; };
 		944564912103528700201DD4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944564902103528700201DD4 /* MoreViewController.swift */; };
@@ -136,6 +137,7 @@
 		9409694821036E0C00AA7146 /* PlantProtectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionTableViewCell.swift; sourceTree = "<group>"; };
 		9409694A21036E1B00AA7146 /* VintageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageTableViewCell.swift; sourceTree = "<group>"; };
 		940DD3C721047AF80004CD26 /* PlantProtectionDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionDialogs.swift; sourceTree = "<group>"; };
+		9427E4AC210E230D00BD0458 /* MapLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocalization.swift; sourceTree = "<group>"; };
 		943D33702109E684006886CA /* MapPolygonArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPolygonArea.swift; sourceTree = "<group>"; };
 		9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionLocalization.swift; sourceTree = "<group>"; };
 		944564902103528700201DD4 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
@@ -515,8 +517,9 @@
 		945CD71D21091E7200542CD8 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				94BE5C662107B50C00C95F97 /* MapDialogs.swift */,
+				9427E4AC210E230D00BD0458 /* MapLocalization.swift */,
 				945CD7152108E60400542CD8 /* MapFieldVerification.swift */,
+				94BE5C662107B50C00C95F97 /* MapDialogs.swift */,
 				943D33702109E684006886CA /* MapPolygonArea.swift */,
 				945CD71E21091E7E00542CD8 /* Drawing */,
 				945CD71F21091E8F00542CD8 /* FieldManagement */,
@@ -555,8 +558,8 @@
 		945CD72121091EF800542CD8 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				945B47BD210B70C6007865D5 /* OperationDialogs.swift */,
 				945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */,
+				945B47BD210B70C6007865D5 /* OperationDialogs.swift */,
 				945B47B8210B6640007865D5 /* Fertilization */,
 				945CD72221091F0500542CD8 /* PlantProtection */,
 				945B47BF210B7764007865D5 /* Vintage */,
@@ -567,8 +570,8 @@
 		945CD72221091F0500542CD8 /* PlantProtection */ = {
 			isa = PBXGroup;
 			children = (
-				940DD3C721047AF80004CD26 /* PlantProtectionDialogs.swift */,
 				9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */,
+				940DD3C721047AF80004CD26 /* PlantProtectionDialogs.swift */,
 			);
 			path = PlantProtection;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 				945F08352100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift in Sources */,
 				945065A120FB445F00758D8C /* SwitchTableViewCell.swift in Sources */,
 				940477A920F9E7420049CDB5 /* AddFertilizationViewController.swift in Sources */,
+				9427E4AD210E230D00BD0458 /* MapLocalization.swift in Sources */,
 				9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */,
 				9409694721036DFD00AA7146 /* DefoliationTableViewCell.swift in Sources */,
 				945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */,

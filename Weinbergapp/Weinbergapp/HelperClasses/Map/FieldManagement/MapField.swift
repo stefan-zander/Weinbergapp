@@ -57,8 +57,7 @@ class MapField {
         }
         
         if let point = point {
-            point.title = "\(field.name) (\(String.init(format: "%.2f", field.areaInSquareKilometers)) km²)"
-            point.subtitle = "Reben Sorte: \(field.vineVariety)"
+            update(point: point)
         }
     }
     
@@ -74,19 +73,20 @@ class MapField {
         mapView.add(polygon)
         
         if let point = point {
-            update(point: point, coordinate: polygon.coordinate)
+            update(point: point)
+            point.coordinate = polygon.coordinate
         } else {
             let point = MKFieldPointAnnotation(owner: self)
-            update(point: point, coordinate: polygon.coordinate)
+            update(point: point)
+            point.coordinate = polygon.coordinate
             self.point = point
             mapView.addAnnotation(point)
         }
     }
     
-    private func update(point: MKFieldPointAnnotation, coordinate: CLLocationCoordinate2D) {
-        point.title = "\(field.name) (\(String.init(format: "%.2f", field.areaInSquareKilometers)) km²)"
+    private func update(point: MKFieldPointAnnotation) {
+        point.title = "\(field.name) (\(MapLocalization.localize(area: field.area)))"
         point.subtitle = "Reben Sorte: \(field.vineVariety)"
-        point.coordinate = coordinate
     }
 
     private func removeFromMapView() {

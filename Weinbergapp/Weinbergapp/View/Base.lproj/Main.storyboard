@@ -14,7 +14,7 @@
         <scene sceneID="iJB-zV-OgV">
             <objects>
                 <tableViewController id="oNZ-z5-vyi" customClass="OperationsTableViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pb7-8h-yOP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pb7-8h-yOP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,25 +27,37 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OperationCell" id="Dk3-JF-t75" customClass="OperationTableViewCell" customModule="Weinbergapp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dk3-JF-t75" id="n5Q-ub-Tp6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILG-WS-Lbf">
-                                            <rect key="frame" x="16" y="9" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ILG-WS-Lbf">
+                                            <rect key="frame" x="12" y="11" width="50" height="50"/>
                                             <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="6R6-z1-D3X"/>
+                                                <constraint firstAttribute="height" constant="50" id="onZ-GC-E3C"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rJ-rd-L0U">
-                                            <rect key="frame" x="91" y="9" width="268" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rJ-rd-L0U">
+                                            <rect key="frame" x="78" y="11" width="281" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="g5a-12-bba"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4rJ-rd-L0U" firstAttribute="leading" secondItem="ILG-WS-Lbf" secondAttribute="trailing" constant="16" id="6Zl-ZM-UxX"/>
+                                        <constraint firstItem="4rJ-rd-L0U" firstAttribute="top" secondItem="n5Q-ub-Tp6" secondAttribute="top" constant="12" id="ZZl-bg-0Qa"/>
+                                        <constraint firstItem="ILG-WS-Lbf" firstAttribute="leading" secondItem="n5Q-ub-Tp6" secondAttribute="leading" constant="12" id="g9d-y0-VEb"/>
+                                        <constraint firstItem="ILG-WS-Lbf" firstAttribute="top" secondItem="n5Q-ub-Tp6" secondAttribute="top" constant="12" id="gr0-BV-tfW"/>
+                                        <constraint firstAttribute="trailing" secondItem="4rJ-rd-L0U" secondAttribute="trailing" constant="16" id="wcg-Hz-L7q"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imageThumbnailOperation" destination="ILG-WS-Lbf" id="lWM-lu-8AZ"/>
@@ -58,7 +70,7 @@
                             <outlet property="delegate" destination="oNZ-z5-vyi" id="TH0-QY-TXD"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Arbeitsgänge" image="Operations" id="rjB-iW-7hR"/>
+                    <tabBarItem key="tabBarItem" title="Arbeitsgänge" image="OperationsLogo" id="rjB-iW-7hR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ty-2f-Puc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1212,7 +1224,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tTu-fD-evz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Karte" image="Map" id="0Mt-Cg-U6j"/>
+                    <tabBarItem key="tabBarItem" title="Karte" image="MapLogo" id="0Mt-Cg-U6j"/>
                     <connections>
                         <outlet property="mapView" destination="fJU-Ud-ci9" id="6Mw-yc-LVN"/>
                         <outlet property="navigationBar" destination="HXH-Ka-YXU" id="gpI-iK-pyR"/>
@@ -1437,8 +1449,8 @@
     </scenes>
     <resources>
         <image name="Logo" width="100" height="100"/>
-        <image name="Map" width="30" height="30"/>
-        <image name="Operations" width="30" height="30"/>
+        <image name="MapLogo" width="30" height="30"/>
+        <image name="OperationsLogo" width="30" height="30"/>
         <image name="location" width="32" height="32"/>
     </resources>
 </document>

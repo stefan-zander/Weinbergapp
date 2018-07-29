@@ -12,19 +12,19 @@ class OperationsTableViewController: UITableViewController {
 
     let operations = [
         Operation(name: "Düngung",
-                  image: UIImage(named: "Fertilization")!,
+                  image: UIImage(named: "FertilizationLogo")!,
                   storyboardIdentifier: "Fertilization"),
 
         Operation(name: "Entlauben",
-                  image: UIImage(named: "Defoliation")!,
+                  image: UIImage(named: "DefoliationLogo")!,
                   storyboardIdentifier: "Defoliation"),
 
         Operation(name: "Pflanzenschutz",
-                  image: UIImage(named: "PlantProtection")!,
+                  image: UIImage(named: "PlantProtectionLogo")!,
                   storyboardIdentifier: "PlantProtection"),
 
         Operation(name: "Traubenlese",
-                  image: UIImage(named: "Vintage")!,
+                  image: UIImage(named: "VintageLogo")!,
                   storyboardIdentifier: "Vintage")
     ]
 

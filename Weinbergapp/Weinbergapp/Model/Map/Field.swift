@@ -15,9 +15,6 @@ import RealmSwift
  */
 public class Field: Object {
     
-    public static let kMetersPerKilometer = 1000.0
-    public static let kSquareMetersPerSquareKilometers = kMetersPerKilometer * kMetersPerKilometer
-    
     /// The name of the field.
     @objc public dynamic var name: String = ""
     
@@ -29,6 +26,7 @@ public class Field: Object {
     
     private var cachedArea: Double?
     
+    /// The area of the field measured in meters.
     public var area: Double {
         if let area = cachedArea {
             return area
@@ -62,10 +60,5 @@ public class Field: Object {
                 rawCoordinates.append(coordinate.longitude)
             }
         }
-    }
-    
-    /// The total area of the field in square kilometers
-    public var areaInSquareKilometers: Double {
-        return area / Field.kSquareMetersPerSquareKilometers
     }
 }
