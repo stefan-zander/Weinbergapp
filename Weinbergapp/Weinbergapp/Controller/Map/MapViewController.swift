@@ -65,7 +65,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
                 if let addField = storyboard.instantiateViewController(withIdentifier: "AddField")
                     as? AddFieldViewController {
-                    addField.coordinates = previewer.getCoordinates()
+                    addField.source = self
+                    addField.coordinates = coordinates
 
                     self.present(addField, animated: true)
                 }
