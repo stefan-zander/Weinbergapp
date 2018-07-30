@@ -37,16 +37,12 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = self.tableView.dequeueReusableCell(
             withIdentifier: "FertilizationViewCell",
             for: indexPath)
-
+        
         if let cell = cell as? FertilizationTableViewCell {
             let fertilization = fertilizations[indexPath.row]
-
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            dateFormatter.locale = Locale.init(identifier: "de_DE")
-
+            
             cell.setField(field: "Feld: \(fertilization.field)")
-            cell.setDate(date: "Datum: \(dateFormatter.string(from: fertilization.date))")
+            cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: fertilization.date)))")
             cell.setUser(user: "Benutzer: \(fertilization.user)")
         }
 

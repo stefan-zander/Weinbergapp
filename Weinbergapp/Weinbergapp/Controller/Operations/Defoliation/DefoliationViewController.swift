@@ -41,12 +41,8 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
         if let cell = cell as? DefoliationTableViewCell {
             let defoliation = defoliations[indexPath.row]
 
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            dateFormatter.locale = Locale.init(identifier: "de_DE")
-
             cell.setField(field: "Feld: \(defoliation.field)")
-            cell.setDate(date: "Datum: \(dateFormatter.string(from: defoliation.date))")
+            cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: defoliation.date))")
             cell.setUser(user: "Benutzer: \(defoliation.user)")
         }
 

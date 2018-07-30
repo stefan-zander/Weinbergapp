@@ -64,6 +64,8 @@
 		945F08352100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */; };
 		945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */; };
 		9473746D21061D8F006196CF /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473746C21061D8E006196CF /* Field.swift */; };
+		9486C4C4210FB3E100C2E153 /* RealmPersistentCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9486C4C3210FB3E100C2E153 /* RealmPersistentCollection.swift */; };
+		9486C4C6210FBBDF00C2E153 /* GermanDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9486C4C5210FBBDF00C2E153 /* GermanDateFormatter.swift */; };
 		94BE5C63210799F300C95F97 /* MapPolygonDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */; };
 		94BE5C672107B50C00C95F97 /* MapDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C662107B50C00C95F97 /* MapDialogs.swift */; };
 		94BE5C6B210887CA00C95F97 /* MKPreviewPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C6A210887CA00C95F97 /* MKPreviewPolygon.swift */; };
@@ -159,6 +161,8 @@
 		945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsecticidalOrAcaricidalPlantProtection.swift; sourceTree = "<group>"; };
 		945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionPesticides.swift; sourceTree = "<group>"; };
 		9473746C21061D8E006196CF /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		9486C4C3210FB3E100C2E153 /* RealmPersistentCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistentCollection.swift; sourceTree = "<group>"; };
+		9486C4C5210FBBDF00C2E153 /* GermanDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanDateFormatter.swift; sourceTree = "<group>"; };
 		94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPolygonDrawer.swift; sourceTree = "<group>"; };
 		94BE5C662107B50C00C95F97 /* MapDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDialogs.swift; sourceTree = "<group>"; };
 		94BE5C6A210887CA00C95F97 /* MKPreviewPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPreviewPolygon.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				940585C7210DC2B10045B5A6 /* RealmDataSource.swift */,
+				9486C4C3210FB3E100C2E153 /* RealmPersistentCollection.swift */,
 				9401561C20FCCFF3006E36D9 /* Map */,
 				940155F820FCCF0A006E36D9 /* Operations */,
 			);
@@ -508,6 +513,7 @@
 		945CD71C21091D1700542CD8 /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
+				9486C4C5210FBBDF00C2E153 /* GermanDateFormatter.swift */,
 				945CD71D21091E7200542CD8 /* Map */,
 				945CD72121091EF800542CD8 /* Operations */,
 			);
@@ -823,6 +829,7 @@
 				9409694921036E0C00AA7146 /* PlantProtectionTableViewCell.swift in Sources */,
 				354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */,
 				94FEDF522108ADA6002CF6A0 /* MKFieldPointAnnotation.swift in Sources */,
+				9486C4C4210FB3E100C2E153 /* RealmPersistentCollection.swift in Sources */,
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
 				940585C8210DC2B10045B5A6 /* RealmDataSource.swift in Sources */,
@@ -861,6 +868,7 @@
 				945CD7162108E60400542CD8 /* MapFieldVerification.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
 				945F08312100A03800F55C44 /* FungicidalPlantProtection.swift in Sources */,
+				9486C4C6210FBBDF00C2E153 /* GermanDateFormatter.swift in Sources */,
 				358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */,
 				940155F420FCC96A006E36D9 /* PlantProtection.swift in Sources */,
 				940477AF20F9E9120049CDB5 /* AddDefoliationViewController.swift in Sources */,

@@ -41,12 +41,8 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
         if let cell = cell as? PlantProtectionTableViewCell {
             let plantProtection = plantProtections[indexPath.row]
 
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            dateFormatter.locale = Locale.init(identifier: "de_DE")
-
             cell.setField(field: "Feld: \(plantProtection.field)")
-            cell.setDate(date: "Datum: \(dateFormatter.string(from: plantProtection.date))")
+            cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: plantProtection.date))")
             cell.setUser(user: "Benutzer: \(plantProtection.user)")
         }
 

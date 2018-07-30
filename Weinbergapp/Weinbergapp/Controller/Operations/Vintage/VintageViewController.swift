@@ -39,12 +39,8 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let cell = cell as? VintageTableViewCell {
             let vintage = vintages[indexPath.row]
 
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            dateFormatter.locale = Locale.init(identifier: "de_DE")
-
             cell.setField(field: "Feld: \(vintage.field)")
-            cell.setDate(date: "Datum: \(dateFormatter.string(from: vintage.date))")
+            cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string)")
             cell.setUser(user: "Benutzer: \(vintage.user)")
         }
 
