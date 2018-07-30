@@ -62,6 +62,19 @@ class MapDialogs {
         controller.present(alert, animated: true)
     }
     
+    static func presentFieldDeletionConfirmation(controller: UIViewController,
+                                                 fieldName: String,
+                                                 onConfirmation: @escaping (UIAlertAction) -> Void) {
+        let alert = UIAlertController(title: "Löschen bestätigen",
+                                      message: "Möchten Sie das Feld \"\(fieldName)\" wirklich löschen?",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ja, \"\(fieldName)\" löschen", style: .default, handler: onConfirmation))
+        alert.addAction(UIAlertAction(title: "Nein, \"\(fieldName)\" beibehalten", style: .default, handler: nil))
+        
+        controller.present(alert, animated: true)
+    }
+    
     static func presentDeletionInDatabaseFailed(controller: UIViewController, error: Error) {
         let alert = UIAlertController(title: "Feld konnte nicht gelöscht werden.",
                                       message: error.localizedDescription,

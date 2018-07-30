@@ -35,18 +35,22 @@ class AddFieldViewController: UIViewController {
             assert(false)
         }
         
-        do {
-            if let index = source.fields.index(where: { $0 === editingField }) {
-                try source.fieldDataSource.delete(editingField.field)
-                editingField.displayedOnMap = false
-                source.fields.remove(at: index)
+        MapDialogs.presentFieldDeletionConfirmation(controller: self,
+                                                    fieldName: editingField.name,
+                                                    onConfirmation: { _ in
+            do {
+                if let index = self.source.fields.index(where: { $0 === editingField }) {
+                    try self.source.fieldDataSource.delete(editingField.field)
+                    editingField.displayedOnMap = false
+                    self.source.fields.remove(at: index)
+                }
+            } catch let error as NSError {
+                MapDialogs.presentDeletionInDatabaseFailed(controller: self, error: error)
+                return
             }
-        } catch let error as NSError {
-            MapDialogs.presentDeletionInDatabaseFailed(controller: self, error: error)
-            return
-        }
-        
-        self.dismiss(animated: true, completion: nil)
+            
+            self.dismiss(animated: true, completion: nil)
+        })
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
