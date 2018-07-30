@@ -20,15 +20,14 @@ public class MKFieldPointAnnotation: MKPointAnnotation {
 
     public func getAnnotationView(in mapView: MKMapView) -> MKAnnotationView {
         if let fieldMarkerAnnotation = mapView.dequeueReusableAnnotationView(
-            withIdentifier: "fieldMarkerAnnotation") {
+            withIdentifier: "fieldPinAnnotation") {
             fieldMarkerAnnotation.annotation = self
             return fieldMarkerAnnotation
         }
 
-        let fieldMarkerAnnotation = MKMarkerAnnotationView(annotation: self,
-                                                           reuseIdentifier: "fieldMarkerAnnotation")
+        let fieldMarkerAnnotation = MKPinAnnotationView(annotation: self,
+                                                           reuseIdentifier: "fieldPinAnnotation")
         fieldMarkerAnnotation.tintColor = .orange
-        fieldMarkerAnnotation.markerTintColor = .orange
 
         fieldMarkerAnnotation.canShowCallout = true
         fieldMarkerAnnotation.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
