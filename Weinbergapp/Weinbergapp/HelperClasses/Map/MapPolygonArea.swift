@@ -33,7 +33,7 @@ public func radians(degrees: Double) -> Double {
  - Returns: The area of the polygon in square meters.
  
  - Remark:
-     This algorithm has been implemented according to formular "area of a polygon on a sphere", located on page 13 of
+     This algorithm has been implemented according to formular "area of a polygon on a sphere", located on page 7 of
      [Some Algorithms for Polygons on a Sphere](
      https://trs-new.jpl.nasa.gov/bitstream/handle/2014/40409/JPL%20Pub%2007-3%20%20w%20Errata.pdf). The algorithm
      assumes the earth to be a sphere, which while giving a reasonably quick approximation, may not be perfectly
