@@ -10,6 +10,9 @@ import UIKit
 
 class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
     UIPickerViewDataSource {
+    
+    public var onLoad: (() -> Void)?
+    public var onSave: (() -> Bool)?
 
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var field: UITextField!
@@ -38,12 +41,12 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         treatmentSchedule.delegate = self
         treatmentSchedule.dataSource = self
         
-        if let editingElement = editingElement {
-            applyChanges(from: editingElement)
+        if let onLoad = onLoad {
+            onLoad()
         }
     }
     
-    func applyChanges(from: PlantProtection) {
+    public func applyChanges(from: PlantProtection) {
         date.date = from.date
         field.text = from.field
         user.text = from.user
@@ -71,7 +74,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         appliedAmount.text = String(from.appliedAmount)
     }
     
-    func applyChanges(to: PlantProtection) {
+    public func applyChanges(to: PlantProtection) {
         to.date = date.date
         to.field = field.text ?? ""
         to.user = user.text ?? ""
@@ -118,6 +121,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField {
         case plantProtectionKind:
+            // TODO move this onto another dialog
             switch currentCategory {
             case .fungicidal:
                 PlantProtectionDialogs.present(fungicidal: currentFungicidal,
@@ -190,24 +194,11 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
         guard OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
         
-        do {
-            if let editingElement = editingElement {
-                try source.dataSource.update {
-                    applyChanges(to: editingElement)
-                }
-            } else {
-                let plantProtection = PlantProtection()
-                applyChanges(to: plantProtection)
-                
-                try source.dataSource.add(plantProtection)
-                source.plantProtections.append(plantProtection)
-            }
-            
-            source.tableView.reloadData()
-            self.dismiss(animated: true, completion: nil)
-        } catch let error as NSError {
-            OperationDialogs.presentSaveFailed(error: error, controller: self)
+        if let onSave = onSave {
+            guard onSave() else { return }
         }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {

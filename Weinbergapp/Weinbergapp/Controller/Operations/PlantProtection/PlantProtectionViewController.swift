@@ -12,9 +12,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet weak var tableView: UITableView!
     
-    let dataSource = RealmDataSource<PlantProtection>()
-    
-    var plantProtections: [PlantProtection] = []
+    let collection = RealmPersistentCollection<PlantProtection>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +21,14 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
         tableView.dataSource = self
         
         do {
-            try dataSource.query(elements: &plantProtections)
+            try collection.reload()
         } catch let error as NSError {
             OperationDialogs.presentLoadFailed(error: error, controller: self)
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plantProtections.count
+        return collection.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,7 +37,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
             for: indexPath)
 
         if let cell = cell as? PlantProtectionTableViewCell {
-            let plantProtection = plantProtections[indexPath.row]
+            let plantProtection = collection[indexPath.row]
 
             cell.setField(field: "Feld: \(plantProtection.field)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: plantProtection.date))")
@@ -52,12 +50,29 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        if let addPlantProtection = storyboard.instantiateViewController(withIdentifier: "AddPlantProtection")
+        if let editPlantProtection = storyboard.instantiateViewController(withIdentifier: "AddPlantProtection")
             as? AddPlantProtectionViewController {
-            addPlantProtection.source = self
-            addPlantProtection.editingElement = plantProtections[indexPath.row]
-
-            self.present(addPlantProtection, animated: true)
+            let editingElement = collection[indexPath.row]
+            
+            editPlantProtection.onLoad = {
+                editPlantProtection.applyChanges(from: editingElement)
+            }
+            
+            editPlantProtection.onSave = {
+                do {
+                    try self.collection.update {
+                        editPlantProtection.applyChanges(to: editingElement)
+                    }
+                    
+                    self.tableView.reloadData()
+                    return true
+                } catch let error as NSError {
+                    OperationDialogs.presentSaveFailed(error: error, controller: editPlantProtection)
+                    return false
+                }
+            }
+            
+            self.present(editPlantProtection, animated: true)
         }
     }
 
@@ -70,8 +85,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             do {
-                try dataSource.delete(plantProtections[indexPath.row])
-                plantProtections.remove(at: indexPath.row)
+                try collection.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
                 OperationDialogs.presentDeletionFailed(error: error, controller: self)
@@ -84,8 +98,20 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
 
         if let addPlantProtection = storyboard.instantiateViewController(withIdentifier: "AddPlantProtection")
             as? AddPlantProtectionViewController {
-            addPlantProtection.source = self
-
+            addPlantProtection.onSave = {
+                do {
+                    let plantProtection = PlantProtection()
+                    addPlantProtection.applyChanges(to: plantProtection)
+                    try self.collection.add(plantProtection)
+                    
+                    self.tableView.reloadData()
+                    return true
+                } catch let error as NSError {
+                    OperationDialogs.presentSaveFailed(error: error, controller: addPlantProtection)
+                    return false
+                }
+            }
+            
             self.present(addPlantProtection, animated: true)
         }
     }
