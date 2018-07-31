@@ -1338,7 +1338,7 @@
         <!--Main View Controller-->
         <scene sceneID="osP-U2-eYe">
             <objects>
-                <tabBarController storyboardIdentifier="MainViewControllerID" id="AzT-oI-WRz" customClass="MainViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Main" id="AzT-oI-WRz" customClass="MainViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pvj-dI-Lvb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

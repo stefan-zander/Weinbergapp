@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
             let realm = try Realm()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            if let controller = storyboard.instantiateViewController(withIdentifier: "MainViewControllerID")
+            if let controller = storyboard.instantiateViewController(withIdentifier: "Main")
                 as? MainViewController {
                 controller.realm = realm
                 
