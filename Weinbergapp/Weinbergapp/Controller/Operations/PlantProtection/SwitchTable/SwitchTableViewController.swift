@@ -80,7 +80,11 @@ class SwitchTableViewController: UITableViewController {
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: completion)
+        if let completion = completion {
+            completion()
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {

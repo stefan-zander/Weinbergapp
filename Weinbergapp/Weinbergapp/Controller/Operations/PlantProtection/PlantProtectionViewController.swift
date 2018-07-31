@@ -12,7 +12,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet weak var tableView: UITableView!
     
-    let collection = RealmPersistentCollection<PlantProtection>()
+    let plantProtections = RealmPersistentCollection<PlantProtection>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,14 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
         tableView.dataSource = self
         
         do {
-            try collection.reload()
+            try plantProtections.reload()
         } catch let error as NSError {
             OperationDialogs.presentLoadFailed(error: error, controller: self)
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collection.count
+        return plantProtections.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,7 +37,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
             for: indexPath)
 
         if let cell = cell as? PlantProtectionTableViewCell {
-            let plantProtection = collection[indexPath.row]
+            let plantProtection = plantProtections[indexPath.row]
 
             cell.setField(field: "Feld: \(plantProtection.field)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: plantProtection.date))")
@@ -52,7 +52,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
 
         if let editPlantProtection = storyboard.instantiateViewController(withIdentifier: "AddPlantProtection")
             as? AddPlantProtectionViewController {
-            let editingElement = collection[indexPath.row]
+            let editingElement = plantProtections[indexPath.row]
             
             editPlantProtection.onLoad = {
                 editPlantProtection.applyChanges(from: editingElement)
@@ -60,7 +60,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
             
             editPlantProtection.onSave = {
                 do {
-                    try self.collection.update {
+                    try self.plantProtections.update {
                         editPlantProtection.applyChanges(to: editingElement)
                     }
                     
@@ -85,7 +85,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             do {
-                try collection.delete(at: indexPath.row)
+                try plantProtections.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
                 OperationDialogs.presentDeletionFailed(error: error, controller: self)
@@ -102,7 +102,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                 do {
                     let plantProtection = PlantProtection()
                     addPlantProtection.applyChanges(to: plantProtection)
-                    try self.collection.add(plantProtection)
+                    try self.plantProtections.add(plantProtection)
                     
                     self.tableView.reloadData()
                     return true

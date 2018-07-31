@@ -30,9 +30,6 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     var currentInsecticidalOrAcaricidal = InsecticidalOrAcaricidalPlantProtection()
     var currentPesticides = PlantProtectionPesticides()
 
-    var editingElement: PlantProtection?
-    var source: PlantProtectionViewController!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,8 +62,18 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
             currentInsecticidalOrAcaricidal.copy(from: insecticidalOrAcaricidal)
         }
         
+        switch currentCategory {
+        case .fungicidal:
+            plantProtectionKind.text = PlantProtectionLocalization.localize(currentFungicidal)
+        case .herbicide:
+            plantProtectionKind.text = PlantProtectionLocalization.localize(currentHerbicide)
+        case .insecticidalOrAcaricidal:
+            plantProtectionKind.text = PlantProtectionLocalization.localize(currentInsecticidalOrAcaricidal)
+        }
+        
         if let pesticides = from.pesticides {
             currentPesticides.copy(from: pesticides)
+            self.pesticides.text = PlantProtectionLocalization.localize(pesticides)
         }
         
         treatmentSchedule.selectRow(from.treatmentScheduleRaw, inComponent: 0, animated: false)
