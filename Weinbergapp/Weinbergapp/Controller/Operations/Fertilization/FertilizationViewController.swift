@@ -12,10 +12,8 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var tableView: UITableView!
 
-    let dataSource = RealmDataSource<Fertilization>()
+    let collection = RealmPersistentCollection<Fertilization>()
     
-    var fertilizations: [Fertilization] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,14 +21,14 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.dataSource = self
         
         do {
-            try dataSource.query(elements: &fertilizations)
+            try collection.reload()
         } catch let error as NSError {
             OperationDialogs.presentLoadFailed(error: error, controller: self)
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fertilizations.count
+        return collection.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,7 +37,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
             for: indexPath)
         
         if let cell = cell as? FertilizationTableViewCell {
-            let fertilization = fertilizations[indexPath.row]
+            let fertilization = collection[indexPath.row]
             
             cell.setField(field: "Feld: \(fertilization.field)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: fertilization.date)))")
@@ -52,12 +50,27 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        if let addFertilization = storyboard.instantiateViewController(withIdentifier: "AddFertilization")
+        if let editFertilization = storyboard.instantiateViewController(withIdentifier: "AddFertilization")
             as? AddFertilizationViewController {
-            addFertilization.source = self
-            addFertilization.editingElement = fertilizations[indexPath.row]
+            let editingElement = collection[indexPath.row]
+            
+            editFertilization.onLoad = {
+                editFertilization.applyChanges(from: editingElement)
+            }
+            
+            editFertilization.onSave = {
+                do {
+                    try self.collection.update {
+                        editFertilization.applyChanges(to: editingElement)
+                    }
+                    
+                    self.tableView.reloadData()
+                } catch let error as NSError {
+                    OperationDialogs.presentSaveFailed(error: error, controller: self)
+                }
+            }
 
-            self.present(addFertilization, animated: true)
+            self.present(editFertilization, animated: true)
         }
     }
 
@@ -70,8 +83,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             do {
-                try dataSource.delete(fertilizations[indexPath.row])
-                fertilizations.remove(at: indexPath.row)
+                try collection.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
                 OperationDialogs.presentDeletionFailed(error: error, controller: self)
@@ -84,7 +96,16 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
 
         if let addFertilization = storyboard.instantiateViewController(withIdentifier: "AddFertilization")
             as? AddFertilizationViewController {
-            addFertilization.source = self
+            addFertilization.onSave = {
+                do {
+                    let fertilization = Fertilization()
+                    addFertilization.applyChanges(to: fertilization)
+                    try self.collection.add(fertilization)
+                    self.tableView.reloadData()
+                } catch let error as NSError {
+                    OperationDialogs.presentSaveFailed(error: error, controller: self)
+                }
+            }
 
             self.present(addFertilization, animated: true)
         }

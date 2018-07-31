@@ -9,6 +9,9 @@
 import UIKit
 
 class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    public var onLoad: (() -> Void)?
+    public var onSave: (() -> Void)?
 
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var field: UITextField!
@@ -17,10 +20,7 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var fertilizerCategory: UIPickerView!
     @IBOutlet weak var fertilizer: UIPickerView!
     @IBOutlet weak var appliedAmount: UITextField!
-
-    var editingElement: Fertilization?
-    var source: FertilizationViewController!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,13 +28,13 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         fertilizerCategory.dataSource = self
         fertilizer.delegate = self
         fertilizer.dataSource = self
-
-        if let editingElement = editingElement {
-            applyChanges(from: editingElement)
+        
+        if let onLoad = onLoad {
+            onLoad()
         }
     }
     
-    func applyChanges(from: Fertilization) {
+    public func applyChanges(from: Fertilization) {
         date.date = from.date
         field.text = from.field
         user.text = from.user
@@ -53,7 +53,7 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         appliedAmount.text = String(from.appliedAmount)
     }
     
-    func applyChanges(to: Fertilization) {
+    public func applyChanges(to: Fertilization) {
         to.date = date.date
         to.field = field.text ?? ""
         to.user = user.text ?? ""
@@ -117,24 +117,11 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
         guard OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
         
-        do {
-            if let editingElement = editingElement {
-                try source.dataSource.update {
-                    applyChanges(to: editingElement)
-                }
-            } else {
-                let fertilization = Fertilization()
-                applyChanges(to: fertilization)
-                
-                try source.dataSource.add(fertilization)
-                source.fertilizations.append(fertilization)
-            }
-            
-            source.tableView.reloadData()
-            self.dismiss(animated: true, completion: nil)
-        } catch let error as NSError {
-            OperationDialogs.presentSaveFailed(error: error, controller: self)
+        if let onSave = onSave {
+            onSave()
         }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
