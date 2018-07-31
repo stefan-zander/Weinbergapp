@@ -9,6 +9,9 @@
 import UIKit
 
 class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    public var onLoad: (() -> Void)?
+    public var onSave: (() -> Bool)?
 
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var field: UITextField!
@@ -25,8 +28,8 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
         execution.delegate = self
         execution.dataSource = self
         
-        if let editingElement = editingElement {
-            applyChanges(from: editingElement)
+        if let onLoad = onLoad {
+            onLoad()
         }
     }
     
@@ -63,24 +66,11 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
         guard OperationFieldVerification.verify(user: user, self) else { return }
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
 
-        do {
-            if let editingElement = editingElement {
-                try source.dataSource.update {
-                    applyChanges(to: editingElement)
-                }
-            } else {
-                let vintage = Vintage()
-                applyChanges(to: vintage)
-                
-                try source.dataSource.add(vintage)
-                source.vintages.append(vintage)
-            }
-            
-            source.tableView.reloadData()
-            self.dismiss(animated: true, completion: nil)
-        } catch let error as NSError {
-            OperationDialogs.presentSaveFailed(error: error, controller: self)
+        if let onSave = onSave {
+            guard onSave() else { return }
         }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {

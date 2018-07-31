@@ -12,9 +12,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    let dataSource = RealmDataSource<Vintage>()
-
-    var vintages: [Vintage] = []
+    let collection = RealmPersistentCollection<Vintage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,21 +21,21 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         
         do {
-            try dataSource.query(elements: &vintages)
+            try collection.reload()
         } catch let error as NSError {
             OperationDialogs.presentLoadFailed(error: error, controller: self)
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vintages.count
+        return collection.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "VintageViewCell", for: indexPath)
 
         if let cell = cell as? VintageTableViewCell {
-            let vintage = vintages[indexPath.row]
+            let vintage = collection[indexPath.row]
 
             cell.setField(field: "Feld: \(vintage.field)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string)")
@@ -50,12 +48,29 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        if let addVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage")
+        if let editVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage")
             as? AddVintageViewController {
-            addVintage.source = self
-            addVintage.editingElement = vintages[indexPath.row]
+            let editingElement = collection[indexPath.row]
+            
+            editVintage.onLoad = {
+                editVintage.applyChanges(from: editingElement)
+            }
+            
+            editVintage.onSave = {
+                do {
+                    try self.collection.update {
+                        editVintage.applyChanges(to: editingElement)
+                    }
+                    
+                    self.tableView.reloadData()
+                    return true
+                } catch let error as NSError {
+                    OperationDialogs.presentSaveFailed(error: error, controller: editVintage)
+                    return false
+                }
+            }
 
-            self.present(addVintage, animated: true)
+            self.present(editVintage, animated: true)
         }
     }
 
@@ -68,8 +83,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             do {
-                try dataSource.delete(vintages[indexPath.row])
-                vintages.remove(at: indexPath.row)
+                try collection.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
                 OperationDialogs.presentDeletionFailed(error: error, controller: self)
@@ -82,7 +96,19 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         if let addVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage")
             as? AddVintageViewController {
-            addVintage.source = self
+            addVintage.onSave = {
+                do {
+                    let vintage = Vintage()
+                    addVintage.applyChanges(to: vintage)
+                    try self.collection.add(vintage)
+                    
+                    self.tableView.reloadData()
+                    return true
+                } catch let error as NSError {
+                    OperationDialogs.presentSaveFailed(error: error, controller: addVintage)
+                    return false
+                }
+            }
 
             self.present(addVintage, animated: true)
         }
