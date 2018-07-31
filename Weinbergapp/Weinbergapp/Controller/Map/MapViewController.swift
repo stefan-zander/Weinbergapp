@@ -38,11 +38,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         do {
-            try fieldDataSource.query(elements: &fields, { field in
+            fields = try fieldDataSource.queryAll().map { field in
                 let mapField = MapField(field: field, fieldDataSource: self.fieldDataSource, mapView: self.mapView)
                 mapField.displayedOnMap = true
                 return mapField
-            })
+            }
         } catch let error as NSError {
             MapDialogs.presentLoadFailed(error: error, controller: self)
         }

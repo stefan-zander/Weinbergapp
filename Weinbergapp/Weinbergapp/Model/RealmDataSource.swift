@@ -13,20 +13,6 @@ public class RealmDataSource<T: Object> {
     
     private var realm: Realm?
     
-    // TODO remove me
-    public func query(elements: inout [T]) throws {
-        let realm = try getOrCreateRealm()
-        
-        elements = Array(realm.objects(T.self))
-    }
-    
-    // TODO remove me
-    public func query<U>(elements: inout [U], _ transform: (T) -> U) throws {
-        let realm = try getOrCreateRealm()
-        
-        elements = realm.objects(T.self).map(transform)
-    }
-    
     public func queryAll() throws -> [T] {
         let realm = try getOrCreateRealm()
         
