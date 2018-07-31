@@ -2,7 +2,7 @@
 //  PlantProtectionSwitchListViewController.swift
 //  Weinbergapp
 //
-//  Created by VM on 14.07.18.
+//  Created by Stefan Zander on 14.07.18.
 //  Copyright © 2018 TH Bingen. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 
 class SwitchTableViewController: UITableViewController {
 
-    public var completion: (() -> Void)?
+    public var onSave: (() -> Void)?
 
     var items: [(String, Bool)] = []
 
@@ -80,8 +80,8 @@ class SwitchTableViewController: UITableViewController {
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        if let completion = completion {
-            completion()
+        if let onSave = onSave {
+            onSave()
         }
         
         self.dismiss(animated: true, completion: nil)

@@ -2,7 +2,7 @@
 //  OrganicFertilizer.swift
 //  Weinbergapp
 //
-//  Created by VM on 19.07.18.
+//  Created by Stefan Zander on 19.07.18.
 //  Copyright © 2018 TH Bingen. All rights reserved.
 //
 

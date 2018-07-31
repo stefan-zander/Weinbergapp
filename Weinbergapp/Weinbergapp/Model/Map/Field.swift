@@ -2,7 +2,7 @@
 //  Field.swift
 //  Weinbergapp
 //
-//  Created by VM on 23.07.18.
+//  Created by Stefan Zander on 23.07.18.
 //  Copyright © 2018 TH Bingen. All rights reserved.
 //
 

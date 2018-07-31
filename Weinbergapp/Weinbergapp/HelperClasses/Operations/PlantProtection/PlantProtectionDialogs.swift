@@ -2,7 +2,7 @@
 //  PlantProtectionDialogs.swift
 //  Weinbergapp
 //
-//  Created by VM on 22.07.18.
+//  Created by Stefan Zander on 22.07.18.
 //  Copyright © 2018 TH Bingen. All rights reserved.
 //
 
@@ -38,7 +38,7 @@ class PlantProtectionDialogs {
             ("Roter Brenner", fungicidal.redBurner)
             ])
 
-        switchTable.completion = {
+        switchTable.onSave = {
             fungicidal.botrytis = switchTable.getItemState(index: 0)
             fungicidal.acidRot = switchTable.getItemState(index: 1)
             fungicidal.oidium = switchTable.getItemState(index: 2)
@@ -65,7 +65,7 @@ class PlantProtectionDialogs {
             ("Ein- und Zweikeimblättrige", herbicide.monocotyledonousAndDicotyledonous)
             ])
 
-        switchTable.completion = {
+        switchTable.onSave = {
             herbicide.bindweed = switchTable.getItemState(index: 0)
             herbicide.monocotyledonousAndDicotyledonous = switchTable.getItemState(index: 1)
 
@@ -93,7 +93,7 @@ class PlantProtectionDialogs {
             ("Zikaden", insecticidalOrAcaricidal.cicadas)
             ])
 
-        switchTable.completion = {
+        switchTable.onSave = {
             insecticidalOrAcaricidal.drosophilaSpecies = switchTable.getItemState(index: 0)
             insecticidalOrAcaricidal.grapevineRustMites = switchTable.getItemState(index: 1)
             insecticidalOrAcaricidal.willowBeauty = switchTable.getItemState(index: 2)
@@ -129,7 +129,7 @@ class PlantProtectionDialogs {
             ("Teldor", pesticides.teldor)
             ])
 
-        switchTable.completion = {
+        switchTable.onSave = {
             pesticides.botector = switchTable.getItemState(index: 0)
             pesticides.cantus = switchTable.getItemState(index: 1)
             pesticides.gibbb3 = switchTable.getItemState(index: 2)
