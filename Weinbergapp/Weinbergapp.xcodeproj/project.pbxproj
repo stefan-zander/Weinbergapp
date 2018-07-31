@@ -13,7 +13,6 @@
 		356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* Main.storyboard */; };
 		356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */; };
 		356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */; };
-		356AFE4D20CAB28F000D9BC1 /* WeinbergappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */; };
 		356AFE5820CAB28F000D9BC1 /* WeinbergappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */; };
 		358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D620E4ED8000640347 /* OperationTableViewCell.swift */; };
 		358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D820E4F22000640347 /* OperationsTableViewController.swift */; };
@@ -43,7 +42,7 @@
 		9409694B21036E1B00AA7146 /* VintageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694A21036E1B00AA7146 /* VintageTableViewCell.swift */; };
 		940DD3C821047AF80004CD26 /* PlantProtectionDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940DD3C721047AF80004CD26 /* PlantProtectionDialogs.swift */; };
 		9427E4AD210E230D00BD0458 /* MapLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9427E4AC210E230D00BD0458 /* MapLocalization.swift */; };
-		943D33712109E684006886CA /* MapPolygonArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943D33702109E684006886CA /* MapPolygonArea.swift */; };
+		943D33712109E684006886CA /* PolygonArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943D33702109E684006886CA /* PolygonArea.swift */; };
 		9445648D2103506100201DD4 /* PlantProtectionLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */; };
 		944564912103528700201DD4 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944564902103528700201DD4 /* MoreViewController.swift */; };
 		9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659A20FA3A8000758D8C /* Defoliation.swift */; };
@@ -64,11 +63,13 @@
 		945F08352100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */; };
 		945F08372100A08A00F55C44 /* PlantProtectionPesticides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */; };
 		9473746D21061D8F006196CF /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9473746C21061D8E006196CF /* Field.swift */; };
+		9478C25D21109A6B00184DA8 /* PolygonAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9478C25C21109A6B00184DA8 /* PolygonAreaTests.swift */; };
 		9486C4C4210FB3E100C2E153 /* RealmPersistentCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9486C4C3210FB3E100C2E153 /* RealmPersistentCollection.swift */; };
 		9486C4C6210FBBDF00C2E153 /* GermanDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9486C4C5210FBBDF00C2E153 /* GermanDateFormatter.swift */; };
 		94BE5C63210799F300C95F97 /* MapPolygonDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */; };
 		94BE5C672107B50C00C95F97 /* MapDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C662107B50C00C95F97 /* MapDialogs.swift */; };
 		94BE5C6B210887CA00C95F97 /* MKPreviewPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C6A210887CA00C95F97 /* MKPreviewPolygon.swift */; };
+		94DCAFE721108C800075D520 /* GermanDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DCAFE621108C800075D520 /* GermanDateFormatterTests.swift */; };
 		94FEDF502108AC95002CF6A0 /* MKPreviewPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FEDF4F2108AC95002CF6A0 /* MKPreviewPointAnnotation.swift */; };
 		94FEDF522108ADA6002CF6A0 /* MKFieldPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FEDF512108ADA6002CF6A0 /* MKFieldPointAnnotation.swift */; };
 		DBC42D4AF5F0C2FA6250C345 /* Pods_Weinbergapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FB341301313ACB219BF7F5 /* Pods_Weinbergapp.framework */; };
@@ -106,7 +107,6 @@
 		356AFE4120CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356AFE4320CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		356AFE4820CAB28F000D9BC1 /* WeinbergappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeinbergappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeinbergappTests.swift; sourceTree = "<group>"; };
 		356AFE4E20CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		356AFE5320CAB28F000D9BC1 /* WeinbergappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeinbergappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeinbergappUITests.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		9409694A21036E1B00AA7146 /* VintageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageTableViewCell.swift; sourceTree = "<group>"; };
 		940DD3C721047AF80004CD26 /* PlantProtectionDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionDialogs.swift; sourceTree = "<group>"; };
 		9427E4AC210E230D00BD0458 /* MapLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocalization.swift; sourceTree = "<group>"; };
-		943D33702109E684006886CA /* MapPolygonArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPolygonArea.swift; sourceTree = "<group>"; };
+		943D33702109E684006886CA /* PolygonArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonArea.swift; sourceTree = "<group>"; };
 		9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionLocalization.swift; sourceTree = "<group>"; };
 		944564902103528700201DD4 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		9450659A20FA3A8000758D8C /* Defoliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defoliation.swift; sourceTree = "<group>"; };
@@ -161,11 +161,13 @@
 		945F08342100A07500F55C44 /* InsecticidalOrAcaricidalPlantProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsecticidalOrAcaricidalPlantProtection.swift; sourceTree = "<group>"; };
 		945F08362100A08A00F55C44 /* PlantProtectionPesticides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionPesticides.swift; sourceTree = "<group>"; };
 		9473746C21061D8E006196CF /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		9478C25C21109A6B00184DA8 /* PolygonAreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonAreaTests.swift; sourceTree = "<group>"; };
 		9486C4C3210FB3E100C2E153 /* RealmPersistentCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistentCollection.swift; sourceTree = "<group>"; };
 		9486C4C5210FBBDF00C2E153 /* GermanDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanDateFormatter.swift; sourceTree = "<group>"; };
 		94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPolygonDrawer.swift; sourceTree = "<group>"; };
 		94BE5C662107B50C00C95F97 /* MapDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDialogs.swift; sourceTree = "<group>"; };
 		94BE5C6A210887CA00C95F97 /* MKPreviewPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPreviewPolygon.swift; sourceTree = "<group>"; };
+		94DCAFE621108C800075D520 /* GermanDateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanDateFormatterTests.swift; sourceTree = "<group>"; };
 		94FEDF4F2108AC95002CF6A0 /* MKPreviewPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPreviewPointAnnotation.swift; sourceTree = "<group>"; };
 		94FEDF512108ADA6002CF6A0 /* MKFieldPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKFieldPointAnnotation.swift; sourceTree = "<group>"; };
 		C1D2D8E7F4580DFCF36D2D60 /* Pods-WeinbergappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeinbergappTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeinbergappTests/Pods-WeinbergappTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -243,7 +245,8 @@
 		356AFE4B20CAB28F000D9BC1 /* WeinbergappTests */ = {
 			isa = PBXGroup;
 			children = (
-				356AFE4C20CAB28F000D9BC1 /* WeinbergappTests.swift */,
+				94DCAFE621108C800075D520 /* GermanDateFormatterTests.swift */,
+				9478C25C21109A6B00184DA8 /* PolygonAreaTests.swift */,
 				356AFE4E20CAB28F000D9BC1 /* Info.plist */,
 			);
 			path = WeinbergappTests;
@@ -526,9 +529,9 @@
 				9427E4AC210E230D00BD0458 /* MapLocalization.swift */,
 				945CD7152108E60400542CD8 /* MapFieldVerification.swift */,
 				94BE5C662107B50C00C95F97 /* MapDialogs.swift */,
-				943D33702109E684006886CA /* MapPolygonArea.swift */,
 				945CD71E21091E7E00542CD8 /* Drawing */,
 				945CD71F21091E8F00542CD8 /* FieldManagement */,
+				943D33702109E684006886CA /* PolygonArea.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -820,7 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35C0DE4A20E65DCA00C31C78 /* VintageExecution.swift in Sources */,
-				943D33712109E684006886CA /* MapPolygonArea.swift in Sources */,
+				943D33712109E684006886CA /* PolygonArea.swift in Sources */,
 				9445648D2103506100201DD4 /* PlantProtectionLocalization.swift in Sources */,
 				356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */,
 				356AFE3720CAB28F000D9BC1 /* LoginViewController.swift in Sources */,
@@ -883,7 +886,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356AFE4D20CAB28F000D9BC1 /* WeinbergappTests.swift in Sources */,
+				94DCAFE721108C800075D520 /* GermanDateFormatterTests.swift in Sources */,
+				9478C25D21109A6B00184DA8 /* PolygonAreaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

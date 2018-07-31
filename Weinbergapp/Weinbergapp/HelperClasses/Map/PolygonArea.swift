@@ -1,5 +1,5 @@
 //
-//  MapPolygonArea.swift
+//  PolygonArea.swift
 //  Weinbergapp
 //
 //  Created by Stefan Zander on 26.07.18.
@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-import MapKit
+import CoreLocation
 
 /// The radius of the earth, given in meters.
 let kEarthRadiusInMeters = 6378137.0
@@ -24,6 +23,16 @@ let kEarthRadiusInMetersSquared = kEarthRadiusInMeters * kEarthRadiusInMeters
  */
 public func radians(degrees: Double) -> Double {
     return degrees * Double.pi / 180.0
+}
+
+/**
+ Converts an angle measured in radians to degrees.
+ 
+ - Parameter radians: An angle in radians.
+ - Returns: The converted angle in degrees.
+ */
+public func degrees(radians: Double) -> Double {
+    return radians / Double.pi * 180.0
 }
 
 /**
