@@ -23,13 +23,13 @@ import Foundation
  ````
  */
 public enum PlantProtectionCategory: Int {
-    
+
     /// The fungicidal category
     case fungicidal
-    
+
     /// The herbicide category
     case herbicide
-    
+
     /// The insecticidal or acaricidal category
     case insecticidalOrAcaricidal
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+
     public var onLoad: (() -> Void)?
     public var onSave: (() -> Bool)?
 
@@ -24,12 +24,12 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
         execution.delegate = self
         execution.dataSource = self
-        
+
         if let onLoad = onLoad {
             onLoad()
         }
     }
-    
+
     func applyChanges(from: Vintage) {
         date.date = from.date
         field.text = from.field
@@ -37,7 +37,7 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
         workingHours.text = String(from.workingHours)
         execution.selectRow(from.executionRaw, inComponent: 0, animated: false)
     }
-    
+
     func applyChanges(to: Vintage) {
         to.date = date.date
         to.field = field.text ?? ""
@@ -66,7 +66,7 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
         if let onSave = onSave {
             guard onSave() else { return }
         }
-        
+
         self.dismiss(animated: true, completion: nil)
     }
 

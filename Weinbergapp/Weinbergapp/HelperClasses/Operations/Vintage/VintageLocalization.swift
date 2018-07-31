@@ -9,7 +9,7 @@
 import Foundation
 
 class VintageLocalization {
-    
+
     static let executionOptions = [
         "Händisch",
         "Mechanisch"

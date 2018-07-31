@@ -14,9 +14,9 @@ class AddFieldViewController: UIViewController {
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var vineVariety: UITextField!
     @IBOutlet weak var deleteFieldButton: UIButton!
-    
+
     var coordinates: [CLLocationCoordinate2D] = []
-    
+
     var source: MapViewController!
     var editingField: MapField?
 
@@ -29,12 +29,12 @@ class AddFieldViewController: UIViewController {
             deleteFieldButton.isHidden = false
         }
     }
-    
+
     @IBAction func deleteField(_ sender: UIButton) {
         guard let editingField = editingField else {
             assert(false)
         }
-        
+
         MapDialogs.presentFieldDeletionConfirmation(controller: self,
                                                     fieldName: editingField.name,
                                                     onConfirmation: { _ in
@@ -48,7 +48,7 @@ class AddFieldViewController: UIViewController {
                 MapDialogs.presentDeletionInDatabaseFailed(controller: self, error: error)
                 return
             }
-            
+
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -56,7 +56,7 @@ class AddFieldViewController: UIViewController {
     @IBAction func save(_ sender: UIBarButtonItem) {
         guard MapFieldVerification.verify(name: name, self) != nil else { return }
         guard MapFieldVerification.verify(vineVariety: vineVariety, self) != nil else { return }
-        
+
         if let editingField = editingField {
             do {
                 try editingField.changeText(name: name.text ?? "",
@@ -67,25 +67,25 @@ class AddFieldViewController: UIViewController {
             }
         } else {
             let field = Field()
-            
+
             field.name = name.text ?? ""
             field.vineVariety = vineVariety.text ?? ""
             field.coordinates = coordinates
-            
+
             do {
                 try source.fieldDataSource.add(field)
             } catch let error as NSError {
                 MapDialogs.presentAddToDatabaseFailed(controller: self, error: error)
                 return
             }
-            
+
             let mapField = MapField(field: field,
                                     fieldDataSource: source.fieldDataSource,
                                     mapView: source.mapView)
             mapField.displayedOnMap = true
             source.fields.append(mapField)
         }
-        
+
         self.dismiss(animated: true, completion: nil)
     }
 

@@ -31,10 +31,10 @@ public class FungicidalPlantProtection: Object {
 
     /// Represents the fungicidal illnesses "Red burner".
     @objc public dynamic var redBurner: Bool = false
-    
+
     /**
      Copies the contents from another `FungicidalPlantProtection` object to this object.
-     
+
      - Parameter from: The `FungicidalPlantProtection` object to copy from.
     */
     public func copy(from: FungicidalPlantProtection) {
@@ -45,10 +45,10 @@ public class FungicidalPlantProtection: Object {
         self.phomopsis = from.phomopsis
         self.redBurner = from.redBurner
     }
-    
+
     /**
      Copies the contents of this object to another `FungicidalPlantProtection` object.
-     
+
      - Parameter to: The `FungicidalPlantProtection` object to copy to.
      */
     public func copy(to: FungicidalPlantProtection) {

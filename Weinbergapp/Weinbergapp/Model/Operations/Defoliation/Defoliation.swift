@@ -13,7 +13,7 @@ import RealmSwift
  Represents the information required for the defoliation operation.
  */
 public class Defoliation: Object {
-    
+
     /// The date on which the defoliation operation takes place.
     @objc dynamic var date: Date = Date()
 

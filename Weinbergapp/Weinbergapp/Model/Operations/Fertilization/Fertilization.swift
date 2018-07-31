@@ -25,37 +25,37 @@ public class Fertilization: Object {
 
     /// The approximate working hours for the fertilization operation.
     @objc public dynamic var workingHours: Double = 0.0
-    
+
     /**
      The raw value of the fertilizer category used for the fertilization operation.
-     
+
      - Remark:
      This property exists in order to remain compatible to Realm Swift, for the properly typed version see property
      `fertilizerCategory`.
      */
     @objc public dynamic var fertilizerCategoryRaw: Int = 0
-    
+
     /**
      The raw value of the mineral fertilizer used for the fertilization operation.
-     
+
      - Remark:
      This property exists in order to remain compatible to Realm Swift, for the properly typed version see property
      `mineralFertilizer`.
      */
     @objc public dynamic var mineralFertilizerRaw: Int = 0
-    
+
     /**
      The raw value of the organic fertilizer used for the fertilization operation.
-     
+
      - Remark:
      This property exists in order to remain compatible to Realm Swift, for the properly typed version see property
      `organicFertilizer`.
      */
     @objc public dynamic var organicFertilizerRaw: Int = 0
-    
+
     /// The applied amount of the fertilization operation.
     @objc public dynamic var appliedAmount: Double = 0.0
-    
+
     /// The fertilizer category used for the fertilization operation.
     public var fertilizerCategory: FertilizerCategory {
         get {
@@ -65,7 +65,7 @@ public class Fertilization: Object {
             fertilizerCategoryRaw = category.rawValue
         }
     }
-    
+
     /// The mineral fertilizer used for the fertilization operation.
     public var mineralFertilizer: MineralFertilizer {
         get {
@@ -75,7 +75,7 @@ public class Fertilization: Object {
             mineralFertilizerRaw = fertilizer.rawValue
         }
     }
-    
+
     /// The organic fertilizer used for the fertilization operation.
     public var organicFertilizer: OrganicFertilizer {
         get {

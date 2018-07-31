@@ -15,10 +15,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var mapView: MKMapView!
 
     let fieldDataSource = RealmDataSource<Field>()
-    
+
     var fields: [MapField] = []
     var previewer: MapPolygonDrawer!
-    
+
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(toggleAdd))
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(toggleAdd))
 
@@ -36,7 +36,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
+
         do {
             fields = try fieldDataSource.queryAll().map { field in
                 let mapField = MapField(field: field, fieldDataSource: self.fieldDataSource, mapView: self.mapView)
@@ -135,7 +135,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 as? AddFieldViewController {
                 editField.source = self
                 editField.editingField = point.owner!
-                
+
                 self.present(editField, animated: true)
             }
         default:

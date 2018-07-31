@@ -10,7 +10,7 @@ import Foundation
 
 /**
  Represents the treatment schedule used for the plant protection operation.
- 
+
  ````
  case proliferation
  case earlyFlowering

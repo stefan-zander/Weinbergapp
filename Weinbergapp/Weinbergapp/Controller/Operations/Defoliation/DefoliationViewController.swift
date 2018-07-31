@@ -11,7 +11,7 @@ import UIKit
 class DefoliationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     let defoliations = RealmPersistentCollection<Defoliation>()
 
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
 
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         do {
             try defoliations.reload()
         } catch let error as NSError {
@@ -53,17 +53,17 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
         if let editDefoliation = storyboard.instantiateViewController(withIdentifier: "AddDefoliation")
             as? AddDefoliationViewController {
             let editingElement = defoliations[indexPath.row]
-            
+
             editDefoliation.onLoad = {
                 editDefoliation.applyChanges(from: editingElement)
             }
-            
+
             editDefoliation.onSave = {
                 do {
                     try self.defoliations.update {
                         editDefoliation.applyChanges(to: editingElement)
                     }
-                    
+
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
@@ -71,7 +71,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                     return false
                 }
             }
-            
+
             self.present(editDefoliation, animated: true)
         }
     }
@@ -103,7 +103,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                     let defoliation = Defoliation()
                     addDefoliation.applyChanges(to: defoliation)
                     try self.defoliations.add(defoliation)
-                    
+
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {

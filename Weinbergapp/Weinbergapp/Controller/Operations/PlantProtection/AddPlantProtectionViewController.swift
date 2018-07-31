@@ -10,7 +10,7 @@ import UIKit
 
 class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
     UIPickerViewDataSource {
-    
+
     public var onLoad: (() -> Void)?
     public var onSave: (() -> Bool)?
 
@@ -23,7 +23,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     @IBOutlet weak var treatmentSchedule: UIPickerView!
     @IBOutlet weak var additionalInformation: UITextView!
     @IBOutlet weak var appliedAmount: UITextField!
-    
+
     var currentCategory = PlantProtectionCategory.fungicidal
     var currentFungicidal = FungicidalPlantProtection()
     var currentHerbicide = HerbicidePlantProtection()
@@ -37,31 +37,31 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         pesticides.delegate = self
         treatmentSchedule.delegate = self
         treatmentSchedule.dataSource = self
-        
+
         if let onLoad = onLoad {
             onLoad()
         }
     }
-    
+
     public func applyChanges(from: PlantProtection) {
         date.date = from.date
         field.text = from.field
         user.text = from.user
         workingHours.text = String(from.workingHours)
         currentCategory = from.plantProtectionCategory
-        
+
         if let fungicidal = from.fungicidalPlantProtection {
             currentFungicidal.copy(from: fungicidal)
         }
-        
+
         if let herbicide = from.herbicidePlantProtection {
             currentHerbicide.copy(from: herbicide)
         }
-        
+
         if let insecticidalOrAcaricidal = from.insecticidalOrAcaricidalPlantProtection {
             currentInsecticidalOrAcaricidal.copy(from: insecticidalOrAcaricidal)
         }
-        
+
         switch currentCategory {
         case .fungicidal:
             plantProtectionKind.text = PlantProtectionLocalization.localize(currentFungicidal)
@@ -70,24 +70,24 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         case .insecticidalOrAcaricidal:
             plantProtectionKind.text = PlantProtectionLocalization.localize(currentInsecticidalOrAcaricidal)
         }
-        
+
         if let pesticides = from.pesticides {
             currentPesticides.copy(from: pesticides)
             self.pesticides.text = PlantProtectionLocalization.localize(pesticides)
         }
-        
+
         treatmentSchedule.selectRow(from.treatmentScheduleRaw, inComponent: 0, animated: false)
         additionalInformation.text = from.additionalInformation
         appliedAmount.text = String(from.appliedAmount)
     }
-    
+
     public func applyChanges(to: PlantProtection) {
         to.date = date.date
         to.field = field.text ?? ""
         to.user = user.text ?? ""
         to.workingHours = Double(workingHours.text ?? "0") ?? 0.0
         to.plantProtectionCategory = currentCategory
-        
+
         if let fungicidal = to.fungicidalPlantProtection {
             currentFungicidal.copy(to: fungicidal)
         } else {
@@ -95,7 +95,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
             currentFungicidal.copy(to: fungicidal)
             to.fungicidalPlantProtection = fungicidal
         }
-        
+
         if let herbicide = to.herbicidePlantProtection {
             currentHerbicide.copy(to: herbicide)
         } else {
@@ -103,7 +103,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
             currentHerbicide.copy(to: herbicide)
             to.herbicidePlantProtection = herbicide
         }
-        
+
         if let insecticidalOrAcaricidal = to.insecticidalOrAcaricidalPlantProtection {
             currentInsecticidalOrAcaricidal.copy(to: insecticidalOrAcaricidal)
         } else {
@@ -111,7 +111,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
             currentInsecticidalOrAcaricidal.copy(to: insecticidalOrAcaricidal)
             to.insecticidalOrAcaricidalPlantProtection = insecticidalOrAcaricidal
         }
-        
+
         if let pesticides = to.pesticides {
             currentPesticides.copy(to: pesticides)
         } else {
@@ -119,12 +119,12 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
             currentPesticides.copy(to: pesticides)
             to.pesticides = pesticides
         }
-        
+
         to.treatmentScheduleRaw = treatmentSchedule.selectedRow(inComponent: 0)
-        to.additionalInformation = additionalInformation.text        
+        to.additionalInformation = additionalInformation.text
         to.appliedAmount = Double(appliedAmount.text ?? "0") ?? 0.0
     }
-    
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField {
         case plantProtectionKind:
@@ -170,11 +170,11 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         guard OperationFieldVerification.verify(user: user, self) else { return }
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
         guard OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
-        
+
         if let onSave = onSave {
             guard onSave() else { return }
         }
-        
+
         self.dismiss(animated: true, completion: nil)
     }
 

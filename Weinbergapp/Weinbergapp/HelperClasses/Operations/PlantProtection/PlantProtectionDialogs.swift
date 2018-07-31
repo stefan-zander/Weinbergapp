@@ -9,7 +9,7 @@
 import UIKit
 
 class PlantProtectionDialogs {
-    
+
     static func presentPlantProtection(controller: AddPlantProtectionViewController) {
         switch controller.currentCategory {
         case .fungicidal:
@@ -26,7 +26,7 @@ class PlantProtectionDialogs {
 
         guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
             as? SwitchTableViewController else { return }
-        
+
         let fungicidal = controller.currentFungicidal
 
         switchTable.setItems(items: [
@@ -57,7 +57,7 @@ class PlantProtectionDialogs {
 
         guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
             as? SwitchTableViewController else { return }
-        
+
         let herbicide = controller.currentHerbicide
 
         switchTable.setItems(items: [
@@ -80,7 +80,7 @@ class PlantProtectionDialogs {
 
         guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
             as? SwitchTableViewController else { return }
-        
+
         let insecticidalOrAcaricidal = controller.currentInsecticidalOrAcaricidal
 
         switchTable.setItems(items: [
@@ -101,7 +101,7 @@ class PlantProtectionDialogs {
             insecticidalOrAcaricidal.springWorm = switchTable.getItemState(index: 4)
             insecticidalOrAcaricidal.grape = switchTable.getItemState(index: 5)
             insecticidalOrAcaricidal.cicadas = switchTable.getItemState(index: 6)
-            
+
             controller.plantProtectionKind.text = PlantProtectionLocalization.localize(insecticidalOrAcaricidal)
         }
 
@@ -110,7 +110,7 @@ class PlantProtectionDialogs {
 
     static func presentPesticides(controller: AddPlantProtectionViewController) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+
         guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTable")
             as? SwitchTableViewController else { return }
 

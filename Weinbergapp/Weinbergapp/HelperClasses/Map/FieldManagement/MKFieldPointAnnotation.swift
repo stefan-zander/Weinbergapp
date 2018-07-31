@@ -12,7 +12,7 @@ import MapKit
 public class MKFieldPointAnnotation: MKPointAnnotation {
 
     var owner: MapField!
-    
+
     convenience init(owner: MapField) {
         self.init()
         self.owner = owner

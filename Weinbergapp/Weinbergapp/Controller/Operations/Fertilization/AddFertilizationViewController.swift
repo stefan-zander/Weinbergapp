@@ -9,7 +9,7 @@
 import UIKit
 
 class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+
     public var onLoad: (() -> Void)?
     public var onSave: (() -> Bool)?
 
@@ -20,7 +20,7 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var fertilizerCategory: UIPickerView!
     @IBOutlet weak var fertilizer: UIPickerView!
     @IBOutlet weak var appliedAmount: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,19 +28,19 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         fertilizerCategory.dataSource = self
         fertilizer.delegate = self
         fertilizer.dataSource = self
-        
+
         if let onLoad = onLoad {
             onLoad()
         }
     }
-    
+
     public func applyChanges(from: Fertilization) {
         date.date = from.date
         field.text = from.field
         user.text = from.user
         workingHours.text = String(from.workingHours)
         fertilizerCategory.selectRow(from.fertilizerCategoryRaw, inComponent: 0, animated: false)
-        
+
         switch from.fertilizerCategoryRaw {
         case 0:
             fertilizer.selectRow(from.mineralFertilizerRaw, inComponent: 0, animated: false)
@@ -49,17 +49,17 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         default:
             break
         }
-        
+
         appliedAmount.text = String(from.appliedAmount)
     }
-    
+
     public func applyChanges(to: Fertilization) {
         to.date = date.date
         to.field = field.text ?? ""
         to.user = user.text ?? ""
         to.workingHours = Double(workingHours.text ?? "0") ?? 0.0
         to.fertilizerCategoryRaw = fertilizerCategory.selectedRow(inComponent: 0)
-        
+
         switch to.fertilizerCategoryRaw {
         case 0:
             to.mineralFertilizerRaw = fertilizer.selectedRow(inComponent: 0)
@@ -68,7 +68,7 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         default:
             break
         }
-        
+
         to.appliedAmount = Double(appliedAmount.text ?? "0") ?? 0.0
     }
 
@@ -103,17 +103,17 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
             return nil
         }
     }
-    
+
     @IBAction func save(_ sender: UIBarButtonItem) {
         guard OperationFieldVerification.verify(field: field, self) else { return }
         guard OperationFieldVerification.verify(user: user, self) else { return }
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
         guard OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
-        
+
         if let onSave = onSave {
             guard onSave() else { return }
         }
-        
+
         self.dismiss(animated: true, completion: nil)
     }
 

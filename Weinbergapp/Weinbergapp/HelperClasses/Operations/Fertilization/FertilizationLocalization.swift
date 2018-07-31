@@ -9,12 +9,12 @@
 import Foundation
 
 class FertilizationLocalization {
-    
+
     static let fertilizerCategoryOptions = [
         "Mineralisch",
         "Organisch"
     ]
-    
+
     static let fertilizerOptions = [[
             "Entec perfekt",
             "Entec 26",

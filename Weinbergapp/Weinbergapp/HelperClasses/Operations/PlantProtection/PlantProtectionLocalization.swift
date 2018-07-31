@@ -9,7 +9,7 @@
 import Foundation
 
 class PlantProtectionLocalization {
-    
+
     static let treatmentScheduleOptions = [
         "Austrieb",
         "Vorblüte",

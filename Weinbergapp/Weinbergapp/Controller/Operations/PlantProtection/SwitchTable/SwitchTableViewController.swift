@@ -83,7 +83,7 @@ class SwitchTableViewController: UITableViewController {
         if let onSave = onSave {
             onSave()
         }
-        
+
         self.dismiss(animated: true, completion: nil)
     }
 

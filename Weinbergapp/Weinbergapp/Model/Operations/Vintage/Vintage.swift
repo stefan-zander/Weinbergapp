@@ -13,7 +13,7 @@ import RealmSwift
  Represents the information required for the vintage operation.
  */
 public class Vintage: Object {
-    
+
     /// The date on which the vintage operation takes place.
     @objc public dynamic var date: Date = Date()
 
@@ -28,13 +28,13 @@ public class Vintage: Object {
 
     /**
      The raw value of the way of execution for the vintage operation.
-     
+
      - Remark:
          This property exists in order to remain compatible to Realm Swift, for the properly typed version see property
          `execution`.
      */
     @objc public dynamic var executionRaw: Int = 0
-    
+
     /// The way of execution for the vintage operation.
     public var execution: VintageExecution {
         get {

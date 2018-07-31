@@ -13,13 +13,13 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
 
     let fertilizations = RealmPersistentCollection<Fertilization>()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         do {
             try fertilizations.reload()
         } catch let error as NSError {
@@ -35,10 +35,10 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = self.tableView.dequeueReusableCell(
             withIdentifier: "FertilizationViewCell",
             for: indexPath)
-        
+
         if let cell = cell as? FertilizationTableViewCell {
             let fertilization = fertilizations[indexPath.row]
-            
+
             cell.setField(field: "Feld: \(fertilization.field)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: fertilization.date))")
             cell.setUser(user: "Benutzer: \(fertilization.user)")
@@ -53,17 +53,17 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
         if let editFertilization = storyboard.instantiateViewController(withIdentifier: "AddFertilization")
             as? AddFertilizationViewController {
             let editingElement = fertilizations[indexPath.row]
-            
+
             editFertilization.onLoad = {
                 editFertilization.applyChanges(from: editingElement)
             }
-            
+
             editFertilization.onSave = {
                 do {
                     try self.fertilizations.update {
                         editFertilization.applyChanges(to: editingElement)
                     }
-                    
+
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
@@ -103,7 +103,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                     let fertilization = Fertilization()
                     addFertilization.applyChanges(to: fertilization)
                     try self.fertilizations.add(fertilization)
-                    
+
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {

@@ -11,7 +11,7 @@ import UIKit
 class VintageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     let vintages = RealmPersistentCollection<Vintage>()
 
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         do {
             try vintages.reload()
         } catch let error as NSError {
@@ -51,17 +51,17 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let editVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage")
             as? AddVintageViewController {
             let editingElement = vintages[indexPath.row]
-            
+
             editVintage.onLoad = {
                 editVintage.applyChanges(from: editingElement)
             }
-            
+
             editVintage.onSave = {
                 do {
                     try self.vintages.update {
                         editVintage.applyChanges(to: editingElement)
                     }
-                    
+
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
@@ -101,7 +101,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let vintage = Vintage()
                     addVintage.applyChanges(to: vintage)
                     try self.vintages.add(vintage)
-                    
+
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {

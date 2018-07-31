@@ -9,9 +9,9 @@
 import UIKit
 
 class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet weak var tableView: UITableView!
-    
+
     let plantProtections = RealmPersistentCollection<PlantProtection>()
 
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
 
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         do {
             try plantProtections.reload()
         } catch let error as NSError {
@@ -53,17 +53,17 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
         if let editPlantProtection = storyboard.instantiateViewController(withIdentifier: "AddPlantProtection")
             as? AddPlantProtectionViewController {
             let editingElement = plantProtections[indexPath.row]
-            
+
             editPlantProtection.onLoad = {
                 editPlantProtection.applyChanges(from: editingElement)
             }
-            
+
             editPlantProtection.onSave = {
                 do {
                     try self.plantProtections.update {
                         editPlantProtection.applyChanges(to: editingElement)
                     }
-                    
+
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
@@ -71,7 +71,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                     return false
                 }
             }
-            
+
             self.present(editPlantProtection, animated: true)
         }
     }
@@ -103,7 +103,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                     let plantProtection = PlantProtection()
                     addPlantProtection.applyChanges(to: plantProtection)
                     try self.plantProtections.add(plantProtection)
-                    
+
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
@@ -111,7 +111,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                     return false
                 }
             }
-            
+
             self.present(addPlantProtection, animated: true)
         }
     }

@@ -16,7 +16,7 @@ public class MKFieldPolygon: MKPolygon {
     static let kPreviewPolygonLineWidth: CGFloat = 2.0
 
     var owner: MapField!
-    
+
     convenience init(owner: MapField, coordinates: UnsafePointer<CLLocationCoordinate2D>, count: Int) {
         self.init(coordinates: coordinates, count: count)
         self.owner = owner
