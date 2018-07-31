@@ -11,6 +11,10 @@ import RealmSwift
 
 extension Realm: MockableRealm {
     
+    func queryAll<Element>(_ type: Element.Type) -> [Element] where Element: Object {
+        return Array(objects(type))
+    }
+    
     func add(_ object: Object) {
         add(object, update: false)
     }

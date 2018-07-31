@@ -49,6 +49,7 @@
 		9450659F20FB445F00758D8C /* SwitchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659E20FB445F00758D8C /* SwitchTableViewController.swift */; };
 		945065A120FB445F00758D8C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945065A020FB445F00758D8C /* SwitchTableViewCell.swift */; };
 		9459E5872110EF530095F577 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9459E5862110EF530095F577 /* MainViewController.swift */; };
+		9459E58F2111061E0095F577 /* RealmDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9459E58E2111061E0095F577 /* RealmDataSourceTests.swift */; };
 		945B47B7210B58B8007865D5 /* OperationFieldVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */; };
 		945B47BA210B6650007865D5 /* FertilizationLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B9210B6650007865D5 /* FertilizationLocalization.swift */; };
 		945B47BE210B70C6007865D5 /* OperationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BD210B70C6007865D5 /* OperationDialogs.swift */; };
@@ -151,6 +152,7 @@
 		9450659E20FB445F00758D8C /* SwitchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewController.swift; sourceTree = "<group>"; };
 		945065A020FB445F00758D8C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		9459E5862110EF530095F577 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9459E58E2111061E0095F577 /* RealmDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataSourceTests.swift; sourceTree = "<group>"; };
 		945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFieldVerification.swift; sourceTree = "<group>"; };
 		945B47B9210B6650007865D5 /* FertilizationLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationLocalization.swift; sourceTree = "<group>"; };
 		945B47BD210B70C6007865D5 /* OperationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDialogs.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				94DCAFE621108C800075D520 /* GermanDateFormatterTests.swift */,
 				9478C25C21109A6B00184DA8 /* PolygonAreaTests.swift */,
+				9459E58E2111061E0095F577 /* RealmDataSourceTests.swift */,
 				356AFE4E20CAB28F000D9BC1 /* Info.plist */,
 			);
 			path = WeinbergappTests;
@@ -935,6 +938,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DCAFE721108C800075D520 /* GermanDateFormatterTests.swift in Sources */,
+				9459E58F2111061E0095F577 /* RealmDataSourceTests.swift in Sources */,
 				9478C25D21109A6B00184DA8 /* PolygonAreaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 protocol MockableRealm {
-    func objects<Element: Object>(_ type: Element.Type) -> Results<Element>
+    func queryAll<Element: Object>(_ type: Element.Type) -> [Element]
     func write(_ block: (() throws -> Void)) throws
     func add(_ object: Object)
     func delete(_ object: Object)

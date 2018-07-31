@@ -18,7 +18,7 @@ public class RealmDataSource<T: Object> {
     }
 
     public func queryAll() throws -> [T] {
-        return Array(realm.objects(T.self))
+        return realm.queryAll(T.self)
     }
 
     public func add(_ element: T) throws {
