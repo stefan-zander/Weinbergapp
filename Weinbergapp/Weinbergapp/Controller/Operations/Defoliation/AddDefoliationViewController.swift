@@ -10,30 +10,30 @@ import UIKit
 
 class AddDefoliationViewController: UIViewController {
     
+    public var onLoad: (() -> Void)?
+    public var onSave: (() -> Bool)?
+    
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var field: UITextField!
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var workingHours: UITextField!
 
-    var editingElement: Defoliation?
-    var source: DefoliationViewController!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let editingElement = editingElement {
-            applyChanges(from: editingElement)
+        
+        if let onLoad = onLoad {
+            onLoad()
         }
     }
     
-    func applyChanges(from: Defoliation) {
+    public func applyChanges(from: Defoliation) {
         date.date = from.date
         field.text = from.field
         user.text = from.user
         workingHours.text = String(from.workingHours)
     }
     
-    func applyChanges(to: Defoliation) {
+    public func applyChanges(to: Defoliation) {
         to.date = date.date
         to.field = field.text ?? ""
         to.user = user.text ?? ""
@@ -45,24 +45,11 @@ class AddDefoliationViewController: UIViewController {
         guard OperationFieldVerification.verify(user: user, self) else { return }
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
         
-        do {
-            if let editingElement = editingElement {
-                try source.dataSource.update {
-                    applyChanges(to: editingElement)
-                }
-            } else {
-                let defoliation = Defoliation()
-                applyChanges(to: defoliation)
-                
-                try source.dataSource.add(defoliation)
-                source.defoliations.append(defoliation)
-            }
-            
-            source.tableView.reloadData()
-            self.dismiss(animated: true, completion: nil)
-        } catch let error as NSError {
-            OperationDialogs.presentSaveFailed(error: error, controller: self)
+        if let onSave = onSave {
+            guard onSave() else { return }
         }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
