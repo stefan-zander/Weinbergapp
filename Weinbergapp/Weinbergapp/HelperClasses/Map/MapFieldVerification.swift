@@ -8,17 +8,15 @@
 
 import UIKit
 
-public class MapFieldVerification {
+class MapFieldVerification {
 
-    public static func verify(name: UITextField, _ controller: UIViewController) -> String? {
+    static func verify(name: UITextField, _ controller: UIViewController) -> String? {
         guard let name = name.text, !name.isEmpty else {
             let alert = UIAlertController(title: "Name nicht angegeben",
                                           message: "Ein Name für das Feld muss angegeben werden.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok",
-                                          style: .default,
-                                          handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
             controller.present(alert, animated: true)
             return nil
@@ -27,15 +25,13 @@ public class MapFieldVerification {
         return name
     }
 
-    public static func verify(vineVariety: UITextField, _ controller: UIViewController) -> String? {
+    static func verify(vineVariety: UITextField, _ controller: UIViewController) -> String? {
         guard let vineVariety = vineVariety.text, !vineVariety.isEmpty else {
             let alert = UIAlertController(title: "Reben Sorte nicht angegeben",
                                           message: "Eine Reben Sorte muss für das Feld angegeben werden.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok",
-                                          style: .default,
-                                          handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
             controller.present(alert, animated: true)
             return nil

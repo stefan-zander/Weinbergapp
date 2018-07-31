@@ -14,7 +14,7 @@ class MapDialogs {
         let alert = UIAlertController(title: "Standort konnte nicht ermittelt werden.",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -24,7 +24,7 @@ class MapDialogs {
         let alert = UIAlertController(title: "Nicht genügend Punkte eingezeichnet",
                                       message: "Um eine Fläche aufzuspannen werden mindestens drei Punkte benötigt.",
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Weitere Punkte einzeichnen", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Weitere Punkte einzeichnen", style: .default))
         alert.addAction(UIAlertAction(title: "Vorgang abbrechen", style: .cancel, handler: onCancel))
 
         controller.present(alert, animated: true)
@@ -35,9 +35,7 @@ class MapDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok",
-                                      style: .default,
-                                      handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -47,7 +45,7 @@ class MapDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -57,7 +55,7 @@ class MapDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -70,7 +68,7 @@ class MapDialogs {
                                       preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Ja, \"\(fieldName)\" löschen", style: .default, handler: onConfirmation))
-        alert.addAction(UIAlertAction(title: "Nein, \"\(fieldName)\" beibehalten", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Nein, \"\(fieldName)\" beibehalten", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -80,7 +78,7 @@ class MapDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
         controller.present(alert, animated: true)
     }

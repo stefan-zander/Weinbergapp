@@ -15,9 +15,7 @@ class OperationDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok",
-                                      style: .default,
-                                      handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -27,7 +25,7 @@ class OperationDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -37,9 +35,7 @@ class OperationDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok",
-                                      style: .default,
-                                      handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
         controller.present(alert, animated: true)
     }
