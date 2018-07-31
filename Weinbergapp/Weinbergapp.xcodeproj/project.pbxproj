@@ -240,6 +240,7 @@
 				35C0DE4320E65BE500C31C78 /* Model */,
 				9409693D2103682200AA7146 /* View */,
 				940155F720FCCEFB006E36D9 /* Controller */,
+				9459E5882110FFE70095F577 /* Dialogs */,
 				945CD71C21091D1700542CD8 /* HelperClasses */,
 				356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */,
 				359977E120F8AAD0005664CB /* Assets.xcassets */,
@@ -508,6 +509,41 @@
 			path = More;
 			sourceTree = "<group>";
 		};
+		9459E5882110FFE70095F577 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				948A414C2110D88D00D301D3 /* LoginDialogs.swift */,
+				9459E5892111001C0095F577 /* Map */,
+				9459E58A211100370095F577 /* Operations */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		9459E5892111001C0095F577 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				94BE5C662107B50C00C95F97 /* MapDialogs.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		9459E58A211100370095F577 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				945B47BD210B70C6007865D5 /* OperationDialogs.swift */,
+				9459E58B211100490095F577 /* PlantProtection */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		9459E58B211100490095F577 /* PlantProtection */ = {
+			isa = PBXGroup;
+			children = (
+				940DD3C721047AF80004CD26 /* PlantProtectionDialogs.swift */,
+			);
+			path = PlantProtection;
+			sourceTree = "<group>";
+		};
 		945B47B8210B6640007865D5 /* Fertilization */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,7 +565,6 @@
 			children = (
 				9486C4C5210FBBDF00C2E153 /* GermanDateFormatter.swift */,
 				943D33702109E684006886CA /* PolygonArea.swift */,
-				948A414C2110D88D00D301D3 /* LoginDialogs.swift */,
 				945CD71D21091E7200542CD8 /* Map */,
 				945CD72121091EF800542CD8 /* Operations */,
 			);
@@ -541,7 +576,6 @@
 			children = (
 				9427E4AC210E230D00BD0458 /* MapLocalization.swift */,
 				945CD7152108E60400542CD8 /* MapFieldVerification.swift */,
-				94BE5C662107B50C00C95F97 /* MapDialogs.swift */,
 				945CD71E21091E7E00542CD8 /* Drawing */,
 				945CD71F21091E8F00542CD8 /* FieldManagement */,
 			);
@@ -580,7 +614,6 @@
 			isa = PBXGroup;
 			children = (
 				945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */,
-				945B47BD210B70C6007865D5 /* OperationDialogs.swift */,
 				945B47B8210B6640007865D5 /* Fertilization */,
 				945CD72221091F0500542CD8 /* PlantProtection */,
 				945B47BF210B7764007865D5 /* Vintage */,
@@ -592,7 +625,6 @@
 			isa = PBXGroup;
 			children = (
 				9445648C2103506100201DD4 /* PlantProtectionLocalization.swift */,
-				940DD3C721047AF80004CD26 /* PlantProtectionDialogs.swift */,
 			);
 			path = PlantProtection;
 			sourceTree = "<group>";
