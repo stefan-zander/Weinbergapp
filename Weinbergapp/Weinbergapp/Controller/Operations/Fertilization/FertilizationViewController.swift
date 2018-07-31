@@ -40,7 +40,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
             let fertilization = fertilizations[indexPath.row]
             
             cell.setField(field: "Feld: \(fertilization.field)")
-            cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: fertilization.date)))")
+            cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: fertilization.date))")
             cell.setUser(user: "Benutzer: \(fertilization.user)")
         }
 

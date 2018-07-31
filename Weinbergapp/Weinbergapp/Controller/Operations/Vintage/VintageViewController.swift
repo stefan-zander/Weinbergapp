@@ -38,7 +38,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
             let vintage = vintages[indexPath.row]
 
             cell.setField(field: "Feld: \(vintage.field)")
-            cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string)")
+            cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: vintage.date))")
             cell.setUser(user: "Benutzer: \(vintage.user)")
         }
 

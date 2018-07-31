@@ -19,19 +19,19 @@ public class MKFieldPointAnnotation: MKPointAnnotation {
     }
 
     public func getAnnotationView(in mapView: MKMapView) -> MKAnnotationView {
-        if let fieldMarkerAnnotation = mapView.dequeueReusableAnnotationView(
+        if let fieldPinAnnotation = mapView.dequeueReusableAnnotationView(
             withIdentifier: "fieldPinAnnotation") {
-            fieldMarkerAnnotation.annotation = self
-            return fieldMarkerAnnotation
+            fieldPinAnnotation.annotation = self
+            return fieldPinAnnotation
         }
 
-        let fieldMarkerAnnotation = MKPinAnnotationView(annotation: self,
+        let fieldPinAnnotation = MKPinAnnotationView(annotation: self,
                                                            reuseIdentifier: "fieldPinAnnotation")
-        fieldMarkerAnnotation.tintColor = .orange
+        fieldPinAnnotation.tintColor = .orange
+        fieldPinAnnotation.pinTintColor = .orange
+        fieldPinAnnotation.canShowCallout = true
+        fieldPinAnnotation.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
 
-        fieldMarkerAnnotation.canShowCallout = true
-        fieldMarkerAnnotation.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-
-        return fieldMarkerAnnotation
+        return fieldPinAnnotation
     }
 }
