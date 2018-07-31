@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OperationsTableViewController: UITableViewController {
-
+    
     let operations = [
         Operation(name: "Düngung",
                   image: UIImage(named: "FertilizationLogo")!,
@@ -27,6 +28,8 @@ class OperationsTableViewController: UITableViewController {
                   image: UIImage(named: "VintageLogo")!,
                   storyboardIdentifier: "Vintage")
     ]
+    
+    var realm: Realm!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +53,24 @@ class OperationsTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(
             withIdentifier: operations[indexPath.row].storyboardIdentifier)
-
-        self.present(view, animated: true)
+        
+        do {
+            switch view {
+            case let fertilization as FertilizationViewController:
+                fertilization.fertilizations = try RealmPersistentCollection(dataSource: RealmDataSource(realm: realm))
+            case let defoliation as DefoliationViewController:
+                defoliation.defoliations = try RealmPersistentCollection(dataSource: RealmDataSource(realm: realm))
+            case let plantProtection as PlantProtectionViewController:
+                plantProtection.plantProtections = try RealmPersistentCollection(dataSource: RealmDataSource(realm: realm))
+            case let vintage as VintageViewController:
+                vintage.vintages = try RealmPersistentCollection(dataSource: RealmDataSource(realm: realm))
+            default:
+                break
+            }
+            
+            self.present(view, animated: true)
+        } catch let error as NSError {
+            // TODO HANDLE ME
+        }
     }
 }

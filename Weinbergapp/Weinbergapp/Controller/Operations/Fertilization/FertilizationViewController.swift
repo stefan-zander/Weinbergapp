@@ -12,19 +12,13 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var tableView: UITableView!
 
-    let fertilizations = RealmPersistentCollection<Fertilization>()
+    var fertilizations: RealmPersistentCollection<Fertilization>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-
-        do {
-            try fertilizations.reload()
-        } catch let error as NSError {
-            OperationDialogs.presentLoadFailed(error: error, controller: self)
-        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

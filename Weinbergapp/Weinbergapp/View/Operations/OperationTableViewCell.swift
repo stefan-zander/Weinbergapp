@@ -21,5 +21,4 @@ class OperationTableViewCell: UITableViewCell {
         imageThumbnailOperation.image = operation.image
         labelOperationName.text = operation.name
     }
-
 }

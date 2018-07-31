@@ -36,6 +36,34 @@ public class Field: Object {
         cachedArea = area
         return area
     }
+    
+    /**
+     Gets the coordinates that construct the polygon associated with this field
+ 
+     - Returns: The coordinates of the polygon.
+    */
+    public func getCoordinates() -> [CLLocationCoordinate2D] {
+        let coordinatesCount = rawCoordinates.count / 2
+        
+        var coordinates: [CLLocationCoordinate2D] = []
+        coordinates.reserveCapacity(coordinatesCount)
+        
+        for index in 0..<coordinatesCount {
+            coordinates.append(CLLocationCoordinate2D(latitude: rawCoordinates[2 * index],
+                                                      longitude: rawCoordinates[2 * index + 1]))
+        }
+        
+        return coordinates
+    }
+    
+    public func setCoordinates(_ coordinates: [CLLocationCoordinate2D]) {
+        rawCoordinates.removeAll()
+        
+        for coordinate in coordinates {
+            rawCoordinates.append(coordinate.latitude)
+            rawCoordinates.append(coordinate.longitude)
+        }
+    }
 
     ///The coordinates constructing the polygon of the field
     public var coordinates: [CLLocationCoordinate2D] {
@@ -53,12 +81,7 @@ public class Field: Object {
             return coordinates
         }
         set(coordinates) {
-            rawCoordinates.removeAll()
-
-            for coordinate in coordinates {
-                rawCoordinates.append(coordinate.latitude)
-                rawCoordinates.append(coordinate.longitude)
-            }
+            
         }
     }
 }

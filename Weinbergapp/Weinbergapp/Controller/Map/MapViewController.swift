@@ -14,8 +14,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var mapView: MKMapView!
 
-    let fieldDataSource = RealmDataSource<Field>()
-
+    var fieldDataSource: RealmDataSource<Field>!
     var fields: [MapField] = []
     var previewer: MapPolygonDrawer!
 

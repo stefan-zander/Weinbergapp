@@ -26,7 +26,7 @@ public class MKFieldPointAnnotation: MKPointAnnotation {
         }
 
         let fieldPinAnnotation = MKPinAnnotationView(annotation: self,
-                                                           reuseIdentifier: "fieldPinAnnotation")
+                                                     reuseIdentifier: "fieldPinAnnotation")
         fieldPinAnnotation.tintColor = .orange
         fieldPinAnnotation.pinTintColor = .orange
         fieldPinAnnotation.canShowCallout = true

@@ -12,19 +12,13 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
 
     @IBOutlet weak var tableView: UITableView!
 
-    let plantProtections = RealmPersistentCollection<PlantProtection>()
+    var plantProtections: RealmPersistentCollection<PlantProtection>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-
-        do {
-            try plantProtections.reload()
-        } catch let error as NSError {
-            OperationDialogs.presentLoadFailed(error: error, controller: self)
-        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

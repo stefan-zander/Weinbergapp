@@ -11,9 +11,13 @@ import RealmSwift
 
 public class RealmPersistentCollection<T: Object> {
 
-    private let dataSource = RealmDataSource<T>()
-
-    private var collection: [T] = []
+    private let dataSource: RealmDataSource<T>
+    private var collection: [T]
+    
+    init(dataSource: RealmDataSource<T>) throws {
+        self.dataSource = dataSource
+        self.collection = try dataSource.queryAll()
+    }
 
     public subscript(index: Int) -> T {
         return collection[index]
@@ -21,10 +25,6 @@ public class RealmPersistentCollection<T: Object> {
 
     public var count: Int {
         return collection.count
-    }
-
-    public func reload() throws {
-        collection = try dataSource.queryAll()
     }
 
     public func add(_ element: T) throws {

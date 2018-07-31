@@ -1335,10 +1335,10 @@
             </objects>
             <point key="canvasLocation" x="-39.200000000000003" y="-2685.6071964017992"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="osP-U2-eYe">
             <objects>
-                <tabBarController storyboardIdentifier="Controller" id="AzT-oI-WRz" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewControllerID" id="AzT-oI-WRz" customClass="MainViewController" customModule="Weinbergapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pvj-dI-Lvb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

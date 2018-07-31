@@ -27,7 +27,7 @@ public func radians(degrees: Double) -> Double {
 
 /**
  Converts an angle measured in radians to degrees.
- 
+
  - Parameter radians: An angle in radians.
  - Returns: The converted angle in degrees.
  */

@@ -12,19 +12,13 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var tableView: UITableView!
 
-    let defoliations = RealmPersistentCollection<Defoliation>()
+    var defoliations: RealmPersistentCollection<Defoliation>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-
-        do {
-            try defoliations.reload()
-        } catch let error as NSError {
-            OperationDialogs.presentLoadFailed(error: error, controller: self)
-        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

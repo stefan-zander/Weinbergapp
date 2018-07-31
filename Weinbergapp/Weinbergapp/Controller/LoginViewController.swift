@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import RealmSwift
 
 class LoginViewController: UIViewController {
 
@@ -23,29 +24,25 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func login(_ sender: Any) {
-        if username.text == "" && password.text == "" {
+        // TODO change username and password
+        guard username.text == "" && password.text == "" else {
+            LoginDialogs.presentLoginFailed(controller: self)
+            return
+        }
+        
+        do {
+            let realm = try Realm()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let controller = storyboard.instantiateViewController(withIdentifier: "Controller")
-                as? UITabBarController {
+            
+            if let controller = storyboard.instantiateViewController(withIdentifier: "MainViewControllerID")
+                as? MainViewController {
+                controller.realm = realm
+                
                 self.present(controller, animated: true)
             }
-        } else {
-
-            let alert = UIAlertController(
-                title: "Login fehlgeschlagen",
-                message: "Ungültige Zugangsdaten. Bitte versuchen Sie es erneut",
-                preferredStyle: UIAlertControllerStyle.alert)
-
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                switch action.style {
-                case .default:
-                    print("default")
-                case .cancel:
-                    print("cancel")
-                case .destructive:
-                    print("destructive")
-                }}))
-            self.present(alert, animated: true)
+        } catch let error as NSError {
+            LoginDialogs.presentDatabaseError(controller: self, error: error)
+            return
         }
     }
 }

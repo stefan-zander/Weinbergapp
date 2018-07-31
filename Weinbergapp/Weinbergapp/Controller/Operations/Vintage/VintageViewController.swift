@@ -12,19 +12,13 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
 
-    let vintages = RealmPersistentCollection<Vintage>()
+    var vintages: RealmPersistentCollection<Vintage>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-
-        do {
-            try vintages.reload()
-        } catch let error as NSError {
-            OperationDialogs.presentLoadFailed(error: error, controller: self)
-        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

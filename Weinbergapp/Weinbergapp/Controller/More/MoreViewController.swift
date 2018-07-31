@@ -15,6 +15,7 @@ class MoreViewController: UIViewController {
     }
 
     @IBAction func setupBusiness(_ sender: UIButton) {
+        // TODO add QR scanner
     }
 
     @IBAction func logout(_ sender: UIButton) {
