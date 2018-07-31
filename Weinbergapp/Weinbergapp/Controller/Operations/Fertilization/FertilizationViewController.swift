@@ -12,7 +12,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var tableView: UITableView!
 
-    let collection = RealmPersistentCollection<Fertilization>()
+    let fertilizations = RealmPersistentCollection<Fertilization>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,14 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.dataSource = self
         
         do {
-            try collection.reload()
+            try fertilizations.reload()
         } catch let error as NSError {
             OperationDialogs.presentLoadFailed(error: error, controller: self)
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collection.count
+        return fertilizations.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,7 +37,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
             for: indexPath)
         
         if let cell = cell as? FertilizationTableViewCell {
-            let fertilization = collection[indexPath.row]
+            let fertilization = fertilizations[indexPath.row]
             
             cell.setField(field: "Feld: \(fertilization.field)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: fertilization.date)))")
@@ -52,7 +52,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
 
         if let editFertilization = storyboard.instantiateViewController(withIdentifier: "AddFertilization")
             as? AddFertilizationViewController {
-            let editingElement = collection[indexPath.row]
+            let editingElement = fertilizations[indexPath.row]
             
             editFertilization.onLoad = {
                 editFertilization.applyChanges(from: editingElement)
@@ -60,7 +60,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
             
             editFertilization.onSave = {
                 do {
-                    try self.collection.update {
+                    try self.fertilizations.update {
                         editFertilization.applyChanges(to: editingElement)
                     }
                     
@@ -85,7 +85,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             do {
-                try collection.delete(at: indexPath.row)
+                try fertilizations.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
                 OperationDialogs.presentDeletionFailed(error: error, controller: self)
@@ -102,7 +102,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                 do {
                     let fertilization = Fertilization()
                     addFertilization.applyChanges(to: fertilization)
-                    try self.collection.add(fertilization)
+                    try self.fertilizations.add(fertilization)
                     
                     self.tableView.reloadData()
                     return true

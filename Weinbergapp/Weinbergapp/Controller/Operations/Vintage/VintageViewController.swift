@@ -12,7 +12,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    let collection = RealmPersistentCollection<Vintage>()
+    let vintages = RealmPersistentCollection<Vintage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,21 +21,21 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         
         do {
-            try collection.reload()
+            try vintages.reload()
         } catch let error as NSError {
             OperationDialogs.presentLoadFailed(error: error, controller: self)
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collection.count
+        return vintages.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "VintageViewCell", for: indexPath)
 
         if let cell = cell as? VintageTableViewCell {
-            let vintage = collection[indexPath.row]
+            let vintage = vintages[indexPath.row]
 
             cell.setField(field: "Feld: \(vintage.field)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string)")
@@ -50,7 +50,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         if let editVintage = storyboard.instantiateViewController(withIdentifier: "AddVintage")
             as? AddVintageViewController {
-            let editingElement = collection[indexPath.row]
+            let editingElement = vintages[indexPath.row]
             
             editVintage.onLoad = {
                 editVintage.applyChanges(from: editingElement)
@@ -58,7 +58,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             editVintage.onSave = {
                 do {
-                    try self.collection.update {
+                    try self.vintages.update {
                         editVintage.applyChanges(to: editingElement)
                     }
                     
@@ -83,7 +83,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             do {
-                try collection.delete(at: indexPath.row)
+                try vintages.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
                 OperationDialogs.presentDeletionFailed(error: error, controller: self)
@@ -100,7 +100,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                 do {
                     let vintage = Vintage()
                     addVintage.applyChanges(to: vintage)
-                    try self.collection.add(vintage)
+                    try self.vintages.add(vintage)
                     
                     self.tableView.reloadData()
                     return true

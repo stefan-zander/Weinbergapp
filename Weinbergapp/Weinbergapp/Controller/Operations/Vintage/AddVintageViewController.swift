@@ -19,9 +19,6 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var workingHours: UITextField!
     @IBOutlet weak var execution: UIPickerView!
 
-    var editingElement: Vintage?
-    var source: VintageViewController!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -12,7 +12,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     
-    let collection = RealmPersistentCollection<Defoliation>()
+    let defoliations = RealmPersistentCollection<Defoliation>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,14 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.dataSource = self
         
         do {
-            try collection.reload()
+            try defoliations.reload()
         } catch let error as NSError {
             OperationDialogs.presentLoadFailed(error: error, controller: self)
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collection.count
+        return defoliations.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,7 +37,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
             for: indexPath)
 
         if let cell = cell as? DefoliationTableViewCell {
-            let defoliation = collection[indexPath.row]
+            let defoliation = defoliations[indexPath.row]
 
             cell.setField(field: "Feld: \(defoliation.field)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: defoliation.date))")
@@ -52,7 +52,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
 
         if let editDefoliation = storyboard.instantiateViewController(withIdentifier: "AddDefoliation")
             as? AddDefoliationViewController {
-            let editingElement = collection[indexPath.row]
+            let editingElement = defoliations[indexPath.row]
             
             editDefoliation.onLoad = {
                 editDefoliation.applyChanges(from: editingElement)
@@ -60,7 +60,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
             
             editDefoliation.onSave = {
                 do {
-                    try self.collection.update {
+                    try self.defoliations.update {
                         editDefoliation.applyChanges(to: editingElement)
                     }
                     
@@ -85,7 +85,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             do {
-                try collection.delete(at: indexPath.row)
+                try defoliations.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
                 OperationDialogs.presentDeletionFailed(error: error, controller: self)
@@ -102,7 +102,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                 do {
                     let defoliation = Defoliation()
                     addDefoliation.applyChanges(to: defoliation)
-                    try self.collection.add(defoliation)
+                    try self.defoliations.add(defoliation)
                     
                     self.tableView.reloadData()
                     return true
