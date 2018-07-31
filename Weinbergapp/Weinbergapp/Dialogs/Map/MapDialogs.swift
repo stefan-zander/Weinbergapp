@@ -14,7 +14,7 @@ class MapDialogs {
         let alert = UIAlertController(title: "Standort konnte nicht ermittelt werden.",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -35,7 +35,7 @@ class MapDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -45,7 +45,7 @@ class MapDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -55,7 +55,7 @@ class MapDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
 
         controller.present(alert, animated: true)
     }
@@ -78,7 +78,7 @@ class MapDialogs {
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
 
         controller.present(alert, animated: true)
     }

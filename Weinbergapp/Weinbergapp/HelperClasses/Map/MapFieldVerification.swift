@@ -16,7 +16,7 @@ class MapFieldVerification {
                                           message: "Ein Name für das Feld muss angegeben werden.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
 
             controller.present(alert, animated: true)
             return nil
@@ -31,7 +31,7 @@ class MapFieldVerification {
                                           message: "Eine Reben Sorte muss für das Feld angegeben werden.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
 
             controller.present(alert, animated: true)
             return nil

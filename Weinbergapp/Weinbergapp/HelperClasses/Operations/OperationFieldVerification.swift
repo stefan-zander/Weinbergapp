@@ -16,7 +16,7 @@ class OperationFieldVerification {
                                           message: "Ein Feld muss angegeben werden.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
 
             controller.present(alert, animated: true)
             return false
@@ -31,7 +31,7 @@ class OperationFieldVerification {
                                           message: "Ein Benutzer muss angegeben werden.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
 
             controller.present(alert, animated: true)
             return false
@@ -46,7 +46,7 @@ class OperationFieldVerification {
                                           message: "Die Arbeitsstunden müssen angegeben werden.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
 
             controller.present(alert, animated: true)
             return false
@@ -57,7 +57,7 @@ class OperationFieldVerification {
                                           message: "Bei der Angabe von Arbeitsstunden sind nur Zahlen erlaubt.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
 
             controller.present(alert, animated: true)
             return false
@@ -72,7 +72,7 @@ class OperationFieldVerification {
                                           message: "Die ausgegebene Menge muss angegeben werden.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
 
             controller.present(alert, animated: true)
             return false
@@ -83,7 +83,7 @@ class OperationFieldVerification {
                                           message: "Bei der Angabe von der ausgegebenen Menge sind nur Zahlen erlaubt.",
                                           preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
 
             controller.present(alert, animated: true)
             return false
