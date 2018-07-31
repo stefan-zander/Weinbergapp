@@ -24,7 +24,7 @@ class FertilizationLocalization {
             "Kalimagnesia (Parent-Kali)",
             "Kaliumsulfat fein u. granuliert",
             "Kalksalpeter"
-        ],[
+        ], [
             "Terragon",
             "Weinhefen filtriert",
             "Trester",

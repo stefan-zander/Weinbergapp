@@ -128,39 +128,9 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField {
         case plantProtectionKind:
-            // TODO move this onto another dialog
-            switch currentCategory {
-            case .fungicidal:
-                PlantProtectionDialogs.present(fungicidal: currentFungicidal,
-                                               controller: self,
-                                               completion: {
-                    self.plantProtectionKind.text =
-                        PlantProtectionLocalization.localize(self.currentFungicidal)
-                })
-
-            case .herbicide:
-                PlantProtectionDialogs.present(herbicide: currentHerbicide,
-                                               controller: self,
-                                               completion: {
-                    self.plantProtectionKind.text =
-                        PlantProtectionLocalization.localize(self.currentHerbicide)
-                    })
-
-            case .insecticidalOrAcaricidal:
-                PlantProtectionDialogs.present(insecticidalOrAcaricidal: currentInsecticidalOrAcaricidal,
-                                               controller: self,
-                                               completion: {
-                    self.plantProtectionKind.text =
-                        PlantProtectionLocalization.localize(self.currentInsecticidalOrAcaricidal)
-                })
-            }
+            PlantProtectionDialogs.presentPlantProtection(controller: self)
         case pesticides:
-            PlantProtectionDialogs.present(pesticides: self.currentPesticides,
-                                           controller: self,
-                                           completion: {
-                self.pesticides.text =
-                    PlantProtectionLocalization.localize(self.currentPesticides)
-            })
+            PlantProtectionDialogs.presentPesticides(controller: self)
         default:
             break
         }
