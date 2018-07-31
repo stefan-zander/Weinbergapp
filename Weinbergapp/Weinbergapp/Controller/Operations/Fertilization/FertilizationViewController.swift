@@ -65,8 +65,10 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                     }
                     
                     self.tableView.reloadData()
+                    return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(error: error, controller: self)
+                    OperationDialogs.presentSaveFailed(error: error, controller: editFertilization)
+                    return false
                 }
             }
 
@@ -101,9 +103,12 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                     let fertilization = Fertilization()
                     addFertilization.applyChanges(to: fertilization)
                     try self.collection.add(fertilization)
+                    
                     self.tableView.reloadData()
+                    return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(error: error, controller: self)
+                    OperationDialogs.presentSaveFailed(error: error, controller: addFertilization)
+                    return false
                 }
             }
 

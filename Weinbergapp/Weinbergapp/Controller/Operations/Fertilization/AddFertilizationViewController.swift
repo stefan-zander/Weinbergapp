@@ -11,7 +11,7 @@ import UIKit
 class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     public var onLoad: (() -> Void)?
-    public var onSave: (() -> Void)?
+    public var onSave: (() -> Bool)?
 
     @IBOutlet weak var date: UIDatePicker!
     @IBOutlet weak var field: UITextField!
@@ -118,7 +118,7 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
         guard OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }
         
         if let onSave = onSave {
-            onSave()
+            guard onSave() else { return }
         }
         
         self.dismiss(animated: true, completion: nil)
