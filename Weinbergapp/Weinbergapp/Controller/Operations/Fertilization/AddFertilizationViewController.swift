@@ -79,9 +79,9 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView {
         case fertilizerCategory:
-            return 2
+            return FertilizationLocalization.fertilizerCategoryOptions.count
         case fertilizer:
-            return 8
+            return FertilizationLocalization.fertilizerOptions[fertilizerCategory.selectedRow(inComponent: 0)].count
         default:
             return 0
         }
@@ -96,16 +96,9 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView {
         case fertilizerCategory:
-            return FertilizationLocalization.localizeFertilizerCategory(index: row)
+            return FertilizationLocalization.fertilizerCategoryOptions[row]
         case fertilizer:
-            switch fertilizerCategory.selectedRow(inComponent: 0) {
-            case 0:
-                return FertilizationLocalization.localizeMineralFertilizer(index: row)
-            case 1:
-                return FertilizationLocalization.getOrganicFertilizer(index: row)
-            default:
-                return nil
-            }
+            return FertilizationLocalization.fertilizerOptions[fertilizerCategory.selectedRow(inComponent: 0)][row]
         default:
             return nil
         }

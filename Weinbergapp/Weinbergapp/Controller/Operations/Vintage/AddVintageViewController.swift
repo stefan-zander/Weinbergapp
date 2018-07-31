@@ -51,11 +51,11 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 2
+        return VintageLocalization.executionOptions.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return VintageLocalization.localizeExecution(index: row)
+        return VintageLocalization.executionOptions[row]
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {

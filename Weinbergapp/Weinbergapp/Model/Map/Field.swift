@@ -37,7 +37,7 @@ public class Field: Object {
         return area
     }
     
-    /// The coordinates constructing the polygon of the field
+    ///The coordinates constructing the polygon of the field
     public var coordinates: [CLLocationCoordinate2D] {
         get {
             let coordinatesCount = rawCoordinates.count / 2

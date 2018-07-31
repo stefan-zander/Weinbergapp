@@ -177,7 +177,7 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return PlantProtectionLocalization.localizeTreatmentSchedule(index: row)
+        return PlantProtectionLocalization.treatmentScheduleOptions[row]
     }
 
     @IBAction func fungicidalClicked(_ sender: UIButton) {

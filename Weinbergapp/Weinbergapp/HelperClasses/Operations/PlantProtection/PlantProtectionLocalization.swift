@@ -10,28 +10,16 @@ import Foundation
 
 class PlantProtectionLocalization {
     
-    static func localizeTreatmentSchedule(index: Int) -> String? {
-        switch index {
-        case 0:
-            return "Austrieb"
-        case 1:
-            return "Vorblüte"
-        case 2:
-            return "1. Vorblüte"
-        case 3:
-            return "2. Vorblüte"
-        case 4:
-            return "3. Vorblüte"
-        case 5:
-            return "Abgehende Blüte"
-        case 6:
-            return "2. Nachblüte"
-        case 7:
-            return "3. Nachblüte"
-        default:
-            return nil
-        }
-    }
+    static let treatmentScheduleOptions = [
+        "Austrieb",
+        "Vorblüte",
+        "1. Vorblüte",
+        "2. Vorblüte",
+        "3. Vorblüte",
+        "Abgehende Blüte",
+        "2. Nachblüte",
+        "3. Nachblüte"
+    ]
 
     static func localize(_ fungicidal: FungicidalPlantProtection) -> String {
         var choices: [String] = []
