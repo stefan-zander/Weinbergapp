@@ -37,7 +37,7 @@ public class MapPolygonDrawer {
         return 0
     }
 
-    public func enterPreviewMode(coordinates: [CLLocationCoordinate2D]?) {
+    public func beginDraw(coordinates: [CLLocationCoordinate2D]?) {
         if let coordinates = coordinates {
             self.previewPoints = coordinates.enumerated().map { (offset, element) -> MKPointAnnotation in
                 return createPointAnnotation(index: offset, coordinate: element)
@@ -51,7 +51,7 @@ public class MapPolygonDrawer {
         self.previewPolygon = nil
     }
 
-    public func leavePreviewMode() {
+    public func endDraw() {
         if let previewPoints = previewPoints {
             self.mapView.removeAnnotations(previewPoints)
             self.previewPoints = nil

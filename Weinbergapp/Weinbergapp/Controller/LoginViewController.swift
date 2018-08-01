@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func login(_ sender: Any) {
-        // TODO change username and password
         guard username.text == "" && password.text == "" else {
             LoginDialogs.presentLoginFailed(controller: self)
             return

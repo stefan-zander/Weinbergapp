@@ -19,25 +19,13 @@ class MapDialogs {
         controller.present(alert, animated: true)
     }
 
-    // TODO mayb eno onCancel
-    static func presentInsufficientPointsWarning(controller: UIViewController,
+    static func presentInsufficientPointsWarning(controller: MapViewController,
                                                  onCancel: ((UIAlertAction) -> Swift.Void)? = nil) {
         let alert = UIAlertController(title: "Nicht genügend Punkte eingezeichnet",
                                       message: "Um eine Fläche aufzuspannen werden mindestens drei Punkte benötigt.",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Weitere Punkte einzeichnen", style: .default))
         alert.addAction(UIAlertAction(title: "Vorgang abbrechen", style: .cancel, handler: onCancel))
-
-        controller.present(alert, animated: true)
-    }
-
-    // TODO unused?
-    static func presentLoadFailed(error: NSError, controller: UIViewController) {
-        let alert = UIAlertController(title: "Fehler beim Laden der Flächen",
-                                      message: error.localizedDescription,
-                                      preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
 
         controller.present(alert, animated: true)
     }

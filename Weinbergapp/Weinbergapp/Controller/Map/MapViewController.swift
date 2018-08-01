@@ -14,9 +14,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var mapView: MKMapView!
     
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(toggleAdd))
-    let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(toggleAdd))
-    let locationManager = CLLocationManager()
+    private let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(beginAdd))
+    private let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(endAdd))
+    private let locationManager = CLLocationManager()
 
     var fields: MapFieldCollection!
     var drawer: MapPolygonDrawer!
@@ -38,34 +38,34 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         fields.mapView = mapView
         drawer = MapPolygonDrawer(for: mapView)
     }
-
-    @IBAction func toggleAdd(_ sender: UIBarButtonItem) {
-        if drawer.isEnabled {
-            if drawer.pointsDrawn < 3 {
-                MapDialogs.presentInsufficientPointsWarning(controller: self, onCancel: { _ in
-                    self.navigationBar.leftBarButtonItem = self.addButton
-                    self.drawer.leavePreviewMode()
-                })
-            } else {
-                let coordinates = drawer.getCoordinates()
-
-                // TODO maybe extract to function
+    
+    @IBAction func beginAdd(_ sender: UIBarButtonItem) {
+        navigationBar.leftBarButtonItem = doneButton
+        drawer.beginDraw(coordinates: nil)
+    }
+    
+    @IBAction func endAdd(_ sender: UIBarButtonItem) {
+        guard drawer.pointsDrawn > 3 else {
+            MapDialogs.presentInsufficientPointsWarning(controller: self, onCancel: { _ in
                 self.navigationBar.leftBarButtonItem = self.addButton
-                self.drawer.leavePreviewMode()
-
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-                if let addField = storyboard.instantiateViewController(withIdentifier: "AddField")
-                    as? AddFieldViewController {
-                    addField.fields = fields
-                    addField.coordinates = coordinates
-
-                    self.present(addField, animated: true)
-                }
-            }
-        } else {
-            self.navigationBar.leftBarButtonItem = doneButton
-            drawer.enterPreviewMode(coordinates: nil)
+                self.drawer.endDraw()
+            })
+            return
+        }
+        
+        let coordinates = drawer.getCoordinates()
+        
+        navigationBar.leftBarButtonItem = addButton
+        drawer.endDraw()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let addField = storyboard.instantiateViewController(withIdentifier: "AddField")
+            as? AddFieldViewController {
+            addField.fields = fields
+            addField.coordinates = coordinates
+            
+            self.present(addField, animated: true)
         }
     }
 

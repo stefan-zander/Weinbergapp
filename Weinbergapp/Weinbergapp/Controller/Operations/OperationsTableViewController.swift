@@ -57,28 +57,24 @@ class OperationsTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: operations[indexPath.row].identifier)
         
-        do {
-            switch view {
-            case let fertilization as FertilizationViewController:
-                fertilization.fertilizations = RealmPersistentCollection(realm: realm)
-                fertilization.fields = fields
-            case let defoliation as DefoliationViewController:
-                defoliation.defoliations = RealmPersistentCollection(realm: realm)
-                defoliation.fields = fields
-            case let plantProtection as PlantProtectionViewController:
-                plantProtection.plantProtections = RealmPersistentCollection(realm: realm)
-                plantProtection.fields = fields
-            case let vintage as VintageViewController:
-                vintage.vintages = RealmPersistentCollection(realm: realm)
-                vintage.fields = fields
-            default:
-                break
-            }
-            
-            self.present(view, animated: true)
-        } catch let error as NSError {
-            // TODO HANDLE ME
+        switch view {
+        case let fertilization as FertilizationViewController:
+            fertilization.fertilizations = RealmPersistentCollection(realm: realm)
+            fertilization.fields = fields
+        case let defoliation as DefoliationViewController:
+            defoliation.defoliations = RealmPersistentCollection(realm: realm)
+            defoliation.fields = fields
+        case let plantProtection as PlantProtectionViewController:
+            plantProtection.plantProtections = RealmPersistentCollection(realm: realm)
+            plantProtection.fields = fields
+        case let vintage as VintageViewController:
+            vintage.vintages = RealmPersistentCollection(realm: realm)
+            vintage.fields = fields
+        default:
+            break
         }
+        
+        self.present(view, animated: true)
     }
     
     private struct OperationInfo {
