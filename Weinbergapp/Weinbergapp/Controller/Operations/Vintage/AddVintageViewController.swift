@@ -19,7 +19,7 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var workingHours: UITextField!
     @IBOutlet weak var execution: UIPickerView!
     
-    var fields: [Field]!
+    var fields: MapFieldCollection!
 
     override func viewDidLoad() {
         super.viewDidLoad()

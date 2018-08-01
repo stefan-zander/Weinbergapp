@@ -17,12 +17,15 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
         
         if let viewControllers = viewControllers {
+            let fields = MapFieldCollection(realm: realm)
+            
             if let map = viewControllers[0] as? MapViewController {
-                map.fields = MapFieldCollection(realm: realm)
+                map.fields = fields
             }
             
             if let operations = viewControllers[1] as? OperationsTableViewController {
                 operations.realm = realm
+                operations.fields = fields
             }
         }
     }

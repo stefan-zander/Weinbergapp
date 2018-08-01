@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
         password.isSecureTextEntry = !sender.isOn
     }
 
-    
     @IBAction func login(_ sender: Any) {
         // TODO change username and password
         guard username.text == "" && password.text == "" else {

@@ -13,7 +13,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
 
     var vintages: RealmPersistentCollection<Vintage>!
-    var fields: [Field]!
+    var fields: MapFieldCollection!
 
     override func viewDidLoad() {
         super.viewDidLoad()

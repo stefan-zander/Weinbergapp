@@ -11,12 +11,6 @@ import RealmSwift
 
 class OperationsTableViewController: UITableViewController {
     
-    private struct OperationInfo {
-        let name: String
-        let image: UIImage
-        let identifier: String
-    }
-    
     private let operations = [
         OperationInfo(name: "Düngung",
                       image: UIImage(named: "FertilizationLogo")!,
@@ -36,6 +30,7 @@ class OperationsTableViewController: UITableViewController {
     ]
     
     var realm: Realm!
+    var fields: MapFieldCollection!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,20 +58,18 @@ class OperationsTableViewController: UITableViewController {
         let view = storyboard.instantiateViewController(withIdentifier: operations[indexPath.row].identifier)
         
         do {
-            let fields = realm.queryAll(Field.self)
-            
             switch view {
             case let fertilization as FertilizationViewController:
-                fertilization.fertilizations = try RealmPersistentCollection(realm: realm)
+                fertilization.fertilizations = RealmPersistentCollection(realm: realm)
                 fertilization.fields = fields
             case let defoliation as DefoliationViewController:
-                defoliation.defoliations = try RealmPersistentCollection(realm: realm)
+                defoliation.defoliations = RealmPersistentCollection(realm: realm)
                 defoliation.fields = fields
             case let plantProtection as PlantProtectionViewController:
-                plantProtection.plantProtections = try RealmPersistentCollection(realm: realm)
+                plantProtection.plantProtections = RealmPersistentCollection(realm: realm)
                 plantProtection.fields = fields
             case let vintage as VintageViewController:
-                vintage.vintages = try RealmPersistentCollection(realm: realm)
+                vintage.vintages = RealmPersistentCollection(realm: realm)
                 vintage.fields = fields
             default:
                 break
@@ -86,5 +79,11 @@ class OperationsTableViewController: UITableViewController {
         } catch let error as NSError {
             // TODO HANDLE ME
         }
+    }
+    
+    private struct OperationInfo {
+        let name: String
+        let image: UIImage
+        let identifier: String
     }
 }

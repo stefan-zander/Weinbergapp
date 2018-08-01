@@ -21,7 +21,7 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var fertilizer: UIPickerView!
     @IBOutlet weak var appliedAmount: UITextField!
     
-    var fields: [Field]!
+    var fields: MapFieldCollection!
 
     override func viewDidLoad() {
         super.viewDidLoad()

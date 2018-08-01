@@ -39,7 +39,7 @@ class AddFieldViewController: UIViewController {
                                                     onConfirmation: { _ in
             
             do {
-                try self.fields.delete(editingField)
+                try self.fields.delete(editingField.field)
             } catch let error as NSError {
                 MapDialogs.presentDeletionInDatabaseFailed(controller: self, error: error)
                 return

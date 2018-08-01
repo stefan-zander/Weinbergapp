@@ -12,35 +12,24 @@ import MapKit
 public class MapFieldCollection {
     
     private let realm: MockableRealm    
-    private var fields: [MapField] = []
+    private var mapFields: [MapField] = []
     private var currentMapView: MKMapView?
     
     init(realm: MockableRealm) {
         self.realm = realm
-        self.fields = realm.queryAll(Field.self).map { MapField(field: $0, fieldCollection: self) }
+        self.mapFields = realm.queryAll(Field.self).map { MapField(field: $0, fieldCollection: self) }
     }
     
-    public var mapView: MKMapView? {
-        get {
-            return currentMapView
-        }
-        set(mapView) {
-            guard mapView != currentMapView else { return }
-            
-            if let previousMapView = currentMapView {
-                for field in fields {
-                    field.removeFromMapView(mapView: previousMapView)
-                }
-            }
-            
-            currentMapView = mapView
-            
-            if let nextMapView = currentMapView {
-                for field in fields {
-                    field.addToMapView(mapView: nextMapView)
-                }
-            }
-        }
+    public func index(of field: Field) -> Int? {
+        return mapFields.index(where: { $0.field === field })
+    }
+    
+    public subscript(index: Int) -> Field {
+        return mapFields[index].field
+    }
+    
+    public var count: Int {
+        return mapFields.count
     }
     
     public func add(_ field: Field) throws {
@@ -50,7 +39,7 @@ public class MapFieldCollection {
         
         let mapField = MapField(field: field, fieldCollection: self)
         
-        fields.append(mapField)
+        mapFields.append(mapField)
         
         if let currentMapView = currentMapView {
             mapField.addToMapView(mapView: currentMapView)
@@ -61,17 +50,42 @@ public class MapFieldCollection {
         try realm.write(block)
     }
     
-    public func delete(_ field: MapField) throws {
-        guard let index = fields.index(where: { $0 === field }) else { return }
+    public func delete(_ field: Field) throws {
+        guard let index = mapFields.index(where: { $0.field === field }) else { return }
+        
+        let mapField = mapFields[index]
         
         try realm.write {
-            realm.delete(field.field)
+            realm.delete(mapField.field)
         }
         
         if let currentMapView = currentMapView {
-            field.removeFromMapView(mapView: currentMapView)
+            mapField.removeFromMapView(mapView: currentMapView)
         }
         
-        fields.remove(at: index)
+        mapFields.remove(at: index)
+    }
+    
+    public var mapView: MKMapView? {
+        get {
+            return currentMapView
+        }
+        set(mapView) {
+            guard mapView != currentMapView else { return }
+            
+            if let previousMapView = currentMapView {
+                for field in mapFields {
+                    field.removeFromMapView(mapView: previousMapView)
+                }
+            }
+            
+            currentMapView = mapView
+            
+            if let nextMapView = currentMapView {
+                for field in mapFields {
+                    field.addToMapView(mapView: nextMapView)
+                }
+            }
+        }
     }
 }
