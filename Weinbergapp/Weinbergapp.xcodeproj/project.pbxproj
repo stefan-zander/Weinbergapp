@@ -48,11 +48,9 @@
 		9450659F20FB445F00758D8C /* SwitchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659E20FB445F00758D8C /* SwitchTableViewController.swift */; };
 		945065A120FB445F00758D8C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945065A020FB445F00758D8C /* SwitchTableViewCell.swift */; };
 		9459E5872110EF530095F577 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9459E5862110EF530095F577 /* MainViewController.swift */; };
-		945B47B7210B58B8007865D5 /* OperationFieldVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */; };
 		945B47BA210B6650007865D5 /* FertilizationLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B9210B6650007865D5 /* FertilizationLocalization.swift */; };
 		945B47BE210B70C6007865D5 /* OperationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BD210B70C6007865D5 /* OperationDialogs.swift */; };
 		945B47C1210B7776007865D5 /* VintageLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47C0210B7776007865D5 /* VintageLocalization.swift */; };
-		945CD7162108E60400542CD8 /* MapFieldVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945CD7152108E60400542CD8 /* MapFieldVerification.swift */; };
 		945CD71A2108EFAF00542CD8 /* MapField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945CD7192108EFAF00542CD8 /* MapField.swift */; };
 		945F08292100850C00F55C44 /* FertilizerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F08282100850C00F55C44 /* FertilizerCategory.swift */; };
 		945F082B2100851F00F55C44 /* MineralFertilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F082A2100851F00F55C44 /* MineralFertilizer.swift */; };
@@ -150,11 +148,9 @@
 		9450659E20FB445F00758D8C /* SwitchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewController.swift; sourceTree = "<group>"; };
 		945065A020FB445F00758D8C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		9459E5862110EF530095F577 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFieldVerification.swift; sourceTree = "<group>"; };
 		945B47B9210B6650007865D5 /* FertilizationLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationLocalization.swift; sourceTree = "<group>"; };
 		945B47BD210B70C6007865D5 /* OperationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDialogs.swift; sourceTree = "<group>"; };
 		945B47C0210B7776007865D5 /* VintageLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageLocalization.swift; sourceTree = "<group>"; };
-		945CD7152108E60400542CD8 /* MapFieldVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFieldVerification.swift; sourceTree = "<group>"; };
 		945CD7192108EFAF00542CD8 /* MapField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapField.swift; sourceTree = "<group>"; };
 		945F08282100850C00F55C44 /* FertilizerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizerCategory.swift; sourceTree = "<group>"; };
 		945F082A2100851F00F55C44 /* MineralFertilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineralFertilizer.swift; sourceTree = "<group>"; };
@@ -575,7 +571,6 @@
 			isa = PBXGroup;
 			children = (
 				9427E4AC210E230D00BD0458 /* MapLocalization.swift */,
-				945CD7152108E60400542CD8 /* MapFieldVerification.swift */,
 				945CD71E21091E7E00542CD8 /* Drawing */,
 				945CD71F21091E8F00542CD8 /* Fields */,
 			);
@@ -613,7 +608,6 @@
 		945CD72121091EF800542CD8 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */,
 				945B47B8210B6640007865D5 /* Fertilization */,
 				945CD72221091F0500542CD8 /* PlantProtection */,
 				945B47BF210B7764007865D5 /* Vintage */,
@@ -883,7 +877,6 @@
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
 				9473746D21061D8F006196CF /* Field.swift in Sources */,
-				945B47B7210B58B8007865D5 /* OperationFieldVerification.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
 				945F082D2100852F00F55C44 /* OrganicFertilizer.swift in Sources */,
 				94BE5C63210799F300C95F97 /* MapPolygonDrawer.swift in Sources */,
@@ -918,7 +911,6 @@
 				940DD3C821047AF80004CD26 /* PlantProtectionDialogs.swift in Sources */,
 				940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */,
 				946F7C932111BB8900F16BDF /* FieldCollection.swift in Sources */,
-				945CD7162108E60400542CD8 /* MapFieldVerification.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
 				945F08312100A03800F55C44 /* FungicidalPlantProtection.swift in Sources */,
 				9486C4C6210FBBDF00C2E153 /* GermanDateFormatter.swift in Sources */,

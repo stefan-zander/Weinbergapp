@@ -62,8 +62,8 @@ class AddDefoliationViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard OperationFieldVerification.verify(user: user, self) else { return }
-        guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
+        guard OperationDialogs.verifyOrPresent(user: user, self) else { return }
+        guard OperationDialogs.verifyOrPresent(workingHours: workingHours, self) else { return }
 
         if let onSave = onSave {
             guard onSave() else { return }
