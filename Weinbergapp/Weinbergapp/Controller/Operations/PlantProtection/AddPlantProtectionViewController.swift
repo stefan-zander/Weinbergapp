@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
-    UIPickerViewDataSource {
+class AddPlantProtectionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
+    UITextFieldDelegate {
 
     public var onLoad: (() -> Void)?
     public var onSave: (() -> Bool)?
@@ -35,6 +35,8 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        field.delegate = self
+        field.dataSource = self
         plantProtectionKind.delegate = self
         pesticides.delegate = self
         treatmentSchedule.delegate = self
@@ -130,6 +132,32 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         to.additionalInformation = additionalInformation.text
         to.appliedAmount = Double(appliedAmount.text ?? "0") ?? 0.0
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView {
+        case field:
+            return fields.count
+        case treatmentSchedule:
+            return PlantProtectionLocalization.treatmentScheduleOptions.count
+        default:
+            return 0
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch pickerView {
+        case field:
+            return fields[row].name
+        case treatmentSchedule:
+            return PlantProtectionLocalization.treatmentScheduleOptions[row]
+        default:
+            return nil
+        }
+    }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField {
@@ -142,18 +170,6 @@ class AddPlantProtectionViewController: UIViewController, UITextFieldDelegate, U
         }
 
         return false
-    }
-
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 8
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return PlantProtectionLocalization.treatmentScheduleOptions[row]
     }
 
     @IBAction func fungicidalClicked(_ sender: UIButton) {

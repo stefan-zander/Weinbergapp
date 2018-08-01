@@ -29,6 +29,10 @@ public class MapField {
     public var vineVariety: String {
         return field.vineVariety
     }
+    
+    public var useCount: Int {
+        return field.useCount
+    }
 
     public func changeText(name: String, vineVariety: String) throws {
         try fieldCollection.update {

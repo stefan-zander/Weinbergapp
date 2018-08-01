@@ -54,6 +54,11 @@ class OperationsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard fields.count > 0 else {
+            OperationDialogs.presentNoFields(controller: self)
+            return
+        }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: operations[indexPath.row].identifier)
         

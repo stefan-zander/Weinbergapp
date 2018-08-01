@@ -62,7 +62,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(error: error, controller: editDefoliation)
+                    OperationDialogs.presentSaveFailed(controller: editDefoliation, error: error)
                     return false
                 }
             }
@@ -85,7 +85,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                 try defoliations.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
-                OperationDialogs.presentDeletionFailed(error: error, controller: self)
+                OperationDialogs.presentDeletionFailed(controller: self, error: error)
             }
         }
     }
@@ -104,7 +104,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(error: error, controller: addDefoliation)
+                    OperationDialogs.presentSaveFailed(controller: addDefoliation, error: error)
                     return false
                 }
             }

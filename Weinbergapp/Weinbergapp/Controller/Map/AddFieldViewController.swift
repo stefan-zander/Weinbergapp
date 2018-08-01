@@ -33,20 +33,16 @@ class AddFieldViewController: UIViewController {
         guard let editingField = editingField else {
             assert(false, "Ability to delete fields should never be present on non-editing uses of this controller.")
         }
-
-        MapDialogs.presentFieldDeletionConfirmation(controller: self,
-                                                    fieldName: editingField.name,
-                                                    onConfirmation: { _ in
-            
+        
+        MapDialogs.presentDeletionConfirmation(controller: self, field: editingField, onConfirmation: { _ in
             do {
                 try self.fields.delete(editingField.field)
+                self.dismiss(animated: true, completion: nil)
             } catch let error as NSError {
                 MapDialogs.presentDeletionInDatabaseFailed(controller: self, error: error)
-                return
             }
-
-            self.dismiss(animated: true, completion: nil)
         })
+        
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {

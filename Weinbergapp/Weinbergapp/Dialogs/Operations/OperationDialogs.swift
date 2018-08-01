@@ -9,8 +9,19 @@
 import UIKit
 
 class OperationDialogs {
+    
+    static func presentNoFields(controller: UIViewController) {
+        let alert = UIAlertController(title: "Keine Felder vorhanden",
+                                      message: "Sie müssen erst Felder auf der Karte einzeichnen bevor Sie " +
+                                               "Operationen anlegen können.",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        controller.present(alert, animated: true)
+    }
 
-    static func presentLoadFailed(error: NSError, controller: UIViewController) {
+    static func presentLoadFailed(controller: UIViewController, error: NSError) {
         let alert = UIAlertController(title: "Fehler beim Laden der Daten",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
@@ -20,7 +31,7 @@ class OperationDialogs {
         controller.present(alert, animated: true)
     }
 
-    static func presentSaveFailed(error: NSError, controller: UIViewController) {
+    static func presentSaveFailed(controller: UIViewController, error: NSError) {
         let alert = UIAlertController(title: "Veränderungen konnten nicht gespeichert werden",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
@@ -30,7 +41,7 @@ class OperationDialogs {
         controller.present(alert, animated: true)
     }
 
-    static func presentDeletionFailed(error: NSError, controller: UIViewController) {
+    static func presentDeletionFailed(controller: UIViewController, error: NSError) {
         let alert = UIAlertController(title: "Fehler beim Löschen",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)

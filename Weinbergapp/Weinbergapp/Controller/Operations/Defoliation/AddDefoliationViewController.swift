@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AddDefoliationViewController: UIViewController {
-
+class AddDefoliationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     public var onLoad: (() -> Void)?
     public var onSave: (() -> Bool)?
 
@@ -22,6 +22,9 @@ class AddDefoliationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        field.delegate = self
+        field.dataSource = self
 
         if let onLoad = onLoad {
             onLoad()
@@ -44,6 +47,18 @@ class AddDefoliationViewController: UIViewController {
         to.field = fields[field.selectedRow(inComponent: 0)]
         to.user = user.text ?? ""
         to.workingHours = Double(workingHours.text ?? "0") ?? 0.0
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return fields.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return fields[row].name
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {

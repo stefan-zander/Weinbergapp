@@ -24,6 +24,8 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        field.delegate = self
+        field.dataSource = self
         execution.delegate = self
         execution.dataSource = self
 
@@ -57,11 +59,25 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return VintageLocalization.executionOptions.count
+        switch pickerView {
+        case field:
+            return fields.count
+        case execution:
+            return VintageLocalization.executionOptions.count
+        default:
+            return 0
+        }
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return VintageLocalization.executionOptions[row]
+        switch pickerView {
+        case field:
+            return fields[row].name
+        case execution:
+            return VintageLocalization.executionOptions[row]
+        default:
+            return nil
+        }
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {

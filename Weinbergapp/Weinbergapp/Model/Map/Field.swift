@@ -24,10 +24,26 @@ public class Field: Object {
     /// The raw value of the coordinates constructing the polygon of the field
     public let rawCoordinates = List<Double>()
     
-    /// The operations that are performed on this field
-    public let operations = LinkingObjects(fromType: Operation.self, property: "field")
+    /// All fertilization operations that are done on this field
+    public let fertilizations = LinkingObjects(fromType: Fertilization.self, property: "field")
+    
+    /// All defoliation operations that are done on this field
+    public let defoliations = LinkingObjects(fromType: Defoliation.self, property: "field")
+    
+    /// All plant protection operations that are done on this field
+    public let plantProtections = LinkingObjects(fromType: PlantProtection.self, property: "field")
+    
+    /// All vintage operations that are done on this field
+    public let vintages = LinkingObjects(fromType: Vintage.self, property: "field")
 
     private var area: Double?
+    
+    public var useCount: Int {
+        return fertilizations.count +
+               defoliations.count +
+               plantProtections.count +
+               vintages.count
+    }
     
     /**
      An array of property names that will not be persisted in the database

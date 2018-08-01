@@ -62,7 +62,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(error: error, controller: editPlantProtection)
+                    OperationDialogs.presentSaveFailed(controller: editPlantProtection, error: error)
                     return false
                 }
             }
@@ -85,7 +85,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                 try plantProtections.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
-                OperationDialogs.presentDeletionFailed(error: error, controller: self)
+                OperationDialogs.presentDeletionFailed(controller: self, error: error)
             }
         }
     }
@@ -104,7 +104,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(error: error, controller: addPlantProtection)
+                    OperationDialogs.presentSaveFailed(controller: addPlantProtection, error: error)
                     return false
                 }
             }

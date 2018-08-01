@@ -50,15 +50,28 @@ class MapDialogs {
         controller.present(alert, animated: true)
     }
 
-    static func presentFieldDeletionConfirmation(controller: UIViewController,
-                                                 fieldName: String,
-                                                 onConfirmation: @escaping (UIAlertAction) -> Void) {
-        let alert = UIAlertController(title: "Löschen bestätigen",
-                                      message: "Möchten Sie das Feld \"\(fieldName)\" wirklich löschen?",
+    static func presentDeletionConfirmation(controller: AddFieldViewController, field: MapField,
+                                            onConfirmation: ((UIAlertAction) -> Swift.Void)? = nil) {
+        let message: String
+        let useCount = field.useCount
+        
+        if useCount > 0 {
+            message = "Möchten Sie das Feld \"\(field.name)\" und \(useCount) dazugehörige Operation(en) wirklich " +
+                      "löschen?"
+        } else {
+            message = "Möchten Sie das Feld \"\(field.name)\" wirklich löschen?"
+        }
+        
+        let alert = UIAlertController(title: "Löschvorgang bestätigen",
+                                      message: message,
                                       preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "Ja, \"\(fieldName)\" löschen", style: .default, handler: onConfirmation))
-        alert.addAction(UIAlertAction(title: "Nein, \"\(fieldName)\" beibehalten", style: .default))
+        
+        alert.addAction(UIAlertAction(title: "Ja, \"\(field.name)\" löschen",
+                                      style: .default,
+                                      handler: onConfirmation))
+            
+        alert.addAction(UIAlertAction(title: "Nein, \"\(field.name)\" beibehalten",
+                                      style: .cancel))
 
         controller.present(alert, animated: true)
     }

@@ -20,6 +20,29 @@ public class MapFieldCollection {
         self.mapFields = realm.queryAll(Field.self).map { MapField(field: $0, fieldCollection: self) }
     }
     
+    public var mapView: MKMapView? {
+        get {
+            return currentMapView
+        }
+        set(mapView) {
+            guard mapView != currentMapView else { return }
+            
+            if let previousMapView = currentMapView {
+                for field in mapFields {
+                    field.removeFromMapView(mapView: previousMapView)
+                }
+            }
+            
+            currentMapView = mapView
+            
+            if let nextMapView = currentMapView {
+                for field in mapFields {
+                    field.addToMapView(mapView: nextMapView)
+                }
+            }
+        }
+    }
+    
     public func index(of field: Field) -> Int? {
         return mapFields.index(where: { $0.field === field })
     }
@@ -56,6 +79,22 @@ public class MapFieldCollection {
         let mapField = mapFields[index]
         
         try realm.write {
+            for fertilization in field.fertilizations {
+                realm.delete(fertilization)
+            }
+            
+            for defoliation in field.defoliations {
+                realm.delete(defoliation)
+            }
+            
+            for plantProtection in field.plantProtections {
+                realm.delete(plantProtection)
+            }
+            
+            for vintage in field.vintages {
+                realm.delete(vintage)
+            }
+            
             realm.delete(mapField.field)
         }
         
@@ -64,28 +103,5 @@ public class MapFieldCollection {
         }
         
         mapFields.remove(at: index)
-    }
-    
-    public var mapView: MKMapView? {
-        get {
-            return currentMapView
-        }
-        set(mapView) {
-            guard mapView != currentMapView else { return }
-            
-            if let previousMapView = currentMapView {
-                for field in mapFields {
-                    field.removeFromMapView(mapView: previousMapView)
-                }
-            }
-            
-            currentMapView = mapView
-            
-            if let nextMapView = currentMapView {
-                for field in mapFields {
-                    field.addToMapView(mapView: nextMapView)
-                }
-            }
-        }
     }
 }

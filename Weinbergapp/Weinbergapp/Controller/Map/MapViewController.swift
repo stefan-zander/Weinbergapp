@@ -45,7 +45,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     @IBAction func endAdd(_ sender: UIBarButtonItem) {
-        guard drawer.pointsDrawn > 3 else {
+        guard drawer.pointsDrawn >= 3 else {
             MapDialogs.presentInsufficientPointsWarning(controller: self, onCancel: { _ in
                 self.navigationBar.leftBarButtonItem = self.addButton
                 self.drawer.endDraw()
