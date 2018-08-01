@@ -14,8 +14,8 @@ class MapLocalization {
     static let kSquareMetersPerSquareKilometers = kMetersPerKilometer * kMetersPerKilometer
 
     static func localize(area: Double) -> String {
-        if area < kSquareMetersPerSquareKilometers {
-            return String.init(format: "%.2f m²", area)
+        if abs(area) < kSquareMetersPerSquareKilometers {
+            return String.init(format: "%.0f m²", area)
         }
 
         let areaInSquareKilometers = area / kSquareMetersPerSquareKilometers
