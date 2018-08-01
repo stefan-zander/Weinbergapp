@@ -46,8 +46,8 @@ class AddFieldViewController: UIViewController {
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard MapFieldVerification.verifyOrPresent(name: name, self) != nil else { return }
-        guard MapFieldVerification.verifyOrPresent(vineVariety: vineVariety, self) != nil else { return }
+        guard MapDialogs.verifyOrPresent(name: name, self) != nil else { return }
+        guard MapDialogs.verifyOrPresent(vineVariety: vineVariety, self) != nil else { return }
 
         if let editingField = editingField {
             do {
