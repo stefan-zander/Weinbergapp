@@ -9,11 +9,19 @@
 import Foundation
 import MapKit
 
+/**
+ A special polygon to use for the fields displayed in `MapViewController`.
+ */
 public class MKFieldPolygon: MKPolygon {
-
-    static let kPreviewPolygonFillColor = UIColor.orange.withAlphaComponent(0.25)
-    static let kPreviewPolygonStrokeColor = UIColor.orange.withAlphaComponent(0.5)
-    static let kPreviewPolygonLineWidth: CGFloat = 2.0
+    
+    /// The fill color to use for the polygon belonging to a field.
+    static let kFieldPolygonFillColor = UIColor.orange.withAlphaComponent(0.25)
+    
+    /// The stroke color to use for the polygon belonging to a field
+    static let kFieldPolygonStrokeColor = UIColor.orange.withAlphaComponent(0.5)
+    
+    /// The line width to use for the polygon belonging to a field
+    static let kFieldPolygonLineWidth: CGFloat = 2.0
 
     var owner: MapField!
 
@@ -22,12 +30,18 @@ public class MKFieldPolygon: MKPolygon {
         self.owner = owner
     }
 
+    /**
+     Creates a renderer to use for this polygon given an overlay.
+     
+     - Parameter overlay: The overlay to use for the renderer.
+     - Retruns: The renderer to use for this polygon.
+     */
     public static func makeRenderer(rendererFor overlay: MKOverlay) -> MKPolygonRenderer {
         let renderer = MKPolygonRenderer(overlay: overlay)
 
-        renderer.fillColor = kPreviewPolygonFillColor
-        renderer.strokeColor = kPreviewPolygonStrokeColor
-        renderer.lineWidth = kPreviewPolygonLineWidth
+        renderer.fillColor = kFieldPolygonFillColor
+        renderer.strokeColor = kFieldPolygonStrokeColor
+        renderer.lineWidth = kFieldPolygonLineWidth
 
         return renderer
     }
