@@ -13,58 +13,51 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var mapView: MKMapView!
-
-    var fieldDataSource: RealmDataSource<Field>!
-    var fields: [MapField] = []
-    var previewer: MapPolygonDrawer!
-
+    
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(toggleAdd))
     let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(toggleAdd))
-
     let locationManager = CLLocationManager()
 
+    var fields: MapFieldCollection!
+    var drawer: MapPolygonDrawer!
+    
+    deinit {
+        fields.mapView = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationBar.leftBarButtonItem = addButton
-
         mapView.delegate = self
         mapView.showsUserLocation = true
-
-        previewer = MapPolygonDrawer(for: mapView)
-
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
-        do {
-            fields = try fieldDataSource.queryAll().map { field in
-                let mapField = MapField(field: field, fieldDataSource: self.fieldDataSource, mapView: self.mapView)
-                mapField.displayedOnMap = true
-                return mapField
-            }
-        } catch let error as NSError {
-            MapDialogs.presentLoadFailed(error: error, controller: self)
-        }
+        fields.mapView = mapView
+        drawer = MapPolygonDrawer(for: mapView)
     }
 
     @IBAction func toggleAdd(_ sender: UIBarButtonItem) {
-        if previewer.isEnabled {
-            if previewer.pointsDrawn < 3 {
+        if drawer.isEnabled {
+            if drawer.pointsDrawn < 3 {
                 MapDialogs.presentInsufficientPointsWarning(controller: self, onCancel: { _ in
                     self.navigationBar.leftBarButtonItem = self.addButton
-                    self.previewer.leavePreviewMode()
+                    self.drawer.leavePreviewMode()
                 })
             } else {
-                let coordinates = previewer.getCoordinates()
+                let coordinates = drawer.getCoordinates()
 
+                // TODO maybe extract to function
                 self.navigationBar.leftBarButtonItem = self.addButton
-                self.previewer.leavePreviewMode()
+                self.drawer.leavePreviewMode()
 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
                 if let addField = storyboard.instantiateViewController(withIdentifier: "AddField")
                     as? AddFieldViewController {
-                    addField.source = self
+                    addField.fields = fields
                     addField.coordinates = coordinates
 
                     self.present(addField, animated: true)
@@ -72,7 +65,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
         } else {
             self.navigationBar.leftBarButtonItem = doneButton
-            previewer.enterPreviewMode(coordinates: nil)
+            drawer.enterPreviewMode(coordinates: nil)
         }
     }
 
@@ -126,14 +119,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                  calloutAccessoryControlTapped control: UIControl) {
         switch view.annotation {
         case let point as MKPreviewPointAnnotation:
-            previewer.remove(point: point)
+            drawer.remove(point: point)
         case let point as MKFieldPointAnnotation:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
             if let editField = storyboard.instantiateViewController(withIdentifier: "AddField")
                 as? AddFieldViewController {
-                editField.source = self
-                editField.editingField = point.owner!
+                editField.fields = fields
+                editField.editingField = point.owner
 
                 self.present(editField, animated: true)
             }
@@ -157,7 +150,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                  didChange newState: MKAnnotationViewDragState,
                  fromOldState oldState: MKAnnotationViewDragState) {
         if newState == .ending {
-            previewer.refreshPreviewPolygon()
+            drawer.refreshPreviewPolygon()
         }
     }
 }

@@ -15,9 +15,8 @@ class AddFieldViewController: UIViewController {
     @IBOutlet weak var vineVariety: UITextField!
     @IBOutlet weak var deleteFieldButton: UIButton!
 
+    var fields: MapFieldCollection!
     var coordinates: [CLLocationCoordinate2D] = []
-
-    var source: MapViewController!
     var editingField: MapField?
 
     override func viewDidLoad() {
@@ -32,18 +31,15 @@ class AddFieldViewController: UIViewController {
 
     @IBAction func deleteField(_ sender: UIButton) {
         guard let editingField = editingField else {
-            assert(false)
+            assert(false, "Ability to delete fields should never be present on non-editing uses of this controller.")
         }
 
         MapDialogs.presentFieldDeletionConfirmation(controller: self,
                                                     fieldName: editingField.name,
                                                     onConfirmation: { _ in
+            
             do {
-                if let index = self.source.fields.index(where: { $0 === editingField }) {
-                    try self.source.fieldDataSource.delete(editingField.field)
-                    editingField.displayedOnMap = false
-                    self.source.fields.remove(at: index)
-                }
+                try self.fields.delete(editingField)
             } catch let error as NSError {
                 MapDialogs.presentDeletionInDatabaseFailed(controller: self, error: error)
                 return
@@ -73,17 +69,11 @@ class AddFieldViewController: UIViewController {
             field.setCoordinates(coordinates)
 
             do {
-                try source.fieldDataSource.add(field)
+                try fields.add(field)
             } catch let error as NSError {
                 MapDialogs.presentAddToDatabaseFailed(controller: self, error: error)
                 return
             }
-
-            let mapField = MapField(field: field,
-                                    fieldDataSource: source.fieldDataSource,
-                                    mapView: source.mapView)
-            mapField.displayedOnMap = true
-            source.fields.append(mapField)
         }
 
         self.dismiss(animated: true, completion: nil)

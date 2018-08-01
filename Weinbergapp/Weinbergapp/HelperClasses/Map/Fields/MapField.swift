@@ -9,20 +9,17 @@
 import Foundation
 import MapKit
 
-class MapField {
+public class MapField {
 
-    let field: Field
-    let fieldDataSource: RealmDataSource<Field>
-    let mapView: MKMapView
+    public let field: Field
+    public let fieldCollection: MapFieldCollection
 
-    private var isDisplayedOnMap = false
     private var polygon: MKFieldPolygon?
     private var point: MKFieldPointAnnotation?
 
-    init(field: Field, fieldDataSource: RealmDataSource<Field>, mapView: MKMapView) {
+    init(field: Field, fieldCollection: MapFieldCollection) {
         self.field = field
-        self.fieldDataSource = fieldDataSource
-        self.mapView = mapView
+        self.fieldCollection = fieldCollection
     }
 
     public var name: String {
@@ -33,25 +30,8 @@ class MapField {
         return field.vineVariety
     }
 
-    public var displayedOnMap: Bool {
-        get {
-            return isDisplayedOnMap
-        }
-        set(displayOnMap) {
-            guard displayOnMap != isDisplayedOnMap else { return }
-
-            if displayOnMap {
-                addToMapView()
-                isDisplayedOnMap = true
-            } else {
-                removeFromMapView()
-                isDisplayedOnMap = false
-            }
-        }
-    }
-
     public func changeText(name: String, vineVariety: String) throws {
-        try fieldDataSource.update {
+        try fieldCollection.update {
             field.name = name
             field.vineVariety = vineVariety
         }
@@ -61,7 +41,7 @@ class MapField {
         }
     }
 
-    private func addToMapView() {
+    public func addToMapView(mapView: MKMapView) {
         if let polygon = self.polygon {
             mapView.remove(polygon)
         }
@@ -84,12 +64,7 @@ class MapField {
         }
     }
 
-    private func update(point: MKFieldPointAnnotation) {
-        point.title = "\(field.name) (\(MapLocalization.localize(area: field.getArea())))"
-        point.subtitle = "Reben Sorte: \(field.vineVariety)"
-    }
-
-    private func removeFromMapView() {
+    public func removeFromMapView(mapView: MKMapView) {
         if let polygon = polygon {
             mapView.remove(polygon)
             self.polygon = nil
@@ -99,5 +74,10 @@ class MapField {
             mapView.removeAnnotation(point)
             self.point = nil
         }
+    }
+    
+    private func update(point: MKFieldPointAnnotation) {
+        point.title = "\(field.name) (\(MapLocalization.localize(area: field.getArea())))"
+        point.subtitle = "Reben Sorte: \(field.vineVariety)"
     }
 }

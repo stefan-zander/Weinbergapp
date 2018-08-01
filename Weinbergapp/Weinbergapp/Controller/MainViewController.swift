@@ -18,7 +18,7 @@ class MainViewController: UITabBarController {
         
         if let viewControllers = viewControllers {
             if let map = viewControllers[0] as? MapViewController {
-                map.fieldDataSource = RealmDataSource<Field>(realm: realm)
+                map.fields = MapFieldCollection(realm: realm)
             }
             
             if let operations = viewControllers[1] as? OperationsTableViewController {
