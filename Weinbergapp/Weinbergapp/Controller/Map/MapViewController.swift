@@ -103,7 +103,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         switch annotation {
-        case let previewPointAnnotation as MKPreviewPointAnnotation:
+        case let previewPointAnnotation as MKDrawingPointAnnotation:
             return previewPointAnnotation.getAnnotationView(in: mapView)
         case let fieldPointAnnotation as MKFieldPointAnnotation:
             return fieldPointAnnotation.getAnnotationView(in: mapView)
@@ -118,7 +118,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                  annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
         switch view.annotation {
-        case let point as MKPreviewPointAnnotation:
+        case let point as MKDrawingPointAnnotation:
             drawer.remove(point: point)
         case let point as MKFieldPointAnnotation:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -136,8 +136,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPreviewPolygon {
-            return MKPreviewPolygon.makeRenderer(rendererFor: overlay)
+        if overlay is MKDrawingPolygon {
+            return MKDrawingPolygon.makeRenderer(rendererFor: overlay)
         } else if overlay is MKFieldPolygon {
             return MKFieldPolygon.makeRenderer(rendererFor: overlay)
         }
@@ -150,7 +150,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                  didChange newState: MKAnnotationViewDragState,
                  fromOldState oldState: MKAnnotationViewDragState) {
         if newState == .ending {
-            drawer.refreshPreviewPolygon()
+            drawer.refreshDrawingPolygon()
         }
     }
 }

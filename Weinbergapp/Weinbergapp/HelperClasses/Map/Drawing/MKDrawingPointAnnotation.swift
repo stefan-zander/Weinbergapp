@@ -1,5 +1,5 @@
 //
-//  MKPreviewPointAnnotation.swift
+//  MKDrawingPointAnnotation.swift
 //  Weinbergapp
 //
 //  Created by Stefan Zander on 25.07.18.
@@ -9,9 +9,18 @@
 import Foundation
 import MapKit
 
-public class MKPreviewPointAnnotation: MKPointAnnotation {
+/**
+ A special annotation to use for the vertices of polygons drawn with `MapPolygonDrawer`.
+ */
+public class MKDrawingPointAnnotation: MKPointAnnotation {
 
-    func getAnnotationView(in mapView: MKMapView) -> MKAnnotationView {
+    /**
+     Gets the annotation view to use for this `MKDrawingPointAnnotation`.
+     
+     - Parameter mapView: A mapView where reusable annotation views can be cached.
+     - Returns: The `MKAnnotationView` to use for this `MKDrawingPointAnnotation`.
+    */
+    public func getAnnotationView(in mapView: MKMapView) -> MKAnnotationView {
         if let previewPointAnnotation = mapView.dequeueReusableAnnotationView(
             withIdentifier: "previewPointAnnotation") {
             previewPointAnnotation.annotation = self

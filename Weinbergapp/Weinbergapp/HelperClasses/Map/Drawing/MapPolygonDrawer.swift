@@ -9,111 +9,139 @@
 import Foundation
 import MapKit
 
+/**
+ A class designed for drawing polygons on a `MKMapView`.
+ */
 public class MapPolygonDrawer {
 
     private let mapView: MKMapView
+    
+    private var addPointGesture: UILongPressGestureRecognizer!
+    private var drawingPoints: [MKPointAnnotation]?
+    private var drawingPolygon: MKPolygon?
 
-    private var previewPoints: [MKPointAnnotation]?
-    private var previewPolygon: MKPolygon?
-
-    init(for mapView: MKMapView) {
+    /**
+     Initializes a new `MapPolygonDrawer` for the `MKMapView` `mapView`.
+ 
+     - Parameter mapView: The `MKMapView` where a preview of the drawing polygon will be added.
+     */
+    public init(for mapView: MKMapView) {
         self.mapView = mapView
 
-        let addPointGesture = UILongPressGestureRecognizer(target: self,
-                                                           action: #selector(addPointGestureReceived))
+        addPointGesture = UILongPressGestureRecognizer(target: self,
+                                                       action: #selector(addPointGestureReceived))
         addPointGesture.minimumPressDuration = 0.25
         mapView.addGestureRecognizer(addPointGesture)
     }
-
-    public var isEnabled: Bool {
-        return previewPoints != nil
+    
+    deinit {
+        mapView.removeGestureRecognizer(addPointGesture)
     }
 
+    /// A `Bool` indicating whether drawing is currently enabled or disabled.
+    public var isDrawing: Bool {
+        return drawingPoints != nil
+    }
+
+    /// The number of points that are currently drawn.
     public var pointsDrawn: Int {
-        if let previewPoints = previewPoints {
-            return previewPoints.count
+        if let drawingPoints = drawingPoints {
+            return drawingPoints.count
         }
 
         return 0
     }
 
+    /**
+     Enter drawing mode with optional initial coordinates given.
+     
+     - Parameter coordinates: An array of coordinates that should already be drawn onto the map or `nil` to start from
+                              scratch.
+    */
     public func beginDraw(coordinates: [CLLocationCoordinate2D]?) {
         if let coordinates = coordinates {
-            self.previewPoints = coordinates.enumerated().map { (offset, element) -> MKPointAnnotation in
+            self.drawingPoints = coordinates.enumerated().map { (offset, element) -> MKPointAnnotation in
                 return createPointAnnotation(index: offset, coordinate: element)
             }
 
-            refreshPreviewPolygon()
+            refreshDrawingPolygon()
         } else {
-            self.previewPoints = []
+            self.drawingPoints = []
         }
 
-        self.previewPolygon = nil
+        self.drawingPolygon = nil
     }
 
+    /**
+     Ends drawing mode and removes any created previews drawn on `mapView`.
+     
+     - Remarks: This method also resets the drawing points, so in order to use the class properly the coordinates need
+                to be queried first before ending drawing mode.
+    */
     public func endDraw() {
-        if let previewPoints = previewPoints {
-            self.mapView.removeAnnotations(previewPoints)
-            self.previewPoints = nil
+        if let drawingPoints = drawingPoints {
+            self.mapView.removeAnnotations(drawingPoints)
+            self.drawingPoints = nil
         }
 
-        if let previewPolygon = previewPolygon {
-            self.mapView.remove(previewPolygon)
-            self.previewPolygon = nil
+        if let drawingPolygon = drawingPolygon {
+            self.mapView.remove(drawingPolygon)
+            self.drawingPolygon = nil
         }
     }
-
-    public func add(coordinate: CLLocationCoordinate2D) {
-        guard var previewPoints = previewPoints else { return }
-
-        previewPoints.append(createPointAnnotation(index: previewPoints.count, coordinate: coordinate))
-
-        self.previewPoints = previewPoints
-
-        refreshPreviewPolygon()
-    }
-
+    
+    /**
+     When in drawing mode this method returns an array of coordinates that have been drawn, otherwise an empty array is
+     returned.
+     
+     - Returns: The coordinates drawn so far.
+    */
     public func getCoordinates() -> [CLLocationCoordinate2D] {
-        if let previewPoints = previewPoints {
-            return previewPoints.map { $0.coordinate }
+        if let drawingPoints = drawingPoints {
+            return drawingPoints.map { $0.coordinate }
         }
 
         return []
     }
 
-    public func remove(point: MKPointAnnotation) {
-        guard var previewPoints = previewPoints else { return }
-        guard let index = previewPoints.index(of: point) else { return }
+    /**
+     Removes a point of the drawing polygon.
+     
+     - Parameter point: The point to remove from the drawing polygon.
+    */
+    public func remove(point: MKDrawingPointAnnotation) {
+        guard var drawingPoints = drawingPoints else { return }
+        guard let index = drawingPoints.index(of: point) else { return }
 
         mapView.removeAnnotation(point)
-        previewPoints.remove(at: index)
+        drawingPoints.remove(at: index)
 
-        for index in index..<previewPoints.count {
-            previewPoints[index].title = "Punkt \(index + 1)"
+        for index in index..<drawingPoints.count {
+            drawingPoints[index].title = "Punkt \(index + 1)"
         }
 
-        self.previewPoints = previewPoints
-        refreshPreviewPolygon()
+        self.drawingPoints = drawingPoints
+        refreshDrawingPolygon()
     }
-
+    
     @objc func addPointGestureReceived(gestureRecognizer: UILongPressGestureRecognizer) {
         guard gestureRecognizer.state == .began else { return }
-        guard var previewPoints = previewPoints else { return }
+        guard var drawingPoints = drawingPoints else { return }
 
         let touchPoint = gestureRecognizer.location(in: mapView)
         let coordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-        let point = createPointAnnotation(index: previewPoints.count, coordinate: coordinate)
+        let point = createPointAnnotation(index: drawingPoints.count, coordinate: coordinate)
 
-        previewPoints.append(point)
+        drawingPoints.append(point)
 
         self.mapView.addAnnotation(point)
-        self.previewPoints = previewPoints
+        self.drawingPoints = drawingPoints
 
-        refreshPreviewPolygon()
+        refreshDrawingPolygon()
     }
 
     private func createPointAnnotation(index: Int, coordinate: CLLocationCoordinate2D) -> MKPointAnnotation {
-        let point = MKPreviewPointAnnotation()
+        let point = MKDrawingPointAnnotation()
 
         point.title = "Punkt \(index + 1)"
         point.coordinate = coordinate
@@ -121,18 +149,21 @@ public class MapPolygonDrawer {
         return point
     }
 
-    public func refreshPreviewPolygon() {
-        if let previousPolygon = previewPolygon {
+    /**
+     Redraws the preview of the currently drawn polygon.
+    */
+    public func refreshDrawingPolygon() {
+        if let previousPolygon = drawingPolygon {
             mapView.remove(previousPolygon)
         }
 
-        guard let previewPoints = previewPoints else { return }
-        guard previewPoints.count >= 3 else { return }
+        guard let drawingPoints = drawingPoints else { return }
+        guard drawingPoints.count >= 3 else { return }
 
-        let newPreview = MKPreviewPolygon(coordinates: previewPoints.map { $0.coordinate },
-                                          count: previewPoints.count)
+        let newPolygon = MKDrawingPolygon(coordinates: drawingPoints.map { $0.coordinate },
+                                          count: drawingPoints.count)
 
-        self.mapView.add(newPreview)
-        self.previewPolygon = newPreview
+        self.mapView.add(newPolygon)
+        self.drawingPolygon = newPolygon
     }
 }
