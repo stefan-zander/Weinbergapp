@@ -247,7 +247,7 @@
 				9409693D2103682200AA7146 /* View */,
 				940155F720FCCEFB006E36D9 /* Controller */,
 				9459E5882110FFE70095F577 /* Dialogs */,
-				945CD71C21091D1700542CD8 /* HelperClasses */,
+				945CD71C21091D1700542CD8 /* Utility */,
 				356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */,
 				359977E120F8AAD0005664CB /* Assets.xcassets */,
 				356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */,
@@ -570,7 +570,7 @@
 			path = Vintage;
 			sourceTree = "<group>";
 		};
-		945CD71C21091D1700542CD8 /* HelperClasses */ = {
+		945CD71C21091D1700542CD8 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				9486C4C5210FBBDF00C2E153 /* GermanDateFormatter.swift */,
@@ -578,7 +578,7 @@
 				945CD71D21091E7200542CD8 /* Map */,
 				945CD72121091EF800542CD8 /* Operations */,
 			);
-			path = HelperClasses;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		945CD71D21091E7200542CD8 /* Map */ = {
