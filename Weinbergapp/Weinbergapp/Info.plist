@@ -46,10 +46,12 @@
 		<string>MKDirectionsModeTaxi</string>
 		<string>MKDirectionsModeTrain</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Diese App braucht ihre Kamera um QR codes zu scannen.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>App braucht deine Standortdaten, um funktionieren zu können </string>
+	<string>Diese App braucht deine Standortdaten um funktionieren zu können.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>App braucht deine Standortdaten, um funktionieren zu können </string>
+	<string>Diese App braucht deine Standortdaten um funktionieren zu können.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
