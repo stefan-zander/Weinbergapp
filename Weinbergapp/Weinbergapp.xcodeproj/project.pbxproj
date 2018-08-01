@@ -11,8 +11,6 @@
 		356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */; };
 		356AFE3720CAB28F000D9BC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3620CAB28F000D9BC1 /* LoginViewController.swift */; };
 		356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* Main.storyboard */; };
-		356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */; };
-		356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */; };
 		356AFE5820CAB28F000D9BC1 /* WeinbergappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */; };
 		358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D620E4ED8000640347 /* OperationTableViewCell.swift */; };
 		358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D820E4F22000640347 /* OperationsTableViewController.swift */; };
@@ -110,8 +108,6 @@
 		356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356AFE3620CAB28F000D9BC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		356AFE3920CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		356AFE3C20CAB28F000D9BC1 /* Weinbergapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weinbergapp.xcdatamodel; sourceTree = "<group>"; };
-		356AFE4120CAB28F000D9BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356AFE4320CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		356AFE4820CAB28F000D9BC1 /* WeinbergappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeinbergappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		356AFE4E20CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -250,9 +246,7 @@
 				945CD71C21091D1700542CD8 /* Utility */,
 				356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */,
 				359977E120F8AAD0005664CB /* Assets.xcassets */,
-				356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */,
 				356AFE4320CAB28F000D9BC1 /* Info.plist */,
-				356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */,
 			);
 			path = Weinbergapp;
 			sourceTree = "<group>";
@@ -766,7 +760,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356AFE4220CAB28F000D9BC1 /* LaunchScreen.storyboard in Resources */,
 				359977E220F8AAD1005664CB /* Assets.xcassets in Resources */,
 				356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */,
 			);
@@ -889,7 +882,6 @@
 				943D33712109E684006886CA /* PolygonArea.swift in Sources */,
 				9459E5872110EF530095F577 /* MainViewController.swift in Sources */,
 				9445648D2103506100201DD4 /* PlantProtectionLocalization.swift in Sources */,
-				356AFE3D20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld in Sources */,
 				356AFE3720CAB28F000D9BC1 /* LoginViewController.swift in Sources */,
 				945F082B2100851F00F55C44 /* MineralFertilizer.swift in Sources */,
 				356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */,
@@ -991,14 +983,6 @@
 				356AFE3920CAB28F000D9BC1 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		356AFE4020CAB28F000D9BC1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				356AFE4120CAB28F000D9BC1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1253,19 +1237,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		356AFE3B20CAB28F000D9BC1 /* Weinbergapp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				356AFE3C20CAB28F000D9BC1 /* Weinbergapp.xcdatamodel */,
-			);
-			currentVersion = 356AFE3C20CAB28F000D9BC1 /* Weinbergapp.xcdatamodel */;
-			path = Weinbergapp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 356AFE2920CAB28F000D9BC1 /* Project object */;
 }
