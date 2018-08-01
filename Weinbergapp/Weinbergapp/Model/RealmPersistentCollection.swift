@@ -11,12 +11,12 @@ import RealmSwift
 
 public class RealmPersistentCollection<T: Object> {
 
-    private let dataSource: RealmDataSource<T>
+    private let realm: MockableRealm
     private var collection: [T]
     
-    init(dataSource: RealmDataSource<T>) throws {
-        self.dataSource = dataSource
-        self.collection = try dataSource.queryAll()
+    init(realm: MockableRealm) {
+        self.realm = realm
+        self.collection = realm.queryAll(T.self)
     }
 
     public subscript(index: Int) -> T {
@@ -28,12 +28,15 @@ public class RealmPersistentCollection<T: Object> {
     }
 
     public func add(_ element: T) throws {
-        try dataSource.add(element)
+        try realm.write {
+            realm.add(element)
+        }
+        
         collection.append(element)
     }
 
     public func update(_ changes: (() throws -> Void)) throws {
-        try dataSource.update(changes)
+        try realm.write(changes)
     }
 
     public func delete(_ element: T) throws {
@@ -43,7 +46,10 @@ public class RealmPersistentCollection<T: Object> {
     }
 
     public func delete(at index: Int) throws {
-        try dataSource.delete(collection[index])
+        try realm.write {
+            realm.delete(collection[index])
+        }
+        
         collection.remove(at: index)
     }
 }

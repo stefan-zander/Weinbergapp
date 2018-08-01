@@ -33,7 +33,6 @@
 		940477B320F9E92B0049CDB5 /* AddPlantProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */; };
 		940477B520F9E93A0049CDB5 /* VintageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B420F9E93A0049CDB5 /* VintageViewController.swift */; };
 		940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940477B620F9E9450049CDB5 /* AddVintageViewController.swift */; };
-		940585C8210DC2B10045B5A6 /* RealmDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940585C7210DC2B10045B5A6 /* RealmDataSource.swift */; };
 		940743DE210763470028AC49 /* MKFieldPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940743DD210763470028AC49 /* MKFieldPolygon.swift */; };
 		940743E0210765E10028AC49 /* AddFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940743DF210765E10028AC49 /* AddFieldViewController.swift */; };
 		9409694521036DEB00AA7146 /* FertilizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409694421036DEB00AA7146 /* FertilizationTableViewCell.swift */; };
@@ -49,7 +48,6 @@
 		9450659F20FB445F00758D8C /* SwitchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659E20FB445F00758D8C /* SwitchTableViewController.swift */; };
 		945065A120FB445F00758D8C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945065A020FB445F00758D8C /* SwitchTableViewCell.swift */; };
 		9459E5872110EF530095F577 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9459E5862110EF530095F577 /* MainViewController.swift */; };
-		9459E58F2111061E0095F577 /* RealmDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9459E58E2111061E0095F577 /* RealmDataSourceTests.swift */; };
 		945B47B7210B58B8007865D5 /* OperationFieldVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */; };
 		945B47BA210B6650007865D5 /* FertilizationLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B9210B6650007865D5 /* FertilizationLocalization.swift */; };
 		945B47BE210B70C6007865D5 /* OperationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BD210B70C6007865D5 /* OperationDialogs.swift */; };
@@ -137,7 +135,6 @@
 		940477B220F9E92B0049CDB5 /* AddPlantProtectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantProtectionViewController.swift; sourceTree = "<group>"; };
 		940477B420F9E93A0049CDB5 /* VintageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageViewController.swift; sourceTree = "<group>"; };
 		940477B620F9E9450049CDB5 /* AddVintageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVintageViewController.swift; sourceTree = "<group>"; };
-		940585C7210DC2B10045B5A6 /* RealmDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataSource.swift; sourceTree = "<group>"; };
 		940743DD210763470028AC49 /* MKFieldPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKFieldPolygon.swift; sourceTree = "<group>"; };
 		940743DF210765E10028AC49 /* AddFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFieldViewController.swift; sourceTree = "<group>"; };
 		9409694421036DEB00AA7146 /* FertilizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,7 +150,6 @@
 		9450659E20FB445F00758D8C /* SwitchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewController.swift; sourceTree = "<group>"; };
 		945065A020FB445F00758D8C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		9459E5862110EF530095F577 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		9459E58E2111061E0095F577 /* RealmDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataSourceTests.swift; sourceTree = "<group>"; };
 		945B47B6210B58B8007865D5 /* OperationFieldVerification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFieldVerification.swift; sourceTree = "<group>"; };
 		945B47B9210B6650007865D5 /* FertilizationLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationLocalization.swift; sourceTree = "<group>"; };
 		945B47BD210B70C6007865D5 /* OperationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDialogs.swift; sourceTree = "<group>"; };
@@ -260,7 +256,6 @@
 			children = (
 				94DCAFE621108C800075D520 /* GermanDateFormatterTests.swift */,
 				9478C25C21109A6B00184DA8 /* PolygonAreaTests.swift */,
-				9459E58E2111061E0095F577 /* RealmDataSourceTests.swift */,
 				356AFE4E20CAB28F000D9BC1 /* Info.plist */,
 			);
 			path = WeinbergappTests;
@@ -280,7 +275,6 @@
 			children = (
 				948A41452110D20D00D301D3 /* MockableRealm.swift */,
 				948A41472110D31800D301D3 /* Realm.swift */,
-				940585C7210DC2B10045B5A6 /* RealmDataSource.swift */,
 				9486C4C3210FB3E100C2E153 /* RealmPersistentCollection.swift */,
 				9401561C20FCCFF3006E36D9 /* Map */,
 				940155F820FCCF0A006E36D9 /* Operations */,
@@ -888,7 +882,6 @@
 				9486C4C4210FB3E100C2E153 /* RealmPersistentCollection.swift in Sources */,
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
-				940585C8210DC2B10045B5A6 /* RealmDataSource.swift in Sources */,
 				9473746D21061D8F006196CF /* Field.swift in Sources */,
 				945B47B7210B58B8007865D5 /* OperationFieldVerification.swift in Sources */,
 				35C0DE4820E65D7C00C31C78 /* Vintage.swift in Sources */,
@@ -944,7 +937,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DCAFE721108C800075D520 /* GermanDateFormatterTests.swift in Sources */,
-				9459E58F2111061E0095F577 /* RealmDataSourceTests.swift in Sources */,
 				9478C25D21109A6B00184DA8 /* PolygonAreaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

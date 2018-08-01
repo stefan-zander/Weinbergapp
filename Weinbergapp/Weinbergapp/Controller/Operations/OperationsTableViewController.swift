@@ -62,22 +62,21 @@ class OperationsTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: operations[indexPath.row].identifier)
         
-        
         do {
             let fields = realm.queryAll(Field.self)
             
             switch view {
             case let fertilization as FertilizationViewController:
-                fertilization.fertilizations = try RealmPersistentCollection(dataSource: RealmDataSource(realm: realm))
+                fertilization.fertilizations = try RealmPersistentCollection(realm: realm)
                 fertilization.fields = fields
             case let defoliation as DefoliationViewController:
-                defoliation.defoliations = try RealmPersistentCollection(dataSource: RealmDataSource(realm: realm))
+                defoliation.defoliations = try RealmPersistentCollection(realm: realm)
                 defoliation.fields = fields
             case let plantProtection as PlantProtectionViewController:
-                plantProtection.plantProtections = try RealmPersistentCollection(dataSource: RealmDataSource(realm: realm))
+                plantProtection.plantProtections = try RealmPersistentCollection(realm: realm)
                 plantProtection.fields = fields
             case let vintage as VintageViewController:
-                vintage.vintages = try RealmPersistentCollection(dataSource: RealmDataSource(realm: realm))
+                vintage.vintages = try RealmPersistentCollection(realm: realm)
                 vintage.fields = fields
             default:
                 break
