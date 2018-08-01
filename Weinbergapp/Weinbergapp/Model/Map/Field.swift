@@ -38,6 +38,7 @@ public class Field: Object {
 
     private var area: Double?
     
+    /// The number of operations that currently use this field.
     public var useCount: Int {
         return fertilizations.count +
                defoliations.count +

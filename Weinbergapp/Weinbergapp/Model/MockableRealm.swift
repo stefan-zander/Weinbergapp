@@ -9,6 +9,9 @@
 import Foundation
 import RealmSwift
 
+/**
+ A protocol for a mockable Realm Swift instance.
+ */
 public protocol MockableRealm {
     
     /**

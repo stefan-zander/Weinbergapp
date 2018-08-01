@@ -36,9 +36,9 @@ public class FieldCollection {
         set(mapView) {
             guard mapView != currentMapView else { return }
             
-            if let previousMapView = currentMapView {
+            if currentMapView != nil {
                 for field in mapFields {
-                    field.removeFromMapView(mapView: previousMapView)
+                    field.removeFromMapView()
                 }
             }
             
@@ -138,8 +138,8 @@ public class FieldCollection {
             realm.delete(mapField.field)
         }
         
-        if let currentMapView = currentMapView {
-            mapField.removeFromMapView(mapView: currentMapView)
+        if currentMapView != nil {
+            mapField.removeFromMapView()
         }
         
         mapFields.remove(at: index)
