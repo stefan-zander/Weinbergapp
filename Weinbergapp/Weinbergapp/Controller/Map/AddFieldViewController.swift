@@ -39,7 +39,7 @@ class AddFieldViewController: UIViewController {
                 try self.fields.delete(editingField.field)
                 self.dismiss(animated: true, completion: nil)
             } catch let error as NSError {
-                MapDialogs.presentDeletionInDatabaseFailed(controller: self, error: error)
+                MapDialogs.presentDatabaseDeletionError(error, controller: self)
             }
         })
         
@@ -54,7 +54,7 @@ class AddFieldViewController: UIViewController {
                 try editingField.changeText(name: name.text ?? "",
                                             vineVariety: vineVariety.text ?? "")
             } catch let error as NSError {
-                MapDialogs.presentUpdateInDatabaseFailed(controller: self, error: error)
+                MapDialogs.presentDatabaseUpdateError(error, controller: self)
                 return
             }
         } else {
@@ -67,7 +67,7 @@ class AddFieldViewController: UIViewController {
             do {
                 try fields.add(field)
             } catch let error as NSError {
-                MapDialogs.presentAddToDatabaseFailed(controller: self, error: error)
+                MapDialogs.presentDatabaseAddError(error, controller: self)
                 return
             }
         }

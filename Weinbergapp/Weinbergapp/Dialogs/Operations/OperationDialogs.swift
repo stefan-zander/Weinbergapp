@@ -20,18 +20,18 @@ class OperationDialogs {
         
         controller.present(alert, animated: true)
     }
-
-    static func presentLoadFailed(controller: UIViewController, error: NSError) {
-        let alert = UIAlertController(title: "Fehler beim Laden der Daten",
+    
+    static func presentAddError(_ error: NSError, controller: UIViewController) {
+        let alert = UIAlertController(title: "Operation konnte nicht hinzugefügt werden",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
-
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default))
-
+        
         controller.present(alert, animated: true)
     }
 
-    static func presentSaveFailed(controller: UIViewController, error: NSError) {
+    static func presentSaveError(_ error: NSError, controller: UIViewController) {
         let alert = UIAlertController(title: "Veränderungen konnten nicht gespeichert werden",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
@@ -41,8 +41,8 @@ class OperationDialogs {
         controller.present(alert, animated: true)
     }
 
-    static func presentDeletionFailed(controller: UIViewController, error: NSError) {
-        let alert = UIAlertController(title: "Fehler beim Löschen",
+    static func presentDeletionError(_ error: NSError, controller: UIViewController) {
+        let alert = UIAlertController(title: "Fehler beim Löschen der Operation",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
 

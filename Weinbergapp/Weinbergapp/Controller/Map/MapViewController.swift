@@ -98,7 +98,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        MapDialogs.presentLocationUnavailable(controller: self, error: error)
+        MapDialogs.presentLocationError(error, controller: self)
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

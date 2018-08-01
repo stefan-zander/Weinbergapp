@@ -10,7 +10,7 @@ import UIKit
 
 class MapDialogs {
 
-    static func presentLocationUnavailable(controller: UIViewController, error: Error) {
+    static func presentLocationError(_ error: Error, controller: UIViewController) {
         let alert = UIAlertController(title: "Standort konnte nicht ermittelt werden.",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
@@ -24,13 +24,14 @@ class MapDialogs {
         let alert = UIAlertController(title: "Nicht genügend Punkte eingezeichnet",
                                       message: "Um eine Fläche aufzuspannen werden mindestens drei Punkte benötigt.",
                                       preferredStyle: .alert)
+        
         alert.addAction(UIAlertAction(title: "Weitere Punkte einzeichnen", style: .default))
         alert.addAction(UIAlertAction(title: "Vorgang abbrechen", style: .cancel, handler: onCancel))
 
         controller.present(alert, animated: true)
     }
 
-    static func presentAddToDatabaseFailed(controller: UIViewController, error: Error) {
+    static func presentDatabaseAddError(_ error: Error, controller: UIViewController) {
         let alert = UIAlertController(title: "Feld konnte nicht hinzugefügt werden.",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
@@ -40,7 +41,7 @@ class MapDialogs {
         controller.present(alert, animated: true)
     }
 
-    static func presentUpdateInDatabaseFailed(controller: UIViewController, error: Error) {
+    static func presentDatabaseUpdateError(_ error: Error, controller: UIViewController) {
         let alert = UIAlertController(title: "Feld konnte nicht geändert werden.",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
@@ -76,7 +77,7 @@ class MapDialogs {
         controller.present(alert, animated: true)
     }
 
-    static func presentDeletionInDatabaseFailed(controller: UIViewController, error: Error) {
+    static func presentDatabaseDeletionError(_ error: Error, controller: UIViewController) {
         let alert = UIAlertController(title: "Feld konnte nicht gelöscht werden.",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)

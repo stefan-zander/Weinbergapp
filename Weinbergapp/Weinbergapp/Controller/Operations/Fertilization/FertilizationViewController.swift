@@ -62,7 +62,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(controller: editFertilization, error: error)
+                    OperationDialogs.presentSaveError(error, controller: editFertilization)
                     return false
                 }
             }
@@ -85,7 +85,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                 try fertilizations.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
-                OperationDialogs.presentDeletionFailed(controller: self, error: error)
+                OperationDialogs.presentDeletionError(error, controller: self)
             }
         }
     }
@@ -104,7 +104,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(controller: addFertilization, error: error)
+                    OperationDialogs.presentAddError(error, controller: addFertilization)
                     return false
                 }
             }

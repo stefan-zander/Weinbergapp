@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
                 self.present(controller, animated: true)
             }
         } catch let error as NSError {
-            LoginDialogs.presentDatabaseError(controller: self, error: error)
+            LoginDialogs.presentDatabaseError(error, controller: self)
             return
         }
     }

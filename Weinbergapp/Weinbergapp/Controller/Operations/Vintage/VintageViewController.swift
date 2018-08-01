@@ -60,7 +60,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(controller: editVintage, error: error)
+                    OperationDialogs.presentSaveError(error, controller: editVintage)
                     return false
                 }
             }
@@ -83,7 +83,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                 try vintages.delete(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch let error as NSError {
-                OperationDialogs.presentDeletionFailed(controller: self, error: error)
+                OperationDialogs.presentDeletionError(error, controller: self)
             }
         }
     }
@@ -102,7 +102,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.tableView.reloadData()
                     return true
                 } catch let error as NSError {
-                    OperationDialogs.presentSaveFailed(controller: addVintage, error: error)
+                    OperationDialogs.presentAddError(error, controller: addVintage)
                     return false
                 }
             }

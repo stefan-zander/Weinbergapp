@@ -21,7 +21,7 @@ class LoginDialogs {
         controller.present(alert, animated: true)
     }
     
-    static func presentDatabaseError(controller: LoginViewController, error: NSError) {
+    static func presentDatabaseError(_ error: NSError, controller: LoginViewController) {
         let alert = UIAlertController(
             title: "Datenbankzugriff fehlgeschlagen",
             message: "Die Verbindung zur Datenbank konnte nicht hergestellt werden. Bitte versuchen Sie es erneut.",
