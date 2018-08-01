@@ -18,7 +18,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     private let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(endAdd))
     private let locationManager = CLLocationManager()
 
-    var fields: MapFieldCollection!
+    var fields: FieldCollection!
     var drawer: MapPolygonDrawer!
     
     deinit {

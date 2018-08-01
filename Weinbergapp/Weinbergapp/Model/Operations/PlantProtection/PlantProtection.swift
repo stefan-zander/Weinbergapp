@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 /**
- Represents the information required for the plant protection operation.
+ The plant protection operation.
  */
 public class PlantProtection: Operation {
     

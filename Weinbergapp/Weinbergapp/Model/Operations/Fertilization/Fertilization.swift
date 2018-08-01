@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 /**
- Represents the information required for the fertilization operation.
+ The Fertilization operation.
  */
 public class Fertilization: Operation {
 

@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 /**
- Represents the information required for the defoliation operation.
+ The Defoliation operation.
  */
 public class Defoliation: Operation {
     

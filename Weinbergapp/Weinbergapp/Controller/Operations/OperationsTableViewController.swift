@@ -30,7 +30,7 @@ class OperationsTableViewController: UITableViewController {
     ]
     
     var realm: Realm!
-    var fields: MapFieldCollection!
+    var fields: FieldCollection!
 
     override func viewDidLoad() {
         super.viewDidLoad()

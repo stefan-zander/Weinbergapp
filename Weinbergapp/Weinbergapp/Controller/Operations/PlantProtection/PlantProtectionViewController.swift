@@ -13,7 +13,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var tableView: UITableView!
 
     var plantProtections: RealmPersistentCollection<PlantProtection>!
-    var fields: MapFieldCollection!
+    var fields: FieldCollection!
 
     override func viewDidLoad() {
         super.viewDidLoad()

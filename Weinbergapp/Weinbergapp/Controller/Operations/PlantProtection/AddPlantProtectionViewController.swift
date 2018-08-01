@@ -24,7 +24,7 @@ class AddPlantProtectionViewController: UIViewController, UIPickerViewDelegate, 
     @IBOutlet weak var additionalInformation: UITextView!
     @IBOutlet weak var appliedAmount: UITextField!
 
-    var fields: MapFieldCollection!
+    var fields: FieldCollection!
     
     var currentCategory = PlantProtectionCategory.fungicidal
     var currentFungicidal = FungicidalPlantProtection()

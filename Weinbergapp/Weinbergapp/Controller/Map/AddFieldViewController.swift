@@ -15,7 +15,7 @@ class AddFieldViewController: UIViewController {
     @IBOutlet weak var vineVariety: UITextField!
     @IBOutlet weak var deleteFieldButton: UIButton!
 
-    var fields: MapFieldCollection!
+    var fields: FieldCollection!
     var coordinates: [CLLocationCoordinate2D] = []
     var editingField: MapField?
 

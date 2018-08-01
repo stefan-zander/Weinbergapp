@@ -13,7 +13,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
 
     var defoliations: RealmPersistentCollection<Defoliation>!
-    var fields: MapFieldCollection!
+    var fields: FieldCollection!
 
     override func viewDidLoad() {
         super.viewDidLoad()

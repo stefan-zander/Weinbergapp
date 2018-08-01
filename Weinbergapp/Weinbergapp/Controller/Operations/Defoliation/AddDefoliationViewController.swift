@@ -18,7 +18,7 @@ class AddDefoliationViewController: UIViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var workingHours: UITextField!
     
-    var fields: MapFieldCollection!
+    var fields: FieldCollection!
 
     override func viewDidLoad() {
         super.viewDidLoad()

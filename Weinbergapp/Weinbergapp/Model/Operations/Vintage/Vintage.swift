@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 /**
- Represents the information required for the vintage operation.
+ The vintage operation.
  */
 public class Vintage: Operation {
 

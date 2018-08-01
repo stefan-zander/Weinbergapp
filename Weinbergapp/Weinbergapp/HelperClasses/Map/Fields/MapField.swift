@@ -12,12 +12,12 @@ import MapKit
 public class MapField {
 
     public let field: Field
-    public let fieldCollection: MapFieldCollection
+    public let fieldCollection: FieldCollection
 
     private var polygon: MKFieldPolygon?
     private var point: MKFieldPointAnnotation?
 
-    init(field: Field, fieldCollection: MapFieldCollection) {
+    init(field: Field, fieldCollection: FieldCollection) {
         self.field = field
         self.fieldCollection = fieldCollection
     }

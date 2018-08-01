@@ -18,7 +18,7 @@ public class RealmPersistentCollection<T: Object> {
     private var collection: [T]
     
     /**
-     Creates a new `RealmPersistentCollection` which is populated with the elements from the database.
+     Creates a new `RealmPersistentCollection` which is populated with the elements stored in the database.
  
      - Parameter realm: The Realm Swift object to use.
     */
@@ -65,7 +65,8 @@ public class RealmPersistentCollection<T: Object> {
     }
 
     /**
-     Deletes an object from the collection and the database.
+     Deletes an element from the collection and the database. If the element is not found within the collection, this
+     method does nothing.
      
      - Parameter element: The element to delete from the collection and the database.
     */

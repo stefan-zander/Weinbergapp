@@ -100,5 +100,8 @@ public class Field: Object {
             rawCoordinates.append(coordinate.latitude)
             rawCoordinates.append(coordinate.longitude)
         }
+        
+        // invalidate cached area
+        area = nil
     }
 }

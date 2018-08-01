@@ -10,7 +10,8 @@ import UIKit
 import RealmSwift
 
 /**
- Represents the information required for the fertilization operation.
+ An Operation class which contains the basic information required for any operation. This class is not intended to be
+ used directly, but rather it's four subclasses: `Fertilization`, `Defoliation`, `PlantProtection` and `Vintage`.
  */
 public class Operation: Object {
     

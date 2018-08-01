@@ -13,7 +13,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
 
     var fertilizations: RealmPersistentCollection<Fertilization>!
-    var fields: MapFieldCollection!
+    var fields: FieldCollection!
 
     override func viewDidLoad() {
         super.viewDidLoad()
