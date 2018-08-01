@@ -68,6 +68,9 @@
 		948A41462110D20D00D301D3 /* MockableRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A41452110D20D00D301D3 /* MockableRealm.swift */; };
 		948A41482110D31800D301D3 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A41472110D31800D301D3 /* Realm.swift */; };
 		948A414D2110D88D00D301D3 /* LoginDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A414C2110D88D00D301D3 /* LoginDialogs.swift */; };
+		9499BDC221121D7B0075629E /* RealmPersistentCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9499BDC121121D7B0075629E /* RealmPersistentCollectionTests.swift */; };
+		9499BDC4211232020075629E /* MockedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9499BDC3211232020075629E /* MockedRealm.swift */; };
+		9499BDC7211235D00075629E /* TestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9499BDC6211235D00075629E /* TestObject.swift */; };
 		94BE5C63210799F300C95F97 /* MapPolygonDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */; };
 		94BE5C672107B50C00C95F97 /* MapDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C662107B50C00C95F97 /* MapDialogs.swift */; };
 		94BE5C6B210887CA00C95F97 /* MKPreviewPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE5C6A210887CA00C95F97 /* MKPreviewPolygon.swift */; };
@@ -168,6 +171,9 @@
 		948A41452110D20D00D301D3 /* MockableRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableRealm.swift; sourceTree = "<group>"; };
 		948A41472110D31800D301D3 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		948A414C2110D88D00D301D3 /* LoginDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDialogs.swift; sourceTree = "<group>"; };
+		9499BDC121121D7B0075629E /* RealmPersistentCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistentCollectionTests.swift; sourceTree = "<group>"; };
+		9499BDC3211232020075629E /* MockedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedRealm.swift; sourceTree = "<group>"; };
+		9499BDC6211235D00075629E /* TestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObject.swift; sourceTree = "<group>"; };
 		94BE5C62210799F300C95F97 /* MapPolygonDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPolygonDrawer.swift; sourceTree = "<group>"; };
 		94BE5C662107B50C00C95F97 /* MapDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDialogs.swift; sourceTree = "<group>"; };
 		94BE5C6A210887CA00C95F97 /* MKPreviewPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPreviewPolygon.swift; sourceTree = "<group>"; };
@@ -250,8 +256,10 @@
 		356AFE4B20CAB28F000D9BC1 /* WeinbergappTests */ = {
 			isa = PBXGroup;
 			children = (
+				9499BDC5211235A90075629E /* Realm */,
 				94DCAFE621108C800075D520 /* GermanDateFormatterTests.swift */,
 				9478C25C21109A6B00184DA8 /* PolygonAreaTests.swift */,
+				9499BDC121121D7B0075629E /* RealmPersistentCollectionTests.swift */,
 				356AFE4E20CAB28F000D9BC1 /* Info.plist */,
 			);
 			path = WeinbergappTests;
@@ -623,6 +631,15 @@
 			path = PlantProtection;
 			sourceTree = "<group>";
 		};
+		9499BDC5211235A90075629E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				9499BDC3211232020075629E /* MockedRealm.swift */,
+				9499BDC6211235D00075629E /* TestObject.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -928,8 +945,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9499BDC7211235D00075629E /* TestObject.swift in Sources */,
+				9499BDC4211232020075629E /* MockedRealm.swift in Sources */,
 				94DCAFE721108C800075D520 /* GermanDateFormatterTests.swift in Sources */,
 				9478C25D21109A6B00184DA8 /* PolygonAreaTests.swift in Sources */,
+				9499BDC221121D7B0075629E /* RealmPersistentCollectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
