@@ -13,6 +13,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
 
     var defoliations: RealmPersistentCollection<Defoliation>!
+    var fields: [Field]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
         if let cell = cell as? DefoliationTableViewCell {
             let defoliation = defoliations[indexPath.row]
 
-            cell.setField(field: "Feld: \(defoliation.field)")
+            cell.setField(field: "Feld: \(defoliation.field!.name)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: defoliation.date))")
             cell.setUser(user: "Benutzer: \(defoliation.user)")
         }
@@ -65,6 +66,8 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                     return false
                 }
             }
+            
+            editDefoliation.fields = fields
 
             self.present(editDefoliation, animated: true)
         }
@@ -105,6 +108,8 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                     return false
                 }
             }
+            
+            addDefoliation.fields = fields
 
             self.present(addDefoliation, animated: true)
         }

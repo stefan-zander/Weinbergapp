@@ -13,6 +13,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var tableView: UITableView!
 
     var plantProtections: RealmPersistentCollection<PlantProtection>!
+    var fields: [Field]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
         if let cell = cell as? PlantProtectionTableViewCell {
             let plantProtection = plantProtections[indexPath.row]
 
-            cell.setField(field: "Feld: \(plantProtection.field)")
+            cell.setField(field: "Feld: \(plantProtection.field!.name)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: plantProtection.date))")
             cell.setUser(user: "Benutzer: \(plantProtection.user)")
         }
@@ -65,6 +66,8 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                     return false
                 }
             }
+            
+            editPlantProtection.fields = fields
 
             self.present(editPlantProtection, animated: true)
         }
@@ -105,6 +108,8 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                     return false
                 }
             }
+            
+            addPlantProtection.fields = fields
 
             self.present(addPlantProtection, animated: true)
         }

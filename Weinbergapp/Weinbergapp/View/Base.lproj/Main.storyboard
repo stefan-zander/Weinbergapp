@@ -458,7 +458,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="1436"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="THB-RO-gfT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1311"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1497"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PD4-oN-Vem">
                                                 <rect key="frame" x="16" y="16" width="343" height="20.5"/>
@@ -478,44 +478,41 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zugehöriges Feld eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VR2-va-bQV">
-                                                <rect key="frame" x="16" y="321" width="343" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoD-A3-2qH">
+                                                <rect key="frame" x="16" y="321" width="343" height="216"/>
+                                            </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benutzer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zye-HQ-6B7">
-                                                <rect key="frame" x="16" y="367" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="553" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzer eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2L7-Bh-BPb">
-                                                <rect key="frame" x="16" y="403.5" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="589.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arbeitsstunden:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLW-qo-caM">
-                                                <rect key="frame" x="16" y="449.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="635.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arbeitsstunden eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4p0-SE-rkn">
-                                                <rect key="frame" x="16" y="486" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="672" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pflanzenschutzmittel Kategorie:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysu-7e-YCq">
-                                                <rect key="frame" x="16" y="532" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="718" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VMR-Yv-Y3y">
-                                                <rect key="frame" x="16" y="568.5" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="754.5" width="343" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDx-sd-dt5">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
@@ -541,46 +538,46 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ausbringungen gegen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6He-dy-lCA">
-                                                <rect key="frame" x="16" y="614.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="800.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Krankheiten, Schädlinge oder Urkräuter eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-DE-73k">
-                                                <rect key="frame" x="16" y="651" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="837" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pflanzenschutzmittel:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-DV-Rcb">
-                                                <rect key="frame" x="16" y="697" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="883" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pflanzenschutzmittel eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bys-Ms-kMg">
-                                                <rect key="frame" x="16" y="733.5" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="919.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Behandlungstermin:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vda-xT-qXj">
-                                                <rect key="frame" x="16" y="779.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="965.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHl-lb-9fd">
-                                                <rect key="frame" x="16" y="816" width="343" height="216"/>
+                                                <rect key="frame" x="16" y="1002" width="343" height="216"/>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zusatzliche Informationen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-tD-wFw">
-                                                <rect key="frame" x="16" y="1048" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="1234" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Keine Informationen angegeben." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cGi-kJ-DAY">
-                                                <rect key="frame" x="16" y="1084.5" width="343" height="128"/>
+                                                <rect key="frame" x="16" y="1270.5" width="343" height="128"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="E01-WQ-zlm"/>
@@ -589,13 +586,13 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ausgebrachte Menge (Kg je Ha):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOZ-pJ-jRq">
-                                                <rect key="frame" x="16" y="1228.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="1414.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ausgebrachte Menge eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rvj-Sd-obg">
-                                                <rect key="frame" x="16" y="1265" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="1451" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -630,7 +627,7 @@
                         <outlet property="additionalInformation" destination="cGi-kJ-DAY" id="hUj-yV-a75"/>
                         <outlet property="appliedAmount" destination="Rvj-Sd-obg" id="Hvo-09-mW3"/>
                         <outlet property="date" destination="8Zv-QF-DhW" id="ja8-rS-8Vj"/>
-                        <outlet property="field" destination="VR2-va-bQV" id="7lc-b0-XDe"/>
+                        <outlet property="field" destination="VoD-A3-2qH" id="qiy-Zi-z6C"/>
                         <outlet property="pesticides" destination="bys-Ms-kMg" id="XJc-i9-LX2"/>
                         <outlet property="plantProtectionKind" destination="Lge-DE-73k" id="hPx-6y-BJ7"/>
                         <outlet property="treatmentSchedule" destination="AHl-lb-9fd" id="a8V-J3-WXH"/>
@@ -671,7 +668,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="736"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7oY-IV-1gT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="986.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIv-23-zEs">
                                                 <rect key="frame" x="16" y="16" width="343" height="20.5"/>
@@ -691,44 +688,41 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zugehöriges Feld eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcW-Px-JHb">
-                                                <rect key="frame" x="16" y="321" width="343" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7k-W4-wKN">
+                                                <rect key="frame" x="16" y="321" width="343" height="216"/>
+                                            </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benutzer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMD-XW-zn7">
-                                                <rect key="frame" x="16" y="367" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="553" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzer eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJ6-qn-mHh">
-                                                <rect key="frame" x="16" y="403.5" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="589.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arbeitsstunden:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9y-03-n3b">
-                                                <rect key="frame" x="16" y="449.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="635.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arbeitsstunden eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOX-Yu-tCt">
-                                                <rect key="frame" x="16" y="486" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="672" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art der Durchführung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLP-BS-Qmh">
-                                                <rect key="frame" x="16" y="532" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="718" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJc-hA-4Vb">
-                                                <rect key="frame" x="16" y="568.5" width="343" height="216"/>
+                                                <rect key="frame" x="16" y="754.5" width="343" height="216"/>
                                             </pickerView>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
@@ -759,7 +753,7 @@
                     <connections>
                         <outlet property="date" destination="zPa-s8-lGf" id="lci-Xa-H3Z"/>
                         <outlet property="execution" destination="gJc-hA-4Vb" id="Dpd-H2-qYl"/>
-                        <outlet property="field" destination="lcW-Px-JHb" id="nll-VW-ctX"/>
+                        <outlet property="field" destination="A7k-W4-wKN" id="ej8-q8-hYC"/>
                         <outlet property="user" destination="wJ6-qn-mHh" id="TPH-3F-1gf"/>
                         <outlet property="workingHours" destination="rOX-Yu-tCt" id="SNv-qn-ryR"/>
                     </connections>
@@ -797,7 +791,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6XM-Az-Cwc">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="718"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-X3-9ZC">
                                                 <rect key="frame" x="16" y="16" width="343" height="20.5"/>
@@ -817,32 +811,29 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zugehöriges Feld eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDX-Gj-xEu">
-                                                <rect key="frame" x="16" y="321" width="343" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRg-gs-Jih">
+                                                <rect key="frame" x="16" y="321" width="343" height="216"/>
+                                            </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benutzer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyw-3M-PcP">
-                                                <rect key="frame" x="16" y="367" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="553" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzer eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qod-Xh-X79">
-                                                <rect key="frame" x="16" y="403.5" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="589.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arbeitsstunden:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyO-IY-qoJ">
-                                                <rect key="frame" x="16" y="449.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="635.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arbeitsstunden eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7F-VC-zGW">
-                                                <rect key="frame" x="16" y="486" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="672" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -874,7 +865,7 @@
                     </view>
                     <connections>
                         <outlet property="date" destination="MZp-zy-y6S" id="mWr-0a-SG6"/>
-                        <outlet property="field" destination="XDX-Gj-xEu" id="Ctg-BD-YCj"/>
+                        <outlet property="field" destination="tRg-gs-Jih" id="P3A-Qa-yZP"/>
                         <outlet property="user" destination="qod-Xh-X79" id="aAs-4O-M3V"/>
                         <outlet property="workingHours" destination="v7F-VC-zGW" id="ugn-QD-q8z"/>
                     </connections>
@@ -912,7 +903,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="1036"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tKt-4T-rle">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1043.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1229.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m15-oX-6We">
                                                 <rect key="frame" x="16" y="16" width="343" height="20.5"/>
@@ -932,65 +923,62 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zugehöriges Feld eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dV6-98-XXY">
-                                                <rect key="frame" x="16" y="321" width="343" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDh-ix-5ex">
+                                                <rect key="frame" x="16" y="321" width="343" height="216"/>
+                                            </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benutzer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylH-gY-XGo">
-                                                <rect key="frame" x="16" y="367" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="553" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Benutzer eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9K-tH-bOB">
-                                                <rect key="frame" x="16" y="403.5" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="589.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arbeitsstunden:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1a-HL-Npv">
-                                                <rect key="frame" x="16" y="449.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="635.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arbeitsstunden eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8QR-uc-4hd">
-                                                <rect key="frame" x="16" y="486" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="672" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategorie des Düngungsmittels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIa-9a-PyH">
-                                                <rect key="frame" x="16" y="532" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="718" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COE-Jd-Wye">
-                                                <rect key="frame" x="16" y="568.5" width="343" height="108"/>
+                                                <rect key="frame" x="16" y="754.5" width="343" height="108"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="108" id="dLK-fB-Vdx"/>
                                                 </constraints>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Düngungsmittel:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gci-Hb-7Jn">
-                                                <rect key="frame" x="16" y="692.5" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="878.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gn1-LP-5bQ">
-                                                <rect key="frame" x="16" y="729" width="343" height="216"/>
+                                                <rect key="frame" x="16" y="915" width="343" height="216"/>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ausgebrachte Menge (Kg je Ha):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeA-Xz-D7K">
-                                                <rect key="frame" x="16" y="961" width="343" height="20.5"/>
+                                                <rect key="frame" x="16" y="1147" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arbeitsstunden eintragen..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABZ-0q-mLM">
-                                                <rect key="frame" x="16" y="997.5" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="1183.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1026,7 +1014,7 @@
                         <outlet property="date" destination="gcB-Zn-N56" id="awJ-17-iXn"/>
                         <outlet property="fertilizer" destination="Gn1-LP-5bQ" id="hzR-ip-5fM"/>
                         <outlet property="fertilizerCategory" destination="COE-Jd-Wye" id="F4i-Yn-suz"/>
-                        <outlet property="field" destination="dV6-98-XXY" id="gn6-f2-yjw"/>
+                        <outlet property="field" destination="VDh-ix-5ex" id="QzA-Q5-nvH"/>
                         <outlet property="user" destination="r9K-tH-bOB" id="CY5-c3-s0L"/>
                         <outlet property="workingHours" destination="8QR-uc-4hd" id="OR2-Do-1cy"/>
                     </connections>

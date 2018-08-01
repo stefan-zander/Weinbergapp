@@ -12,20 +12,8 @@ import RealmSwift
 /**
  Represents the information required for the plant protection operation.
  */
-public class PlantProtection: Object {
-
-    /// The date on which the plant protection operation takes place.
-    @objc public dynamic var date: Date = Date()
-
-    /// The field associated with the plant protection operation.
-    @objc public dynamic var field: String = ""
-
-    /// The user associated with the plant protection operation.
-    @objc public dynamic var user: String = ""
-
-    /// The approximate working hours for the plant protection operation.
-    @objc public dynamic var workingHours: Double = 0.0
-
+public class PlantProtection: Operation {
+    
     /**
      The raw value of the category of illnesses to protect for in the plant protection operation.
 

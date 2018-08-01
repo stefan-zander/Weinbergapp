@@ -10,21 +10,6 @@ import UIKit
 
 class OperationFieldVerification {
 
-    static func verify(field: UITextField, _ controller: UIViewController) -> Bool {
-        guard let field = field.text, !field.isEmpty else {
-            let alert = UIAlertController(title: "Feld nicht angegeben",
-                                          message: "Ein Feld muss angegeben werden.",
-                                          preferredStyle: .alert)
-
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-
-            controller.present(alert, animated: true)
-            return false
-        }
-
-        return true
-    }
-
     static func verify(user: UITextField, _ controller: UIViewController) -> Bool {
         guard let user = user.text, !user.isEmpty else {
             let alert = UIAlertController(title: "Benutzer nicht angegeben",

@@ -14,9 +14,11 @@ class AddDefoliationViewController: UIViewController {
     public var onSave: (() -> Bool)?
 
     @IBOutlet weak var date: UIDatePicker!
-    @IBOutlet weak var field: UITextField!
+    @IBOutlet weak var field: UIPickerView!
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var workingHours: UITextField!
+    
+    var fields: [Field]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,20 +30,23 @@ class AddDefoliationViewController: UIViewController {
 
     public func applyChanges(from: Defoliation) {
         date.date = from.date
-        field.text = from.field
+        
+        if let index = fields.index(of: from.field!) {
+            field.selectRow(index, inComponent: 0, animated: false)
+        }
+        
         user.text = from.user
         workingHours.text = String(from.workingHours)
     }
 
     public func applyChanges(to: Defoliation) {
         to.date = date.date
-        to.field = field.text ?? ""
+        to.field = fields[field.selectedRow(inComponent: 0)]
         to.user = user.text ?? ""
         to.workingHours = Double(workingHours.text ?? "0") ?? 0.0
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard OperationFieldVerification.verify(field: field, self) else { return }
         guard OperationFieldVerification.verify(user: user, self) else { return }
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
 

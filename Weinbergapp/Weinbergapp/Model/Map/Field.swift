@@ -23,22 +23,38 @@ public class Field: Object {
 
     /// The raw value of the coordinates constructing the polygon of the field
     public let rawCoordinates = List<Double>()
+    
+    /// The operations that are performed on this field
+    public let operations = LinkingObjects(fromType: Operation.self, property: "field")
 
-    private var cachedArea: Double?
+    private var area: Double?
+    
+    /**
+     An array of property names that will not be persisted in the database
+ 
+     - Returns: The array of property names.
+    */
+    public override static func ignoredProperties() -> [String] {
+        return ["area"]
+    }
 
-    /// The area of the field measured in meters.
-    public var area: Double {
-        if let area = cachedArea {
+    /**
+     Computes the area of the field measured in meters.
+     
+     - Returns: The area of the field measured in meters.
+     */
+    public func getArea() -> Double {
+        if let area = area {
             return area
         }
-
-        let area = computeArea(coordinates: coordinates)
-        cachedArea = area
-        return area
+        
+        let newArea = computeArea(coordinates: getCoordinates())
+        area = newArea
+        return newArea
     }
     
     /**
-     Gets the coordinates that construct the polygon associated with this field
+     Gets the coordinates that construct the polygon associated with this field.
  
      - Returns: The coordinates of the polygon.
     */
@@ -56,32 +72,17 @@ public class Field: Object {
         return coordinates
     }
     
+    /**
+     Sets the coordinates that construct the polygon associated with this field.
+ 
+     - Parameter coordinates: The coordinates of the new polygon.
+    */
     public func setCoordinates(_ coordinates: [CLLocationCoordinate2D]) {
         rawCoordinates.removeAll()
         
         for coordinate in coordinates {
             rawCoordinates.append(coordinate.latitude)
             rawCoordinates.append(coordinate.longitude)
-        }
-    }
-
-    ///The coordinates constructing the polygon of the field
-    public var coordinates: [CLLocationCoordinate2D] {
-        get {
-            let coordinatesCount = rawCoordinates.count / 2
-
-            var coordinates: [CLLocationCoordinate2D] = []
-            coordinates.reserveCapacity(coordinatesCount)
-
-            for index in 0..<coordinatesCount {
-                coordinates.append(CLLocationCoordinate2D(latitude: rawCoordinates[2 * index],
-                                                          longitude: rawCoordinates[2 * index + 1]))
-            }
-
-            return coordinates
-        }
-        set(coordinates) {
-            
         }
     }
 }

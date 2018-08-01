@@ -14,16 +14,20 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     public var onSave: (() -> Bool)?
 
     @IBOutlet weak var date: UIDatePicker!
-    @IBOutlet weak var field: UITextField!
+    @IBOutlet weak var field: UIPickerView!
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var workingHours: UITextField!
     @IBOutlet weak var fertilizerCategory: UIPickerView!
     @IBOutlet weak var fertilizer: UIPickerView!
     @IBOutlet weak var appliedAmount: UITextField!
+    
+    var fields: [Field]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        field.delegate = self
+        field.dataSource = self
         fertilizerCategory.delegate = self
         fertilizerCategory.dataSource = self
         fertilizer.delegate = self
@@ -36,7 +40,11 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
 
     public func applyChanges(from: Fertilization) {
         date.date = from.date
-        field.text = from.field
+        
+        if let index = fields.index(of: from.field!) {
+            field.selectRow(index, inComponent: 0, animated: false)
+        }
+        
         user.text = from.user
         workingHours.text = String(from.workingHours)
         fertilizerCategory.selectRow(from.fertilizerCategoryRaw, inComponent: 0, animated: false)
@@ -55,7 +63,7 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
 
     public func applyChanges(to: Fertilization) {
         to.date = date.date
-        to.field = field.text ?? ""
+        to.field = fields[field.selectedRow(inComponent: 0)]
         to.user = user.text ?? ""
         to.workingHours = Double(workingHours.text ?? "0") ?? 0.0
         to.fertilizerCategoryRaw = fertilizerCategory.selectedRow(inComponent: 0)
@@ -78,6 +86,8 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView {
+        case field:
+            return fields.count
         case fertilizerCategory:
             return FertilizationLocalization.fertilizerCategoryOptions.count
         case fertilizer:
@@ -95,6 +105,8 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView {
+        case field:
+            return fields[row].name
         case fertilizerCategory:
             return FertilizationLocalization.fertilizerCategoryOptions[row]
         case fertilizer:
@@ -105,7 +117,6 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     }
 
     @IBAction func save(_ sender: UIBarButtonItem) {
-        guard OperationFieldVerification.verify(field: field, self) else { return }
         guard OperationFieldVerification.verify(user: user, self) else { return }
         guard OperationFieldVerification.verify(workingHours: workingHours, self) else { return }
         guard OperationFieldVerification.verify(appliedAmount: appliedAmount, self) else { return }

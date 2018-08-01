@@ -13,6 +13,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
 
     var fertilizations: RealmPersistentCollection<Fertilization>!
+    var fields: [Field]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
         if let cell = cell as? FertilizationTableViewCell {
             let fertilization = fertilizations[indexPath.row]
 
-            cell.setField(field: "Feld: \(fertilization.field)")
+            cell.setField(field: "Feld: \(fertilization.field!.name)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: fertilization.date))")
             cell.setUser(user: "Benutzer: \(fertilization.user)")
         }
@@ -65,6 +66,8 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                     return false
                 }
             }
+            
+            editFertilization.fields = fields
 
             self.present(editFertilization, animated: true)
         }
@@ -105,6 +108,8 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                     return false
                 }
             }
+            
+            addFertilization.fields = fields
 
             self.present(addFertilization, animated: true)
         }

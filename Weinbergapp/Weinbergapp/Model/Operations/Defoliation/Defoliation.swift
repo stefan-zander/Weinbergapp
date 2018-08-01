@@ -12,17 +12,6 @@ import RealmSwift
 /**
  Represents the information required for the defoliation operation.
  */
-public class Defoliation: Object {
-
-    /// The date on which the defoliation operation takes place.
-    @objc dynamic var date: Date = Date()
-
-    /// The field associated with the defoliation operation.
-    @objc dynamic var field: String = ""
-
-    /// The user associated with the defoliation operation.
-    @objc dynamic var user: String = ""
-
-    /// The approximate working hours for the defoliation operation.
-    @objc dynamic var workingHours: Double = 0.0
+public class Defoliation: Operation {
+    
 }

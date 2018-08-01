@@ -12,19 +12,7 @@ import RealmSwift
 /**
  Represents the information required for the fertilization operation.
  */
-public class Fertilization: Object {
-
-    /// The date on which the fertilization operation takes place.
-    @objc public dynamic var date: Date = Date()
-
-    /// The field associated with the fertilization operation.
-    @objc public dynamic var field: String = ""
-
-    /// The user associated with the fertilization operation.
-    @objc public dynamic var user: String = ""
-
-    /// The approximate working hours for the fertilization operation.
-    @objc public dynamic var workingHours: Double = 0.0
+public class Fertilization: Operation {
 
     /**
      The raw value of the fertilizer category used for the fertilization operation.

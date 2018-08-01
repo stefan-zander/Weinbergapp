@@ -70,7 +70,7 @@ class AddFieldViewController: UIViewController {
 
             field.name = name.text ?? ""
             field.vineVariety = vineVariety.text ?? ""
-            field.coordinates = coordinates
+            field.setCoordinates(coordinates)
 
             do {
                 try source.fieldDataSource.add(field)

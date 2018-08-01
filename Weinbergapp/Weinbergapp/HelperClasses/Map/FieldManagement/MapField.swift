@@ -66,7 +66,7 @@ class MapField {
             mapView.remove(polygon)
         }
 
-        let coordinates = field.coordinates
+        let coordinates = field.getCoordinates()
         let polygon = MKFieldPolygon(owner: self, coordinates: coordinates, count: coordinates.count)
 
         self.polygon = polygon
@@ -85,7 +85,7 @@ class MapField {
     }
 
     private func update(point: MKFieldPointAnnotation) {
-        point.title = "\(field.name) (\(MapLocalization.localize(area: field.area)))"
+        point.title = "\(field.name) (\(MapLocalization.localize(area: field.getArea())))"
         point.subtitle = "Reben Sorte: \(field.vineVariety)"
     }
 

@@ -13,6 +13,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
 
     var vintages: RealmPersistentCollection<Vintage>!
+    var fields: [Field]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let cell = cell as? VintageTableViewCell {
             let vintage = vintages[indexPath.row]
 
-            cell.setField(field: "Feld: \(vintage.field)")
+            cell.setField(field: "Feld: \(vintage.field!.name)")
             cell.setDate(date: "Datum: \(GermanDateFormatter.shared.string(from: vintage.date))")
             cell.setUser(user: "Benutzer: \(vintage.user)")
         }
@@ -63,6 +64,8 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                     return false
                 }
             }
+            
+            editVintage.fields = fields
 
             self.present(editVintage, animated: true)
         }
