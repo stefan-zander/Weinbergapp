@@ -133,7 +133,7 @@ class PlantProtectionLocalization {
             choices.append("Scala")
         }
 
-        if pesticides.`switch` {
+        if pesticides.switch {
             choices.append("Switch")
         }
 

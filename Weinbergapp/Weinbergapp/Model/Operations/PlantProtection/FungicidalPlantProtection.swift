@@ -17,7 +17,7 @@ public class FungicidalPlantProtection: Object {
     /// Represents the fungicidal illnesses "Botrytis".
     @objc public dynamic var botrytis: Bool = false
 
-    /// Represents the fungicidal illnesses "AcidRot".
+    /// Represents the fungicidal illnesses "Acid rot".
     @objc public dynamic var acidRot: Bool = false
 
     /// Represents the fungicidal illnesses "Oidium".
