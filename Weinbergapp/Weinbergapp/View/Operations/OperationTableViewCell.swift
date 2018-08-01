@@ -10,15 +10,18 @@ import UIKit
 
 class OperationTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageThumbnailOperation: UIImageView!
     @IBOutlet weak var labelOperationName: UILabel!
+    @IBOutlet weak var imageThumbnailOperation: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    func initCell(operation: Operation) {
-        imageThumbnailOperation.image = operation.image
-        labelOperationName.text = operation.name
+    func set(name: String) {
+        labelOperationName.text = name
+    }
+    
+    func set(image: UIImage) {
+        imageThumbnailOperation.image = image
     }
 }

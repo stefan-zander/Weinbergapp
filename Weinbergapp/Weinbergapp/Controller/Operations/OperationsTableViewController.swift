@@ -11,22 +11,28 @@ import RealmSwift
 
 class OperationsTableViewController: UITableViewController {
     
-    let operations = [
-        Operation(name: "Düngung",
-                  image: UIImage(named: "FertilizationLogo")!,
-                  storyboardIdentifier: "Fertilization"),
-
-        Operation(name: "Entlauben",
-                  image: UIImage(named: "DefoliationLogo")!,
-                  storyboardIdentifier: "Defoliation"),
-
-        Operation(name: "Pflanzenschutz",
-                  image: UIImage(named: "PlantProtectionLogo")!,
-                  storyboardIdentifier: "PlantProtection"),
-
-        Operation(name: "Traubenlese",
-                  image: UIImage(named: "VintageLogo")!,
-                  storyboardIdentifier: "Vintage")
+    private struct OperationInfo {
+        let name: String
+        let image: UIImage
+        let identifier: String
+    }
+    
+    private let operations = [
+        OperationInfo(name: "Düngung",
+                      image: UIImage(named: "FertilizationLogo")!,
+                      identifier: "Fertilization"),
+        
+        OperationInfo(name: "Entlauben",
+                      image: UIImage(named: "DefoliationLogo")!,
+                      identifier: "Defoliation"),
+        
+        OperationInfo(name: "Pflanzenschutz",
+                      image: UIImage(named: "PlantProtectionLogo")!,
+                      identifier: "PlantProtection"),
+        
+        OperationInfo(name: "Traubenlese",
+                      image: UIImage(named: "VintageLogo")!,
+                      identifier: "Vintage")
     ]
     
     var realm: Realm!
@@ -43,7 +49,10 @@ class OperationsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OperationCell", for: indexPath)
 
         if let operationCell = cell as? OperationTableViewCell {
-            operationCell.initCell(operation: operations[indexPath.row])
+            let operationInfo = operations[indexPath.row]
+            
+            operationCell.set(name: operationInfo.name)
+            operationCell.set(image: operationInfo.image)
         }
 
         return cell
@@ -51,8 +60,7 @@ class OperationsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let view = storyboard.instantiateViewController(
-            withIdentifier: operations[indexPath.row].storyboardIdentifier)
+        let view = storyboard.instantiateViewController(withIdentifier: operations[indexPath.row].identifier)
         
         do {
             switch view {
