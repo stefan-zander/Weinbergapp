@@ -31,7 +31,7 @@ class RealmPersistentCollectionTests: XCTestCase {
         collection = RealmPersistentCollection(realm: mockedRealm)
         
         // then
-        XCTAssertEqual(1, collection.count)
+        XCTAssertEqual(collection.count, 1)
         XCTAssertEqual(expected, collection[0])
     }
     
@@ -43,9 +43,9 @@ class RealmPersistentCollectionTests: XCTestCase {
         try collection.add(expected)
         
         // then
-        XCTAssertEqual(1, collection.count)
+        XCTAssertEqual(collection.count, 1)
         XCTAssertEqual(expected, collection[0])
-        XCTAssertEqual(1, mockedRealm.objects.count)
+        XCTAssertEqual(mockedRealm.objects.count, 1)
         XCTAssertEqual(expected, mockedRealm.objects[0])
     }
     
@@ -86,9 +86,9 @@ class RealmPersistentCollectionTests: XCTestCase {
         }
         
         // then
-        XCTAssertEqual(20, collection[0].num)
-        XCTAssertEqual(20, (mockedRealm.objects[0] as! TestObject).num)
-        XCTAssertEqual(20, testObject.num)
+        XCTAssertEqual(collection[0].num, 20)
+        XCTAssertEqual((mockedRealm.objects[0] as! TestObject).num, 20)
+        XCTAssertEqual(testObject.num, 20)
     }
     
     func testDelete() throws {
@@ -100,8 +100,8 @@ class RealmPersistentCollectionTests: XCTestCase {
         try collection.delete(testObject)
         
         // then
-        XCTAssertEqual(0, collection.count)
-        XCTAssertEqual(0, mockedRealm.objects.count)
+        XCTAssertEqual(collection.count, 0)
+        XCTAssertEqual(mockedRealm.objects.count, 0)
     }
     
     func testDelete2() throws {
@@ -115,9 +115,9 @@ class RealmPersistentCollectionTests: XCTestCase {
         try collection.delete(differentTestObject)
         
         // then
-        XCTAssertEqual(1, collection.count)
+        XCTAssertEqual(collection.count, 1)
         XCTAssertEqual(testObject, collection[0])
-        XCTAssertEqual(1, mockedRealm.objects.count)
+        XCTAssertEqual(mockedRealm.objects.count, 1)
         XCTAssertEqual(testObject, mockedRealm.objects[0])
     }
     
@@ -133,10 +133,10 @@ class RealmPersistentCollectionTests: XCTestCase {
         try collection.delete(at: 1)
         
         // then
-        XCTAssertEqual(2, collection.count)
+        XCTAssertEqual(collection.count, 2)
         XCTAssertEqual(testObject1, collection[0])
         XCTAssertEqual(testObject3, collection[1])
-        XCTAssertEqual(2, mockedRealm.objects.count)
+        XCTAssertEqual(mockedRealm.objects.count, 2)
         XCTAssertEqual(testObject1, mockedRealm.objects[0])
         XCTAssertEqual(testObject3, mockedRealm.objects[1])
     }

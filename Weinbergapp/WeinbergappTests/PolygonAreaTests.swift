@@ -21,7 +21,7 @@ class PolygonAreaTests: XCTestCase {
         let expectedRadians = Double.pi / 2
 
         // then
-        XCTAssertEqual(expectedRadians, actualRadians, accuracy: 1e-10)
+        XCTAssertEqual(actualRadians, expectedRadians, accuracy: 1e-10)
     }
 
     func testRadians2() {
@@ -33,7 +33,7 @@ class PolygonAreaTests: XCTestCase {
         let expectedRadians = 2 * Double.pi
 
         // then
-        XCTAssertEqual(expectedRadians, actualRadians, accuracy: 1e-10)
+        XCTAssertEqual(actualRadians, expectedRadians, accuracy: 1e-10)
     }
 
     func testDegrees1() {
@@ -45,7 +45,7 @@ class PolygonAreaTests: XCTestCase {
         let expectedDegrees = 0.0
 
         // then
-        XCTAssertEqual(expectedDegrees, actualDegrees, accuracy: 1e-10)
+        XCTAssertEqual(actualDegrees, expectedDegrees, accuracy: 1e-10)
     }
 
     func testDegrees2() {
@@ -57,7 +57,7 @@ class PolygonAreaTests: XCTestCase {
         let expectedDegrees = 2 * 360.0
 
         // then
-        XCTAssertEqual(expectedDegrees, actualDegrees, accuracy: 1e-10)
+        XCTAssertEqual(actualDegrees, expectedDegrees, accuracy: 1e-10)
     }
 
     func testComputeAreaEmpty() {
@@ -87,11 +87,11 @@ class PolygonAreaTests: XCTestCase {
         ]
         
         // when
+        let computedAreaInSquareMeters = computeArea(coordinates: eiffleTower)
 
         // Source: https://www.wonders-of-the-world.net/Eiffel-Tower/Dimensions-of-the-Eiffel-tower.php
         let widthOfEiffleTowerInMeters = 125.0
         let surfaceOfEiffleTowerInSquareMeters = widthOfEiffleTowerInMeters * widthOfEiffleTowerInMeters
-        let computedAreaInSquareMeters = computeArea(coordinates: eiffleTower)
 
         // then
         XCTAssertEqual(computedAreaInSquareMeters,

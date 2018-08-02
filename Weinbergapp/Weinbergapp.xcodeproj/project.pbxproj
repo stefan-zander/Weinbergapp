@@ -259,8 +259,8 @@
 				9478C25C21109A6B00184DA8 /* PolygonAreaTests.swift */,
 				9499BDC121121D7B0075629E /* RealmPersistentCollectionTests.swift */,
 				9499BDCA211261DC0075629E /* MapLocalizationTests.swift */,
-				356AFE4E20CAB28F000D9BC1 /* Info.plist */,
 				9499BDCC211264280075629E /* PlantProtectionLocalizationTests.swift */,
+				356AFE4E20CAB28F000D9BC1 /* Info.plist */,
 			);
 			path = WeinbergappTests;
 			sourceTree = "<group>";
@@ -1104,12 +1104,15 @@
 			baseConfigurationReference = 265BAD8103D79841FFA1921F /* Pods-Weinbergapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Weinbergapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.thbingen.Weinbergapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1120,12 +1123,15 @@
 			baseConfigurationReference = 0F311BF641165B08BBAF2535 /* Pods-Weinbergapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Weinbergapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.thbingen.Weinbergapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

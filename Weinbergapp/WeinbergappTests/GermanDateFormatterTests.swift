@@ -53,7 +53,7 @@ class GermanDateFormatterTests: XCTestCase {
         let expectedDate = createDate(day: 1, month: 8, year: 2018)
 
         // then
-        XCTAssertEqual(expectedDate, actualDate)
+        XCTAssertEqual(actualDate, expectedDate)
     }
 
     func testString2() {
@@ -65,7 +65,7 @@ class GermanDateFormatterTests: XCTestCase {
         let expectedDate = createDate(day: 1, month: 1, year: 510)
 
         // then
-        XCTAssertEqual(expectedDate, actualDate)
+        XCTAssertEqual(actualDate, expectedDate)
     }
 
     func testString3() {

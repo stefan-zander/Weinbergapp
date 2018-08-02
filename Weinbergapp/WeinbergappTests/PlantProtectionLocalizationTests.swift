@@ -19,7 +19,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(fungicidal)
         
         // then
-        XCTAssertEqual("", localized)
+        XCTAssertEqual(localized, "")
     }
     
     func testFungicidal2() {
@@ -31,7 +31,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(fungicidal)
         
         // then
-        XCTAssertEqual("Botrytis", localized)
+        XCTAssertEqual(localized, "Botrytis")
     }
     
     func testFungicidal3() {
@@ -44,7 +44,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(fungicidal)
         
         // then
-        XCTAssertEqual("Essigfäule, Oidium", localized)
+        XCTAssertEqual(localized, "Essigfäule, Oidium")
     }
     
     func testFungicidal4() {
@@ -58,7 +58,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(fungicidal)
         
         // then
-        XCTAssertEqual("Peronospora, Phomopsis, Roter Brenner", localized)
+        XCTAssertEqual(localized, "Peronospora, Phomopsis, Roter Brenner")
     }
     
     func testHerbicide1() {
@@ -69,7 +69,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(herbicide)
         
         // then
-        XCTAssertEqual("", localized)
+        XCTAssertEqual(localized, "")
     }
     
     func testHerbicide2() {
@@ -81,7 +81,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(herbicide)
         
         // then
-        XCTAssertEqual("Ein- und Zweikeimblättrige", localized)
+        XCTAssertEqual(localized, "Ein- und Zweikeimblättrige")
     }
     
     func testHerbicide3() {
@@ -94,7 +94,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(herbicide)
         
         // then
-        XCTAssertEqual("Ackerwinde, Ein- und Zweikeimblättrige", localized)
+        XCTAssertEqual(localized, "Ackerwinde, Ein- und Zweikeimblättrige")
     }
     
     func testInsecticidalOrAcaricidal1() {
@@ -105,7 +105,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(insecticidalOrAcaricidal)
         
         // then
-        XCTAssertEqual("", localized)
+        XCTAssertEqual(localized, "")
     }
     
     func testInsecticidalOrAcaricidal2() {
@@ -117,7 +117,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(insecticidalOrAcaricidal)
         
         // then
-        XCTAssertEqual("Zikaden", localized)
+        XCTAssertEqual(localized, "Zikaden")
     }
     
     func testInsecticidalOrAcaricidal3() {
@@ -130,7 +130,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(insecticidalOrAcaricidal)
         
         // then
-        XCTAssertEqual("Drosophila-Arten, Springwurm", localized)
+        XCTAssertEqual(localized, "Drosophila-Arten, Springwurm")
     }
     
     func testInsecticidalOrAcaricidal4() {
@@ -145,7 +145,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(insecticidalOrAcaricidal)
         
         // then
-        XCTAssertEqual("Kräuselmilben, Rhombenspanner, Spinnmilben, Traubenwickler (Heu- und Sauerwurm)", localized)
+        XCTAssertEqual(localized, "Kräuselmilben, Rhombenspanner, Spinnmilben, Traubenwickler (Heu- und Sauerwurm)")
     }
     
     func testPesticides1() {
@@ -156,7 +156,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(pesticides)
         
         // then
-        XCTAssertEqual("", localized)
+        XCTAssertEqual(localized, "")
     }
     
     func testPesticides2() {
@@ -168,7 +168,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(pesticides)
         
         // then
-        XCTAssertEqual("Regalis Plus", localized)
+        XCTAssertEqual(localized, "Regalis Plus")
     }
     
     func testPesticides3() {
@@ -182,7 +182,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(pesticides)
         
         // then
-        XCTAssertEqual("Botector, Cantus, Gibbb 3", localized)
+        XCTAssertEqual(localized, "Botector, Cantus, Gibbb 3")
     }
     
     func testPesticides4() {
@@ -195,7 +195,7 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(pesticides)
         
         // then
-        XCTAssertEqual("Melody Combi, Pyrus; Babel", localized)
+        XCTAssertEqual(localized, "Melody Combi, Pyrus; Babel")
     }
     
     func testPesticides5() {
@@ -210,6 +210,6 @@ class PlantProtectionLocalizationTests: XCTestCase {
         let localized = PlantProtectionLocalization.localize(pesticides)
         
         // then
-        XCTAssertEqual("Prolectus, Scala, Switch, Teldor", localized)
+        XCTAssertEqual(localized, "Prolectus, Scala, Switch, Teldor")
     }
 }

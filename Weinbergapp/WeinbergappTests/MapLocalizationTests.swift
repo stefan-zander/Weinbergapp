@@ -19,7 +19,7 @@ class MapLocalizationTests: XCTestCase {
         let localized = MapLocalization.localize(area: zeroMeters)
         
         // then
-        XCTAssertEqual("0 m²", localized)
+        XCTAssertEqual(localized, "0 m²")
     }
     
     func testTwentySquareMeters() {
@@ -30,7 +30,7 @@ class MapLocalizationTests: XCTestCase {
         let localized = MapLocalization.localize(area: twentyMeters)
         
         // then
-        XCTAssertEqual("20 m²", localized)
+        XCTAssertEqual(localized, "20 m²")
     }
     
     func testOneSquareKilometers() {
@@ -41,7 +41,7 @@ class MapLocalizationTests: XCTestCase {
         let localized = MapLocalization.localize(area: oneSquareKilometer)
         
         // then
-        XCTAssertEqual("1.00 km²", localized)
+        XCTAssertEqual(localized, "1.00 km²")
     }
     
     func testOneAndAQuarterSquareKilometers() {
@@ -52,7 +52,7 @@ class MapLocalizationTests: XCTestCase {
         let localized = MapLocalization.localize(area: oneAndAQuarterSquareKilometer)
         
         // then
-        XCTAssertEqual("1.25 km²", localized)
+        XCTAssertEqual(localized, "1.25 km²")
     }
     
     func testMinusFiveHundredSquareKilometers() {
@@ -63,6 +63,6 @@ class MapLocalizationTests: XCTestCase {
         let localized = MapLocalization.localize(area: oneSquareKilometer)
         
         // then
-        XCTAssertEqual("-500.00 km²", localized)
+        XCTAssertEqual(localized, "-500.00 km²")
     }
 }
