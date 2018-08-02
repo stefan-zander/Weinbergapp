@@ -36,6 +36,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             LoginDialogs.presentLoginFailed(controller: self)
             return
         }
+        
         do {
             let realm = try Realm()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
