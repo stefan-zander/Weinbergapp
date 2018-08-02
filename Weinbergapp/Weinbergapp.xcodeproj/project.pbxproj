@@ -45,6 +45,8 @@
 		9450659B20FA3A8000758D8C /* Defoliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659A20FA3A8000758D8C /* Defoliation.swift */; };
 		9450659F20FB445F00758D8C /* SwitchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450659E20FB445F00758D8C /* SwitchTableViewController.swift */; };
 		945065A120FB445F00758D8C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945065A020FB445F00758D8C /* SwitchTableViewCell.swift */; };
+		94547D6621139FF7007715BE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94547D6521139FF7007715BE /* Business.swift */; };
+		94547D692113A28C007715BE /* MoreDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94547D682113A28C007715BE /* MoreDialogs.swift */; };
 		9459E5872110EF530095F577 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9459E5862110EF530095F577 /* MainViewController.swift */; };
 		945B47BA210B6650007865D5 /* FertilizationLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B9210B6650007865D5 /* FertilizationLocalization.swift */; };
 		945B47BE210B70C6007865D5 /* OperationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BD210B70C6007865D5 /* OperationDialogs.swift */; };
@@ -148,6 +150,8 @@
 		9450659A20FA3A8000758D8C /* Defoliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defoliation.swift; sourceTree = "<group>"; };
 		9450659E20FB445F00758D8C /* SwitchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewController.swift; sourceTree = "<group>"; };
 		945065A020FB445F00758D8C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		94547D6521139FF7007715BE /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		94547D682113A28C007715BE /* MoreDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDialogs.swift; sourceTree = "<group>"; };
 		9459E5862110EF530095F577 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		945B47B9210B6650007865D5 /* FertilizationLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationLocalization.swift; sourceTree = "<group>"; };
 		945B47BD210B70C6007865D5 /* OperationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDialogs.swift; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 				9486C4C3210FB3E100C2E153 /* RealmPersistentCollection.swift */,
 				9401561C20FCCFF3006E36D9 /* Map */,
 				940155F820FCCF0A006E36D9 /* Operations */,
+				94547D6421139FDE007715BE /* More */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -513,12 +518,29 @@
 			path = More;
 			sourceTree = "<group>";
 		};
+		94547D6421139FDE007715BE /* More */ = {
+			isa = PBXGroup;
+			children = (
+				94547D6521139FF7007715BE /* Business.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		94547D672113A279007715BE /* More */ = {
+			isa = PBXGroup;
+			children = (
+				94547D682113A28C007715BE /* MoreDialogs.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
 		9459E5882110FFE70095F577 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
 				948A414C2110D88D00D301D3 /* LoginDialogs.swift */,
 				9459E5892111001C0095F577 /* Map */,
 				9459E58A211100370095F577 /* Operations */,
+				94547D672113A279007715BE /* More */,
 			);
 			path = Dialogs;
 			sourceTree = "<group>";
@@ -888,6 +910,7 @@
 				9409694921036E0C00AA7146 /* PlantProtectionTableViewCell.swift in Sources */,
 				354BA7A320E6599700EF1D9D /* MapViewController.swift in Sources */,
 				94FEDF522108ADA6002CF6A0 /* MKFieldPointAnnotation.swift in Sources */,
+				94547D6621139FF7007715BE /* Business.swift in Sources */,
 				9486C4C4210FB3E100C2E153 /* RealmPersistentCollection.swift in Sources */,
 				358B65DB20E4F39B00640347 /* Operation.swift in Sources */,
 				940477AB20F9E8320049CDB5 /* Fertilization.swift in Sources */,
@@ -927,6 +950,7 @@
 				940477B720F9E9450049CDB5 /* AddVintageViewController.swift in Sources */,
 				946F7C932111BB8900F16BDF /* FieldCollection.swift in Sources */,
 				358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */,
+				94547D692113A28C007715BE /* MoreDialogs.swift in Sources */,
 				945F08312100A03800F55C44 /* FungicidalPlantProtection.swift in Sources */,
 				9486C4C6210FBBDF00C2E153 /* GermanDateFormatter.swift in Sources */,
 				358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */,
