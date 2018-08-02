@@ -117,6 +117,7 @@ class RealmPersistentCollectionTests: XCTestCase {
         // then
         XCTAssertEqual(collection.count, 1)
         XCTAssertEqual(testObject, collection[0])
+        
         XCTAssertEqual(mockedRealm.objects.count, 1)
         XCTAssertEqual(testObject, mockedRealm.objects[0])
     }
@@ -125,6 +126,7 @@ class RealmPersistentCollectionTests: XCTestCase {
         let testObject1 = TestObject()
         let testObject2 = TestObject()
         let testObject3 = TestObject()
+        
         try collection.add(testObject1)
         try collection.add(testObject2)
         try collection.add(testObject3)
@@ -136,9 +138,9 @@ class RealmPersistentCollectionTests: XCTestCase {
         XCTAssertEqual(collection.count, 2)
         XCTAssertEqual(testObject1, collection[0])
         XCTAssertEqual(testObject3, collection[1])
+        
         XCTAssertEqual(mockedRealm.objects.count, 2)
         XCTAssertEqual(testObject1, mockedRealm.objects[0])
         XCTAssertEqual(testObject3, mockedRealm.objects[1])
     }
-    
 }

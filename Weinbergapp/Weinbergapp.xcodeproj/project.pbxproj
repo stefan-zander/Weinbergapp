@@ -47,6 +47,7 @@
 		945065A120FB445F00758D8C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945065A020FB445F00758D8C /* SwitchTableViewCell.swift */; };
 		94547D6621139FF7007715BE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94547D6521139FF7007715BE /* Business.swift */; };
 		94547D692113A28C007715BE /* MoreDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94547D682113A28C007715BE /* MoreDialogs.swift */; };
+		94547D6B2113B6A4007715BE /* FieldCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94547D6A2113B6A4007715BE /* FieldCollectionTests.swift */; };
 		9459E5872110EF530095F577 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9459E5862110EF530095F577 /* MainViewController.swift */; };
 		945B47BA210B6650007865D5 /* FertilizationLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B9210B6650007865D5 /* FertilizationLocalization.swift */; };
 		945B47BE210B70C6007865D5 /* OperationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BD210B70C6007865D5 /* OperationDialogs.swift */; };
@@ -152,6 +153,7 @@
 		945065A020FB445F00758D8C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		94547D6521139FF7007715BE /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		94547D682113A28C007715BE /* MoreDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDialogs.swift; sourceTree = "<group>"; };
+		94547D6A2113B6A4007715BE /* FieldCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCollectionTests.swift; sourceTree = "<group>"; };
 		9459E5862110EF530095F577 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		945B47B9210B6650007865D5 /* FertilizationLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationLocalization.swift; sourceTree = "<group>"; };
 		945B47BD210B70C6007865D5 /* OperationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDialogs.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				94DCAFE621108C800075D520 /* GermanDateFormatterTests.swift */,
 				9478C25C21109A6B00184DA8 /* PolygonAreaTests.swift */,
 				9499BDC121121D7B0075629E /* RealmPersistentCollectionTests.swift */,
+				94547D6A2113B6A4007715BE /* FieldCollectionTests.swift */,
 				9499BDCA211261DC0075629E /* MapLocalizationTests.swift */,
 				9499BDCC211264280075629E /* PlantProtectionLocalizationTests.swift */,
 				356AFE4E20CAB28F000D9BC1 /* Info.plist */,
@@ -405,8 +408,8 @@
 		9401561C20FCCFF3006E36D9 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				946F7C922111BB8900F16BDF /* FieldCollection.swift */,
 				9473746C21061D8E006196CF /* Field.swift */,
+				946F7C922111BB8900F16BDF /* FieldCollection.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -967,6 +970,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94547D6B2113B6A4007715BE /* FieldCollectionTests.swift in Sources */,
 				9499BDC7211235D00075629E /* TestObject.swift in Sources */,
 				9499BDCB211261DC0075629E /* MapLocalizationTests.swift in Sources */,
 				9499BDC4211232020075629E /* MockedRealm.swift in Sources */,
