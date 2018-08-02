@@ -48,10 +48,8 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Diese App braucht ihre Kamera um QR codes zu scannen.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Diese App braucht deine Standortdaten um funktionieren zu können.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Diese App braucht deine Standortdaten um funktionieren zu können.</string>
+	<string>Diese App braucht ihre Standortdaten um deinen aktuellen Standort in der Karte anzuzeigen.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
