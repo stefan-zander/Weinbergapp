@@ -451,8 +451,8 @@
 		9409693D2103682200AA7146 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9409693F21036CF200AA7146 /* Operations */,
 				356AFE3820CAB28F000D9BC1 /* Main.storyboard */,
+				9409693F21036CF200AA7146 /* Operations */,
 			);
 			path = View;
 			sourceTree = "<group>";
