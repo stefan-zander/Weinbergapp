@@ -13,37 +13,37 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var mapView: MKMapView!
-    
+
     private let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(beginAdd))
     private let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(endAdd))
     private let locationManager = CLLocationManager()
 
     var fields: FieldCollection!
     var drawer: MapPolygonDrawer!
-    
+
     deinit {
         fields.mapView = nil
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationBar.leftBarButtonItem = addButton
         mapView.delegate = self
         mapView.showsUserLocation = true
-        
+
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
 
         fields.mapView = mapView
         drawer = MapPolygonDrawer(for: mapView)
     }
-    
+
     @IBAction func beginAdd(_ sender: UIBarButtonItem) {
         navigationBar.leftBarButtonItem = doneButton
         drawer.beginDraw(coordinates: nil)
     }
-    
+
     @IBAction func endAdd(_ sender: UIBarButtonItem) {
         guard drawer.pointsDrawn >= 3 else {
             MapDialogs.presentInsufficientPointsWarning(controller: self, onCancel: { _ in
@@ -52,19 +52,19 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             })
             return
         }
-        
+
         let coordinates = drawer.getCoordinates()
-        
+
         navigationBar.leftBarButtonItem = addButton
         drawer.endDraw()
-        
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+
         if let addField = storyboard.instantiateViewController(withIdentifier: "AddField")
             as? AddFieldViewController {
             addField.fields = fields
             addField.coordinates = coordinates
-            
+
             self.present(addField, animated: true)
         }
     }

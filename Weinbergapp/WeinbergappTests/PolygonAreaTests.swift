@@ -77,7 +77,7 @@ class PolygonAreaTests: XCTestCase {
 
     func testComputeAreaEiffleTower() {
         // given
-        
+
         // Source: Coordinates of vertices of the eiffle tower were obtained from MapKit
         let eiffleTower = [
             CLLocationCoordinate2D(latitude: 48.859051240203826, longitude: 2.294493716281107),
@@ -85,7 +85,7 @@ class PolygonAreaTests: XCTestCase {
             CLLocationCoordinate2D(latitude: 48.857463830025296, longitude: 2.2945175656281482),
             CLLocationCoordinate2D(latitude: 48.858248388220119, longitude: 2.2932913134106578)
         ]
-        
+
         // when
         let computedAreaInSquareMeters = computeArea(coordinates: eiffleTower)
 

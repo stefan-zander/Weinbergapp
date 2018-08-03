@@ -20,7 +20,7 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var fertilizerCategory: UIPickerView!
     @IBOutlet weak var fertilizer: UIPickerView!
     @IBOutlet weak var appliedAmount: UITextField!
-    
+
     var fields: FieldCollection!
 
     override func viewDidLoad() {
@@ -40,11 +40,11 @@ class AddFertilizationViewController: UIViewController, UIPickerViewDelegate, UI
 
     public func applyChanges(from: Fertilization) {
         date.date = from.date
-        
+
         if let index = fields.index(of: from.field!) {
             field.selectRow(index, inComponent: 0, animated: false)
         }
-        
+
         user.text = from.user
         workingHours.text = String(from.workingHours)
         fertilizerCategory.selectRow(from.fertilizerCategoryRaw, inComponent: 0, animated: false)

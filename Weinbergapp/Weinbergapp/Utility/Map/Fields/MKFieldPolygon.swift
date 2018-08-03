@@ -13,13 +13,13 @@ import MapKit
  A special polygon to use for the fields displayed in `MapViewController`.
  */
 public class MKFieldPolygon: MKPolygon {
-    
+
     /// The fill color to use for the polygon belonging to a field.
     static let kFieldPolygonFillColor = UIColor.orange.withAlphaComponent(0.25)
-    
+
     /// The stroke color to use for the polygon belonging to a field
     static let kFieldPolygonStrokeColor = UIColor.orange.withAlphaComponent(0.5)
-    
+
     /// The line width to use for the polygon belonging to a field
     static let kFieldPolygonLineWidth: CGFloat = 2.0
 
@@ -32,7 +32,7 @@ public class MKFieldPolygon: MKPolygon {
 
     /**
      Creates a renderer to use for this polygon given an overlay.
-     
+
      - Parameter overlay: The overlay to use for the renderer.
      - Retruns: The renderer to use for this polygon.
      */

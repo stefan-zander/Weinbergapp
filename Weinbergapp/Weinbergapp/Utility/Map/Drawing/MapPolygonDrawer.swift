@@ -15,14 +15,14 @@ import MapKit
 public class MapPolygonDrawer {
 
     private let mapView: MKMapView
-    
+
     private var addPointGesture: UILongPressGestureRecognizer!
     private var drawingPoints: [MKPointAnnotation]?
     private var drawingPolygon: MKPolygon?
 
     /**
      Initializes a new `MapPolygonDrawer` for the `MKMapView` `mapView`.
- 
+
      - Parameter mapView: The `MKMapView` where a preview of the drawing polygon will be added.
      */
     public init(for mapView: MKMapView) {
@@ -33,7 +33,7 @@ public class MapPolygonDrawer {
         addPointGesture.minimumPressDuration = 0.25
         mapView.addGestureRecognizer(addPointGesture)
     }
-    
+
     deinit {
         mapView.removeGestureRecognizer(addPointGesture)
     }
@@ -54,7 +54,7 @@ public class MapPolygonDrawer {
 
     /**
      Enter drawing mode with optional initial coordinates given.
-     
+
      - Parameter coordinates: An array of coordinates that should already be drawn onto the map or `nil` to start from
                               scratch.
     */
@@ -74,7 +74,7 @@ public class MapPolygonDrawer {
 
     /**
      Ends drawing mode and removes any created previews drawn on `mapView`.
-     
+
      - Remarks: This method also resets the drawing points, so in order to use the class properly the coordinates need
                 to be queried first before ending drawing mode.
     */
@@ -89,11 +89,11 @@ public class MapPolygonDrawer {
             self.drawingPolygon = nil
         }
     }
-    
+
     /**
      When in drawing mode this method returns an array of coordinates that have been drawn, otherwise an empty array is
      returned.
-     
+
      - Returns: The coordinates drawn so far.
     */
     public func getCoordinates() -> [CLLocationCoordinate2D] {
@@ -106,7 +106,7 @@ public class MapPolygonDrawer {
 
     /**
      Removes a point of the drawing polygon.
-     
+
      - Parameter point: The point to remove from the drawing polygon.
     */
     public func remove(point: MKDrawingPointAnnotation) {
@@ -123,7 +123,7 @@ public class MapPolygonDrawer {
         self.drawingPoints = drawingPoints
         refreshDrawingPolygon()
     }
-    
+
     @objc func addPointGestureReceived(gestureRecognizer: UILongPressGestureRecognizer) {
         guard gestureRecognizer.state == .began else { return }
         guard var drawingPoints = drawingPoints else { return }

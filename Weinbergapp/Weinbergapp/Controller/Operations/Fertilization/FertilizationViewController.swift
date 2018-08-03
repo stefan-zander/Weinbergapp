@@ -66,7 +66,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                     return false
                 }
             }
-            
+
             editFertilization.fields = fields
 
             self.present(editFertilization, animated: true)
@@ -108,7 +108,7 @@ class FertilizationViewController: UIViewController, UITableViewDelegate, UITabl
                     return false
                 }
             }
-            
+
             addFertilization.fields = fields
 
             self.present(addFertilization, animated: true)

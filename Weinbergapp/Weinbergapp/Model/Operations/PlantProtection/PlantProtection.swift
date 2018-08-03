@@ -13,7 +13,7 @@ import RealmSwift
  The plant protection operation.
  */
 public class PlantProtection: Operation {
-    
+
     /**
      The raw value of the category of illnesses to protect for in the plant protection operation.
 

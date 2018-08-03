@@ -66,7 +66,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                     return false
                 }
             }
-            
+
             editDefoliation.fields = fields
 
             self.present(editDefoliation, animated: true)
@@ -108,7 +108,7 @@ class DefoliationViewController: UIViewController, UITableViewDelegate, UITableV
                     return false
                 }
             }
-            
+
             addDefoliation.fields = fields
 
             self.present(addDefoliation, animated: true)

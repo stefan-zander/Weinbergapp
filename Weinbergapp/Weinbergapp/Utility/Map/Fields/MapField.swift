@@ -17,7 +17,7 @@ public class MapField {
 
     /// The underlying field.
     public let field: Field
-    
+
     /// The field collection this object belongs to.
     public let fieldCollection: FieldCollection
 
@@ -39,7 +39,7 @@ public class MapField {
     public var vineVariety: String {
         return field.vineVariety
     }
-    
+
     /// The number of operations that currently use the underlying field.
     public var useCount: Int {
         return field.useCount
@@ -47,7 +47,7 @@ public class MapField {
 
     /**
      Changes the name and vine variety of the underlying field and updates the visual representations on the `mapView`.
-     
+
      - Parameter name: The new name to use for the field.
      - Parameter vineVariety: the new vine variety to use for the field.
      */
@@ -64,7 +64,7 @@ public class MapField {
 
     /**
      Adds a visual representation to the given `mapView`, using the coordinates of the underlying field.
-     
+
      - Parameter mapView: The `mapView` to add the visual representation to.
      - Remarks: If this method is called when it is already attached to a different `mapView`, the previous visual
                 representations will be deleted first.
@@ -99,20 +99,20 @@ public class MapField {
      */
     public func removeFromMapView() {
         guard let mapView = mapView else { return }
-        
+
         if let polygon = polygon {
             mapView.remove(polygon)
             self.polygon = nil
         }
-        
+
         if let point = point {
             mapView.removeAnnotation(point)
             self.point = nil
         }
-        
+
         self.mapView = nil
     }
-    
+
     private func update(point: MKFieldPointAnnotation) {
         point.title = "\(field.name) (\(MapLocalization.localize(area: field.getArea())))"
         point.subtitle = "Reben Sorte: \(field.vineVariety)"

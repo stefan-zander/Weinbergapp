@@ -64,7 +64,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                     return false
                 }
             }
-            
+
             editVintage.fields = fields
 
             self.present(editVintage, animated: true)
@@ -106,7 +106,7 @@ class VintageViewController: UIViewController, UITableViewDelegate, UITableViewD
                     return false
                 }
             }
-            
+
             addVintage.fields = fields
 
             self.present(addVintage, animated: true)

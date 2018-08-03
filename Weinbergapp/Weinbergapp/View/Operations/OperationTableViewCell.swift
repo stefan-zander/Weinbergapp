@@ -20,7 +20,7 @@ class OperationTableViewCell: UITableViewCell {
     func set(name: String) {
         labelOperationName.text = name
     }
-    
+
     func set(image: UIImage) {
         imageThumbnailOperation.image = image
     }

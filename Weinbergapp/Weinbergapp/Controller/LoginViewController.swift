@@ -11,7 +11,7 @@ import Foundation
 import RealmSwift
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    
+
     static let kUsername = "user"
     static let kPassword = "weinberg"
 
@@ -20,11 +20,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         username.delegate = self
         password.delegate = self
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         login(textField)
         return true
@@ -33,22 +33,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func passwordVisibilityToggled(_ sender: UISwitch) {
         password.isSecureTextEntry = !sender.isOn
     }
-    
+
     @IBAction func login(_ sender: Any) {
         guard username.text == LoginViewController.kUsername &&
             password.text == LoginViewController.kPassword else {
             LoginDialogs.presentLoginFailed(controller: self)
             return
         }
-        
+
         do {
             let realm = try Realm()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
+
             if let controller = storyboard.instantiateViewController(withIdentifier: "Main")
                 as? MainViewController {
                 controller.realm = realm
-                
+
                 password.text = ""
                 self.present(controller, animated: true)
             }

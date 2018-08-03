@@ -16,10 +16,10 @@ public class RealmPersistentCollection<T: Object> {
 
     private let realm: MockableRealm
     private var collection: [T]
-    
+
     /**
      Creates a new `RealmPersistentCollection` which is populated with the elements stored in the database.
- 
+
      - Parameter realm: The Realm Swift object to use.
     */
     public init(realm: MockableRealm) {
@@ -29,7 +29,7 @@ public class RealmPersistentCollection<T: Object> {
 
     /**
      Returns an object at the given index.
-     
+
      - Parameter index: The index of the object.
      - Returns: The object at the given index.
     */
@@ -44,20 +44,20 @@ public class RealmPersistentCollection<T: Object> {
 
     /**
      Adds an object to the collection and persists it in the database.
-     
+
      - Parameter element: The element to add to the collection and to the database.
      */
     public func add(_ element: T) throws {
         try realm.write {
             realm.add(element)
         }
-        
+
         collection.append(element)
     }
 
     /**
      Performs actions contained within the given block inside a write transaction.
-     
+
      - Parameter block: The block containing actions to perform.
     */
     public func update(_ block: (() throws -> Void)) throws {
@@ -67,7 +67,7 @@ public class RealmPersistentCollection<T: Object> {
     /**
      Deletes an element from the collection and the database. If the element is not found within the collection, this
      method does nothing.
-     
+
      - Parameter element: The element to delete from the collection and the database.
     */
     public func delete(_ element: T) throws {
@@ -78,14 +78,14 @@ public class RealmPersistentCollection<T: Object> {
 
     /**
      Deletes an object at the specified index from the collection and the database.
-     
+
      - Parameter index: The index of the element to delete from the collection and the database.
      */
     public func delete(at index: Int) throws {
         try realm.write {
             realm.delete(collection[index])
         }
-        
+
         collection.remove(at: index)
     }
 }

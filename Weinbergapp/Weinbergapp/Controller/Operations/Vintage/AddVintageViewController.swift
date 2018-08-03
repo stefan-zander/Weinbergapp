@@ -18,7 +18,7 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var workingHours: UITextField!
     @IBOutlet weak var execution: UIPickerView!
-    
+
     var fields: FieldCollection!
 
     override func viewDidLoad() {
@@ -36,11 +36,11 @@ class AddVintageViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     func applyChanges(from: Vintage) {
         date.date = from.date
-        
+
         if let index = fields.index(of: from.field!) {
             field.selectRow(index, inComponent: 0, animated: false)
         }
-        
+
         user.text = from.user
         workingHours.text = String(from.workingHours)
         execution.selectRow(from.executionRaw, inComponent: 0, animated: false)

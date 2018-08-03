@@ -10,19 +10,19 @@ import UIKit
 import RealmSwift
 
 class MainViewController: UITabBarController {
-    
+
     var realm: Realm!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if let viewControllers = viewControllers {
             let fields = FieldCollection(realm: realm)
-            
+
             if let map = viewControllers[0] as? MapViewController {
                 map.fields = fields
             }
-            
+
             if let operations = viewControllers[1] as? OperationsTableViewController {
                 operations.realm = realm
                 operations.fields = fields

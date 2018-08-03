@@ -66,7 +66,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                     return false
                 }
             }
-            
+
             editPlantProtection.fields = fields
 
             self.present(editPlantProtection, animated: true)
@@ -108,7 +108,7 @@ class PlantProtectionViewController: UIViewController, UITableViewDelegate, UITa
                     return false
                 }
             }
-            
+
             addPlantProtection.fields = fields
 
             self.present(addPlantProtection, animated: true)

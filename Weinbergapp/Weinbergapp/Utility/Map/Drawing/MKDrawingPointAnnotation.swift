@@ -16,7 +16,7 @@ public class MKDrawingPointAnnotation: MKPointAnnotation {
 
     /**
      Gets the annotation view to use for this `MKDrawingPointAnnotation`.
-     
+
      - Parameter mapView: A mapView where reusable annotation views can be cached.
      - Returns: The `MKAnnotationView` to use for this `MKDrawingPointAnnotation`.
     */

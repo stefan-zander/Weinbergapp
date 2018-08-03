@@ -25,7 +25,7 @@ class AddPlantProtectionViewController: UIViewController, UIPickerViewDelegate, 
     @IBOutlet weak var appliedAmount: UITextField!
 
     var fields: FieldCollection!
-    
+
     var currentCategory = PlantProtectionCategory.fungicidal
     var currentFungicidal = FungicidalPlantProtection()
     var currentHerbicide = HerbicidePlantProtection()
@@ -49,11 +49,11 @@ class AddPlantProtectionViewController: UIViewController, UIPickerViewDelegate, 
 
     public func applyChanges(from: PlantProtection) {
         date.date = from.date
-        
+
         if let index = fields.index(of: from.field!) {
             field.selectRow(index, inComponent: 0, animated: false)
         }
-        
+
         user.text = from.user
         workingHours.text = String(from.workingHours)
         currentCategory = from.plantProtectionCategory
@@ -132,11 +132,11 @@ class AddPlantProtectionViewController: UIViewController, UIPickerViewDelegate, 
         to.additionalInformation = additionalInformation.text
         to.appliedAmount = Double(appliedAmount.text ?? "0") ?? 0.0
     }
-    
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView {
         case field:
@@ -147,7 +147,7 @@ class AddPlantProtectionViewController: UIViewController, UIPickerViewDelegate, 
             return 0
         }
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView {
         case field:

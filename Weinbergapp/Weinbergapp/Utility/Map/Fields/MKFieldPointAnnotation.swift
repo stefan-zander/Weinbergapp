@@ -20,10 +20,10 @@ public class MKFieldPointAnnotation: MKPointAnnotation {
         self.init()
         self.owner = owner
     }
-    
+
     /**
      Gets the annotation view to use for this `MKFieldPointAnnotation`.
-     
+
      - Parameter mapView: A mapView where reusable annotation views can be cached.
      - Returns: The `MKAnnotationView` to use for this `MKFieldPointAnnotation`.
      */

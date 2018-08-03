@@ -10,25 +10,25 @@ import UIKit
 import RealmSwift
 
 class OperationsTableViewController: UITableViewController {
-    
+
     private let operations = [
         OperationInfo(name: "Düngung",
                       image: UIImage(named: "FertilizationLogo")!,
                       identifier: "Fertilization"),
-        
+
         OperationInfo(name: "Entlauben",
                       image: UIImage(named: "DefoliationLogo")!,
                       identifier: "Defoliation"),
-        
+
         OperationInfo(name: "Pflanzenschutz",
                       image: UIImage(named: "PlantProtectionLogo")!,
                       identifier: "PlantProtection"),
-        
+
         OperationInfo(name: "Traubenlese",
                       image: UIImage(named: "VintageLogo")!,
                       identifier: "Vintage")
     ]
-    
+
     var realm: Realm!
     var fields: FieldCollection!
 
@@ -45,7 +45,7 @@ class OperationsTableViewController: UITableViewController {
 
         if let operationCell = cell as? OperationTableViewCell {
             let operationInfo = operations[indexPath.row]
-            
+
             operationCell.set(name: operationInfo.name)
             operationCell.set(image: operationInfo.image)
         }
@@ -58,10 +58,10 @@ class OperationsTableViewController: UITableViewController {
             OperationDialogs.presentNoFields(controller: self)
             return
         }
-        
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: operations[indexPath.row].identifier)
-        
+
         switch view {
         case let fertilization as FertilizationViewController:
             fertilization.fertilizations = RealmPersistentCollection(realm: realm)
@@ -78,10 +78,10 @@ class OperationsTableViewController: UITableViewController {
         default:
             break
         }
-        
+
         self.present(view, animated: true)
     }
-    
+
     private struct OperationInfo {
         let name: String
         let image: UIImage

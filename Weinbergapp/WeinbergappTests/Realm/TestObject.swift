@@ -10,6 +10,6 @@ import Foundation
 import RealmSwift
 
 class TestObject: Object {
-    
+
     var num: Int = 0
 }

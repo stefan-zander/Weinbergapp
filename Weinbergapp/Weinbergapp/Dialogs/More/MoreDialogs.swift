@@ -9,13 +9,13 @@
 import UIKit
 
 class MoreDialogs {
-    
+
     static func presentAddError(_ error: Error, controller: UIViewController) {
         let alert = UIAlertController(title: "Betrieb konnte nicht hinzugefügt werden.",
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
-        
+
         controller.present(alert, animated: true)
     }
 }

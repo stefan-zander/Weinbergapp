@@ -13,5 +13,5 @@ import RealmSwift
  The Defoliation operation.
  */
 public class Defoliation: Operation {
-    
+
 }
