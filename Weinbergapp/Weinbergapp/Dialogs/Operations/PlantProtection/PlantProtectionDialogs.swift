@@ -24,7 +24,7 @@ class PlantProtectionDialogs {
     private static func presentFungicidal(controller: AddPlantProtectionViewController) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
+        guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTable")
             as? SwitchTableViewController else { return }
 
         let fungicidal = controller.currentFungicidal
@@ -55,7 +55,7 @@ class PlantProtectionDialogs {
     private static func presentHerbicide(controller: AddPlantProtectionViewController) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
+        guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTable")
             as? SwitchTableViewController else { return }
 
         let herbicide = controller.currentHerbicide
@@ -78,7 +78,7 @@ class PlantProtectionDialogs {
     private static func presentInsecticidalOrAcaricidal(controller: AddPlantProtectionViewController) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTableViewController")
+        guard let switchTable = storyboard.instantiateViewController(withIdentifier: "SwitchTable")
             as? SwitchTableViewController else { return }
 
         let insecticidalOrAcaricidal = controller.currentInsecticidalOrAcaricidal
