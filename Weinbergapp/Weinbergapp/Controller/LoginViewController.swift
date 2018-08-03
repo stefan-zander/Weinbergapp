@@ -11,6 +11,9 @@ import Foundation
 import RealmSwift
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    
+    static let kUsername = "user"
+    static let kPassword = "weinberg"
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -32,7 +35,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(_ sender: Any) {
-        guard username.text == "user" && password.text == "weinberg" else {
+        guard username.text == LoginViewController.kUsername &&
+            password.text == LoginViewController.kPassword else {
             LoginDialogs.presentLoginFailed(controller: self)
             return
         }
