@@ -11,7 +11,7 @@
 		356AFE3520CAB28F000D9BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3420CAB28F000D9BC1 /* AppDelegate.swift */; };
 		356AFE3720CAB28F000D9BC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE3620CAB28F000D9BC1 /* LoginViewController.swift */; };
 		356AFE3A20CAB28F000D9BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356AFE3820CAB28F000D9BC1 /* Main.storyboard */; };
-		356AFE5820CAB28F000D9BC1 /* WeinbergappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */; };
+		356AFE5820CAB28F000D9BC1 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356AFE5720CAB28F000D9BC1 /* LoginViewControllerTests.swift */; };
 		358B65D720E4ED8000640347 /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D620E4ED8000640347 /* OperationTableViewCell.swift */; };
 		358B65D920E4F22000640347 /* OperationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65D820E4F22000640347 /* OperationsTableViewController.swift */; };
 		358B65DB20E4F39B00640347 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358B65DA20E4F39B00640347 /* Operation.swift */; };
@@ -115,7 +115,7 @@
 		356AFE4820CAB28F000D9BC1 /* WeinbergappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeinbergappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		356AFE4E20CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		356AFE5320CAB28F000D9BC1 /* WeinbergappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeinbergappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeinbergappUITests.swift; sourceTree = "<group>"; };
+		356AFE5720CAB28F000D9BC1 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		356AFE5920CAB28F000D9BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		358B65D620E4ED8000640347 /* OperationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
 		358B65D820E4F22000640347 /* OperationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsTableViewController.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 		356AFE5620CAB28F000D9BC1 /* WeinbergappUITests */ = {
 			isa = PBXGroup;
 			children = (
-				356AFE5720CAB28F000D9BC1 /* WeinbergappUITests.swift */,
+				356AFE5720CAB28F000D9BC1 /* LoginViewControllerTests.swift */,
 				356AFE5920CAB28F000D9BC1 /* Info.plist */,
 			);
 			path = WeinbergappUITests;
@@ -985,7 +985,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356AFE5820CAB28F000D9BC1 /* WeinbergappUITests.swift in Sources */,
+				356AFE5820CAB28F000D9BC1 /* LoginViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
