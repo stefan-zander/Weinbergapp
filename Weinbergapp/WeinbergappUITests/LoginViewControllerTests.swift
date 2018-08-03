@@ -7,8 +7,12 @@
 //
 
 import XCTest
+@testable import Weinbergapp
 
 class LoginViewControllerTests: XCTestCase {
+    
+    static let kUsername = "user"
+    static let kPassword = "weinberg"
 
     override func setUp() {
         super.setUp()
@@ -67,10 +71,10 @@ class LoginViewControllerTests: XCTestCase {
         let app = XCUIApplication()
         
         app.textFields["Benutzername"].tap()
-        app.textFields["Benutzername"].typeText("user")
+        app.textFields["Benutzername"].typeText(LoginViewControllerTests.kUsername)
         
         app.secureTextFields["Passwort"].tap()
-        app.secureTextFields["Passwort"].typeText("weinberg")
+        app.secureTextFields["Passwort"].typeText(LoginViewControllerTests.kPassword)
         
         // when
         app.buttons["Anmelden"].tap()

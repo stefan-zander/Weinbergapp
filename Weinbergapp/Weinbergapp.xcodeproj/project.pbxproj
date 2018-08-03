@@ -48,6 +48,13 @@
 		94547D6621139FF7007715BE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94547D6521139FF7007715BE /* Business.swift */; };
 		94547D692113A28C007715BE /* MoreDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94547D682113A28C007715BE /* MoreDialogs.swift */; };
 		94547D6B2113B6A4007715BE /* FieldCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94547D6A2113B6A4007715BE /* FieldCollectionTests.swift */; };
+		94568E1A21144D3E0095F90D /* MapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94568E1921144D3E0095F90D /* MapViewControllerTests.swift */; };
+		94568E1C211465600095F90D /* FertilizationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94568E1B2114655F0095F90D /* FertilizationViewControllerTests.swift */; };
+		94568E1E211465780095F90D /* DefoliationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94568E1D211465780095F90D /* DefoliationViewControllerTests.swift */; };
+		94568E202114659E0095F90D /* PlantProtectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94568E1F2114659E0095F90D /* PlantProtectionViewControllerTests.swift */; };
+		94568E22211465BF0095F90D /* VintageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94568E21211465BF0095F90D /* VintageViewControllerTests.swift */; };
+		94568E24211465FD0095F90D /* MoreViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94568E23211465FD0095F90D /* MoreViewControllerTests.swift */; };
+		94568E26211467DB0095F90D /* OperationsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94568E25211467DB0095F90D /* OperationsTableViewControllerTests.swift */; };
 		9459E5872110EF530095F577 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9459E5862110EF530095F577 /* MainViewController.swift */; };
 		945B47BA210B6650007865D5 /* FertilizationLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47B9210B6650007865D5 /* FertilizationLocalization.swift */; };
 		945B47BE210B70C6007865D5 /* OperationDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945B47BD210B70C6007865D5 /* OperationDialogs.swift */; };
@@ -154,6 +161,13 @@
 		94547D6521139FF7007715BE /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		94547D682113A28C007715BE /* MoreDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDialogs.swift; sourceTree = "<group>"; };
 		94547D6A2113B6A4007715BE /* FieldCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCollectionTests.swift; sourceTree = "<group>"; };
+		94568E1921144D3E0095F90D /* MapViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerTests.swift; sourceTree = "<group>"; };
+		94568E1B2114655F0095F90D /* FertilizationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationViewControllerTests.swift; sourceTree = "<group>"; };
+		94568E1D211465780095F90D /* DefoliationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefoliationViewControllerTests.swift; sourceTree = "<group>"; };
+		94568E1F2114659E0095F90D /* PlantProtectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProtectionViewControllerTests.swift; sourceTree = "<group>"; };
+		94568E21211465BF0095F90D /* VintageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VintageViewControllerTests.swift; sourceTree = "<group>"; };
+		94568E23211465FD0095F90D /* MoreViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewControllerTests.swift; sourceTree = "<group>"; };
+		94568E25211467DB0095F90D /* OperationsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9459E5862110EF530095F577 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		945B47B9210B6650007865D5 /* FertilizationLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FertilizationLocalization.swift; sourceTree = "<group>"; };
 		945B47BD210B70C6007865D5 /* OperationDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDialogs.swift; sourceTree = "<group>"; };
@@ -276,6 +290,13 @@
 			isa = PBXGroup;
 			children = (
 				356AFE5720CAB28F000D9BC1 /* LoginViewControllerTests.swift */,
+				94568E1921144D3E0095F90D /* MapViewControllerTests.swift */,
+				94568E25211467DB0095F90D /* OperationsTableViewControllerTests.swift */,
+				94568E1B2114655F0095F90D /* FertilizationViewControllerTests.swift */,
+				94568E1D211465780095F90D /* DefoliationViewControllerTests.swift */,
+				94568E1F2114659E0095F90D /* PlantProtectionViewControllerTests.swift */,
+				94568E21211465BF0095F90D /* VintageViewControllerTests.swift */,
+				94568E23211465FD0095F90D /* MoreViewControllerTests.swift */,
 				356AFE5920CAB28F000D9BC1 /* Info.plist */,
 			);
 			path = WeinbergappUITests;
@@ -985,7 +1006,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94568E202114659E0095F90D /* PlantProtectionViewControllerTests.swift in Sources */,
+				94568E26211467DB0095F90D /* OperationsTableViewControllerTests.swift in Sources */,
+				94568E1C211465600095F90D /* FertilizationViewControllerTests.swift in Sources */,
+				94568E22211465BF0095F90D /* VintageViewControllerTests.swift in Sources */,
+				94568E24211465FD0095F90D /* MoreViewControllerTests.swift in Sources */,
 				356AFE5820CAB28F000D9BC1 /* LoginViewControllerTests.swift in Sources */,
+				94568E1A21144D3E0095F90D /* MapViewControllerTests.swift in Sources */,
+				94568E1E211465780095F90D /* DefoliationViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
